@@ -40,7 +40,7 @@ public class Objetos_moviles {
 		else return puntos;
 	}
 	
-	public void Recivir_danio( int danio ){
+	public void Recibir_danio( int danio ){
 		blindaje.Daniar_por( danio );
 		// falta On 0 vida morir
 	}
