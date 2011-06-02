@@ -2,8 +2,8 @@ package Objetos_Moviles;
 
 public class Items extends Objetos_moviles{
 	
-	public static void Verificar_coliciones(){
-		this.Verificar_colicion();
+	public void Verificar_colicion(){
+		//borre lo que estaba aca
 	}
 
 	
