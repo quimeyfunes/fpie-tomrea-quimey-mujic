@@ -1,16 +1,15 @@
 package Mapa;
-import java.awt.Point;
 
 import Objetos_Moviles.Estrategia_De_Vuelo;
 
 public class Ubicacion {
 	
-	Point Punto ;
+	Vector2D Punto ;
 	private static int LimiteX=10000;
 	private static int LimiteY=10000;
 	
 	//Metodo para uso privado.Verifica si se fue del rango, y si es asi, lanza excepcion.	
-	private void ComprobarOffLimits(Point punto){
+	private void ComprobarOffLimits(Vector2D punto){
 		double X = punto.getX();
 		double Y = punto.getY();
 		
@@ -21,7 +20,7 @@ public class Ubicacion {
 	}
 	
 	//Constructor privado.Verifica que el punto este siendo creado dentro de los límites.Si falla, lanza OFFlimits.	
-	private Ubicacion(Point punto){
+	private Ubicacion(Vector2D punto){
 		
 		this.ComprobarOffLimits(punto);
 		this.Punto=punto;
@@ -30,7 +29,7 @@ public class Ubicacion {
 
 	//Constructor publico.Devuelve una Ubicacion
 	public static Ubicacion crearUbicacionEnXY(int X,int Y){
-		Point punto = new Point(X,Y);
+		Vector2D punto = new Vector2D(X,Y);
 		return ( (new Ubicacion(punto) ));
 	}
 	
@@ -63,8 +62,8 @@ public class Ubicacion {
 	}
 	
 	//Devuelvo una copia, no violo encapsulamiento
-	public Point XY(){
-		return( (Point) ( (this.Punto).clone() ) );
+	public Vector2D XY(){
+		return( (Vector2D) ( (this.Punto).clone() ) );
 	}
 	
 	//Devuelven la distancia a los respectivos limites, desde la posicion actual.	
@@ -85,7 +84,7 @@ public class Ubicacion {
 	}
 	
 	//Translada si no queda en posicion invalida.Sino, lanza OFFlimits.
-	public void translateBy(Point punto){
+	public void translateBy(Vector2D punto){
 		
 		this.Punto.translate(punto.x, punto.y);
 		this.ComprobarOffLimits(this.Punto);

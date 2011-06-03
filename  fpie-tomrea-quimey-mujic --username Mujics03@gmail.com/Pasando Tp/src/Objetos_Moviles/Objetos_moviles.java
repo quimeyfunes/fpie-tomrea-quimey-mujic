@@ -1,7 +1,7 @@
 package Objetos_Moviles;
-import java.awt.Point;
 
 import Mapa.Ubicacion;
+import Mapa.Vector2D;
 
 public abstract class Objetos_moviles {
 
@@ -81,42 +81,42 @@ public abstract class Objetos_moviles {
 	}
 	
 	public void arriba(){
-		Point pt= new Point(0,1);
+		Vector2D pt= new Vector2D(0,1);
 		this.direccion(pt);
 	}
 	
 	public void abajo(){
-		Point pt=new Point(0,-1);
+		Vector2D pt= new Vector2D(0,-1);
 		this.direccion(pt);
 	}
 	
 	public void derecha(){
-		Point pt = new Point(1,0);
+		Vector2D pt = new Vector2D(1,0);
 		this.direccion(pt);
 	}
 	
 	public void izquierda(){
-		Point pt= new Point(-1,0);
+		Vector2D pt= new Vector2D(-1,0);
 		this.direccion(pt);
 	}
 	
-	public void direccion( Point DireccionAmoverse ){
+	public void direccion( Vector2D DireccionAmoverse ){
 		
 		if (this.EstaVivo()){ this.Direccion(DireccionAmoverse);}
 		else{//"chau blindaje new signal
 			}
 		}
 
-	private void Direccion(Point direccionAmoverse) {
+	private void Direccion(Vector2D DirToMove) {
 		
-		Point PtN = new Point(0,0);
+		//"normaliza el movimiento a minimo movimiento"
+		(DirToMove.normalize()).scaleThis( Estrategia_De_Vuelo.getMinimoMovimiento());
 		
-		PtN.
+
 		
 		
 		
 	}
 		
-	}
 	
 }
