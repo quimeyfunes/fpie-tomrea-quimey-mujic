@@ -52,9 +52,6 @@ public abstract class Objetos_moviles {
 		// if false ChauBlindaje signal
 	}
 
-	public void direccion( Point direccion_parametro ){
-		
-	}
 	
 	public String getBando(){
 		return bando;
@@ -103,5 +100,23 @@ public abstract class Objetos_moviles {
 		this.direccion(pt);
 	}
 	
+	public void direccion( Point DireccionAmoverse ){
+		
+		if (this.EstaVivo()){ this.Direccion(DireccionAmoverse);}
+		else{//"chau blindaje new signal
+			}
+		}
+
+	private void Direccion(Point direccionAmoverse) {
+		
+		Point PtN = new Point(0,0);
+		
+		PtN.
+		
+		
+		
+	}
+		
+	}
 	
 }
