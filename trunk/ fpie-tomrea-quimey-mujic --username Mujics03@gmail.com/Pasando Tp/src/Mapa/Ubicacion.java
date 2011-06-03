@@ -1,6 +1,8 @@
 package Mapa;
 import java.awt.Point;
 
+import Objetos_Moviles.Estrategia_De_Vuelo;
+
 public class Ubicacion {
 	
 	Point Punto ;
