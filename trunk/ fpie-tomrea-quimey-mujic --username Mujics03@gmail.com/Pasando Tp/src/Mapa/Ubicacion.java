@@ -61,6 +61,7 @@ public class Ubicacion {
 		return( (Point) ( (this.Punto).clone() ) );
 	}
 	
+	//Devuelven la distancia a los respectivos limites, desde la posicion actual.	
 	private double distanciaAlimiteDerecho(){
 		return ( (this.Punto).distance( Ubicacion.getLimiteX() , Punto.y) ) ;
 	}
@@ -81,9 +82,7 @@ public class Ubicacion {
 	public void translateBy(Point punto){
 		
 		this.Punto.translate(punto.x, punto.y);
-		if( (this.Punto.getX()<0) || (this.Punto.getY()<0) || (this.Punto.getX()>LimiteX)||(this.Punto.getY()>LimiteY) ) { 
-			//TODO: lanzar excepcion OFFLimits
-		}
+		this.ComprobarOffLimits(this.Punto);
 		
 	}
 	
