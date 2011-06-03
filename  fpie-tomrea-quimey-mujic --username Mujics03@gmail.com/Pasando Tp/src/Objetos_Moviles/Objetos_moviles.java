@@ -3,7 +3,7 @@ import java.awt.Point;
 
 public class Objetos_moviles {
 
-	boolean vivo;
+	boolean Vivo;
 	Ubicacion ubicacion;
 	int puntos;
 	Blindaje blindaje;
@@ -11,8 +11,8 @@ public class Objetos_moviles {
 	String bando;
 	int Velocidad;
 	
-	public void Matar(){
-		vivo = false;
+	public void Destructor(){
+		Vivo = false;
 	}
 	
 	public boolean Cerca_limite_derecho(){

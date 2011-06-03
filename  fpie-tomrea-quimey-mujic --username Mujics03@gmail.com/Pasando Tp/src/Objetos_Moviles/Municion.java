@@ -4,7 +4,7 @@ import java.awt.Point;
 public class Municion extends Objetos_moviles{
 
 	public static void main(String[] args) {
-		vivo = true;
+		Vivo = true;
 		Puntos = 0;
 	}
 	
