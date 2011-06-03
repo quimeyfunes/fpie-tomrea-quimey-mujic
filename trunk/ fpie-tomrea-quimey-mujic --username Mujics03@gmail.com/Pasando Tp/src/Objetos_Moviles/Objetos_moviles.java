@@ -12,6 +12,7 @@ public abstract class Objetos_moviles {
 	Estrategia_De_Vuelo estrategia_vuelo;
 	String bando;
 	int Velocidad;
+	Cuerpo
 	
 	public void Destructor(){
 		Vivo = false;
@@ -110,7 +111,17 @@ public abstract class Objetos_moviles {
 	private void Direccion(Vector2D DirToMove) {
 		
 		//"normaliza el movimiento a minimo movimiento"
-		(DirToMove.normalize()).scaleThis( Estrategia_De_Vuelo.getMinimoMovimiento());
+		DirToMove.normalizeThis();
+		DirToMove.scaleThis( Estrategia_De_Vuelo.getMinimoMovimiento());
+		
+		try{
+			ubicacion.translateBy(DirToMove);
+			
+			
+			
+		}catch( ){
+			
+		}
 		
 
 		
