@@ -13,7 +13,7 @@ public class ChoqueMultiplesMunicionesConAvionTest extends TestCase{
 	bombardero.CrearEnXY( 100 , 115 );
 	algo42.crearEnXY( 100 , 100 );
 	
-	bombardero.seleccinarSiguienteArma();
+	bombardero.seleccionarSiguienteArma();
 	municion1 = bombardero.disparar();
 	municion2 = bombardero.disparar();
 	municion3 = bombardero.disparar();
@@ -21,7 +21,7 @@ public class ChoqueMultiplesMunicionesConAvionTest extends TestCase{
 	
 	int i; 
 	for ( i = 0 ; i = 19 ; i++ ){
-		bombaderdo.arriba();
+		bombardero.arriba();
 	}
 	
 	try {
