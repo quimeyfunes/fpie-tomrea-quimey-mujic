@@ -1,7 +1,6 @@
 package Objetos_Moviles;
 import java.awt.Point;
 
-import Mapa.Estrategia_De_Vuelo;
 import Mapa.Ubicacion;
 
 public abstract class Objetos_moviles {
