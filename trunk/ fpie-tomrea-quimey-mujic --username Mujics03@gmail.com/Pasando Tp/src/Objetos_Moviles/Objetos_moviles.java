@@ -52,9 +52,8 @@ public abstract class Objetos_moviles {
 		// if false ChauBlindaje signal
 	}
 
-	public void setDireccion( Point direccion_parametro ){
-		if ( this.Vivo ) direccion = direccion_parametro;
-		// else Chaublindaje signal
+	public void direccion( Point direccion_parametro ){
+		
 	}
 	
 	public String getBando(){
@@ -82,6 +81,26 @@ public abstract class Objetos_moviles {
 	
 	public void setPosicion( Ubicacion ubicacion_parametro ){
 		ubicacion = ubicacion_parametro;
+	}
+	
+	public void arriba(){
+		Point pt= new Point(0,1);
+		this.direccion(pt);
+	}
+	
+	public void abajo(){
+		Point pt=new Point(0,-1);
+		this.direccion(pt);
+	}
+	
+	public void derecha(){
+		Point pt = new Point(1,0);
+		this.direccion(pt);
+	}
+	
+	public void izquierda(){
+		Point pt= new Point(-1,0);
+		this.direccion(pt);
 	}
 	
 	
