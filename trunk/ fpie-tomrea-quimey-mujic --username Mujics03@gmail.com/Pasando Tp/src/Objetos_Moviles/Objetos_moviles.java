@@ -12,7 +12,6 @@ public abstract class Objetos_moviles {
 	Estrategia_De_Vuelo estrategia_vuelo;
 	String bando;
 	int Velocidad;
-	Cuerpo
 	
 	public void Destructor(){
 		Vivo = false;
