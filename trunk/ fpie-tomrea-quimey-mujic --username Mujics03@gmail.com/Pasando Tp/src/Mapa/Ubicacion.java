@@ -4,8 +4,8 @@ import java.awt.Point;
 public class Ubicacion {
 	
 	Point Punto ;
-	static int LimiteX=10000;
-	static int LimiteY=10000;
+	private static int LimiteX=10000;
+	private static int LimiteY=10000;
 	
 	//Metodo para uso privado.Verifica si se fue del rango, y si es asi, lanza excepcion.	
 	private void ComprobarOffLimits(Point punto){
@@ -41,19 +41,23 @@ public class Ubicacion {
 		LimiteY=y;
 	}
 	
+	//Cercania a los limites.
+	
 	public boolean EstaCercaAlAlimiteDerecho(){
-		
-	}
+		return  (this.distanciaAlimiteDerecho()) <= (Estrategia_De_Vuelo.getMinimoMovimiento()*5);	
+		}
+
 	public boolean EstaCercaAlAlimiteInferior(){
+		return  (this.distanciaAlimiteInferior()) <= (Estrategia_De_Vuelo.getMinimoMovimiento()*5);
 		
 	}
 	
 	public boolean EstaCercaAlAlimiteIzquierdo(){
-		
+		return  (this.distanciaAlimiteIzquierdo()) <= (Estrategia_De_Vuelo.getMinimoMovimiento()*5);	
 	}
 	
 	public boolean EstaCercaAlAlimiteSuperior(){
-		
+		return  (this.distanciaAlimiteSuperior()) <= (Estrategia_De_Vuelo.getMinimoMovimiento()*5);
 	}
 	
 	//Devuelvo una copia, no violo encapsulamiento

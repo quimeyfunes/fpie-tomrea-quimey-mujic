@@ -1,13 +1,16 @@
 package Objetos_Moviles;
 import java.awt.Point;
 
-public class Objetos_moviles {
+import Mapa.Estrategia_De_Vuelo;
+import Mapa.Ubicacion;
+
+public abstract class Objetos_moviles {
 
 	boolean Vivo;
 	Ubicacion ubicacion;
 	int puntos;
 	Blindaje blindaje;
-	Estrategia_vuelo estrategia_vuelo;
+	Estrategia_De_Vuelo estrategia_vuelo;
 	String bando;
 	int Velocidad;
 	
@@ -15,28 +18,28 @@ public class Objetos_moviles {
 		Vivo = false;
 	}
 	
-	public boolean Cerca_limite_derecho(){
-		return ubicacion.Cerca_limite_derecho;
+	public boolean EstaCercaAlAlimiteDerecho(){
+		return ubicacion.EstaCercaAlAlimiteDerecho();
 	}
 	
-	public boolean Cerca_limite_izquierdo(){
-		return ubicacion.Cerca_limite_izquierdo;
+	public boolean EstaCercaAlAlimiteIzquierdo(){
+		return ubicacion.EstaCercaAlAlimiteIzquierdo();
 	}
 	
-	public boolean Cerca_limite_superior(){
-		return ubicacion.Cerca_limite_superior;
+	public boolean EstaCercaAlAlimiteSuperior(){
+		return ubicacion.EstaCercaAlAlimiteSuperior();
 	}
 	
-	public boolean Cerca_limite_inferior(){
-		return ubicacion.Cerca_limite_inferior;
+	public boolean EstaCercaAlAlimiteInferior(){
+		return ubicacion.EstaCercaAlAlimiteInferior();
 	}
 	
-	public boolean getVivo(){
-		return vivo;
+	public boolean EstaVivo(){
+		return Vivo;
 	}
 	
-	public int getPuntos(){
-		if ( this.vivo ) return 0; 
+	public int RecolectarPuntos(){
+		if ( this.Vivo ) return 0; 
 		else return puntos;
 	}
 	
@@ -45,13 +48,13 @@ public class Objetos_moviles {
 		// falta On 0 vida morir
 	}
 	
-	public void Cambiar_estrategia_vuelo( Estrategia_vuelo nueva_estrategia ){
-		if ( this.vivo ) estrategia_vuelo = nueva_estrategia;
+	public void Cambiar_Estrategia_De_Vuelo( Estrategia_De_Vuelo nueva_estrategia ){
+		if ( this.Vivo ) estrategia_vuelo = nueva_estrategia;
 		// if false ChauBlindaje signal
 	}
 
 	public void setDireccion( Point direccion_parametro ){
-		if ( this.vivo ) direccion = direccion_parametro;
+		if ( this.Vivo ) direccion = direccion_parametro;
 		// else Chaublindaje signal
 	}
 	
@@ -59,14 +62,13 @@ public class Objetos_moviles {
 		return bando;
 	}
 	
-	public void Mover(){
-		if ( this.vivo ) estrategia_vuelvo.Calcular_movimiento( this );
+	public void moverse(){
+		if ( this.Vivo ) this.estrategia_vuelo.CalcularMovimiento( this );
 	}
 	
-	public void Mover_segun_velocidad(){
-		if ( this.vivo ) {
-			int i;
-			for ( i = 0, i = velocidad , i++ ) this.Mover();
+	public void moverseIAsegunVel(){
+		if ( this.Vivo ) {
+			for ( int i = 0 ; i == Velocidad ; i++ ) this.moverse();
 		}
 		// else ChauBlindaje signal
 	}
