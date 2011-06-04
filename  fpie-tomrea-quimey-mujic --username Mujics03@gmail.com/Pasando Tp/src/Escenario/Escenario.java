@@ -10,6 +10,19 @@ public class Escenario
 {
 	List<ObjetosMoviles> todoLoQueEstaEnJuego;
 	int sumaDePuntos;
+	private static Escenario instance = null;
+	
+	private synchronized static void createInstance() {
+		if (instance == null) { 
+			instance = new Escenario();
+	    }
+	}
+	
+	public static Escenario getInstance() {
+	    if (instance == null) 
+	    	createInstance();
+	    return instance;
+	}
 
 	public Escenario()
 	{
