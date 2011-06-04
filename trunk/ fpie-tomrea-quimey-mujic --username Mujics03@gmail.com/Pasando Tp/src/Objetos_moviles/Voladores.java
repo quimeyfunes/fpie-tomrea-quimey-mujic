@@ -3,9 +3,8 @@ import java.util.LinkedList;
 import Escenario.*;
 import Excepciones.ChauBlindajeException; 
 import Armas.*;
-import Objetos_moviles.*;
 
-public class Voladores extends ObjetosMoviles{
+public abstract class Voladores extends ObjetosMoviles{
 
 	boolean vivo;
 	int Timing;
@@ -29,31 +28,31 @@ public class Voladores extends ObjetosMoviles{
 	
 	
 	protected void VerificarColision(){
-		Escenario escenario = escenario.getInstance();
+		Escenario esc = Escenario.getInstance();
 		// buscar tipo generico Collection
-		Collection todoLoQueEstaEnJuego = escenario.objetosVivos();
+		LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego = esc.objetosVivos();
 		int j; 
-		for ( j = 0 , j = todoLoQueEstaEnJuego.size() , j++ ){
+		for ( j = 0 ; j == todoLoQueEstaEnJuego.size() ; j++ ){
 			ObjetosMoviles elemento = todoLoQueEstaEnJuego.get( j );
 			if ( this.condicionComun(elemento) ) elemento.ActuarAnteColision(this);
 			}
 		}
 	
 	public void agregarArma( ArmasFisicas arma )  throws ChauBlindajeException {
-		if ( this.EstaVivo() ) weapons.add(arma) {
-		} else throw new ChauBlindajeException();
+		if ( this.EstaVivo() ){ this.weapons.add(arma);} 
+		 else throw new ChauBlindajeException();
 	}
 		
 	protected Municion disparar()  throws ChauBlindajeException {
 		// Corregir metodo weapons
-		if ( this.EstaVivo() ) weapons.dispararElArmaSeleccionadaDesde( ubicacion XY ){
-		} else throw new ChauBlindajeException();
+		if ( this.EstaVivo() ){ 
+			return  weapons.dispararElArmaSeleccionada( this.ubicacion.XY() );
+		}
+		 else throw new ChauBlindajeException();
 	}
 	
 	protected Danio fuerzaDeChoque(){
-		// verificar porque no reconoce el new, d dond sale blindaje
-		Danio danio =  new Danio();
-		danio.Danio( blindaje.getHitPoints() );
+		Danio danio =  new Danio(blindaje.getHitPoints());
 		return danio;
 	}
 	
@@ -71,7 +70,7 @@ public class Voladores extends ObjetosMoviles{
 	
 	protected void seleccionarSiguienteArma()  throws ChauBlindajeException {
 		// no reconoce weapons
-		if ( this.EstaVivo() ) weapons.seleccionarSiguienteArma(){
-		} else throw new ChauBlindajeException();
+		if ( this.EstaVivo() ){ weapons.seleccionarSiguienteArma();}
+		 else throw new ChauBlindajeException();
 	}
 }

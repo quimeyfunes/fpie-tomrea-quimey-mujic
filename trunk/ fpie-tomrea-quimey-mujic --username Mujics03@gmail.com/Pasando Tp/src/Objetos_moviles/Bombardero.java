@@ -1,9 +1,7 @@
 package Objetos_moviles;
 import java.awt.geom.Rectangle2D;
-import Excepciones.GameOverException;
 import Mapa.Vector2D;
 import Armas.*;
-import Mapa.*;
 
 public class Bombardero extends Voladores{
 	
@@ -24,23 +22,19 @@ public class Bombardero extends Voladores{
 	}
 	
 	public void EstadoCorrecto(){
-		bando = ObjetosMoviles.BandoEnemigo();
-		puntos = 30; 
-		Velocidad = 1;
-		estrategia_vuelo = new ZigZag();
-		Blindaje blindaje = new Blindaje();
-		blindaje.Blindaje( 200 );
+		this.bando = ObjetosMoviles.BandoEnemigo();
+		this.puntos = 30; 
+		this.Velocidad = 1;
+		this.estrategia_vuelo = new ZigZag();
+		this.blindaje = new Blindaje((short)200);
 		Vector2D p = ubicacion.XY();
-		Cuerpo = new Rectangle2D.Double( p.x,p.y,8,8);
-		PistolaLaser pistola_laser = new PistolaLaser();
-		pistolar_laser.PistolaLaser( bando , new LineaRectaDown() );
-		LanzadorMisiles lanzador_misiles = new LanzadorMisiles();
-		lanzadorMisiles.LanzadorMisiles( bando, new MovDirigido() );
-		LanzadorCohetes lanzador_cohetes = new LanzadorCohetes();
-		lanzador_cohetes.LanzadorCohetes( bando , new LineaRectaDown() );
-		weapons.add( pistola_laser );
-		weapons.add( lanzador_misiles );
-		weapons.add( lanzador_cohetes );
+		this.Cuerpo = new Rectangle2D.Double( p.x,p.y,8,8);
+		PistolaLaser pistola_laser = new PistolaLaser( bando , new LineaRectaDown() );
+		LanzadorMisiles lanzador_misiles = new LanzadorMisiles(bando, new MovDirigido());
+		LanzadorCohetes lanzador_cohetes = new LanzadorCohetes(bando, new MovDirigido());
+		this.weapons.add( pistola_laser );
+		this.weapons.add( lanzador_misiles );
+		this.weapons.add( lanzador_cohetes );
 	}
 	
 }

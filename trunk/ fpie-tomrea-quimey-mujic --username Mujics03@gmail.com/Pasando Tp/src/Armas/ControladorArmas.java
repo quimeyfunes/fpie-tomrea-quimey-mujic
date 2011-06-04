@@ -3,6 +3,7 @@ package Armas;
 import java.util.LinkedList;
 import Excepciones.OutOfAmmoException;
 import Mapa.Vector2D;
+import Objetos_moviles.Municion;
 import Armas.ArmasFisicas;
 
 public class ControladorArmas
@@ -27,18 +28,19 @@ public class ControladorArmas
 			weaponOfChoice = 1;
 	}
 	
-	public void dispararElArmaSeleccionada(Vector2D pos)
+	public Municion dispararElArmaSeleccionada(Vector2D pos)
 	{
 		ArmasFisicas arma = this.listaDeArmas.get(weaponOfChoice);
 		try
 		{
-			arma.dispararDesde(pos);
+			return ( arma.dispararDesde(pos) );
 		}
 		catch(OutOfAmmoException e)
 		{
 			this.listaDeArmas.remove(weaponOfChoice);
 			weaponOfChoice = 1;
 		}
+		return null;//No deberia llegar nunca aca...extraño.
 	}
 
 }

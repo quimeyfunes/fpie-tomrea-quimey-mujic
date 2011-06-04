@@ -3,10 +3,12 @@ package Objetos_moviles;
 import Mapa.Vector2D;
 
 public class MovDirigido extends EstrategiaDeVuelo{
-
+	
 	@Override
-	public void CalcularMovimiento(ObjetosMoviles ObjQueRastrea) {
+	public void CalcularMovimiento( ObjetosMoviles ObjQueRastrea ) {
+									
 		
+										//"aca falta implementar una interfaz o algo, para que use metodos de rastreadores
 		Vector2D DirTemp = (ObjQueRastrea.getPosicionDelObjetivo());
 		Vector2D MyPos = ObjQueRastrea.getPosicion();
 		

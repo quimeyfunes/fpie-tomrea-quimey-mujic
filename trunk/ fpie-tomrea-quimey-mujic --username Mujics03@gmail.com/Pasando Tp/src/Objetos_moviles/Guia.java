@@ -1,5 +1,6 @@
 package Objetos_moviles;
 import java.awt.geom.Rectangle2D;
+import java.util.LinkedList;
 
 import Escenario.Escenario;
 import Excepciones.GameOverException;
@@ -29,20 +30,15 @@ public class Guia extends Voladores{
 		bando = ObjetosMoviles.BandoEnemigo();
 		puntos = 0; 
 		Velocidad = 10;
-		estrategia_vuelo = new IdaYvuelta();
-		Blindaje blindaje = new Blindaje();
-		blindaje.Blindaje( 1000 );
+		estrategia_vuelo = new IdaYvuelta();//aca hay que poner de derecha a izquierda
+		this.blindaje = new Blindaje((short)1000);
 		Vector2D p = ubicacion.XY();
 		Cuerpo = new Rectangle2D.Double( p.x,p.y,3,3);
-		PistolaLaser pistola_laser = new PistolaLaser();
-		pistolar_laser.PistolaLaser( bando , new LineaRectaDown() );
-		LanzadorMisiles lanzador_misiles = new LanzadorMisiles();
-		lanzadorMisiles.LanzadorMisiles( bando, new MovDirigido() );
-		LanzadorCohetes lanzador_cohetes = new LanzadorCohetes();
-		lanzador_cohetes.LanzadorCohetes( bando , new LineaRectaDown() );
+		PistolaLaser pistola_laser = new PistolaLaser(bando , new LineaRectaDown());
+		LanzadorMisiles lanzador_misiles = new LanzadorMisiles(bando, new MovDirigido());
+		LanzadorCohetes lanzador_cohetes = new LanzadorCohetes(bando , new LineaRectaDown());
+		
 		weapons.add( pistola_laser );
-		weapons.add( lanzador_misiles );
-		weapons.add( lanzador_cohetes );
 		weapons.add( lanzador_misiles );
 		weapons.add( lanzador_cohetes );
 	}
@@ -50,9 +46,8 @@ public class Guia extends Voladores{
 	protected void Huyan(){
 		Escenario escenario = escenario.getInstance();
 		// buscar tipo generico Collection
-		Collection todoLoQueEstaEnJuego = escenario.objetosVivos();
-		int j; 
-		for ( j = 0 , j = todoLoQueEstaEnJuego.size() , j++ ){
+		LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego = escenario.objetosVivos();
+		for ( int j = 0  ; j == todoLoQueEstaEnJuego.size() ; j=j+1 ){
 			ObjetosMoviles elemento = todoLoQueEstaEnJuego.get( j );
 			if ( this.condicion(elemento) )this.run();
 		}
