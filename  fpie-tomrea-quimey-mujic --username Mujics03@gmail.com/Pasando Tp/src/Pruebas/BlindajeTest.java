@@ -1,8 +1,8 @@
 package Pruebas;
 import Armas.Blindaje;
 import Armas.Danio;
+import Armas.Blindaje;
 import junit.framework.*;
-
 
 
 public class BlindajeTest extends TestCase{
@@ -12,8 +12,10 @@ public class BlindajeTest extends TestCase{
 	Danio b;
 	Blindaje A;
 	
-	b = Danio.De( 300 );
-	A = Blindaje.De( 100 );
+	b = new Danio();
+	b.setearPoder( 300 );
+	A = new Blindaje;
+	A.contruidoCon( 100 );
 	
 	// Verificar funcionamiento del fail 
 	try{
