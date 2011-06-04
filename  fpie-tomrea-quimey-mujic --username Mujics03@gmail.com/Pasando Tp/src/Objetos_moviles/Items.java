@@ -44,7 +44,7 @@ public class Items extends ObjetosMoviles{
 
 
 	@Override
-	protected void ActuarAnteColision() {
+	protected void ActuarAnteColision(ObjetosMoviles objeto){
 		// TODO Auto-generated method stub
 		
 	}
