@@ -9,8 +9,7 @@ public class LanzadorMisiles extends ArmasFisicas{
 
 	public LanzadorMisiles(byte bando, EstrategiaDeVuelo estrategia )
 	{
-		this.setBando(bando);
-		this.setEstrategiaVuelo(estrategia);
+		this.constructor(bando, estrategia, this);
 	}
 
 	int misiles;

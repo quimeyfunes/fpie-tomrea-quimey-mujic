@@ -9,6 +9,12 @@ public abstract class ArmasFisicas {
 	byte bando;
 	EstrategiaDeVuelo direccionAApuntar;
 	
+	protected void constructor(byte bando, EstrategiaDeVuelo estrategia, ArmasFisicas arma)
+	{
+		arma.setBando(bando);
+		arma.setEstrategiaVuelo(estrategia);
+	}
+	
 	protected final void setBando( byte parametro_bando ){
 		bando = parametro_bando;
 	}
