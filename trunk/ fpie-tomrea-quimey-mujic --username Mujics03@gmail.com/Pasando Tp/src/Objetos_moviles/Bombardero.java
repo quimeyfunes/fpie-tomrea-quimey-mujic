@@ -3,7 +3,12 @@ import java.awt.geom.Rectangle2D;
 import Mapa.Vector2D;
 import Armas.*;
 
-public class Bombardero extends Voladores{
+public class Bombardero extends Voladores
+{
+	public Bombardero(double x, double y)
+	{
+		this.constructor(x, y, this);
+	}	
 	
 	public void Actuar(){
 		if ( Timing >= 6 ) {

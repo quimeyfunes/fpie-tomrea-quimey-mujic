@@ -4,6 +4,8 @@ import junit.framework.Assert;
 
 import org.junit.Before;
 
+import Objetos_moviles.Avioneta;
+
 
 public class TestMovimientoIdaYVvuelta {
 	

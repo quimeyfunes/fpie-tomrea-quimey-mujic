@@ -2,6 +2,7 @@ package Objetos_moviles;
 import java.util.LinkedList;
 import Escenario.*;
 import Excepciones.ChauBlindajeException; 
+import Mapa.Ubicacion;
 import Armas.*;
 
 public abstract class Voladores extends ObjetosMoviles{
@@ -15,6 +16,13 @@ public abstract class Voladores extends ObjetosMoviles{
 		//Danio danioTemp = this.fuerzaDeChoque(); 
 		//this.analizarDanio( movil.fuerzaDeChoque() );
 		//movil.analizarDanio( danioTemp );
+	}
+	
+	protected void constructor(double x, double y, Voladores v)
+	{
+		v.setPosicion(Ubicacion.crearUbicacionEnXY(x, y));
+		v.EstadoCorrecto();
+		Escenario.getInstance().agregarObjeto(v);//entra al mundo de los vivos		
 	}
 	
 	

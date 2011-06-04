@@ -3,6 +3,8 @@ import static org.junit.Assert.fail;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import Objetos_moviles.Algo42;
 import Objetos_moviles.Municion;
 import Armas.*;
 
@@ -10,7 +12,7 @@ import cuentas1.CuentaBancaria;
 
 public class TestDestruirAvion {
 	private ControladorArmas ControladorA  =  new ControladorArmas();
-	private Algo42 avion = Algo42 new( 20,20);
+	private Algo42 avion = new Algo42( 20,20);
 	private Municion municion;
 	
 	@Before

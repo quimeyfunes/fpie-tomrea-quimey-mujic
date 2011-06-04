@@ -11,6 +11,11 @@ public class Algo42 extends Voladores{
 		throw new GameOverException();
 	}
 	
+	public Algo42(double x, double y)
+	{
+		this.constructor(x, y, this);
+	}
+	
 	protected void EstadoCorrecto(){ 
 		this.bando = ObjetosMoviles.BandoUsuario();
 		this.Velocidad = 5;

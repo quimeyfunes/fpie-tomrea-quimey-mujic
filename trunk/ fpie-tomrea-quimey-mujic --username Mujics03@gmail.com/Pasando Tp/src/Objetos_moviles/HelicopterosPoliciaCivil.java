@@ -4,7 +4,12 @@ import Armas.*;
 import Mapa.Vector2D;
 
 
-public class HelicopterosPoliciaCivil extends Voladores{
+public class HelicopterosPoliciaCivil extends Voladores
+{
+	public HelicopterosPoliciaCivil(double x, double y)
+	{
+		this.constructor(x, y, this);
+	}
 	
 	protected void Actuar(){
 		this.moverseIAsegunVel();

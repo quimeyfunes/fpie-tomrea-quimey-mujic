@@ -3,7 +3,12 @@ import java.awt.geom.Rectangle2D;
 import Mapa.Vector2D;
 import Armas.*;
 
-public class Caza extends Voladores{
+public class Caza extends Voladores
+{
+	public Caza(double x, double y)
+	{
+		this.constructor(x, y, this);
+	}	
 	
 	public void Actuar(){
 		if ( Timing >= 5 ) {

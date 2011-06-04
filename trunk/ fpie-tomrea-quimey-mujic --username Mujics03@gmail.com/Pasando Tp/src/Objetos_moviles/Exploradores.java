@@ -1,11 +1,14 @@
 package Objetos_moviles;
 import java.awt.geom.Rectangle2D;
-import Excepciones.GameOverException;
 import Mapa.Vector2D;
 import Armas.*;
-import Mapa.*;
 
-public class Exploradores extends Voladores{
+public class Exploradores extends Voladores
+{
+	public Exploradores(double x, double y)
+	{
+		this.constructor(x, y, this);
+	}	
 	
 	public void Actuar(){
 		this.moverseIAsegunVel();
