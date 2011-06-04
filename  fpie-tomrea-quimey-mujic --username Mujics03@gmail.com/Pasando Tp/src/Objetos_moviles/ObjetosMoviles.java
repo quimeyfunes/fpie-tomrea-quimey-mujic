@@ -112,8 +112,8 @@ public abstract class ObjetosMoviles {
 		
 	}
 
-	public Point2D.Double getPosicion(){
-		Point2D.Double pos = new Point2D.Double((Cuerpo.getCenterX()) ,(Cuerpo.getCenterY()));
+	public Vector2D getPosicion(){
+		Vector2D pos = new Vector2D((Cuerpo.getCenterX()) ,(Cuerpo.getCenterY()));
 		return pos;
 			
 	}
