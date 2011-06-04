@@ -1,7 +1,7 @@
 package Mapa;
 
 import Objetos_Moviles.Estrategia_De_Vuelo;
-import Excepcion.OFFlimits;
+import Excepciones.OffLimitsException;
 
 public class Ubicacion {
 	
@@ -10,18 +10,18 @@ public class Ubicacion {
 	private static int LimiteY=10000;
 	
 	//Metodo para uso privado.Verifica si se fue del rango, y si es asi, lanza excepcion.	
-	private void ComprobarOffLimits(Vector2D punto) throws OFFlimits{
+	private void ComprobarOffLimits(Vector2D punto) throws OffLimitsException{
 		double X = punto.getX();
 		double Y = punto.getY();
 		
 		if( (X<0) || (Y<0) || (X>LimiteX)||(Y>LimiteY) ) { 
-			throw( new OFFlimits());
+			throw( new OffLimitsException());
 		}
 		
 	}
 	
 	//Constructor privado.Verifica que el punto este siendo creado dentro de los límites.Si falla, lanza OFFlimits.	
-	private Ubicacion(Vector2D punto) throws OFFlimits{
+	private Ubicacion(Vector2D punto) throws OffLimitsException{
 		
 		this.ComprobarOffLimits(punto);
 		this.Punto=punto;
@@ -29,7 +29,7 @@ public class Ubicacion {
 		}
 
 	//Constructor publico.Devuelve una Ubicacion
-	public static Ubicacion crearUbicacionEnXY(int X,int Y) throws OFFlimits{
+	public static Ubicacion crearUbicacionEnXY(int X,int Y) throws OffLimitsException{
 		Vector2D punto = new Vector2D(X,Y);
 		return ( (new Ubicacion(punto) ));
 	}
@@ -85,7 +85,7 @@ public class Ubicacion {
 	}
 	
 	//Translada si no queda en posicion invalida.Sino, lanza OFFlimits.
-	public void translateBy(Vector2D punto) throws OFFlimits{
+	public void translateBy(Vector2D punto) throws OffLimitsException{
 		
 		this.Punto.translate(punto.x, punto.y);
 		this.ComprobarOffLimits(this.Punto);

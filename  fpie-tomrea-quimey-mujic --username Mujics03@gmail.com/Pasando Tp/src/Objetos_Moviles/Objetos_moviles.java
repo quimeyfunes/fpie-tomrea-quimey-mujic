@@ -1,8 +1,13 @@
 package Objetos_Moviles;
 
 import Armas.Blindaje;
+import Excepciones.OffLimitsException;
 import Mapa.Ubicacion;
 import Mapa.Vector2D;
+
+
+import java.awt.geom.Rectangle2D;
+import java.awt.geom.Rectangle2D.Double;
 
 public abstract class Objetos_moviles {
 
@@ -13,6 +18,7 @@ public abstract class Objetos_moviles {
 	Estrategia_De_Vuelo estrategia_vuelo;
 	String bando;
 	int Velocidad;
+	Rectangle2D.Double Cuerpo;
 	
 	public void Destructor(){
 		Vivo = false;
@@ -117,9 +123,15 @@ public abstract class Objetos_moviles {
 		try{
 			ubicacion.translateBy(DirToMove);
 			
+			double TempAncho = Cuerpo.width;
+			double TempTamanio = Cuerpo.height;
 			
+			//una forma de trasladar el rectangulo.
+			Cuerpo = new Rectangle2D.Double(Cuerpo.x +(DirToMove.x),Cuerpo.y+(DirToMove.y), TempAncho, TempTamanio);
+			this.VerificarColision();
 			
-		}catch( ){
+		}catch( OffLimitsException OffExc ){
+			this.Destructor();
 			
 		}
 		
