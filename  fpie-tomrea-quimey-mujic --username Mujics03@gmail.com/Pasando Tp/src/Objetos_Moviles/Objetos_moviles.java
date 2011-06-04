@@ -1,5 +1,6 @@
 package Objetos_Moviles;
 
+import Armas.Blindaje;
 import Mapa.Ubicacion;
 import Mapa.Vector2D;
 
