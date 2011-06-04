@@ -17,8 +17,7 @@ public class Exploradores extends Voladores{
 		Velocidad = 3;
 		// Verificar variables necesarias pra el movimientos circular
 		estrategia_vuelo = new Circular();
-		Blindaje blindaje = new Blindaje();
-		blindaje.Blindaje( 50 );
+		this.blindaje = new Blindaje((short)50);
 		Vector2D p = ubicacion.XY();
 		Cuerpo = new Rectangle2D.Double( p.x,p.y,3,3);
 	}

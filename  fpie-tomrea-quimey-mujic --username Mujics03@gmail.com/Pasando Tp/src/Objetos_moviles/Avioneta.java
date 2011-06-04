@@ -1,9 +1,7 @@
 package Objetos_moviles;
 import java.awt.geom.Rectangle2D;
-import Excepciones.GameOverException;
 import Mapa.Vector2D;
 import Armas.*;
-import Mapa.*;
 
 public class Avioneta extends Voladores {
 	
@@ -18,17 +16,15 @@ public class Avioneta extends Voladores {
 	}
 	
 	public void EstadoCorrecto(){
-		bando = ObjetosMoviles.BandoEnemigo();
-		puntos = 20; 
-		Velocidad = 5;
-		estrategia_vuelo = new IdaYvuelta();
-		Blindaje blindaje = new Blindaje();
-		blindaje.Blindaje( 100 );
+		this.bando = ObjetosMoviles.BandoEnemigo();
+		this.puntos = 20; 
+		this.Velocidad = 5;
+		this.estrategia_vuelo = new IdaYvuelta();
+		this.blindaje = new Blindaje((short)100);;
 		Vector2D p = ubicacion.XY();
-		Cuerpo = new Rectangle2D.Double( p.x,p.y,5,5);
-		PistolaLaser pistola_laser = new PistolaLaser();
-		pistolar_laser.PistolaLaser( bando , new LineaRectaDown() )
-		weapons.add( pistola_laser );
+		this.Cuerpo = new Rectangle2D.Double( p.x,p.y,5,5);
+		PistolaLaser pistola_laser = new PistolaLaser(this.bando,new LineaRectaDown());
+		this.weapons.add( pistola_laser );
 	}
 	
 	
