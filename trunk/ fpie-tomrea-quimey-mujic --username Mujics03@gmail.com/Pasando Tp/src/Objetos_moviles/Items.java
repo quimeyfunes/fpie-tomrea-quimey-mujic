@@ -14,24 +14,16 @@ public class Items extends ObjetosMoviles{
 	public boolean Puede_ser_atacado(){
 		return false;
 	}
-	
-	public void Direccion(){
-	}
-	
-	public void Mover_segun_velocidad(){
-	}
 
 
 	@Override
 	public boolean PuedeManejarItems() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 
 	@Override
 	public boolean PuedeSerAtacado() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

@@ -20,4 +20,10 @@ public class Algo42 extends Voladores{
 		PistolaLaser pistola_laser = new PistolaLaser( this.bando ,new LineaRectaUp());
 		this.weapons.add( pistola_laser );
 	}
+
+	@Override
+	protected void Actuar() {
+		// TODO Auto-generated method stub
+		
+	}
 }
