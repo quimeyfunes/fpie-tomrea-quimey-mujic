@@ -12,16 +12,14 @@ public class Algo42 extends Voladores{
 		throw new GameOverException();
 	}
 	
-	protected void EstadoCorrecto(){
-		// Verificar esta funcion que no existe
-		bando = ObjetosMoviles bandoUsuario;
+	protected void EstadoCorrecto(){ 
+		bando = ObjetosMoviles.BandoUsuario();
 		Velocidad = 5;
 		Blindaje blindaje = new Blindaje();
 		blindaje.contruidoCon( 150 );
 		Vector2D p = ubicacion.XY();
 		Cuerpo = new Rectangle2D.Double( p.x,p.y,4,4);
 		PistolaLaser pistola_laser = new PistolaLaser();
-		// Verificar de dond sale bando
 		pistolar_laser.PistolaLaser( bando , new LineaRectaUp() )
 		weapons.add( pistola_laser );
 	}
