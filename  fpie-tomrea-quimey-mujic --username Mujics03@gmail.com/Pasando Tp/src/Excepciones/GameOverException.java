@@ -1,6 +1,6 @@
 package Excepciones;
 
-public class GameOverException extends Exception
+public class GameOverException extends RuntimeException
 {
 	public GameOverException()
 	{

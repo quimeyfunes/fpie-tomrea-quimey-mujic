@@ -1,6 +1,6 @@
 package Excepciones;
 
-public class OutOfAmmoException extends Exception
+public class OutOfAmmoException extends RuntimeException
 {
 
 	public OutOfAmmoException()
