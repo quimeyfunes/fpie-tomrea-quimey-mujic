@@ -1,7 +1,6 @@
 package Objetos_moviles;
 
 import java.awt.geom.Rectangle2D;
-import java.awt.image.VolatileImage;
 
 import Armas.Danio;
 import Escenario.Escenario;
