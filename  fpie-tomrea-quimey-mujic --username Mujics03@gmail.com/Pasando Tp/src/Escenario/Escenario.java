@@ -67,7 +67,7 @@ public class Escenario
 	{
 		for (ObjetosMoviles movil : this.objetosVivos())
 		{
-			movil.vivir();
+			movil.VIVIR();
 		}
 		this.limpiarListaYrecolectarPuntos();
 	}
