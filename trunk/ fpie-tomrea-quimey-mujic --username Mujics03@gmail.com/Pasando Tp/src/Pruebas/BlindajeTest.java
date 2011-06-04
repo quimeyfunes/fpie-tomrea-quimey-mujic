@@ -1,4 +1,6 @@
 package Pruebas;
+import Armas.Blindaje;
+import Armas.Danio;
 import junit.framework.*;
 
 
@@ -8,14 +10,14 @@ public class BlindajeTest extends TestCase{
 	
 	// Variables
 	Danio b;
-	Blinjade A;
+	Blindaje A;
 	
 	b = Danio.De( 300 );
 	A = Blindaje.De( 100 );
 	
 	// Verificar funcionamiento del fail 
 	try{
-		A.daniarPor( b );
+		A.daniar( b );
 		fail("Deberia saltar un excepcion CHAUblindaje");
 	}
 	
