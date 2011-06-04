@@ -8,7 +8,12 @@ import Mapa.Vector2D;
 import Armas.*;
 import Mapa.*;
 
-public class Guia extends Voladores{
+public class Guia extends Voladores
+{
+	public Guia(double x, double y)
+	{
+		this.constructor(x, y, this);
+	}
 	
 	public void Actuar(){
 		if ( Timing >= 2 ) {
@@ -23,10 +28,10 @@ public class Guia extends Voladores{
 	
 	protected void DESTRUCTOR(){
 		Vivo = false;
-		this.Huyan;
+		this.Huyan();
 	}
 	
-	private boolean condicion(ObjetoMovil elem){
+	private boolean condicion(ObjetosMoviles elem){
 		
 	}
 	

@@ -10,6 +10,11 @@ public class AvionCivil extends Voladores {
 		this.moverseIAsegunVel();
 	}
 	
+	public AvionCivil(double x, double y)
+	{
+		this.constructor(x, y, this);
+	}
+	
 	protected void EstadoCorrecto(){
 		this.bando = ObjetosMoviles.BandoUsuario();
 		this.puntos = -300;

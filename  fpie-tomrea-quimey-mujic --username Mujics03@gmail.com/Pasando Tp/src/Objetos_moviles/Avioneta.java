@@ -15,6 +15,11 @@ public class Avioneta extends Voladores {
 		}
 	}
 	
+	public Avioneta(double x, double y)
+	{
+		this.constructor(x, y, this);
+	}
+	
 	public void EstadoCorrecto(){
 		this.bando = ObjetosMoviles.BandoEnemigo();
 		this.puntos = 20; 
