@@ -1,24 +1,35 @@
 package Pruebas;
+import org.junit.Before;
+import org.junit.Assert;
+import org.junit.Test;
+
 import Armas.Blindaje;
 import Armas.Danio;
-import junit.framework.*;
+import Excepciones.ChauBlindajeException;
 
-public class BlindajeTest extends TestCase{
+public class BlindajeTest  
+{
 	// Testea el funcionamiento del blindaje y la excepcion cuando este es destruido
+	private Danio d;
+	private Blindaje b;
 	
-	// Variables
-	Danio d = new Danio((short)300);
-	Blindaje b = new Blindaje((short)100);
-
-	// Verificar funcionamiento del fail 
-	/*try
-	{
-		b.daniar(d);
-		Assert.fail("Deberia saltar un excepcion CHAUblindaje");
+	@Before
+	public void setUp() throws Exception {
 	}
-	catch
+
+	@Test
+	public void testBlindaje()
 	{
 		
-	}*/
-	
+		try
+		{
+			d = new Danio((short)300);
+			b = new Blindaje((short)100);
+			b.daniar(d);
+		}
+		catch(ChauBlindajeException e)
+		{
+			Assert.assertTrue(true);
+		}
+	}
 }
