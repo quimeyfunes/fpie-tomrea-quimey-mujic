@@ -1,18 +1,17 @@
 package Armas;
 
-import java.util.List;
+import java.util.LinkedList;
 import Excepciones.OutOfAmmoException;
 import Mapa.Vector2D;
-import Objetos_moviles.Municion;
 import Armas.ArmasFisicas;
 
 public class ControladorArmas
 {
-	List<ArmasFisicas> listaDeArmas;
+	LinkedList<ArmasFisicas> listaDeArmas;
 	short weaponOfChoice;
 	public ControladorArmas()
 	{
-		this.listaDeArmas = new List<ArmasFisicas>();
+		this.listaDeArmas = new LinkedList<ArmasFisicas>();
 		weaponOfChoice = 1;
 	}
 	
