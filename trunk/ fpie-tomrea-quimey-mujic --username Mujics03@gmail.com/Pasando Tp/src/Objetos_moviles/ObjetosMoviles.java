@@ -1,4 +1,4 @@
-package ObjetosMoviles;
+package Objetos_moviles;
 
 import Armas.Blindaje;
 import Armas.Danio;
