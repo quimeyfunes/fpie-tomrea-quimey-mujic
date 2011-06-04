@@ -1,14 +1,12 @@
 package Objetos_moviles;
 import java.awt.Point;
 
-public class Municion extends Objetos_moviles{
+import Mapa.Vector2D;
 
-	public static void main(String[] args) {
-		Vivo = true;
-		Puntos = 0;
-	}
+public class Municion extends ObjetosMoviles{
+
 	
-	public Municion Crear_en( Point ubicacion, Estrategia_vuelo direccion_vuelo, String bando ){
+	public static Municion MunicionCrear( Vector2D ubicacion, EstrategiaDeVuelo direccion_vuelo, String bando ){
 		Municion municion = new Municion();
 		municion setBando( bando );
 		municion setPosicion(  );// new de ubicacion
@@ -16,6 +14,42 @@ public class Municion extends Objetos_moviles{
 		municion SetEstado_correcto();
 		escenario.Agregar_objeto( municion );
 		return municion;				
+	}
+
+	@Override
+	public boolean PuedeManejarItems() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean PuedeSerAtacado() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected void Actuar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void ActuarAnteColision() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void EstadoCorrecto() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void VerificarColision() {
+		// TODO Auto-generated method stub
+		
 	}
 
 
