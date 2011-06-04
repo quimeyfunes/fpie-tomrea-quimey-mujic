@@ -1,7 +1,8 @@
-package Objetos_Moviles;
+package ObjetosMoviles;
 
 import Armas.Blindaje;
-import Excepciones.OffLimitsException;
+import Armas.Danio;
+import Excepciones.*;
 import Mapa.Ubicacion;
 import Mapa.Vector2D;
 
@@ -9,21 +10,33 @@ import Mapa.Vector2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.geom.Rectangle2D.Double;
 
-public abstract class Objetos_moviles {
+public abstract class ObjetosMoviles {
 
 	boolean Vivo;
 	Ubicacion ubicacion;
 	int puntos;
 	Blindaje blindaje;
-	Estrategia_De_Vuelo estrategia_vuelo;
-	String bando;
-	int Velocidad;
+	EstrategiaDeVuelo estrategia_vuelo;
+	byte bando;
+	byte Velocidad;
 	Rectangle2D.Double Cuerpo;
+	
+	//Constantes
+	public static byte BandoUsuario(){
+		return 1;
+	}
+	
+	public static byte BandoEnemigo(){
+		return 2;
+		
+	}
+	//Fin
 	
 	public void Destructor(){
 		Vivo = false;
 	}
 	
+	//LIMITES
 	public boolean EstaCercaAlAlimiteDerecho(){
 		return ubicacion.EstaCercaAlAlimiteDerecho();
 	}
@@ -39,6 +52,7 @@ public abstract class Objetos_moviles {
 	public boolean EstaCercaAlAlimiteInferior(){
 		return ubicacion.EstaCercaAlAlimiteInferior();
 	}
+	//FIN LIMITES
 	
 	public boolean EstaVivo(){
 		return Vivo;
@@ -49,59 +63,75 @@ public abstract class Objetos_moviles {
 		else return puntos;
 	}
 	
-	public void Recibir_danio( int danio ){
-		blindaje.Daniar_por( danio );
-		// falta On 0 vida morir
-	}
+	//"ENTRE OBJETOS"
+	public void analizarDanio( Danio danio ){
+		
+		try{		
+		blindaje.daniar( danio );
+		}
+		catch(ChauBlindajeException ChauE){
+			this.Destructor();
+			}
+		}
 	
-	public void Cambiar_Estrategia_De_Vuelo( Estrategia_De_Vuelo nueva_estrategia ){
+	public void CambiarEstrategiaDeVuelo( EstrategiaDeVuelo nueva_estrategia ) throws ChauBlindajeException{
 		if ( this.Vivo ) estrategia_vuelo = nueva_estrategia;
-		// if false ChauBlindaje signal
+		else{
+			throw new ChauBlindajeException();
+		}
 	}
 
-	
-	public String getBando(){
+	public byte getBando(){
 		return bando;
 	}
 	
-	public void moverse(){
+	public Rectangle2D.Double getCuerpo(){
+		return Cuerpo;
+		
+	}
+
+	public Vector2D getPosicion(){
+		
+	}
+	//FIN "ENTRE OBJETOS"
+	private void moverse(){
 		if ( this.Vivo ) this.estrategia_vuelo.CalcularMovimiento( this );
 	}
 	
-	public void moverseIAsegunVel(){
+	public void moverseIAsegunVel() throws ChauBlindajeException{
 		if ( this.Vivo ) {
 			for ( int i = 0 ; i == Velocidad ; i++ ) this.moverse();
 		}
-		// else ChauBlindaje signal
+		else{
+			throw new ChauBlindajeException();
+		}
 	}
 	
-	public void setBando( String bando_parametro ){
-		bando = bando_parametro;
+	public void setBando( byte unBando ){
+		bando = unBando;
 	}
 	
-	public void setBlindaje( int cantidad ){
-		blindaje = Blindaje.de( cantidad ); 
+	public void setBlindaje( short cantidad ){
+		blindaje = new Blindaje( cantidad ); 
 	}
 	
-	public void setPosicion( Ubicacion ubicacion_parametro ){
-		ubicacion = ubicacion_parametro;
+	public void setPosicion( Ubicacion ubi ){
+		ubicacion = ubi;
 	}
 	
+	//MOVIMIENTOS
 	public void arriba(){
 		Vector2D pt= new Vector2D(0,1);
 		this.direccion(pt);
 	}
-	
 	public void abajo(){
 		Vector2D pt= new Vector2D(0,-1);
 		this.direccion(pt);
 	}
-	
 	public void derecha(){
 		Vector2D pt = new Vector2D(1,0);
 		this.direccion(pt);
 	}
-	
 	public void izquierda(){
 		Vector2D pt= new Vector2D(-1,0);
 		this.direccion(pt);
@@ -110,15 +140,15 @@ public abstract class Objetos_moviles {
 	public void direccion( Vector2D DireccionAmoverse ){
 		
 		if (this.EstaVivo()){ this.Direccion(DireccionAmoverse);}
-		else{//"chau blindaje new signal
+		else{
+			throw new ChauBlindajeException();
 			}
 		}
 
 	private void Direccion(Vector2D DirToMove) {
-		
 		//"normaliza el movimiento a minimo movimiento"
 		DirToMove.normalizeThis();
-		DirToMove.scaleThis( Estrategia_De_Vuelo.getMinimoMovimiento());
+		DirToMove.scaleThis( EstrategiaDeVuelo.getMinimoMovimiento());
 		
 		try{
 			ubicacion.translateBy(DirToMove);
@@ -140,6 +170,6 @@ public abstract class Objetos_moviles {
 		
 		
 	}
-		
 	
+	//Fin sector movimientos
 }
