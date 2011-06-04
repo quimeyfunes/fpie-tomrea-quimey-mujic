@@ -1,6 +1,6 @@
 package Pruebas;
 import junit.framework.*;
-
+import Armas.Danio;
 
 public class BombarderoMuereYdejaArmaTest extends TestCase{
 	// Testea la muerte de un Bombardero y que el item dejado sea agarrado por algo42
@@ -15,7 +15,8 @@ public class BombarderoMuereYdejaArmaTest extends TestCase{
 	algo42.CrearEnXY( 100 , 90 );
 	
 	//El bombardero es daniado y deberia morir para luego liberar el item
-	danio = Danio.De( 200 );
+	danio = new Danio;
+	danio.setearPoder( 200 );
 	bombardero.analizarDanio( danio );
 	assertFalse( bombardero.EstaVivo );
 	

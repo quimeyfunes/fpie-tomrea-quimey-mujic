@@ -1,6 +1,8 @@
 package Pruebas;
-import junit.framework.*;
 import java.awt.Point;
+import Objetos_moviles.*;
+import junit.framework.*;
+
 
 public class Algo42DisparaYcambiaDeArmaTest extends TestCase{
 	// Testea el disparo de un torpedo dirigido por Algo42 contra una avioneta
@@ -17,8 +19,8 @@ public class Algo42DisparaYcambiaDeArmaTest extends TestCase{
 	algo42.CrearEnXY( 100 , 100 );
 	
 	//Seteo y acoplamiento de los misiles
-	misiles_dirigidos.bando( algo42.getBando() );
-	misiles_dirigidos.direccionAapuntar( MovDirigido );
+	misiles_dirigidos = new LanzadorMisilesTeledirigidos();
+	misiles_dirigidos.LanzadorMisilesTeledirigidos( algo42.getBando , MovDirigido );
 	algo42.agregarArma( misiles_dirigidos );
 	
 	//El misil es disparado y pasa a actuar como tal
@@ -31,6 +33,5 @@ public class Algo42DisparaYcambiaDeArmaTest extends TestCase{
 	
 	algo42.seleccionarSiguienteArma();
 	municion = algo42.disparar();
-	
-	assertTrue( municion isistanceof TorpedosDirigido );
+	assertTrue(  municion isistanceof TorpedosDirigido );
 }
