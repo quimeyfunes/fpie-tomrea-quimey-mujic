@@ -1,5 +1,6 @@
 package Pruebas;
 import junit.framework.*;
+import Objetos_moviles.Municion;
 
 public class ChoqueMultiplesMunicionesConAvionTest extends TestCase{
 	//Testea el choque de algo42 contra muchas balas y su subsecuente muerte
@@ -32,9 +33,9 @@ public class ChoqueMultiplesMunicionesConAvionTest extends TestCase{
 		fail("Deberia haber saltado excepcion GameOver");
 	}
 	//Comprobacion de que las balas y algo42 esten muertos
-	assertFalse( algo42.EstaVivo );
-	assertFalse( municion1.EstaVivo );
-	assertFalse( municion2.EstaVivo );
-	assertFalse( municion3.EstaVivo );
+	assertFalse( algo42.EstaVivo() );
+	assertFalse( municion1.EstaVivo() );
+	assertFalse( municion2.EstaVivo() );
+	assertFalse( municion3.EstaVivo() );
 	
 }

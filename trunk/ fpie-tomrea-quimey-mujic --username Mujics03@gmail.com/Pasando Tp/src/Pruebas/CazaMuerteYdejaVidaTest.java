@@ -1,5 +1,7 @@
 package Pruebas;
 import junit.framework.*;
+import Armas.Danio;
+import Mapa.Ubicacion; 
 
 
 public class CazaMuerteYdejaVidaTest extends TestCase{
@@ -15,19 +17,20 @@ public class CazaMuerteYdejaVidaTest extends TestCase{
 	Algo42 algo42; 
 	
 	//Inicializa las unidades
+	// verificar si va a haber un inicializar o si lo seteo desde las pruebas
 	objetos_moviles.Inicializar( escenario );
 	ubicacion.Inicializar();
 	estrategiaDeVuelo.Inicializar();
 	caza.crearEnXY( 100 , 100);
 	
-	
-	danio = Danio.De( 200 );
+	danio = new Danio();
+	danio.setearPoder( 200 );
 	caza.analizarDanio( danio );
 	algo42.crearEnXY( 100 , 100 );
 	
 	algo42.Verificar_Colicion();
 	
-	danio = Danio.De( 160 );
+	danio.setearPoder( 160 );
 	algo42.analizarDanio( danio );
 	//Algo sigue vivo debido a la vida del item obtenido 
 	assertFalse( algo42.EstaVivo );
