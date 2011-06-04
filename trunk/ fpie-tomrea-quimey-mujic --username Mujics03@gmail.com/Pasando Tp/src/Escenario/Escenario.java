@@ -1,6 +1,6 @@
 package Escenario;
 
-import java.util.List;
+import java.util.LinkedList;
 
 import Excepciones.FinEscenarioException;
 import Objetos_moviles.Municion;
@@ -8,7 +8,7 @@ import Objetos_moviles.ObjetosMoviles;
 
 public class Escenario
 {
-	List<ObjetosMoviles> todoLoQueEstaEnJuego;
+	LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego;
 	int sumaDePuntos;
 	private static Escenario instance = null;
 	
@@ -27,10 +27,10 @@ public class Escenario
 	public Escenario()
 	{
 		sumaDePuntos = 0;
-		todoLoQueEstaEnJuego = new List<ObjetosMoviles>();
+		todoLoQueEstaEnJuego = new LinkedList< ObjetosMoviles >();
 	}
 	
-	public List<ObjetosMoviles> objetosVivos() 
+	public LinkedList<ObjetosMoviles> objetosVivos() 
 	{
 		return todoLoQueEstaEnJuego;
 	}
@@ -48,7 +48,7 @@ public class Escenario
 	public void limpiarListaYrecolectarPuntos()
 	{
 		//Itero sobre Muertos, borro sobre TodoLoQueEstaEnJuego , voy sumando puntos
-		List<ObjetosMoviles> muertos = new List<ObjetosMoviles>();
+		LinkedList<ObjetosMoviles> muertos = new LinkedList<ObjetosMoviles>();
 		for (ObjetosMoviles movil : this.objetosVivos())
 			if(!movil.EstaVivo())
 				muertos.add(movil);
