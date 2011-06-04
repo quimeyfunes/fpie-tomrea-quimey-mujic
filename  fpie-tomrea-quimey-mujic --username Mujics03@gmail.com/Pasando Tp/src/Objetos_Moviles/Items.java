@@ -1,4 +1,4 @@
-package Objetos_Moviles;
+package ObjetosMoviles;
 
 public class Items extends Objetos_moviles{
 	
