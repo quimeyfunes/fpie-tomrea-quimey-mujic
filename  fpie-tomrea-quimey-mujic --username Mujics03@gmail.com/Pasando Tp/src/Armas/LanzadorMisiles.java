@@ -1,7 +1,16 @@
 package Armas;
 import java.awt.Point;
 
+import ObjetosMoviles.EstrategiaDeVuelo;
+import ObjetosMoviles.Municion;
+
 public class LanzadorMisiles extends ArmasFisicas{
+
+	public LanzadorMisiles(byte bando, EstrategiaDeVuelo estrategia )
+	{
+		this.setBando(bando);
+		this.setEstrategiaVuelo(estrategia);
+	}
 
 	int misiles;
 		

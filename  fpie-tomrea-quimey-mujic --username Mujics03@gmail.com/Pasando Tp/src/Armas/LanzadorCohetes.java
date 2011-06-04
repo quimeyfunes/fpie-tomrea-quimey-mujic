@@ -2,9 +2,18 @@ package Armas;
 
 import java.awt.Point;
 
+import ObjetosMoviles.EstrategiaDeVuelo;
+import ObjetosMoviles.Municion;
+
 public class LanzadorCohetes extends ArmasFisicas {
 
 	int cohetes;
+	
+	public LanzadorCohetes(byte bando, EstrategiaDeVuelo estrategia )
+	{
+		this.setBando(bando);
+		this.setEstrategiaVuelo(estrategia);
+	}
 	
 	public void main(String [] args){
 		cohetes = 15;

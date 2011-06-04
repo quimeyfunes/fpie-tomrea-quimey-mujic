@@ -3,6 +3,7 @@ package Armas;
 import Excepciones.ChauBlindajeException;
 import ObjetosMoviles.ItemVida;
 
+
 public class Blindaje
 {
 	short hitPoints;
