@@ -1,16 +1,14 @@
 package Objetos_moviles;
 import java.awt.geom.Rectangle2D;
-
-import Escenario.Escenario;
 import Excepciones.GameOverException;
 import Mapa.Vector2D;
 import Armas.*;
 import Mapa.*;
 
-public class Guia extends Voladores{
+public class Bombardero extends Voladores{
 	
 	public void Actuar(){
-		if ( Timing >= 2 ) {
+		if ( Timing >= 6 ) {
 			Timing = 0;
 			this.seleccionarSiguienteArma();
 			this.disparar();
@@ -20,20 +18,20 @@ public class Guia extends Voladores{
 		}
 	}
 	
-	protected void DESTRUCTOR(){
-		Vivo = false;
-		this.Huyan;
+	public void DESTRUCTOR(){
+		vivo = false;
+		// verificar que item deja
 	}
 	
 	public void EstadoCorrecto(){
 		bando = ObjetosMoviles.BandoEnemigo();
-		puntos = 0; 
-		Velocidad = 10;
-		estrategia_vuelo = new IdaYvuelta();
+		puntos = 30; 
+		Velocidad = 1;
+		estrategia_vuelo = new ZigZag();
 		Blindaje blindaje = new Blindaje();
-		blindaje.Blindaje( 1000 );
+		blindaje.Blindaje( 200 );
 		Vector2D p = ubicacion.XY();
-		Cuerpo = new Rectangle2D.Double( p.x,p.y,3,3);
+		Cuerpo = new Rectangle2D.Double( p.x,p.y,8,8);
 		PistolaLaser pistola_laser = new PistolaLaser();
 		pistolar_laser.PistolaLaser( bando , new LineaRectaDown() );
 		LanzadorMisiles lanzador_misiles = new LanzadorMisiles();
@@ -43,24 +41,6 @@ public class Guia extends Voladores{
 		weapons.add( pistola_laser );
 		weapons.add( lanzador_misiles );
 		weapons.add( lanzador_cohetes );
-		weapons.add( lanzador_misiles );
-		weapons.add( lanzador_cohetes );
 	}
 	
-	protected void Huyan(){
-		Escenario escenario = escenario.getInstance();
-		// buscar tipo generico Collection
-		Collection todoLoQueEstaEnJuego = escenario.objetosVivos();
-		int j; 
-		for ( j = 0 , j = todoLoQueEstaEnJuego.size() , j++ ){
-			ObjetosMoviles elemento = todoLoQueEstaEnJuego.get( j );
-			if ( this.condicion(elemento) )this.run();
-		}
-	}
-	
-	protected void run( ObjetosMoviles elemento ){
-		elemento.CambiarEstrategiaDeVuelo( new LineaRectaUp() );
-	}
-	
-	// Falta metodo Condicion
 }
