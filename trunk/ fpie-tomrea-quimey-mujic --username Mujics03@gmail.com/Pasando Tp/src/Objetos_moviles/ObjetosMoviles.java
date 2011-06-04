@@ -1,4 +1,4 @@
-package Objetos_moviles;
+package ObjetosMoviles;
 
 import Armas.Blindaje;
 import Armas.Danio;
@@ -7,8 +7,8 @@ import Mapa.Ubicacion;
 import Mapa.Vector2D;
 
 
+import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
-import java.awt.geom.Rectangle2D.Double;
 
 public abstract class ObjetosMoviles {
 
@@ -54,6 +54,7 @@ public abstract class ObjetosMoviles {
 	}
 	//FIN LIMITES
 	
+	//Para que interactue el ESCENARIO
 	public boolean EstaVivo(){
 		return Vivo;
 	}
@@ -62,6 +63,27 @@ public abstract class ObjetosMoviles {
 		if ( this.Vivo ) return 0; 
 		else return puntos;
 	}
+
+	public void moverseIAsegunVel() throws ChauBlindajeException{
+		if ( this.Vivo ) {
+			for ( int i = 0 ; i == Velocidad ; i++ ) this.moverse();
+		}
+		else{
+			throw new ChauBlindajeException();
+		}
+	}
+	
+	public void VIVIR(){
+		if (this.EstaVivo()){
+			this.Actuar();
+		}
+		else
+			throw new ChauBlindajeException();
+		
+	}
+	
+	//FIN interactuar con ESCENARIO.
+	
 	
 	//"ENTRE OBJETOS"
 	public void analizarDanio( Danio danio ){
@@ -90,22 +112,20 @@ public abstract class ObjetosMoviles {
 		
 	}
 
-	public Vector2D getPosicion(){
-		
-	}
-	//FIN "ENTRE OBJETOS"
-	private void moverse(){
-		if ( this.Vivo ) this.estrategia_vuelo.CalcularMovimiento( this );
+	public Point2D.Double getPosicion(){
+		Point2D.Double pos = new Point2D.Double((Cuerpo.getCenterX()) ,(Cuerpo.getCenterY()));
+		return pos;
+			
 	}
 	
-	public void moverseIAsegunVel() throws ChauBlindajeException{
-		if ( this.Vivo ) {
-			for ( int i = 0 ; i == Velocidad ; i++ ) this.moverse();
-		}
-		else{
-			throw new ChauBlindajeException();
-		}
-	}
+	public abstract boolean PuedeManejarItems();
+	
+	public abstract boolean PuedeSerAtacado();
+	
+	//FIN "ENTRE OBJETOS"
+	
+
+	//MUY PRIVADO
 	
 	public void setBando( byte unBando ){
 		bando = unBando;
@@ -119,7 +139,22 @@ public abstract class ObjetosMoviles {
 		ubicacion = ubi;
 	}
 	
-	//MOVIMIENTOS
+	private void moverse(){
+		if ( this.Vivo ) this.estrategia_vuelo.CalcularMovimiento( this );
+	}
+
+	private boolean smallCondicion(ObjetosMoviles obj){
+		return( (this.EstaVivo()) && (obj != this) && (obj.EstaVivo()) && (( obj.getBando()!= this.bando)) );
+		
+	}
+
+	private boolean condicionComun(ObjetosMoviles obj){
+		return (this.smallCondicion(obj))&& ( obj.getCuerpo()).intersects(this.Cuerpo);
+		
+	}
+	//FIN MUY PRIVADO
+	
+	//UNIMOV
 	public void arriba(){
 		Vector2D pt= new Vector2D(0,1);
 		this.direccion(pt);
@@ -145,6 +180,10 @@ public abstract class ObjetosMoviles {
 			}
 		}
 
+	//Fin UNIMOV
+	
+	//Interno
+	
 	private void Direccion(Vector2D DirToMove) {
 		//"normaliza el movimiento a minimo movimiento"
 		DirToMove.normalizeThis();
@@ -162,14 +201,22 @@ public abstract class ObjetosMoviles {
 			
 		}catch( OffLimitsException OffExc ){
 			this.Destructor();
-			
 		}
-		
-
-		
-		
-		
 	}
+
+	protected abstract void Actuar();
+
+	protected abstract void ActuarAnteColision();
 	
-	//Fin sector movimientos
+	protected abstract void EstadoCorrecto();
+	
+	//"itero sobre una copia sin mi"
+	//"BALAS ENEMIGAS verifican colision con USER"
+	//"BALAS USER verifican colision con FLOTA ENEMIGA"
+	//"ITEMS verifican colision con USER"
+	//"FLOTA ENEMIGA verifica colision con USER(pero no entre si)"	
+	protected abstract void VerificarColision();
+	
+	//FIN Interno
+	
 }
