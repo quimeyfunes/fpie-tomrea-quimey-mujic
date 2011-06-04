@@ -1,4 +1,4 @@
-package Objetos_Moviles;
+package ObjetosMoviles;
 
 public class ItemVida
 {

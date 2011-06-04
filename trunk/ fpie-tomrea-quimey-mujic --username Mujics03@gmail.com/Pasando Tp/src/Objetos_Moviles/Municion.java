@@ -1,4 +1,4 @@
-package Objetos_Moviles;
+package ObjetosMoviles;
 import java.awt.Point;
 
 public class Municion extends Objetos_moviles{

@@ -1,4 +1,4 @@
-package Objetos_Moviles;
+package ObjetosMoviles;
 
 
 public class IdaYvuelta extends Estrategia_De_Vuelo{
