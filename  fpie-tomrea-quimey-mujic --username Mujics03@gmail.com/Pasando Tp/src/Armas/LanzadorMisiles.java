@@ -20,7 +20,7 @@ public class LanzadorMisiles extends ArmasFisicas{
 		misiles = 15;
 	}
 
-	public Municion Disparar_desde ( Vector2D ubicacion ) {
+	public Municion dispararDesde ( Vector2D ubicacion ) {
 		misiles = misiles - 1;
 		if ( misiles < 0 ) 
 			throw new OutOfAmmoException(); 
