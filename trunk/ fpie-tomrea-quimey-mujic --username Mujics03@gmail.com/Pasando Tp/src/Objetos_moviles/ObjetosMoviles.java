@@ -7,7 +7,6 @@ import Mapa.Ubicacion;
 import Mapa.Vector2D;
 
 
-import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
 public abstract class ObjetosMoviles {
@@ -139,16 +138,16 @@ public abstract class ObjetosMoviles {
 		ubicacion = ubi;
 	}
 	
-	private void moverse(){
+	protected void moverse(){
 		if ( this.Vivo ) this.estrategia_vuelo.CalcularMovimiento( this );
 	}
 
-	private boolean smallCondicion(ObjetosMoviles obj){
+	protected boolean smallCondicion(ObjetosMoviles obj){
 		return( (this.EstaVivo()) && (obj != this) && (obj.EstaVivo()) && (( obj.getBando()!= this.bando)) );
 		
 	}
 
-	private boolean condicionComun(ObjetosMoviles obj){
+	protected boolean condicionComun(ObjetosMoviles obj){
 		return (this.smallCondicion(obj))&& ( obj.getCuerpo()).intersects(this.Cuerpo);
 		
 	}
@@ -206,7 +205,7 @@ public abstract class ObjetosMoviles {
 
 	protected abstract void Actuar();
 
-	protected abstract void ActuarAnteColision();
+	protected abstract void ActuarAnteColision(ObjetosMoviles movil);
 	
 	protected abstract void EstadoCorrecto();
 	
