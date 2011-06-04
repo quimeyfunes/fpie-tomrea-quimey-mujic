@@ -2,6 +2,10 @@ package Armas;
 
 import java.util.List;
 
+import Excepciones.OutOfAmmoException;
+import Mapa.Vector2D;
+import Objetos_Moviles.Municion;
+
 public class ControladorArmas
 {
 	List<ArmasFisicas> listaDeArmas;
@@ -24,11 +28,18 @@ public class ControladorArmas
 			weaponOfChoice = 1;
 	}
 	
-	public void seleccionarSiguienteArma()
+	public void dispararElArmaSeleccionada(Vector2D pos)
 	{
-		weaponOfChoice++;
-		if(weaponOfChoice > listaDeArmas.size())
+		ArmasFisicas arma = listaDeArmas.get(weaponOfChoice);
+		try
+		{
+			Municion municion = arma.dispararDesde(pos);
+		}
+		catch(OutOfAmmoException e)
+		{
+			listaDeArmas.remove(weaponOfChoice);
 			weaponOfChoice = 1;
+		}
 	}
 
 }

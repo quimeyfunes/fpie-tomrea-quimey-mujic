@@ -1,6 +1,6 @@
 package Excepciones;
 
-public class FinEscenarioException
+public class FinEscenarioException extends Exception
 {
 	public FinEscenarioException()
 	{

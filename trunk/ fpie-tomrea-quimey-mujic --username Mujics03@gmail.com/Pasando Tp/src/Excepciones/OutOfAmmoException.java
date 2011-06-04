@@ -1,7 +1,8 @@
 package Excepciones;
 
-public class OutOfAmmoException
+public class OutOfAmmoException extends Exception
 {
+
 	public OutOfAmmoException()
 	{
 		

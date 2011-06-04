@@ -1,7 +1,8 @@
 package Excepciones;
 
-public class ChauBlindajeException
+public class ChauBlindajeException extends Exception
 {
+
 	public ChauBlindajeException()
 	{
 		

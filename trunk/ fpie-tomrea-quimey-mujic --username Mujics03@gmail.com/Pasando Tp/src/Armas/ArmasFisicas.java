@@ -1,7 +1,9 @@
 package Armas;
 import java.awt.Point;
 
-public class ArmasFisicas {
+import Mapa.Vector2D;
+
+public abstract class ArmasFisicas {
 
 	byte bando;
 	EstrategiaVuelo direccion_vuelo;
@@ -9,19 +11,17 @@ public class ArmasFisicas {
 	public ArmasFisicas(byte bando, EstrategiaVuelo estrategia )
 	{
 		this.setBando(bando);
-		this.setEstrategia_vuelo(estrategia);
+		this.setEstrategiaVuelo(estrategia);
 	}
 	
 	public void setBando( byte parametro_bando ){
 		bando = parametro_bando;
 	}
 
-	public void setEstrategia_vuelo( EstrategiaVuelo estrategia ){
+	public void setEstrategiaVuelo( EstrategiaVuelo estrategia ){
 		direccion_vuelo = estrategia;
 	}
 	
 	
-	public abstract Municion Disparar_desde ( Point ubicacion ) {
-		
-	}
+	public abstract Municion dispararDesde ( Vector2D ubicacion );
 }
