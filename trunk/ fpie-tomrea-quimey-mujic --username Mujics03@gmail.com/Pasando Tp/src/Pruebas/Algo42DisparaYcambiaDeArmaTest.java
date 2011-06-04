@@ -13,15 +13,15 @@ public class Algo42DisparaYcambiaDeArmaTest extends TestCase{
 	Algo42 algo42;
 	Municion municion;
 	Point valor_esperado;
-	LanzadorMisiles misiles_dirigidos;
+	LanzadorMisiles misiles_dirigido
 	
 	//Creacion unidades
-	avioneta.CrearEnXY( 120 , 120 );
-	algo42.CrearEnXY( 100 , 100 );
+	avioneta = new Avioneta(120, 120);
+	algo42= new Algo42(100, 100);
 	
 	//Seteo y acoplamiento de los misiles
 	misiles_dirigidos = new LanzadorMisilesTeledirigidos();
-	misiles_dirigidos.LanzadorMisilesTeledirigidos( algo42.getBando , MovDirigido );
+	misiles_dirigidos.LanzadorMisilesTeledirigidos( algo42, MovDirigido );
 	algo42.agregarArma( misiles_dirigidos );
 	
 	//El misil es disparado y pasa a actuar como tal

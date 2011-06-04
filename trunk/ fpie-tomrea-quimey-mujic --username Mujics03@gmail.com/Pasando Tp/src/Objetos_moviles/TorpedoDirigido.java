@@ -5,7 +5,6 @@ import java.awt.geom.Rectangle2D;
 import Armas.Danio;
 import Escenario.Escenario;
 import Excepciones.ChauBlindajeException;
-import Mapa.Ubicacion;
 import Mapa.Vector2D;
 
 public class TorpedoDirigido extends Municion
@@ -13,11 +12,7 @@ public class TorpedoDirigido extends Municion
 	private ObjetosMoviles objetivo;
 	public TorpedoDirigido(Vector2D posicion, EstrategiaDeVuelo estrategia, byte bando)
 	{
-		this.setBando(bando);
-		this.setPosicion(Ubicacion.crearUbicacionEnXY(posicion.x, posicion.y));
-		this.CambiarEstrategiaDeVuelo(estrategia);
-		this.EstadoCorrecto();
-		Escenario.getInstance().agregarObjeto(this);//entra al mundo de los vivos
+		this.constructor(posicion, estrategia, bando, this);
 	}	
 	
 	private void setObjetivo(ObjetosMoviles movil)

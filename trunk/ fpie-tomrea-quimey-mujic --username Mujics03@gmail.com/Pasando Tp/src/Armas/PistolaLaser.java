@@ -9,8 +9,7 @@ public class PistolaLaser extends ArmasFisicas{
 	
 	public PistolaLaser(byte bando, EstrategiaDeVuelo estrategia )
 	{
-		this.setBando(bando);
-		this.setEstrategiaVuelo(estrategia);
+		this.constructor(bando, estrategia, this);
 	}
 	
 	public Municion dispararDesde ( Vector2D ubicacion ) {
