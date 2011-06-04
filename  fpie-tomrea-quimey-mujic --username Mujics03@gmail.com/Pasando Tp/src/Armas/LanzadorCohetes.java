@@ -2,8 +2,10 @@ package Armas;
 
 import java.awt.Point;
 
-import ObjetosMoviles.EstrategiaDeVuelo;
-import ObjetosMoviles.Municion;
+import Excepciones.OutOfAmmoException;
+import Mapa.Vector2D;
+import Objetos_moviles.EstrategiaDeVuelo;
+import Objetos_moviles.Municion;
 
 public class LanzadorCohetes extends ArmasFisicas {
 
@@ -19,10 +21,11 @@ public class LanzadorCohetes extends ArmasFisicas {
 		cohetes = 15;
 	}
 
-	public Municion Disparar_desde ( Point ubicacion ) {
+	public Municion Disparar_desde ( Vector2D ubicacion ) {
 		cohetes = cohetes - 1;
-		if ( cohetes < 0 ) trow new // excepcion out of ammo
-		Cohete cohete = new Cohete( Point ubicacion, EstrategiaVuelo direccionVuelo, String bando );
+		if ( cohetes < 0 ) 
+			throw new OutOfAmmoException();
+		Cohete cohete = new Cohete( ubicacion, direccionAApuntar, bando );
 		return cohete;
 	}
 	

@@ -1,8 +1,10 @@
 package Armas;
 import java.awt.Point;
 
-import ObjetosMoviles.EstrategiaDeVuelo;
-import ObjetosMoviles.Municion;
+import Excepciones.OutOfAmmoException;
+import Mapa.Vector2D;
+import Objetos_moviles.EstrategiaDeVuelo;
+import Objetos_moviles.Municion;
 
 public class LanzadorMisiles extends ArmasFisicas{
 
@@ -18,10 +20,11 @@ public class LanzadorMisiles extends ArmasFisicas{
 		misiles = 15;
 	}
 
-	public Municion Disparar_desde ( Point ubicacion ) {
+	public Municion Disparar_desde ( Vector2D ubicacion ) {
 		misiles = misiles - 1;
-		if ( misiles < 0 ) trow new // excepcion out of ammo
-		Misil misil = new Misil( Point ubicacion, EstrategiaVuelo direccionVuelo, String bando );
+		if ( misiles < 0 ) 
+			throw new OutOfAmmoException(); 
+		Misil misil = new Misil( ubicacion, direccionAApuntar, bando );
 		return Misil;
 	}
 		

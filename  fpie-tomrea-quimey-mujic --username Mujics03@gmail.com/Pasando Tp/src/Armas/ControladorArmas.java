@@ -3,7 +3,7 @@ package Armas;
 import java.util.List;
 import Excepciones.OutOfAmmoException;
 import Mapa.Vector2D;
-import ObjetosMoviles.Municion;
+import Objetos_moviles.Municion;
 import Armas.ArmasFisicas;
 
 public class ControladorArmas
@@ -33,7 +33,7 @@ public class ControladorArmas
 		ArmasFisicas arma = this.listaDeArmas.get(weaponOfChoice);
 		try
 		{
-			ObjetosMoviles.Municion municion = arma.dispararDesde(pos);
+			arma.dispararDesde(pos);
 		}
 		catch(OutOfAmmoException e)
 		{

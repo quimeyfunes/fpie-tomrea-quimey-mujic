@@ -1,20 +1,20 @@
 package Armas;
 
 import Mapa.Vector2D;
-import ObjetosMoviles.EstrategiaDeVuelo;
-import ObjetosMoviles.Municion;
+import Objetos_moviles.EstrategiaDeVuelo;
+import Objetos_moviles.Municion;
 
 public abstract class ArmasFisicas {
 
 	byte bando;
-	EstrategiaDeVuelo direccion_vuelo;
+	EstrategiaDeVuelo direccionAApuntar;
 	
 	public void setBando( byte parametro_bando ){
 		bando = parametro_bando;
 	}
 
 	public void setEstrategiaVuelo( EstrategiaDeVuelo estrategia ){
-		direccion_vuelo = estrategia;
+		direccionAApuntar = estrategia;
 	}
 	
 	

@@ -1,7 +1,9 @@
 package Armas;
 import java.awt.Point;
 
-import ObjetosMoviles.EstrategiaDeVuelo;
+import Mapa.Vector2D;
+import Objetos_moviles.EstrategiaDeVuelo;
+import Objetos_moviles.Municion;
 
 public class PistolaLaser extends ArmasFisicas{
 
@@ -12,8 +14,8 @@ public class PistolaLaser extends ArmasFisicas{
 		this.setEstrategiaVuelo(estrategia);
 	}
 	
-	public Municion Disparar_desde ( Point ubicacion ) {
-		Laser laser =  new Laser( Point ubicacion, EstrategiaVuelo direccionVuelo, String bando );
+	public Municion Disparar_desde ( Vector2D ubicacion ) {
+		Laser laser =  new Laser( ubicacion, direccionAApuntar, bando );
 		return Laser;
 	}
 		
