@@ -1,6 +1,8 @@
 package Pruebas;
 import junit.framework.*;
 import Armas.Danio;
+import Objetos_moviles.*;
+import org.junit.Assert;
 
 public class BombarderoMuereYdejaArmaTest extends TestCase{
 	// Testea la muerte de un Bombardero y que el item dejado sea agarrado por algo42
@@ -15,18 +17,18 @@ public class BombarderoMuereYdejaArmaTest extends TestCase{
 	algo42.CrearEnXY( 100 , 90 );
 	
 	//El bombardero es daniado y deberia morir para luego liberar el item
-	danio = new Danio;
+	danio = new Danio();
 	danio.setearPoder( 200 );
 	bombardero.analizarDanio( danio );
-	assertFalse( bombardero.EstaVivo );
+	Assert.assertFalse( bombardero.EstaVivo() );
 	
 	int i; 
-	for ( i = 0 ; i = 9 ; i++ ){
+	for ( i = 0 ; i == 9 ; i++ ){
 		algo42.arriba();
 	}
 	
 	// Algo42 agarra el item y se verifica que este sea el TorpedosDirigido
 	algo42.seleccionarSiguienteArma();
 	municion = algo42.disparar();
-	assertTrue( municion isistanceof TorpedosDirigido );
+	Assert.assertTrue( municion isistanceof TorpedosDirigido );
 }

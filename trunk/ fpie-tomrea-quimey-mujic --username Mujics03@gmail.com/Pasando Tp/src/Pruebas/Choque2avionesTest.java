@@ -1,6 +1,8 @@
 package Pruebas;
 import junit.framework.*;
 import Armas.Danio;
+import Objetos_moviles.*;
+import org.junit.Assert;
 
 public class Choque2avionesTest extends TestCase{
 	// Testea el choque de algo42 contra una avioneta, y la esperada muerta de la avioneta despues 
@@ -15,13 +17,13 @@ public class Choque2avionesTest extends TestCase{
 	algo42.crearEnXY( 150 , 145 );
 	avioneta.crearEnXY( 150 , 150 );
 	
-	int i; 
-	for ( i = 0 ; i = 2 ; i++ ){
+	int i;
+	for ( i = 0 ; i == 2 ; i++ ){
 		algo42.arriba();
 	}
 	
-	assertFalse( avioneta.EstaVivo() );
+	Assert.assertFalse( avioneta.EstaVivo() );
 	danio = algo42.fuerzaDeChoque();
 	valor_esperado = danio.lastimar();
-	assertEquals( valor_esperando , 50 );
+	Assert.assertEquals( valor_esperando , 50 );
 }

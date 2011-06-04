@@ -2,7 +2,9 @@ package Pruebas;
 import junit.framework.*;
 import Armas.Danio;
 import Mapa.Ubicacion; 
-
+import Escenario.*;
+import Objetos_moviles.*;
+import org.junit.Assert;
 
 public class CazaMuerteYdejaVidaTest extends TestCase{
 	// Testea la muerte del caza y que algo sigue vivo debido al item liberado por este.
@@ -33,5 +35,5 @@ public class CazaMuerteYdejaVidaTest extends TestCase{
 	danio.setearPoder( 160 );
 	algo42.analizarDanio( danio );
 	//Algo sigue vivo debido a la vida del item obtenido 
-	assertFalse( algo42.EstaVivo );
+	Assert.assertFalse( algo42.EstaVivo );
 }
