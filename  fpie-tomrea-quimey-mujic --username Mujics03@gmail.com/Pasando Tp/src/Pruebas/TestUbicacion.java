@@ -3,13 +3,12 @@ package Pruebas;
 
 import static org.junit.Assert.fail;
 
-import java.awt.Point;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import Mapa.Ubicacion;
+import Mapa.Vector2D;
 
 public class TestUbicacion {
 	private Ubicacion a;
@@ -20,27 +19,31 @@ public class TestUbicacion {
 	@Test
 	public void testUbicacion(){
 		try{
-			a = new Ubicacion(-1,-1);
+			a =  Ubicacion.crearUbicacionEnXY(-1,-1);
 			fail("Deberia capturar excepcion OFFlimits");
 		}catch(Exception e){}
 		
 		try{
-			a = new Ubicacion( 9999999 , 9999999 );
+			a = Ubicacion.crearUbicacionEnXY( 9999999 , 9999999 );
 			fail("Deberia capturar excepcion OFFlimits");
 		}catch(Exception e){}
 
 
 
-		a = new Ubicacion(-1,-1);
+		a = Ubicacion.crearUbicacionEnXY(1,1);
 
-		Assert.assertEquals(a.EstaCercaAlAlimiteIzquierdo(), 1E-4);
+		Assert.assertTrue(a.EstaCercaAlAlimiteIzquierdo());
 
-		Assert.assertFalse( a.EstaCercaAlAlimiteDerecho, 1E-4 );
+		Assert.assertFalse( a.EstaCercaAlAlimiteDerecho() );
+		
+		Vector2D tra = new Vector2D(0,10);
 
-		a.translateBy(0,10);
+		a.translateBy( tra );
+		
+		Vector2D otro = a.XY();
 
-		a.XY();
 
-		Assert.assertEquals( a .XY() == new Point( 1 , 11 ), 1E-4 );
+		Assert.assertTrue( otro.x == 1 );
+		Assert.assertTrue(otro.y == 11);
 	}
 }
