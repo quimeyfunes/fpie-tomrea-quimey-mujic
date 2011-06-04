@@ -27,7 +27,7 @@ public class Caza extends Voladores{
 		this.puntos = 30; 
 		Velocidad = 3;
 		estrategia_vuelo = new LineaRectaDown();
-		Blindaje blindaje = new Blindaje((short)100);
+		this.blindaje = new Blindaje((short)100);
 		Vector2D p = ubicacion.XY();
 		Cuerpo = new Rectangle2D.Double( p.x,p.y,4,4);
 		PistolaLaser pistola_laser = new PistolaLaser(bando , new LineaRectaDown());

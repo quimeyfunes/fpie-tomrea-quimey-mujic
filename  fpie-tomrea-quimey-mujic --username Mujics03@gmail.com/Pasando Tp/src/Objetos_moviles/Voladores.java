@@ -12,9 +12,9 @@ public abstract class Voladores extends ObjetosMoviles{
 	
 	protected void ActuarAnteColision(ObjetosMoviles movil){
 		// Los aviones se dañan entre si
-		Danio danioTemp = this.fuerzaDeChoque(); 
-		this.analizarDanio( movil.fuerzaDeChoque() );
-		movil.analizarDanio( danioTemp );
+		//Danio danioTemp = this.fuerzaDeChoque(); 
+		//this.analizarDanio( movil.fuerzaDeChoque() );
+		//movil.analizarDanio( danioTemp );
 	}
 	
 	
@@ -64,12 +64,11 @@ public abstract class Voladores extends ObjetosMoviles{
 
 	protected void manejarItemVida( ItemVida item )  throws ChauBlindajeException {
 		// de dond sale blindaje
-		if ( this.EstaVivo() ) blindaje.repararPor( item ) {
-		} else throw new ChauBlindajeException();
+		if ( this.EstaVivo() ) {blindaje.repararPor( item ) ;}
+		 else throw new ChauBlindajeException();
 	}
 	
 	protected void seleccionarSiguienteArma()  throws ChauBlindajeException {
-		// no reconoce weapons
 		if ( this.EstaVivo() ){ weapons.seleccionarSiguienteArma();}
 		 else throw new ChauBlindajeException();
 	}

@@ -26,6 +26,10 @@ public class Guia extends Voladores{
 		this.Huyan;
 	}
 	
+	private boolean condicion(ObjetoMovil elem){
+		
+	}
+	
 	public void EstadoCorrecto(){
 		bando = ObjetosMoviles.BandoEnemigo();
 		puntos = 0; 
@@ -44,7 +48,7 @@ public class Guia extends Voladores{
 	}
 	
 	protected void Huyan(){
-		Escenario escenario = escenario.getInstance();
+		Escenario escenario = Escenario.getInstance();
 		// buscar tipo generico Collection
 		LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego = escenario.objetosVivos();
 		for ( int j = 0  ; j == todoLoQueEstaEnJuego.size() ; j=j+1 ){
