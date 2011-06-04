@@ -8,7 +8,7 @@ public abstract class EstrategiaDeVuelo{
 	private static double slide= (Ubicacion.getLimiteX()/10);
 	private static double MinimoMovimiento = 1;
 	
-	public double Parametro=0;
+	public double Parametro;
 	
 	public static double getMinimoMovimiento(){
 		return MinimoMovimiento;

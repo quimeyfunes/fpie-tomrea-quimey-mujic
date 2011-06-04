@@ -14,4 +14,7 @@ public class IdaYvuelta extends EstrategiaDeVuelo{
 			objeto.arriba();
 		
 	}
+	public IdaYvuelta(){
+		this.restartearParametro();
+	}
 }
