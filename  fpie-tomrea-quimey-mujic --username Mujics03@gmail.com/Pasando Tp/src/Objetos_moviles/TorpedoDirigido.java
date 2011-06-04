@@ -43,6 +43,7 @@ public class TorpedoDirigido extends Municion
 		//si no encuentra nada enemigo para perseguir, explota
 	}
 	
+	@SuppressWarnings("unused")
 	private Vector2D getPosicionDelObjetivo()
 	{
 		return this.objetivo.getPosicion();
