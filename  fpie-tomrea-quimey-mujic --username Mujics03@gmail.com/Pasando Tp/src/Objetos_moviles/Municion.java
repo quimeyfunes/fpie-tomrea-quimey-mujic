@@ -1,56 +1,49 @@
 package Objetos_moviles;
-import java.awt.Point;
+import Armas.Danio;
+import Escenario.Escenario;
 
-import Mapa.Vector2D;
+public abstract class Municion extends ObjetosMoviles{
 
-public class Municion extends ObjetosMoviles{
-
+	protected Danio danio;
 	
-	public static Municion MunicionCrear( Vector2D ubicacion, EstrategiaDeVuelo direccion_vuelo, String bando ){
-		Municion municion = new Municion();
-		municion setBando( bando );
-		municion setPosicion(  );// new de ubicacion
-		municion SetEstrategia_vuelo( direccion_vuelo );
-		municion SetEstado_correcto();
-		escenario.Agregar_objeto( municion );
-		return municion;				
-	}
-
-	@Override
+	
 	public boolean PuedeManejarItems() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
 	public boolean PuedeSerAtacado() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
-	@Override
 	protected void Actuar() {
-		// TODO Auto-generated method stub
+		this.moverseIAsegunVel();
 		
 	}
 
-	@Override
-	protected void ActuarAnteColision() {
-		// TODO Auto-generated method stub
-		
+	protected void ActuarAnteColision(ObjetosMoviles movil) 
+	{
+		movil.analizarDanio(this.daniar());
+		this.Destructor();
+	}
+	
+
+	protected Danio daniar()
+	{
+		return this.danio;
 	}
 
-	@Override
-	protected void EstadoCorrecto() {
-		// TODO Auto-generated method stub
+	protected void VerificarColision() 
+	{
+		for (ObjetosMoviles movil : Escenario.getInstance().objetosVivos())
+			if(this.PuedeSerAtacado() && this.condicionComun(movil))
+				this.ActuarAnteColision(movil);			
 		
 	}
-
-	@Override
-	protected void VerificarColision() {
-		// TODO Auto-generated method stub
-		
-	}
+	
+	public void cambiarDanio(short danio)
+	{
+		this.danio.setearPoder(danio);		
+	} 
 
 
 	
