@@ -1,6 +1,6 @@
 package Excepciones;
 
-public class OffLimitsException extends Exception
+public class OffLimitsException extends RuntimeException
 {
 	public OffLimitsException()
 	{

@@ -1,7 +1,7 @@
 package Armas;
 
 import Excepciones.ChauBlindajeException;
-import Objetos_Moviles.ItemVida;
+import ObjetosMoviles.ItemVida;
 
 public class Blindaje
 {
@@ -28,7 +28,7 @@ public class Blindaje
 		//La vida del avion crece sin limite. Cada vez es mas poderoso."
 	}
 	
-	public void daniar (Danio danio) 
+	public void daniar (Danio danio) throws ChauBlindajeException 
 	{
 		//aca puede ir logistica escudos
 		hitPoints = (short) (hitPoints - danio.lastimar());

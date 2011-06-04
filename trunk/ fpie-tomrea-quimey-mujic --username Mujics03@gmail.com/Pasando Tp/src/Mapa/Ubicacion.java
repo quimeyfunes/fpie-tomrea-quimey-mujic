@@ -1,6 +1,6 @@
 package Mapa;
 
-import Objetos_Moviles.Estrategia_De_Vuelo;
+import ObjetosMoviles.EstrategiaDeVuelo;
 import Excepciones.OffLimitsException;
 
 public class Ubicacion {
@@ -46,20 +46,20 @@ public class Ubicacion {
 	//Cercania a los limites.
 	
 	public boolean EstaCercaAlAlimiteDerecho(){
-		return  (this.distanciaAlimiteDerecho()) <= (Estrategia_De_Vuelo.getMinimoMovimiento()*5);	
+		return  (this.distanciaAlimiteDerecho()) <= (EstrategiaDeVuelo.getMinimoMovimiento()*5);	
 		}
 
 	public boolean EstaCercaAlAlimiteInferior(){
-		return  (this.distanciaAlimiteInferior()) <= (Estrategia_De_Vuelo.getMinimoMovimiento()*5);
+		return  (this.distanciaAlimiteInferior()) <= (EstrategiaDeVuelo.getMinimoMovimiento()*5);
 		
 	}
 	
 	public boolean EstaCercaAlAlimiteIzquierdo(){
-		return  (this.distanciaAlimiteIzquierdo()) <= (Estrategia_De_Vuelo.getMinimoMovimiento()*5);	
+		return  (this.distanciaAlimiteIzquierdo()) <= (EstrategiaDeVuelo.getMinimoMovimiento()*5);	
 	}
 	
 	public boolean EstaCercaAlAlimiteSuperior(){
-		return  (this.distanciaAlimiteSuperior()) <= (Estrategia_De_Vuelo.getMinimoMovimiento()*5);
+		return  (this.distanciaAlimiteSuperior()) <= (EstrategiaDeVuelo.getMinimoMovimiento()*5);
 	}
 	
 	//Devuelvo una copia, no violo encapsulamiento
