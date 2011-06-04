@@ -1,6 +1,6 @@
 package Objetos_moviles;
 
-public class Items extends Objetos_moviles{
+public class Items extends ObjetosMoviles{
 	
 	public void Verificar_colicion(){
 		//borre lo que estaba aca

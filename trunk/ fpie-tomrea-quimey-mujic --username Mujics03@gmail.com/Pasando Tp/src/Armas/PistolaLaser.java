@@ -14,7 +14,7 @@ public class PistolaLaser extends ArmasFisicas{
 		this.setEstrategiaVuelo(estrategia);
 	}
 	
-	public Municion Disparar_desde ( Vector2D ubicacion ) {
+	public Municion dispararDesde ( Vector2D ubicacion ) {
 		Laser laser =  new Laser( ubicacion, direccionAApuntar, bando );
 		return Laser;
 	}

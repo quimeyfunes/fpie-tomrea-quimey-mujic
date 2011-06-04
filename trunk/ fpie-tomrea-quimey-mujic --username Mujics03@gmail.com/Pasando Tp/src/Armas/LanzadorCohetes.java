@@ -21,7 +21,7 @@ public class LanzadorCohetes extends ArmasFisicas {
 		cohetes = 15;
 	}
 
-	public Municion Disparar_desde ( Vector2D ubicacion ) {
+	public Municion dispararDesde ( Vector2D ubicacion ) {
 		cohetes = cohetes - 1;
 		if ( cohetes < 0 ) 
 			throw new OutOfAmmoException();
