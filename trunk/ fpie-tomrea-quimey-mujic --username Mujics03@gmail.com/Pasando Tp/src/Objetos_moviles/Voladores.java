@@ -28,7 +28,7 @@ public class Voladores extends ObjetosMoviles{
 	}
 	
 	
-	protected void VerificarColicion(){
+	protected void VerificarColision(){
 		Escenario escenario = escenario.getInstance();
 		// buscar tipo generico Collection
 		Collection todoLoQueEstaEnJuego = escenario.objetosVivos();
@@ -39,12 +39,12 @@ public class Voladores extends ObjetosMoviles{
 			}
 		}
 	
-	public void agregarArma( ArmasFisicas arma ){
+	public void agregarArma( ArmasFisicas arma )  throws ChauBlindajeException {
 		if ( this.EstaVivo() ) weapons.add(arma) {
 		} else throw new ChauBlindajeException();
 	}
 		
-	protected Municion disparar(){
+	protected Municion disparar()  throws ChauBlindajeException {
 		// Corregir metodo weapons
 		if ( this.EstaVivo() ) weapons.dispararElArmaSeleccionadaDesde( ubicacion XY ){
 		} else throw new ChauBlindajeException();
@@ -63,13 +63,13 @@ public class Voladores extends ObjetosMoviles{
 		weapons = new ControladorArmas();
 	}
 
-	protected void manejarItemVida( ItemVida item ){
+	protected void manejarItemVida( ItemVida item )  throws ChauBlindajeException {
 		// de dond sale blindaje
 		if ( this.EstaVivo() ) blindaje.repararPor( item ) {
 		} else throw new ChauBlindajeException();
 	}
 	
-	protected void seleccionarSiguienteArma(){
+	protected void seleccionarSiguienteArma()  throws ChauBlindajeException {
 		// no reconoce weapons
 		if ( this.EstaVivo() ) weapons.seleccionarSiguienteArma(){
 		} else throw new ChauBlindajeException();
