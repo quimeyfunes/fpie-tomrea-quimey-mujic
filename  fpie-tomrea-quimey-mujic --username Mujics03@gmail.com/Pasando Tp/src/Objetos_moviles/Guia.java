@@ -32,7 +32,7 @@ public class Guia extends Voladores
 	}
 	
 	private boolean condicion(ObjetosMoviles elem){
-		
+		///TODO
 	}
 	
 	public void EstadoCorrecto(){

@@ -10,13 +10,10 @@ public class LanzadorMisiles extends ArmasFisicas{
 	public LanzadorMisiles(byte bando, EstrategiaDeVuelo estrategia )
 	{
 		this.constructor(bando, estrategia, this);
+		this.misiles = 15;
 	}
 
 	int misiles;
-		
-	public void main(String [] args){
-		misiles = 15;
-	}
 
 	public Municion dispararDesde ( Vector2D ubicacion ) {
 		misiles = misiles - 1;

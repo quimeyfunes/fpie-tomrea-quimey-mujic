@@ -13,10 +13,7 @@ public class LanzadorCohetes extends ArmasFisicas {
 	public LanzadorCohetes(byte bando, EstrategiaDeVuelo estrategia )
 	{
 		this.constructor(bando, estrategia, this);
-	}
-	
-	public void main(String [] args){
-		cohetes = 15;
+		this.cohetes = 15;
 	}
 
 	public Municion dispararDesde ( Vector2D ubicacion ) {

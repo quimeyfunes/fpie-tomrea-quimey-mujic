@@ -1,16 +1,16 @@
 package Pruebas;
 
-
-import static org.junit.Assert.fail;
+import junit.framework.TestCase;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import Excepciones.OffLimitsException;
 import Mapa.Ubicacion;
 import Mapa.Vector2D;
 
-public class TestUbicacion {
+public class TestUbicacion extends TestCase{
 	private Ubicacion a;
 	@Before
 	public void setUp() throws Exception {
@@ -21,12 +21,14 @@ public class TestUbicacion {
 		try{
 			a =  Ubicacion.crearUbicacionEnXY(-1,-1);
 			fail("Deberia capturar excepcion OFFlimits");
-		}catch(Exception e){}
+		}catch(OffLimitsException e){
+			
+		}
 		
 		try{
 			a = Ubicacion.crearUbicacionEnXY( 9999999 , 9999999 );
 			fail("Deberia capturar excepcion OFFlimits");
-		}catch(Exception e){}
+		}catch(OffLimitsException OffLimitsException){}
 
 
 
