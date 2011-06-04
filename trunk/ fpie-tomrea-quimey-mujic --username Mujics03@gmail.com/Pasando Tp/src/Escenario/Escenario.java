@@ -2,7 +2,7 @@ package Escenario;
 
 import java.util.List;
 
-import ObjetosMoviles.ObjetosMoviles;;
+import Objetos_moviles.ObjetosMoviles;
 
 public class Escenario
 {

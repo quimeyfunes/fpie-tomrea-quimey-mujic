@@ -1,6 +1,6 @@
 package Mapa;
 
-import ObjetosMoviles.EstrategiaDeVuelo;
+import Objetos_moviles.EstrategiaDeVuelo;
 import Excepciones.OffLimitsException;
 
 public class Ubicacion {

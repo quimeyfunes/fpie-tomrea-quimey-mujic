@@ -1,7 +1,7 @@
 package Armas;
 
 import Excepciones.ChauBlindajeException;
-import ObjetosMoviles.ItemVida;
+import Objetos_moviles.ItemVida;
 
 
 public class Blindaje
