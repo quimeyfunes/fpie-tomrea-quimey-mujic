@@ -1,10 +1,9 @@
 package Armas;
-import java.awt.Point;
-
 import Excepciones.OutOfAmmoException;
 import Mapa.Vector2D;
 import Objetos_moviles.EstrategiaDeVuelo;
 import Objetos_moviles.Municion;
+import Objetos_moviles.TorpedoDirigido;
 
 public class LanzadorMisiles extends ArmasFisicas{
 
@@ -24,8 +23,8 @@ public class LanzadorMisiles extends ArmasFisicas{
 		misiles = misiles - 1;
 		if ( misiles < 0 ) 
 			throw new OutOfAmmoException(); 
-		Misil misil = new Misil( ubicacion, direccionAApuntar, bando );
-		return Misil;
+		TorpedoDirigido torpedo = new TorpedoDirigido( ubicacion, direccionAApuntar, bando );
+		return torpedo;
 	}
 		
 }

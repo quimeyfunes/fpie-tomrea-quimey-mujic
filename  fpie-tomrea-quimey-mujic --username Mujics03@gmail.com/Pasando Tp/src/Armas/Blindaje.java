@@ -12,7 +12,7 @@ public class Blindaje
 		this.construidoCon(hitPoints);
 	}
 	
-	public void construidoCon(short hitPoints)
+	private void construidoCon(short hitPoints)
 	{
 		this.hitPoints = hitPoints;
 	}

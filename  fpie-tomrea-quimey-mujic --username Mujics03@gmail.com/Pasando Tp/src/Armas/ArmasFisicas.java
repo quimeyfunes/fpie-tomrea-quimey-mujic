@@ -9,7 +9,7 @@ public abstract class ArmasFisicas {
 	byte bando;
 	EstrategiaDeVuelo direccionAApuntar;
 	
-	public final void setBando( byte parametro_bando ){
+	protected final void setBando( byte parametro_bando ){
 		bando = parametro_bando;
 	}
 
