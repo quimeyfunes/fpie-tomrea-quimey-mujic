@@ -3,7 +3,6 @@ package Escenario;
 import java.util.LinkedList;
 
 import Excepciones.FinEscenarioException;
-import Objetos_moviles.Municion;
 import Objetos_moviles.ObjetosMoviles;
 
 public class Escenario
@@ -45,7 +44,7 @@ public class Escenario
 		this.todoLoQueEstaEnJuego.remove(objeto);
 	}
 	
-	public void limpiarListaYrecolectarPuntos()
+	private void limpiarListaYrecolectarPuntos()
 	{
 		//Itero sobre Muertos, borro sobre TodoLoQueEstaEnJuego , voy sumando puntos
 		LinkedList<ObjetosMoviles> muertos = new LinkedList<ObjetosMoviles>();
