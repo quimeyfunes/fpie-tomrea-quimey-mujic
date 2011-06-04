@@ -1,8 +1,8 @@
-package Objetos_Moviles;
+package ObjetosMoviles;
 
 import Mapa.Ubicacion;
 
-public abstract class Estrategia_De_Vuelo{
+public abstract class EstrategiaDeVuelo{
 	
 	//movimiento lateral igual a 1/10 del tamanio del escenario
 	private static double slide= (Ubicacion.getLimiteX()/10);
@@ -20,6 +20,6 @@ public abstract class Estrategia_De_Vuelo{
 		this.Parametro=0;
 	}
 	
-	public abstract void CalcularMovimiento(Objetos_moviles objeto);
+	public abstract void CalcularMovimiento(ObjetosMoviles objeto);
 
 }
