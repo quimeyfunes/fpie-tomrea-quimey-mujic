@@ -29,7 +29,7 @@ public class Ubicacion {
 		}
 
 	//Constructor publico.Devuelve una Ubicacion
-	public static Ubicacion crearUbicacionEnXY(int X,int Y) throws OffLimitsException{
+	public static Ubicacion crearUbicacionEnXY(double X,double Y) throws OffLimitsException{
 		Vector2D punto = new Vector2D(X,Y);
 		return ( (new Ubicacion(punto) ));
 	}
