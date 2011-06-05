@@ -2,6 +2,7 @@ package Pruebas;
 import junit.framework.*;
 import Armas.Danio;
 import Objetos_moviles.*;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,7 +41,7 @@ public class BombarderoMuereYdejaArmaTest extends TestCase{
 		// Algo42 agarra el item y se verifica que este sea el TorpedosDirigido
 		algo42.seleccionarSiguienteArma();
 		municion = algo42.disparar();
-		Boolean b = municion instance of TorpedosDirigido;
+		Boolean b = municion instanceof TorpedoDirigido;
 		Assert.assertTrue( b  );
 		
 	}
