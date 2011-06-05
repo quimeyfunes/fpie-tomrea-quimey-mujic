@@ -3,10 +3,8 @@ import java.awt.geom.Rectangle2D;
 import java.util.LinkedList;
 
 import Escenario.Escenario;
-import Excepciones.GameOverException;
 import Mapa.Vector2D;
 import Armas.*;
-import Mapa.*;
 
 public class Guia extends Voladores
 {
@@ -32,7 +30,7 @@ public class Guia extends Voladores
 	}
 	
 	private boolean condicion(ObjetosMoviles elem){
-		///TODO
+		return (elem != this) && (elem.EstaVivo() ) && ( elem.getBando()==this.bando) && (elem.PuedeManejarItems());
 	}
 	
 	public void EstadoCorrecto(){
@@ -58,13 +56,11 @@ public class Guia extends Voladores
 		LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego = escenario.objetosVivos();
 		for ( int j = 0  ; j == todoLoQueEstaEnJuego.size() ; j=j+1 ){
 			ObjetosMoviles elemento = todoLoQueEstaEnJuego.get( j );
-			if ( this.condicion(elemento) )this.run();
+			if ( this.condicion(elemento) )this.run(elemento);
 		}
 	}
 	
 	protected void run( ObjetosMoviles elemento ){
 		elemento.CambiarEstrategiaDeVuelo( new LineaRectaUp() );
 	}
-	
-	// Falta metodo Condicion
 }
