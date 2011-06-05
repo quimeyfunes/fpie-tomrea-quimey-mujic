@@ -1,5 +1,9 @@
 package Objetos_moviles;
 
+import java.util.LinkedList;
+
+import Escenario.Escenario;
+
 public class Items extends ObjetosMoviles{
 	
 	public void Verificar_colicion(){
@@ -30,20 +34,18 @@ public class Items extends ObjetosMoviles{
 
 	@Override
 	protected void Actuar() {
-		// TODO Auto-generated method stub
+		this.Verificar_colicion();
 		
 	}
 
 
 	@Override
-	protected void ActuarAnteColision(ObjetosMoviles objeto){
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract void ActuarAnteColision(ObjetosMoviles objeto);	
+	
 
 
 	@Override
-	protected void EstadoCorrecto() {
+	public abstract void EstadoCorrecto() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -51,7 +53,13 @@ public class Items extends ObjetosMoviles{
 
 	@Override
 	protected void VerificarColision() {
-		// TODO Auto-generated method stub
-		
+		Escenario esc = Escenario.getInstance();
+		// buscar tipo generico Collection
+		LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego = esc.objetosVivos();
+		int j; 
+		for ( j = 0 ; j == todoLoQueEstaEnJuego.size() ; j++ ){
+			ObjetosMoviles elemento = todoLoQueEstaEnJuego.get( j );
+			if ( elemento.condicionComun(elemento) && ( elemento.PuedeManejarItems() ) ) this.ActuarAnteColision(elemento);
+			}
 	}
 }
