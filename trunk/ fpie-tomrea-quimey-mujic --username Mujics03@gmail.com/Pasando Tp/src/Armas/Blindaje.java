@@ -26,7 +26,7 @@ public class Blindaje
 	{
 		hitPoints = (short) (hitPoints + (itemVida.reparar()) );
 
-		//La vida del avion crece sin limite. Cada vez es mas poderoso."
+		//La vida del avion crece sin limite. Cada vez es mas poderoso ;)"
 	}
 	
 	public void daniar (Danio danio) throws ChauBlindajeException 
