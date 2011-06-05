@@ -1,34 +1,46 @@
 package Pruebas;
 
 
+import junit.framework.Assert;
+
 import org.junit.Before;
 import org.junit.Test;
+
+import Armas.ControladorArmas;
+import Armas.LanzadorMisiles;
+import Mapa.Vector2D;
+import Objetos_moviles.Algo42;
+import Objetos_moviles.MovDirigido;
+import Objetos_moviles.Municion;
+import Objetos_moviles.ObjetosMoviles;
 
 public class TestTorpedoTeledirigido {
 	private Algo42 objetivo;
 	private ControladorArmas controladorArmas; 
-	private LanzadorDeMisilesTeledirigidos armaF;
+	private LanzadorMisiles armaF;
 	@Before
 	public void setUp() throws Exception {
 		
 
 		objetivo = new Algo42( 107, 93 ); 
-		controladorA = new ControladorArmas();
+		controladorArmas = new ControladorArmas();
 
 		 
-		armaF = new LanzadorDeMisilesTeledirigidos(ObjetosMoviles.getBandoEnemigo(),new MovDirigido();
-		controladorA.add(armaF);
+		armaF = new LanzadorMisiles(ObjetosMoviles.BandoEnemigo(),new MovDirigido());
+		controladorArmas.add(armaF);
 	}
 	
 	@Test
 	public void testTorpedo(){
-		Assert.assertEquals( objetivo.EstaVivo(), 1E-4 );
+		Assert.assertTrue( objetivo.EstaVivo() );
+		
+		Vector2D pos = new Vector2D( (double)102,(double)93);
 
-		Municion misil = controladorA.dispararElArmaSeleccionadaDesde(102,93);
-		Assert.assertEquals( misil.EstaVivo(), 1E-4 );
+		Municion misil = controladorArmas.dispararElArmaSeleccionada(pos);
+		Assert.assertTrue( misil.EstaVivo() );
 		misil.moverseIAsegunVel();
 
-		Assert.assertFalse (misil.EstaVivo(), 1E-4 );
+		Assert.assertFalse (misil.EstaVivo() );
 	}
 
 }

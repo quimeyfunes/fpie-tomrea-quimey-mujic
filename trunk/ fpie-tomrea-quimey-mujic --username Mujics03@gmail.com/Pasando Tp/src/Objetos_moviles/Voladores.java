@@ -51,8 +51,8 @@ public abstract class Voladores extends ObjetosMoviles{
 		 else throw new ChauBlindajeException();
 	}
 		
-	protected Municion disparar()  throws ChauBlindajeException {
-		// Corregir metodo weapons
+	public Municion disparar()  throws ChauBlindajeException {
+		// Corregir metodo weapons,lo puse como public
 		if ( this.EstaVivo() ){ 
 			return  weapons.dispararElArmaSeleccionada( this.ubicacion.XY() );
 		}
@@ -64,10 +64,10 @@ public abstract class Voladores extends ObjetosMoviles{
 		return danio;
 	}
 	
-	public void main(String[] args) {
-		vivo = true;
-		Timing = 0;
-		weapons = new ControladorArmas();
+	protected void EstadoCorrecto() {
+		this.Vivo = true;
+		this.Timing = 0;
+		this.weapons = new ControladorArmas();
 	}
 
 	protected void manejarItemVida( ItemVida item )  throws ChauBlindajeException {
@@ -76,7 +76,7 @@ public abstract class Voladores extends ObjetosMoviles{
 		 else throw new ChauBlindajeException();
 	}
 	
-	protected void seleccionarSiguienteArma()  throws ChauBlindajeException {
+	public void seleccionarSiguienteArma()  throws ChauBlindajeException {
 		if ( this.EstaVivo() ){ weapons.seleccionarSiguienteArma();}
 		 else throw new ChauBlindajeException();
 	}
