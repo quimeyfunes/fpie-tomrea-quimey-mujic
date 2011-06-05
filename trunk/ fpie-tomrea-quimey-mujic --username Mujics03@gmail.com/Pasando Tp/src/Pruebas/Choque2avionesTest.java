@@ -3,6 +3,8 @@ import junit.framework.*;
 import Armas.Danio;
 import Objetos_moviles.*;
 import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 public class Choque2avionesTest extends TestCase{
 	// Testea el choque de algo42 contra una avioneta, y la esperada muerta de la avioneta despues 
@@ -10,20 +12,29 @@ public class Choque2avionesTest extends TestCase{
 	// Variables
 	Algo42 algo42; 
 	Avioneta avioneta; 
-	int valor_esperado; 
+	int valorEsperado; 
 	Danio danio; 
 	
-	// Creaciones de unidades
-	algo42.crearEnXY( 150 , 145 );
-	avioneta.crearEnXY( 150 , 150 );
-	
-	int i;
-	for ( i = 0 ; i == 2 ; i++ ){
-		algo42.arriba();
+	@Before
+	public void setUp() throws Exception {
+		// Creaciones de unidades
+		algo42 = new Algo42( 150 , 145 );
+		avioneta = new Avioneta( 150 , 150 );
 	}
 	
-	Assert.assertFalse( avioneta.EstaVivo() );
-	danio = algo42.fuerzaDeChoque();
-	valor_esperado = danio.lastimar();
-	Assert.assertEquals( valor_esperando , 50 );
+
+	@Test
+	public void testCreacion(){
+		int i;
+		for ( i = 0 ; i == 2 ; i++ ){
+			algo42.arriba();
+		}
+		
+		Assert.assertFalse( avioneta.EstaVivo() );
+		danio = algo42.fuerzaDeChoque();
+		valorEsperado = danio.lastimar();
+		Assert.assertEquals( valorEsperado , 50 );
+	}
+	
+	
 }

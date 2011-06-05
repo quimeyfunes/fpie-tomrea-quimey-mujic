@@ -35,7 +35,7 @@ public abstract class Voladores extends ObjetosMoviles{
 	}
 	
 	
-	protected void VerificarColision(){
+	public void VerificarColision(){
 		Escenario esc = Escenario.getInstance();
 		// buscar tipo generico Collection
 		LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego = esc.objetosVivos();
@@ -59,7 +59,7 @@ public abstract class Voladores extends ObjetosMoviles{
 		 else throw new ChauBlindajeException();
 	}
 	
-	protected Danio fuerzaDeChoque(){
+	public Danio fuerzaDeChoque(){
 		Danio danio =  new Danio(blindaje.getHitPoints());
 		return danio;
 	}
