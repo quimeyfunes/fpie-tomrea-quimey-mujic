@@ -9,4 +9,9 @@ public class Circular extends EstrategiaDeVuelo {
 		
 	}
 
+	public static double radioStandarSegunDistancia(double d, double e) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

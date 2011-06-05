@@ -3,6 +3,7 @@ package Pruebas;
 import junit.framework.Assert;
 
 import org.junit.Before;
+import org.junit.Test;
 
 import Objetos_moviles.Avioneta;
 
@@ -18,9 +19,9 @@ public class TestMovimientoIdaYVvuelta {
 	
 	
 	@Test
-	prublic void testMovimiento(){
+	public void testMovimiento(){
 		
-		for( int i = 0 ; i < 19, i++ ){
+		for( int i = 0 ; i < 19; i++ ){
 			avion.moverseIAsegunVel();
 		}
 		
@@ -32,7 +33,7 @@ public class TestMovimientoIdaYVvuelta {
 		
 		 //viene, choca contra el borde inferior y sube
 		 //tiene el mismo comportamiento para la subida
-		 Assert.assertFalse( avion.EstaCercaAlAlimiteInferior(),1E-4);
+		 Assert.assertFalse( avion.EstaCercaAlAlimiteInferior());
 		
 	}
 }

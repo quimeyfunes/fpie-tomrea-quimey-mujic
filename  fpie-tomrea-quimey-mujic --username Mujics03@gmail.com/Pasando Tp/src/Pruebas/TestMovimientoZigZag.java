@@ -5,9 +5,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import Objetos_moviles.Bombardero;
+import Objetos_moviles.EstrategiaDeVuelo;
+
 public class TestMovimientoZigZag {
 	
-	private int limiteDeSlide;
+	private double limiteDeSlide;
 	private Bombardero avion;
 
 	@Before
@@ -24,17 +27,17 @@ public class TestMovimientoZigZag {
 			avion.moverseIAsegunVel();
 		}
 
-		Point unXantes = avion.getPosicion.getX();
+		double unXantes = (avion.getPosicion()).x;
 
 		for (int i = 0; i < 3; i++){
 			avion.moverseIAsegunVel();
 		}
 
-		Point unXdespues = avion.getPosicion.getX();
+		double unXdespues = (avion.getPosicion()).x;
 
 		//luego de llegar al limite de slide, cambia de direccion
 		//primer izquierda abajo, luego derecha abajo
-		Assert.assertEquals( unXantes < unXdespues, 1E-4 );
+		Assert.assertTrue( unXantes < unXdespues );
 		
 
 		for (int i = 0; i < limiteDeSlide; i++){
@@ -42,15 +45,15 @@ public class TestMovimientoZigZag {
 		}
 
 
-		Point unXantes = avion.getPosicion.getX();
+		 unXantes = (avion.getPosicion()).x;
 
 		for (int i = 0; i < 3; i++){
 			avion.moverseIAsegunVel();
 		}
 
-		Point unXdespues = avion.getPosicion.getX();
+		unXdespues = (avion.getPosicion()).x;
 
 		//ahora, de vuelta izquierda abajo
-		Assert.assertEquals( unXantes > unXdespues, 1E-4 ); 
+		Assert.assertTrue( unXantes > unXdespues ); 
 	}
 }

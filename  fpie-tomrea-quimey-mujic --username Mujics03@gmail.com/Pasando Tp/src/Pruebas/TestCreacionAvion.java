@@ -3,12 +3,11 @@ package Pruebas;
 
 import static org.junit.Assert.fail;
 
-import java.awt.Point;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import Mapa.Vector2D;
 import Objetos_moviles.Avioneta;
 
 public class TestCreacionAvion {
@@ -31,14 +30,14 @@ public class TestCreacionAvion {
 
 		a = new Avioneta ( 50, 50);
 
-		Assert.assertEquals(a.EstaVivo(), 1E-4);
-		Assert.assertEquals(a.RecolectarPuntos()== 0, 1E-4));
-		Assert.assertEquals( a.getPosicion() == new Point(50,50), 1E-4);
+		Assert.assertTrue(a.EstaVivo());
+		Assert.assertTrue(a.RecolectarPuntos()== 0);
+		Assert.assertTrue( a.getPosicion() == new Vector2D(50,50));
 
-		a.DESTRUCTOR();
+		a.Destructor();
 
 		//muere y entrega los puntos
-		Assert.assertEquals( a.RecolectarPuntos() > 0, 1E-4) );
+		Assert.assertTrue( a.RecolectarPuntos() > 0);
 	}
 
 }
