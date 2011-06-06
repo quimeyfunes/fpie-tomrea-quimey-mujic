@@ -6,23 +6,28 @@ import Mapa.Ubicacion;
 import Armas.*;
 
 public abstract class Voladores extends ObjetosMoviles{
-	
-	protected int Timing=0;
-	protected ControladorArmas weapons = new ControladorArmas();
+
+	boolean vivo;
+	int Timing;
+	ControladorArmas weapons;
 	
 	protected void ActuarAnteColision(ObjetosMoviles movil){
 		// Los aviones se dañan entre si
+		
 		Danio danioTemp = this.fuerzaDeChoque(); 
-		this.analizarDanio( ((Voladores)movil).fuerzaDeChoque() );
+		this.analizarDanio( movil.fuerzaDeChoque() );
 		movil.analizarDanio( danioTemp );
 	}
 	
 	protected void constructor(double x, double y, Voladores v)
 	{
 		v.setPosicion(Ubicacion.crearUbicacionEnXY(x, y));
+		weapons = new ControladorArmas();
+		this.Vivo = true;
+		this.Timing = 0;
 		v.EstadoCorrecto();
-		v.Vivo=true;
 		Escenario.getInstance().agregarObjeto(v);//entra al mundo de los vivos		
+
 	}
 	
 	
@@ -35,7 +40,7 @@ public abstract class Voladores extends ObjetosMoviles{
 	}
 	
 	
-	public void VerificarColision(){
+	protected void VerificarColision(){
 		Escenario esc = Escenario.getInstance();
 		// buscar tipo generico Collection
 		LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego = esc.objetosVivos();
@@ -51,17 +56,23 @@ public abstract class Voladores extends ObjetosMoviles{
 		 else throw new ChauBlindajeException();
 	}
 		
-	public Municion disparar()  throws ChauBlindajeException {
-		// Corregir metodo weapons,lo puse como public
+	protected Municion disparar()  throws ChauBlindajeException {
+		// Corregir metodo weapons
 		if ( this.EstaVivo() ){ 
 			return  weapons.dispararElArmaSeleccionada( this.ubicacion.XY() );
 		}
 		 else throw new ChauBlindajeException();
 	}
 	
-	public Danio fuerzaDeChoque(){
+	protected Danio fuerzaDeChoque(){
 		Danio danio =  new Danio(blindaje.getHitPoints());
 		return danio;
+	}
+	
+	public void main(String[] args) {
+		vivo = true;
+		Timing = 0;
+		weapons = new ControladorArmas();
 	}
 
 	protected void manejarItemVida( ItemVida item )  throws ChauBlindajeException {
@@ -70,7 +81,7 @@ public abstract class Voladores extends ObjetosMoviles{
 		 else throw new ChauBlindajeException();
 	}
 	
-	public void seleccionarSiguienteArma()  throws ChauBlindajeException {
+	protected void seleccionarSiguienteArma()  throws ChauBlindajeException {
 		if ( this.EstaVivo() ){ weapons.seleccionarSiguienteArma();}
 		 else throw new ChauBlindajeException();
 	}
