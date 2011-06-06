@@ -113,16 +113,19 @@ public abstract class ObjetosMoviles {
 	}
 
 	public byte getBando(){
-		return bando;
+		return this.bando;
 	}
 	
 	public Rectangle2D.Double getCuerpo(){
-		return Cuerpo;
+		return this.Cuerpo;
 		
 	}
 
 	public Vector2D getPosicion(){
-		Vector2D pos = new Vector2D((Cuerpo.getCenterX()) ,(Cuerpo.getCenterY()));
+		
+		double x1= this.Cuerpo.x+this.Cuerpo.width/2.0;
+		double y1= this.Cuerpo.y-this.Cuerpo.height/2.0; 
+		Vector2D pos = new Vector2D(x1 ,y1);
 		return pos;
 			
 	}
@@ -195,7 +198,7 @@ public abstract class ObjetosMoviles {
 	
 	protected void ConfigurarCuerpo(double Alto,double Ancho){
 		Vector2D p = this.ubicacion.XY();
-		this.Cuerpo = new Rectangle2D.Double( (p.x)-(Ancho/2.0),(p.y)-(Alto/2.0),Ancho,Alto);
+		this.Cuerpo = new Rectangle2D.Double( (p.x)-(Ancho/2.0),(p.y)+(Alto/2.0),Ancho,Alto);
 	}
 	
 	private void Direccion(Vector2D DirToMove) {
@@ -206,11 +209,13 @@ public abstract class ObjetosMoviles {
 		try{
 			ubicacion.translateBy(DirToMove);
 			
-			double TempAncho = Cuerpo.width;
-			double TempTamanio = Cuerpo.height;
+			double TempAncho = this.Cuerpo.width;
+			double TempTamanio = this.Cuerpo.height;
+			
+			Vector2D pos = this.ubicacion.XY();
 			
 			//una forma de trasladar el rectangulo.
-		this.Cuerpo.setRect(this.Cuerpo.getX()+DirToMove.x, this.Cuerpo.getY()+DirToMove.y, TempAncho, TempTamanio);
+		this.Cuerpo.setRect(pos.x-(TempAncho/2.0),pos.y+(TempTamanio/2.0),TempAncho, TempTamanio);
 		this.VerificarColision();
 			
 		}catch( OffLimitsException OffExc ){

@@ -5,12 +5,13 @@ import Escenario.Escenario;
 import Excepciones.ChauBlindajeException;
 import Mapa.Vector2D;
 
-public class TorpedoDirigido extends Municion
+public class TorpedoDirigido extends Municion implements Rastreador
 {
 	private ObjetosMoviles objetivo;
 	public TorpedoDirigido(Vector2D posicion, EstrategiaDeVuelo estrategia, byte bando)
 	{
 		this.constructor(posicion, estrategia, bando, this);
+		this.buscarObjetivoSegunBando();
 	}	
 	
 	private void setObjetivo(ObjetosMoviles movil)
