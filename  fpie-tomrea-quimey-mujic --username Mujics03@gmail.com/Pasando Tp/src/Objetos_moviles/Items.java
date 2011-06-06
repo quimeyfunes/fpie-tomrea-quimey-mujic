@@ -17,14 +17,6 @@ public abstract class Items extends ObjetosMoviles{
 		Escenario.getInstance().agregarObjeto(item);//entra al mundo de los vivos
 		
 	}
-	
-	public boolean Maneja_items(){
-		return false;
-	}
-	
-	public boolean Puede_ser_atacado(){
-		return false;
-	}
 
 
 	@Override
@@ -61,7 +53,7 @@ public abstract class Items extends ObjetosMoviles{
 		// buscar tipo generico Collection
 		LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego = esc.objetosVivos();
 		int j; 
-		for ( j = 0 ; j == todoLoQueEstaEnJuego.size() ; j++ ){
+		for ( j = 0 ; j <= todoLoQueEstaEnJuego.size() ; j++ ){
 			ObjetosMoviles elemento = todoLoQueEstaEnJuego.get( j );
 			if ( elemento.condicionComun(elemento) && ( elemento.PuedeManejarItems() ) ) this.ActuarAnteColision(elemento);
 			}
