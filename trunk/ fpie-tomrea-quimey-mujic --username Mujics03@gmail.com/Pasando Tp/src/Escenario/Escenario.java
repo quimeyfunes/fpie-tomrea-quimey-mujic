@@ -17,6 +17,11 @@ public class Escenario
 	    }
 	}
 	
+	public synchronized static void reiniciarEscenario() {
+		instance = new Escenario();
+	
+	}
+	
 	public static Escenario getInstance() {
 	    if (instance == null) 
 	    	createInstance();

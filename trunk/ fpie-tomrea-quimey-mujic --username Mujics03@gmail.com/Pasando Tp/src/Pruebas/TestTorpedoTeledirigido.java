@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import Armas.ControladorArmas;
 import Armas.LanzadorMisiles;
+import Escenario.Escenario;
 import Mapa.Vector2D;
 import Objetos_moviles.Algo42;
 import Objetos_moviles.MovDirigido;
@@ -22,6 +23,7 @@ public class TestTorpedoTeledirigido extends TestCase {
 	@Before
 	public void setUp() throws Exception {
 		
+		Escenario.reiniciarEscenario();
 		objetivo = new Algo42( 107, 93 ); 
 		controladorArmas = new ControladorArmas();		 
 		armaF = new LanzadorMisiles(ObjetosMoviles.BandoEnemigo(),new MovDirigido());

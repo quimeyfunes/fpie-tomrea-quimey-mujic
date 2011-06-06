@@ -1,5 +1,6 @@
 package Pruebas;
 import junit.framework.*;
+import Escenario.Escenario;
 import Objetos_moviles.*;
 import org.junit.Assert;
 import org.junit.Before;
@@ -16,6 +17,7 @@ public class ChoqueMultiplesMunicionesConAvionTest extends TestCase{
 	@Before
 	public void setUp() throws Exception {
 		//Creacion de unidades
+		Escenario.reiniciarEscenario();
 		bombardero = new Bombardero ( 100 , 115 );
 		algo42 = new Algo42 ( 100 , 100 );
 		

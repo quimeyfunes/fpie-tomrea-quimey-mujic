@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import Armas.Blindaje;
 import Armas.Danio;
+import Escenario.Escenario;
 import Excepciones.ChauBlindajeException;
 
 public class BlindajeTest  
@@ -15,6 +16,7 @@ public class BlindajeTest
 	
 	@Before
 	public void setUp() throws Exception {
+		Escenario.reiniciarEscenario();
 	}
 
 	@Test

@@ -1,6 +1,7 @@
 package Pruebas;
 import junit.framework.*;
 import Armas.*;
+import Escenario.Escenario;
 import Mapa.Vector2D;
 import Objetos_moviles.*;
 import org.junit.Assert;
@@ -16,6 +17,7 @@ public class ControladorArmasYArmasFisicasTest extends TestCase{
 	@Before
 	public void setUp() throws Exception {
 		
+		Escenario.reiniciarEscenario();
 		pistola_laser = new PistolaLaser( ObjetosMoviles.BandoUsuario(), new LineaRectaUp() );
 		lanzador_cohetes = new LanzadorCohetes(  ObjetosMoviles.BandoUsuario(), new LineaRectaUp() );
 		controlador_armas = new ControladorArmas();

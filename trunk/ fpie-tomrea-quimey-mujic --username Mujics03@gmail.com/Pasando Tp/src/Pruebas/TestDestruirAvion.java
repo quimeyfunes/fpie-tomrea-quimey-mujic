@@ -10,6 +10,7 @@ import Objetos_moviles.LineaRectaUp;
 import Objetos_moviles.Municion;
 import Objetos_moviles.ObjetosMoviles;
 import Armas.*;
+import Escenario.Escenario;
 import Excepciones.ChauBlindajeException;
 import Excepciones.GameOverException;
 
@@ -20,6 +21,7 @@ public class TestDestruirAvion {
 	
 	@Before
 	public void setUp() throws Exception {
+		Escenario.reiniciarEscenario();
 	}
 	@Test
 	public void testDestruir() {
