@@ -11,6 +11,7 @@ import Objetos_moviles.Municion;
 import Objetos_moviles.ObjetosMoviles;
 import Armas.*;
 import Excepciones.ChauBlindajeException;
+import Excepciones.GameOverException;
 
 public class TestDestruirAvion {
 	private ControladorArmas ControladorA  =  new ControladorArmas();
@@ -25,19 +26,19 @@ public class TestDestruirAvion {
 		municion.moverseIAsegunVel();
 	}
 
-	@Test(expected=ChauBlindajeException.class)
+	@Test
 	public void testDestruir() {
 		try{
 			municion.moverseIAsegunVel();
 			fail("Deberia capturar excepcion");
-		}catch(Exception e){}
+		}catch(ChauBlindajeException e){}
+		
 		try{
 			for( int i=0; i<5; i++ ){
 				municion = ControladorA .dispararElArmaSeleccionada( new Vector2D(20,15));
 				municion.moverseIAsegunVel();
 			}
-			fail("Deberia capturar excepcion");
-		}catch(Exception e){}
+		}catch(GameOverException e){}
 		
 		Assert.assertFalse(avion.EstaVivo());
 		

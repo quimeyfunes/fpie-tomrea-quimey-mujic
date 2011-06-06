@@ -26,16 +26,18 @@ public class TestCreacionAvion {
 			fail("Deberia capturar excepcion OFFlimits");
 		}catch(Exception e){}
 		
+		double x= 100;
+		double y= 110;
 
 
-		a = new Avioneta ( 50, 50);
+		a = new Avioneta ( x, y);
 
 		Assert.assertTrue(a.EstaVivo());
 		Assert.assertTrue(a.RecolectarPuntos()== 0);
 		
 		Vector2D posA = a.getPosicion();
 		
-		Vector2D posBuscada = new Vector2D(50,50);
+		Vector2D posBuscada = new Vector2D(x,y);
 		
 		
 		Assert.assertTrue( posA.x == posBuscada.x );

@@ -3,6 +3,7 @@ import junit.framework.*;
 import Armas.Danio;
 import Objetos_moviles.*;
 
+import org.hamcrest.core.IsInstanceOf;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,16 +34,15 @@ public class BombarderoMuereYdejaArmaTest extends TestCase{
 		bombardero.analizarDanio( danio );
 		Assert.assertFalse( bombardero.EstaVivo() );
 		
-		int i; 
-		for ( i = 0 ; i == 9 ; i++ ){
+		for ( int i = 0 ; i <= 9 ; i++ ){
 			algo42.arriba();
 		}
 		
 		// Algo42 agarra el item y se verifica que este sea el TorpedosDirigido
 		algo42.seleccionarSiguienteArma();
 		municion = algo42.disparar();
-		Boolean b = municion instanceof TorpedoDirigido;
-		Assert.assertTrue( b  );
+		Boolean b = (municion.getClass() == TorpedoDirigido.class);
+		Assert.assertTrue( b );
 		
 	}
 	
