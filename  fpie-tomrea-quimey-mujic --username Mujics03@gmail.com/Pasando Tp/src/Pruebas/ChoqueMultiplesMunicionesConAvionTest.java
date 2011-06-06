@@ -38,7 +38,7 @@ public class ChoqueMultiplesMunicionesConAvionTest extends TestCase{
 		
 		try {
 			int j; 
-			for ( j = 0 ; j == 13 ;j ++ ){
+			for ( j = 0 ; j < 14 ;j ++ ){
 				algo42.arriba();
 			}
 			Assert.fail("Deberia haber saltado excepcion GameOver");
