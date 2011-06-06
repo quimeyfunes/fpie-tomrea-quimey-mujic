@@ -42,6 +42,7 @@ public class TestTorpedoTeledirigido extends TestCase {
 		misil.moverseIAsegunVel();
 
 		Assert.assertFalse (misil.EstaVivo() );
+		Assert.assertTrue( objetivo.getVida()==110);
 	}
 
 }
