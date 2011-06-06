@@ -25,7 +25,7 @@ public class ControladorArmasYArmasFisicasTest extends TestCase{
 	}
 	
 	@Test
-	public void testCreacion(){
+	public void testControladorArmasYArmasFisicas(){
 	
 		Assert.assertTrue( (controlador_armas.dispararElArmaSeleccionada( new Vector2D(10, 10) )) instanceof Laser);
 		controlador_armas.seleccionarSiguienteArma(); 

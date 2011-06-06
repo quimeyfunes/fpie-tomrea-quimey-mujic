@@ -12,19 +12,13 @@ public class BombarderoMuereYdejaArmaTest extends TestCase{
 	// Testea la muerte de un Bombardero y que el item dejado sea agarrado por algo42
 	
 	// Variables
-	private Bombardero bombardero; 
-	private Algo42 algo42;
-	private Danio danio; 
+	private Bombardero bombardero= new Bombardero( 100 , 100 ); 
+	private Algo42 algo42=new Algo42(100,90);
+	private Danio danio= new Danio((short) 200); 
 	private Municion municion;
 	
 	@Before
 	public void setUp() throws Exception {
-		// Creacion de unidades
-		bombardero = new Bombardero( 100 , 100 );
-		algo42 = new Algo42( 100 , 90 );
-		
-		//El bombardero es daniado y deberia morir para luego liberar el item
-		danio = new Danio((short) 200);
 
 	}
 	

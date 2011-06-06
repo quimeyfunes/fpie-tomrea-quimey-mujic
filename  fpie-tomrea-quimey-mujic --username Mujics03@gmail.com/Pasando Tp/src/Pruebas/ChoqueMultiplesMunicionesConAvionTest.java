@@ -28,7 +28,7 @@ public class ChoqueMultiplesMunicionesConAvionTest extends TestCase{
 	
 	
 	@Test
-	public void testCreacion(){
+	public void testChoqueMmconAvion(){
 		int i; 
 		for ( i = 0 ; i == 19 ; i++ ){
 			bombardero.arriba();

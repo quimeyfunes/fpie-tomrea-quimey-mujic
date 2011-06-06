@@ -22,11 +22,8 @@ public class TestTorpedoTeledirigido extends TestCase {
 	@Before
 	public void setUp() throws Exception {
 		
-
 		objetivo = new Algo42( 107, 93 ); 
-		controladorArmas = new ControladorArmas();
-
-		 
+		controladorArmas = new ControladorArmas();		 
 		armaF = new LanzadorMisiles(ObjetosMoviles.BandoEnemigo(),new MovDirigido());
 		controladorArmas.add(armaF);
 	}
