@@ -21,7 +21,7 @@ public class Caza extends Voladores
 	
 	public void DESTRUCTOR(){
 		this.Vivo = false;
-		new ItemVida(this.Cuerpo.getCenterX(),this.Cuerpo.getCenterY(), this.getBando());
+		new ItemVida(this.getPosicion().x,this.getPosicion().y, this.getBando());
 	}
 	
 	public void EstadoCorrecto(){

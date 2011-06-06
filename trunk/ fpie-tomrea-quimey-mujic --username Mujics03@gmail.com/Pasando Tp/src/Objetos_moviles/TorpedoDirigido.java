@@ -1,5 +1,8 @@
 package Objetos_moviles;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+
 import Armas.Danio;
 import Escenario.Escenario;
 import Excepciones.ChauBlindajeException;
@@ -23,8 +26,12 @@ public class TorpedoDirigido extends Municion implements Rastreador
 	{
 		boolean bandera = false;
 		
-		for (ObjetosMoviles movil: Escenario.getInstance().objetosVivos())
-		{
+		LinkedList<ObjetosMoviles> ObjVi =  Escenario.getInstance().objetosVivos();
+		Iterator<ObjetosMoviles> it = ObjVi.iterator();
+				
+		while(it.hasNext() && !bandera){
+			
+			ObjetosMoviles movil = it.next();
 			if(this.smallCondicion(movil) && movil.PuedeManejarItems())
 			{
 				this.setObjetivo(movil);

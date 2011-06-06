@@ -40,7 +40,8 @@ public class ControladorArmas
 	
 	public void seleccionarSiguienteArma()
 	{
-		if ( it.hasNext()){
+		boolean bandera = it.hasNext();
+		if ( bandera){
 			this.weaponOfChoice= this.it.next();
 		}
 		
