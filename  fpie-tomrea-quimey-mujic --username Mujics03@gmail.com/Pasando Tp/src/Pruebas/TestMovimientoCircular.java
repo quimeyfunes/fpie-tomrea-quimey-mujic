@@ -1,5 +1,7 @@
 package Pruebas;
 
+import junit.framework.TestCase;
+
 import org.junit.Assert;
 import org.junit.Before;
 
@@ -7,7 +9,7 @@ import Mapa.Vector2D;
 import Objetos_moviles.Circular;
 import Objetos_moviles.Exploradores;
 
-public class TestMovimientoCircular {
+public class TestMovimientoCircular extends TestCase {
 	private Exploradores Avion;
 	private Vector2D puntoCentralPrueba;
 	private double radio;

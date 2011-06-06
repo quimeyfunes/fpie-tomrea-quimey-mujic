@@ -11,6 +11,7 @@ public abstract class Municion extends ObjetosMoviles{
 	protected void constructor(Vector2D posicion, EstrategiaDeVuelo estrategia, byte bando, Municion m)
 	{
 		m.setBando(bando);
+		m.Vivo=true;
 		m.setPosicion(Ubicacion.crearUbicacionEnXY(posicion.x, posicion.y));
 		m.CambiarEstrategiaDeVuelo(estrategia);
 		m.EstadoCorrecto();
