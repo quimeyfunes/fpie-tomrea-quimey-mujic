@@ -19,9 +19,11 @@ public abstract class Voladores extends ObjetosMoviles{
 	
 	protected void constructor(double x, double y, Voladores v)
 	{
+		weapons = new ControladorArmas();
+		this.Vivo = true;
+		this.Timing = 0;
 		v.setPosicion(Ubicacion.crearUbicacionEnXY(x, y));
 		v.EstadoCorrecto();
-		v.Vivo=true;
 		Escenario.getInstance().agregarObjeto(v);//entra al mundo de los vivos		
 	}
 	

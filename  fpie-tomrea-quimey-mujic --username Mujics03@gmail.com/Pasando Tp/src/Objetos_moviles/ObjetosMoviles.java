@@ -89,6 +89,12 @@ public abstract class ObjetosMoviles {
 	
 	
 	//"ENTRE OBJETOS"
+	
+	public short getVida()
+	{
+		return this.blindaje.getHitPoints();
+	}
+
 	public void analizarDanio( Danio danio ){
 		
 		try{		
@@ -224,11 +230,6 @@ public abstract class ObjetosMoviles {
 	//"ITEMS verifican colision con USER"
 	//"FLOTA ENEMIGA verifica colision con USER(pero no entre si)"	
 	protected abstract void VerificarColision();
-	
-	public short getVida()
-	{
-		return this.blindaje.getHitPoints();
-	}
 
 	
 	//FIN Interno
