@@ -6,10 +6,9 @@ import Mapa.Ubicacion;
 import Armas.*;
 
 public abstract class Voladores extends ObjetosMoviles{
-
-	boolean vivo;
-	int Timing;
-	ControladorArmas weapons;
+	
+	protected int Timing=0;
+	protected ControladorArmas weapons = new ControladorArmas();
 	
 	protected void ActuarAnteColision(ObjetosMoviles movil){
 		// Los aviones se dañan entre si
@@ -22,6 +21,7 @@ public abstract class Voladores extends ObjetosMoviles{
 	{
 		v.setPosicion(Ubicacion.crearUbicacionEnXY(x, y));
 		v.EstadoCorrecto();
+		v.Vivo=true;
 		Escenario.getInstance().agregarObjeto(v);//entra al mundo de los vivos		
 	}
 	
@@ -62,12 +62,6 @@ public abstract class Voladores extends ObjetosMoviles{
 	public Danio fuerzaDeChoque(){
 		Danio danio =  new Danio(blindaje.getHitPoints());
 		return danio;
-	}
-	
-	protected void EstadoCorrecto() {
-		this.Vivo = true;
-		this.Timing = 0;
-		this.weapons = new ControladorArmas();
 	}
 
 	protected void manejarItemVida( ItemVida item )  throws ChauBlindajeException {

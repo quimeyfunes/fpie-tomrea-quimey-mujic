@@ -1,8 +1,6 @@
 package Pruebas;
 import junit.framework.*;
 import Armas.Danio;
-import Mapa.Ubicacion; 
-import Escenario.*;
 import Objetos_moviles.*;
 import org.junit.Assert;
 import org.junit.Before;

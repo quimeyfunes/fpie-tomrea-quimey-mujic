@@ -13,7 +13,7 @@ public class ControladorArmas
 	public ControladorArmas()
 	{
 		this.listaDeArmas = new LinkedList<ArmasFisicas>();
-		weaponOfChoice = 1;
+		this.weaponOfChoice = 1;
 	}
 	
 	public void add(ArmasFisicas arma)
@@ -23,22 +23,21 @@ public class ControladorArmas
 	
 	public void seleccionarSiguienteArma()
 	{
-		weaponOfChoice++;
+		this.weaponOfChoice++;
 		if(weaponOfChoice > listaDeArmas.size())
-			weaponOfChoice = 1;
+			this.weaponOfChoice = 1;
 	}
 	
 	public Municion dispararElArmaSeleccionada(Vector2D pos)
 	{
-		ArmasFisicas arma = this.listaDeArmas.get(weaponOfChoice);
-		try
+ 		try
 		{
 			return ( arma.dispararDesde(pos) );
 		}
 		catch(OutOfAmmoException e)
 		{
 			this.listaDeArmas.remove(weaponOfChoice);
-			weaponOfChoice = 1;
+			this.weaponOfChoice = 1;
 		}
 		return null;//No deberia llegar nunca aca...extraño.
 	}
