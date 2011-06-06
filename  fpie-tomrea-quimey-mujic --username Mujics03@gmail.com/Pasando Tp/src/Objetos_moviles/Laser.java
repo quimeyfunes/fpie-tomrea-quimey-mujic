@@ -1,6 +1,5 @@
 package Objetos_moviles;
 
-import java.awt.geom.Rectangle2D;
 import Armas.Danio;
 import Mapa.Vector2D;
 
@@ -15,9 +14,7 @@ public class Laser extends Municion
 	{
 		this.danio = new Danio((short)25);
 		this.Velocidad = 8;
-		Vector2D p = ubicacion.XY();
-
-		Cuerpo = new Rectangle2D.Double( p.x,p.y,1,1);
+		this.ConfigurarCuerpo(1,1);
 
 	}
 	

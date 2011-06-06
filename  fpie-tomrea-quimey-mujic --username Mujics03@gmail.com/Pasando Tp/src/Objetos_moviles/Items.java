@@ -6,11 +6,6 @@ import Escenario.Escenario;
 
 public abstract class Items extends ObjetosMoviles{
 	
-	public void Verificar_colicion(){
-		//borre lo que estaba aca
-	}
-
-	
 	public boolean Maneja_items(){
 		return false;
 	}
@@ -34,7 +29,7 @@ public abstract class Items extends ObjetosMoviles{
 
 	@Override
 	protected void Actuar() {
-		this.Verificar_colicion();
+		this.VerificarColision();
 		
 	}
 

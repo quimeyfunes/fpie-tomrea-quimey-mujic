@@ -1,7 +1,6 @@
 package Objetos_moviles;
-import java.awt.geom.Rectangle2D;
+
 import Armas.*;
-import Mapa.Vector2D;
 
 
 public class HelicopterosPoliciaCivil extends Voladores
@@ -21,8 +20,8 @@ public class HelicopterosPoliciaCivil extends Voladores
 		Velocidad = 1;
 		estrategia_vuelo = new Circular() ; // estrategia de vuelo circular
 		this.blindaje = new Blindaje((short)100);
-		Vector2D p = ubicacion.XY();
-		Cuerpo = new Rectangle2D.Double( p.x,p.y,5,5);
+
+		this.ConfigurarCuerpo(5,5);
 	}
 	
 	public boolean PuedeManejarItems(){

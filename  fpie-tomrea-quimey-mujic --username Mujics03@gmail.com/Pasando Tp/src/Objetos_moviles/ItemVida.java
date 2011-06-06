@@ -22,8 +22,7 @@ public class ItemVida extends Items
 	}
 	
 	public void EstadoCorrecto() {
-		Vector2D p = ubicacion.XY();
-		Cuerpo = new Rectangle2D.Double( p.x,p.y,1,1);
+		this.ConfigurarCuerpo(1,1);
 	}
 	
 	// falta el initialize..lo pongo en main??

@@ -187,6 +187,11 @@ public abstract class ObjetosMoviles {
 	
 	//Interno
 	
+	protected void ConfigurarCuerpo(double Alto,double Ancho){
+		Vector2D p = this.ubicacion.XY();
+		this.Cuerpo = new Rectangle2D.Double( (p.x)-(Ancho/2.0),(p.y)-(Alto/2.0),Ancho,Alto);
+	}
+	
 	private void Direccion(Vector2D DirToMove) {
 		//"normaliza el movimiento a minimo movimiento"
 		DirToMove.normalizeThis();
