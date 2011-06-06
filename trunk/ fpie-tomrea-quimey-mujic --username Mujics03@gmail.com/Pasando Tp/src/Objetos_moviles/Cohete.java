@@ -1,7 +1,5 @@
 package Objetos_moviles;
 
-import java.awt.geom.Rectangle2D;
-
 import Armas.Danio;
 import Mapa.Vector2D;
 
@@ -16,9 +14,7 @@ public class Cohete extends Municion
 	{
 		this.danio = new Danio((short)50);
 		this.Velocidad = 3;
-		Vector2D p = ubicacion.XY();
-
-		Cuerpo = new Rectangle2D.Double( p.x,p.y,2,2);
+		this.ConfigurarCuerpo(3,3);
 
 	}
 

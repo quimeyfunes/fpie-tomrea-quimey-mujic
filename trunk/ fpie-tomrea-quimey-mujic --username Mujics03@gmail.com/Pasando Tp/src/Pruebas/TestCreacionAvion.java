@@ -33,10 +33,13 @@ public class TestCreacionAvion {
 		Assert.assertTrue(a.EstaVivo());
 		Assert.assertTrue(a.RecolectarPuntos()== 0);
 		
-		double Xavion = (a.getPosicion()).x;
+		Vector2D posA = a.getPosicion();
+		
+		Vector2D posBuscada = new Vector2D(50,50);
 		
 		
-		Assert.assertTrue( Xavion == 50 );
+		Assert.assertTrue( posA.x == posBuscada.x );
+		Assert.assertTrue( posA.y == posBuscada.y );
 
 		a.Destructor();
 

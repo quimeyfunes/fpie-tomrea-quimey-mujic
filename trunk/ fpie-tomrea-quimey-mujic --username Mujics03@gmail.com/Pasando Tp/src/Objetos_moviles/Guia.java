@@ -1,9 +1,8 @@
 package Objetos_moviles;
-import java.awt.geom.Rectangle2D;
+
 import java.util.LinkedList;
 
 import Escenario.Escenario;
-import Mapa.Vector2D;
 import Armas.*;
 
 public class Guia extends Voladores
@@ -39,8 +38,7 @@ public class Guia extends Voladores
 		Velocidad = 10;
 		estrategia_vuelo = new IdaYvuelta();//aca hay que poner de derecha a izquierda
 		this.blindaje = new Blindaje((short)1000);
-		Vector2D p = ubicacion.XY();
-		Cuerpo = new Rectangle2D.Double( p.x,p.y,3,3);
+		this.ConfigurarCuerpo(3,3);
 		PistolaLaser pistola_laser = new PistolaLaser(bando , new LineaRectaDown());
 		LanzadorMisiles lanzador_misiles = new LanzadorMisiles(bando, new MovDirigido());
 		LanzadorCohetes lanzador_cohetes = new LanzadorCohetes(bando , new LineaRectaDown());

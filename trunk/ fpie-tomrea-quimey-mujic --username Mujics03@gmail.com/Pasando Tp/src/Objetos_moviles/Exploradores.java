@@ -1,6 +1,5 @@
 package Objetos_moviles;
-import java.awt.geom.Rectangle2D;
-import Mapa.Vector2D;
+
 import Armas.*;
 
 public class Exploradores extends Voladores
@@ -21,7 +20,6 @@ public class Exploradores extends Voladores
 		// Verificar variables necesarias pra el movimientos circular
 		estrategia_vuelo = new Circular();
 		this.blindaje = new Blindaje((short)50);
-		Vector2D p = ubicacion.XY();
-		Cuerpo = new Rectangle2D.Double( p.x,p.y,3,3);
+		this.ConfigurarCuerpo(3, 3);
 	}
 }

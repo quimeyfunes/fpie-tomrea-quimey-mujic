@@ -1,6 +1,4 @@
 package Objetos_moviles;
-import java.awt.geom.Rectangle2D;
-import Mapa.Vector2D;
 import Armas.*;
 
 public class Bombardero extends Voladores
@@ -32,8 +30,9 @@ public class Bombardero extends Voladores
 		this.Velocidad = 1;
 		this.estrategia_vuelo = new ZigZag();
 		this.blindaje = new Blindaje((short)200);
-		Vector2D p = ubicacion.XY();
-		this.Cuerpo = new Rectangle2D.Double( p.x,p.y,8,8);
+
+		this.ConfigurarCuerpo(8,8);
+		
 		PistolaLaser pistola_laser = new PistolaLaser( bando , new LineaRectaDown() );
 		LanzadorMisiles lanzador_misiles = new LanzadorMisiles(bando, new MovDirigido());
 		LanzadorCohetes lanzador_cohetes = new LanzadorCohetes(bando, new MovDirigido());

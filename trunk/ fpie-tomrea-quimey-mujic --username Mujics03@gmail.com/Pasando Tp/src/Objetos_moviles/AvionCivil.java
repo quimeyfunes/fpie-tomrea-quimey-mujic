@@ -1,6 +1,4 @@
 package Objetos_moviles;
-import java.awt.geom.Rectangle2D;
-import Mapa.Vector2D;
 import Armas.*;
 
 
@@ -21,8 +19,8 @@ public class AvionCivil extends Voladores {
 		this.Velocidad = 1;
 		this.estrategia_vuelo = new LineaRectaDown();
 		this.blindaje = new Blindaje((short)100);
-		Vector2D p = ubicacion.XY();
-		this.Cuerpo = new Rectangle2D.Double( p.x,p.y,5,5);
+
+		this.ConfigurarCuerpo(4,4);
 	}
 	
 	public boolean PuedeManejarItems(){

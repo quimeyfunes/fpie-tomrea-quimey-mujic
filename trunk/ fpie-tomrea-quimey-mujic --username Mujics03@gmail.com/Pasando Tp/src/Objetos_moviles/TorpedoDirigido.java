@@ -1,7 +1,5 @@
 package Objetos_moviles;
 
-import java.awt.geom.Rectangle2D;
-
 import Armas.Danio;
 import Escenario.Escenario;
 import Excepciones.ChauBlindajeException;
@@ -48,10 +46,8 @@ public class TorpedoDirigido extends Municion
 	{
 		this.danio = new Danio((short)40);
 		this.Velocidad = 4;
-		Vector2D p = ubicacion.XY();
 
-		Cuerpo = new Rectangle2D.Double( p.x,p.y,2,2);
-		this.buscarObjetivoSegunBando();
+		this.ConfigurarCuerpo(2,2);
 	}
 	
 	public void moverseIAsegunVel()

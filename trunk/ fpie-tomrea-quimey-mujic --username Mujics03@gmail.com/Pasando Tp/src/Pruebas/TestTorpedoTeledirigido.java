@@ -2,6 +2,7 @@ package Pruebas;
 
 
 import junit.framework.Assert;
+import junit.framework.TestCase;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +15,7 @@ import Objetos_moviles.MovDirigido;
 import Objetos_moviles.Municion;
 import Objetos_moviles.ObjetosMoviles;
 
-public class TestTorpedoTeledirigido {
+public class TestTorpedoTeledirigido extends TestCase {
 	private Algo42 objetivo;
 	private ControladorArmas controladorArmas; 
 	private LanzadorMisiles armaF;

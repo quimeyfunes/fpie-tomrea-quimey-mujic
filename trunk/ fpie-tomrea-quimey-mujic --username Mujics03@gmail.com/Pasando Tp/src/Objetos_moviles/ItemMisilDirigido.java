@@ -14,8 +14,7 @@ public class ItemMisilDirigido extends Items{
 	}
 	
 	public void EstadoCorrecto() {
-		Vector2D p = ubicacion.XY();
-		Cuerpo = new Rectangle2D.Double( p.x,p.y,2,2);
+		this.ConfigurarCuerpo(2,2);
 	}
 	
 	// falta initialize..va en main? 
