@@ -224,6 +224,11 @@ public abstract class ObjetosMoviles {
 	//"ITEMS verifican colision con USER"
 	//"FLOTA ENEMIGA verifica colision con USER(pero no entre si)"	
 	protected abstract void VerificarColision();
+	
+	public short getVida()
+	{
+		return this.blindaje.getHitPoints();
+	}
 
 	
 	//FIN Interno
