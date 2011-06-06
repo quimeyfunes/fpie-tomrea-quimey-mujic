@@ -10,31 +10,41 @@ import Armas.ArmasFisicas;
 
 public class ControladorArmas
 {
-	LinkedList<ArmasFisicas> listaDeArmas;
-	ArmasFisicas weaponOfChoice;
+	private LinkedList<ArmasFisicas> listaDeArmas;
+	private ArmasFisicas weaponOfChoice;
+	private Iterator<ArmasFisicas> it;
+	
+	private void ReiniciarIt(){
+		this.it= this.listaDeArmas.iterator();
+		this.it.next();
+		
+	}
+	
+
 	public ControladorArmas()
 	{
 		this.listaDeArmas = new LinkedList<ArmasFisicas>();
+		this.weaponOfChoice=null;
+		this.it=null;
 	}
 	
 	public void add(ArmasFisicas arma)
 	{
 		listaDeArmas.add(arma);
+		this.ReiniciarIt();
 		
 		if (this.listaDeArmas.size()==1){
-		this.weaponOfChoice= this.listaDeArmas.getLast();
+		this.weaponOfChoice= this.listaDeArmas.getFirst();
 		}
 	}
 	
 	public void seleccionarSiguienteArma()
 	{
-	Iterator<ArmasFisicas> it	=this.listaDeArmas.iterator();
-	if (it.hasNext() ){
-		this.weaponOfChoice = it.next();
-	}
-	else{
-		this.weaponOfChoice=this.listaDeArmas.getFirst();
-	}
+		if ( it.hasNext()){
+			this.weaponOfChoice= this.it.next();
+		}
+		
+	
 	}
 	
 	public Municion dispararElArmaSeleccionada(Vector2D pos)
@@ -47,6 +57,7 @@ public class ControladorArmas
 		{
 			this.listaDeArmas.remove(weaponOfChoice);
 			this.weaponOfChoice = this.listaDeArmas.getFirst();
+			this.ReiniciarIt();
 		}
 		return null;
 	}
