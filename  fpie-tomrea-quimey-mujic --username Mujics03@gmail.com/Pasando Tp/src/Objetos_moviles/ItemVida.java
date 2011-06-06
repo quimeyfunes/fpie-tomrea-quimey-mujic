@@ -1,29 +1,26 @@
 package Objetos_moviles;
 
-import java.awt.geom.Rectangle2D;
-
-import Mapa.Vector2D;
-
 public class ItemVida extends Items
 {
 	short hitPointsAsumar;
+	
+	public ItemVida(double x,double y,byte bando){
+		this.constructor(x, y, bando, this);
+	}
 	
 	public short reparar()
 	{
 		return hitPointsAsumar;		
 	}
 	
-	//aca hay que poner una interfaz en Volador para manejar items	
 	public void ActuarAnteColision(ObjetosMoviles objeto){
-		//no reconoce el metodo porq esta en voladores
-		objeto.manejarItemVida( this );
+		((Voladores)objeto).manejarItemVida( this );
 		this.Destructor();
 		
 	}
 	
 	public void EstadoCorrecto() {
+		this.hitPointsAsumar=50;
 		this.ConfigurarCuerpo(1,1);
 	}
-	
-	// falta el initialize..lo pongo en main??
 }	
