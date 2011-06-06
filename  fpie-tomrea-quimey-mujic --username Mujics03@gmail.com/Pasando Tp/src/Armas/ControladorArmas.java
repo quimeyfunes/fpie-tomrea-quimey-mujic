@@ -41,11 +41,12 @@ public class ControladorArmas
 	public void seleccionarSiguienteArma()
 	{
 		boolean bandera = it.hasNext();
-		if ( bandera){
+		if ( bandera ){
 			this.weaponOfChoice= this.it.next();
+		} else {
+			this.weaponOfChoice = this.listaDeArmas.getFirst();
+			this.ReiniciarIt();
 		}
-		
-	
 	}
 	
 	public Municion dispararElArmaSeleccionada(Vector2D pos)
