@@ -1,6 +1,9 @@
 package Pruebas;
 
 
+
+import junit.framework.TestCase;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,7 +11,7 @@ import org.junit.Test;
 import Objetos_moviles.Bombardero;
 import Objetos_moviles.EstrategiaDeVuelo;
 
-public class TestMovimientoZigZag {
+public class TestMovimientoZigZag extends TestCase {
 	
 	private double limiteDeSlide;
 	private Bombardero avion;
@@ -17,7 +20,6 @@ public class TestMovimientoZigZag {
 	public void setUp() throws Exception {
 		limiteDeSlide =  EstrategiaDeVuelo.getSlide();
 		avion = new Bombardero ( 2000, 2000);
-		
 	}
 	
 	@Test

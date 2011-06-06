@@ -64,8 +64,12 @@ public abstract class ObjetosMoviles {
 	}
 
 	public void moverseIAsegunVel() throws ChauBlindajeException{
-		if ( this.Vivo ) {
-			for ( int i = 0 ; i == Velocidad ; i++ ) this.moverse();
+		if ( this.EstaVivo() ) {
+			for ( int i = 0 ; i < this.Velocidad ; i=i+1 ){
+				
+				this.moverse();
+				
+				}
 		}
 		else{
 			throw new ChauBlindajeException();
@@ -96,7 +100,7 @@ public abstract class ObjetosMoviles {
 		}
 	
 	public void CambiarEstrategiaDeVuelo( EstrategiaDeVuelo nueva_estrategia ) throws ChauBlindajeException{
-		if ( this.Vivo ) estrategia_vuelo = nueva_estrategia;
+		if ( this.EstaVivo() ) estrategia_vuelo = nueva_estrategia;
 		else{
 			throw new ChauBlindajeException();
 		}
@@ -139,7 +143,7 @@ public abstract class ObjetosMoviles {
 	}
 	
 	protected void moverse(){
-		if ( this.Vivo ) this.estrategia_vuelo.CalcularMovimiento( this );
+		if ( this.EstaVivo() ) this.estrategia_vuelo.CalcularMovimiento( this );
 	}
 
 	protected boolean smallCondicion(ObjetosMoviles obj){

@@ -66,7 +66,7 @@ public Vector2D()
     Vector2D v = scale(s);
 
     x = v.x;
-    x = v.y;
+    y = v.y;
   }
   
   /*

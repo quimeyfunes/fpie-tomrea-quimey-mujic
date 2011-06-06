@@ -27,7 +27,7 @@ public class Avioneta extends Voladores {
 		this.estrategia_vuelo = new IdaYvuelta();
 		this.blindaje = new Blindaje((short)100);;
 		Vector2D p = ubicacion.XY();
-		this.Cuerpo = new Rectangle2D.Double( p.x,p.y,5,5);
+		this.Cuerpo = new Rectangle2D.Double( (p.x)-(double)(5/2),(p.y)+(double)(5/2),5,5);
 		PistolaLaser pistola_laser = new PistolaLaser(this.bando,new LineaRectaDown());
 		this.weapons.add( pistola_laser );
 	}

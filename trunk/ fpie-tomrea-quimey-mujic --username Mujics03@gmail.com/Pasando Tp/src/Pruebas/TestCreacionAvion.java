@@ -6,6 +6,8 @@ import static org.junit.Assert.fail;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import Mapa.Vector2D;
 import Objetos_moviles.Avioneta;
 
 public class TestCreacionAvion {
@@ -31,9 +33,10 @@ public class TestCreacionAvion {
 		Assert.assertTrue(a.EstaVivo());
 		Assert.assertTrue(a.RecolectarPuntos()== 0);
 		
+		double Xavion = (a.getPosicion()).x;
 		
-		Assert.assertTrue( ((a.getPosicion()).x == 50 ) );
-		Assert.assertTrue( ((a.getPosicion()).y == 50 ) );
+		
+		Assert.assertTrue( Xavion == 50 );
 
 		a.Destructor();
 
