@@ -32,7 +32,7 @@ public class ControladorArmas
 	{
  		try
 		{
-			return ( arma.dispararDesde(pos) );
+			return ((this.listaDeArmas.get(this.weaponOfChoice)).dispararDesde(pos) );
 		}
 		catch(OutOfAmmoException e)
 		{
