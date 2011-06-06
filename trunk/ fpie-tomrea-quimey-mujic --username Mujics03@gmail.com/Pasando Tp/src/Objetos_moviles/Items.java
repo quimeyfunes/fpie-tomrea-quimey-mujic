@@ -11,8 +11,10 @@ public abstract class Items extends ObjetosMoviles{
 		
 		item.setPosicion(Ubicacion.crearUbicacionEnXY(x, y));
 		item.EstadoCorrecto();
-		
-		
+		item.Vivo=true;
+		item.puntos=0;
+		item.setBando(bando);
+		Escenario.getInstance().agregarObjeto(item);//entra al mundo de los vivos
 		
 	}
 	
