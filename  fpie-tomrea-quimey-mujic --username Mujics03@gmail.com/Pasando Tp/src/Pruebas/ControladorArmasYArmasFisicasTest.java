@@ -37,7 +37,7 @@ public class ControladorArmasYArmasFisicasTest extends TestCase{
 		controlador_armas.seleccionarSiguienteArma();
 		
 		int i; 
-		for ( i = 0 ; i == 13 ; i++ ){
+		for ( i = 0 ; i < 15 ; i++ ){
 			controlador_armas.dispararElArmaSeleccionada( new Vector2D(20, 20) );
 		}
 	Assert.assertTrue( ( controlador_armas.dispararElArmaSeleccionada( new Vector2D(20, 20) )) instanceof Laser );
