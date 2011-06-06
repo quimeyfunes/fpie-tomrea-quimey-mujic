@@ -2,6 +2,7 @@ package Pruebas;
 import junit.framework.*;
 import Armas.Danio;
 import Escenario.Escenario;
+import Mapa.Vector2D;
 import Objetos_moviles.*;
 
 import org.hamcrest.core.IsInstanceOf;
@@ -36,8 +37,7 @@ public class BombarderoMuereYdejaArmaTest extends TestCase{
 		// Algo42 agarra el item y se verifica que este sea el TorpedosDirigido
 		algo42.seleccionarSiguienteArma();
 		municion = algo42.disparar();
-		Boolean b = (municion.getClass() == TorpedoDirigido.class);
-		Assert.assertTrue( b );
+		Assert.assertTrue( municion instanceof Laser );
 		
 	}
 	
