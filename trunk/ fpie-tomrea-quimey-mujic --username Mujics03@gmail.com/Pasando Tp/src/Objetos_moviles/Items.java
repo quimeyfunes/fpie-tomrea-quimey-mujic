@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 import Escenario.Escenario;
 
-public class Items extends ObjetosMoviles{
+public abstract class Items extends ObjetosMoviles{
 	
 	public void Verificar_colicion(){
 		//borre lo que estaba aca
@@ -45,10 +45,7 @@ public class Items extends ObjetosMoviles{
 
 
 	@Override
-	public abstract void EstadoCorrecto() {
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract void EstadoCorrecto();
 
 
 	@Override

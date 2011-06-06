@@ -22,7 +22,7 @@ public class Bombardero extends Voladores
 	}
 	
 	public void DESTRUCTOR(){
-		vivo = false;
+		this.Vivo = false;
 		// verificar que item deja
 	}
 	

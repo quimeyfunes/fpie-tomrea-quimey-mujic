@@ -11,14 +11,14 @@ import java.awt.geom.Rectangle2D;
 
 public abstract class ObjetosMoviles {
 
-	boolean Vivo;
-	Ubicacion ubicacion;
-	int puntos;
-	Blindaje blindaje;
-	EstrategiaDeVuelo estrategia_vuelo;
-	byte bando;
-	byte Velocidad;
-	Rectangle2D.Double Cuerpo;
+	protected boolean Vivo;
+	protected Ubicacion ubicacion;
+	protected int puntos;
+	protected Blindaje blindaje;
+	protected EstrategiaDeVuelo estrategia_vuelo;
+	protected byte bando;
+	protected byte Velocidad;
+	protected Rectangle2D.Double Cuerpo;
 	
 	//Constantes
 	public static byte BandoUsuario(){

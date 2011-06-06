@@ -22,7 +22,7 @@ public class Caza extends Voladores
 	}
 	
 	public void DESTRUCTOR(){
-		vivo = false;
+		this.Vivo = false;
 		ItemVida item_vida = new ItemVida();
 		// falta la funcion crear en 
 	}

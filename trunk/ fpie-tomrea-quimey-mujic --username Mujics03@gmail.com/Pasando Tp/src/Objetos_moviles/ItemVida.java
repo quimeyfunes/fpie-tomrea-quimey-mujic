@@ -13,6 +13,7 @@ public class ItemVida extends Items
 		return hitPointsAsumar;		
 	}
 	
+	//aca hay que poner una interfaz en Volador para manejar items	
 	public void ActuarAnteColision(ObjetosMoviles objeto){
 		//no reconoce el metodo porq esta en voladores
 		objeto.manejarItemVida( this );
