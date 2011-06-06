@@ -98,7 +98,7 @@ public abstract class ObjetosMoviles {
 	public void analizarDanio( Danio danio ){
 		
 		try{		
-		blindaje.daniar( danio );
+		this.blindaje.daniar( danio );
 		}
 		catch(ChauBlindajeException ChauE){
 			this.Destructor();
