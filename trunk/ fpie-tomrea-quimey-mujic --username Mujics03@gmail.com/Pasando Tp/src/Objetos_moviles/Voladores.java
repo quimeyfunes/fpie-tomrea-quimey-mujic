@@ -42,7 +42,7 @@ public abstract class Voladores extends ObjetosMoviles{
 		// buscar tipo generico Collection
 		LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego = esc.objetosVivos();
 		int j; 
-		for ( j = 0 ; j == todoLoQueEstaEnJuego.size() ; j++ ){
+		for ( j = 0 ; j < todoLoQueEstaEnJuego.size() ; j++ ){
 			ObjetosMoviles elemento = todoLoQueEstaEnJuego.get( j );
 			if ( this.condicionComun(elemento) ) elemento.ActuarAnteColision(this);
 			}
