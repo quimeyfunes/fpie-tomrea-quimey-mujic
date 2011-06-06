@@ -3,8 +3,18 @@ package Objetos_moviles;
 import java.util.LinkedList;
 
 import Escenario.Escenario;
+import Mapa.Ubicacion;
 
 public abstract class Items extends ObjetosMoviles{
+	
+	protected void constructor(double x, double y,byte bando,Items item) {
+		
+		item.setPosicion(Ubicacion.crearUbicacionEnXY(x, y));
+		item.EstadoCorrecto();
+		
+		
+		
+	}
 	
 	public boolean Maneja_items(){
 		return false;
