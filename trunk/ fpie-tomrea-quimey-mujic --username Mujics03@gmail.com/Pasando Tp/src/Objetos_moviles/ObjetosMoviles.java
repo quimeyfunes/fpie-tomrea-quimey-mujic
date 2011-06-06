@@ -204,8 +204,8 @@ public abstract class ObjetosMoviles {
 			double TempTamanio = Cuerpo.height;
 			
 			//una forma de trasladar el rectangulo.
-			Cuerpo = new Rectangle2D.Double(Cuerpo.x +(DirToMove.x),Cuerpo.y+(DirToMove.y), TempAncho, TempTamanio);
-			this.VerificarColision();
+		this.Cuerpo.setRect(this.Cuerpo.getX()+DirToMove.x, this.Cuerpo.getY()+DirToMove.y, TempAncho, TempTamanio);
+		this.VerificarColision();
 			
 		}catch( OffLimitsException OffExc ){
 			this.Destructor();
