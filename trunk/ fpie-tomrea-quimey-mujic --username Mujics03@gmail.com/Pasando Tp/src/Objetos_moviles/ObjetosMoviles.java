@@ -215,8 +215,8 @@ public abstract class ObjetosMoviles {
 			Vector2D pos = this.ubicacion.XY();
 			
 			//una forma de trasladar el rectangulo.
-		this.Cuerpo.setRect(pos.x-(TempAncho/2.0),pos.y+(TempTamanio/2.0),TempAncho, TempTamanio);
-		this.VerificarColision();
+			this.Cuerpo.setRect(pos.x-(TempAncho/2.0),pos.y+(TempTamanio/2.0),TempAncho, TempTamanio);
+			this.VerificarColision();
 			
 		}catch( OffLimitsException OffExc ){
 			this.Destructor();

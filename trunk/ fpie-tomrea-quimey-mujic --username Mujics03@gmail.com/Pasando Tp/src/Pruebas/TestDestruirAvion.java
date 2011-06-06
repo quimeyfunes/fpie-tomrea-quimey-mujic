@@ -16,12 +16,13 @@ import Excepciones.GameOverException;
 
 public class TestDestruirAvion {
 	private ControladorArmas ControladorA;
-	private Algo42 avion = new Algo42( 20,20);
+	private Algo42 avion;
 	private Municion municion;
 	
 	@Before
 	public void setUp() throws Exception {
 		Escenario.reiniciarEscenario();
+		avion = new Algo42( 20,20);
 	}
 	@Test
 	public void testDestruir() {
@@ -34,14 +35,16 @@ public class TestDestruirAvion {
 		try{
 			municion.moverseIAsegunVel();
 			fail("Deberia capturar excepcion");
-		}catch(ChauBlindajeException e){}
+		}catch(ChauBlindajeException e){
+		}
 		
 		try{
 			for( int i=0; i<5; i++ ){
 				municion = ControladorA .dispararElArmaSeleccionada( new Vector2D(20,15));
 				municion.moverseIAsegunVel();
 			}
-		}catch(GameOverException e){}
+		}catch(GameOverException e){
+		}
 		
 		Assert.assertFalse(avion.EstaVivo());
 		
