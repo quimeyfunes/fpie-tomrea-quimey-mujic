@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import Escenario.Escenario;
 import Mapa.Vector2D;
 import Objetos_moviles.Avioneta;
 
@@ -16,6 +17,7 @@ public class TestCreacionAvion {
 	
 	@Before
 	public void setUp() throws Exception {
+		Escenario.reiniciarEscenario();
 	}
 	
 	@Test

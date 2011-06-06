@@ -1,6 +1,7 @@
 package Pruebas;
 import junit.framework.*;
 import Armas.Danio;
+import Escenario.Escenario;
 import Objetos_moviles.*;
 import org.junit.Assert;
 import org.junit.Before;
@@ -16,7 +17,7 @@ public class CazaMuerteYdejaVidaTest extends TestCase{
 	
 	@Before
 	public void setUp() throws Exception {
-	
+		Escenario.reiniciarEscenario();
 	}
 	
 	@Test

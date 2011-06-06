@@ -1,6 +1,7 @@
 package Pruebas;
 import junit.framework.*;
 import Armas.Danio;
+import Escenario.Escenario;
 import Objetos_moviles.*;
 
 import org.hamcrest.core.IsInstanceOf;
@@ -19,7 +20,7 @@ public class BombarderoMuereYdejaArmaTest extends TestCase{
 	
 	@Before
 	public void setUp() throws Exception {
-
+		Escenario.reiniciarEscenario();
 	}
 	
 	

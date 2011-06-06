@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import Escenario.Escenario;
 import Excepciones.OffLimitsException;
 import Mapa.Ubicacion;
 import Mapa.Vector2D;
@@ -14,6 +15,7 @@ public class TestUbicacion extends TestCase{
 	private Ubicacion a;
 	@Before
 	public void setUp() throws Exception {
+		Escenario.reiniciarEscenario();
 	}
 	
 	@Test

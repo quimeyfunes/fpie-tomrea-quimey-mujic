@@ -5,6 +5,7 @@ import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Before;
 
+import Escenario.Escenario;
 import Mapa.Vector2D;
 import Objetos_moviles.Circular;
 import Objetos_moviles.Exploradores;
@@ -16,6 +17,7 @@ public class TestMovimientoCircular extends TestCase {
 	
 	@Before
 	public void setUp() throws Exception {
+		Escenario.reiniciarEscenario();
 		
 		Avion = new Exploradores((double)800,(double)800);
 

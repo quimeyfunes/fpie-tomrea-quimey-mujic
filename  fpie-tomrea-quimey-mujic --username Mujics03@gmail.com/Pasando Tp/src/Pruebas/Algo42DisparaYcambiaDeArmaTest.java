@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Armas.*;
+import Escenario.Escenario;
 
 public class Algo42DisparaYcambiaDeArmaTest extends TestCase{
 	// Testea el disparo de un torpedo dirigido por Algo42 contra una avioneta
@@ -24,6 +25,7 @@ public class Algo42DisparaYcambiaDeArmaTest extends TestCase{
 	
 	@Before
 	public void setUp() throws Exception {
+		Escenario.reiniciarEscenario();
 	}
 	
 	@Test
