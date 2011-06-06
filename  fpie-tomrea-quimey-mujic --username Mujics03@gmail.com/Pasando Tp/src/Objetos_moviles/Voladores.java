@@ -12,9 +12,9 @@ public abstract class Voladores extends ObjetosMoviles{
 	
 	protected void ActuarAnteColision(ObjetosMoviles movil){
 		// Los aviones se dañan entre si
-		//Danio danioTemp = this.fuerzaDeChoque(); 
-		//this.analizarDanio( movil.fuerzaDeChoque() );
-		//movil.analizarDanio( danioTemp );
+		Danio danioTemp = this.fuerzaDeChoque(); 
+		this.analizarDanio( ((Voladores)movil).fuerzaDeChoque() );
+		movil.analizarDanio( danioTemp );
 	}
 	
 	protected void constructor(double x, double y, Voladores v)
