@@ -16,9 +16,12 @@ public class CazaMuerteYdejaVidaTest extends TestCase{
 	
 	@Before
 	public void setUp() throws Exception {
-		//Inicializa las unidades
-		// verificar si va a haber un inicializar o si lo seteo desde las pruebas
 	
+	}
+	
+	@Test
+	public void testCazaMuere(){
+		
 		caza = new Caza( 100 , 100);
 		
 		danio = new Danio((short) 200);
@@ -29,13 +32,6 @@ public class CazaMuerteYdejaVidaTest extends TestCase{
 		
 		danio.setearPoder( (short) 160 );
 		algo42.analizarDanio( danio );
-		
-	}
-	
-	
-
-	@Test
-	public void testCreacion(){
 		//Algo sigue vivo debido a la vida del item obtenido 
 		Assert.assertFalse( algo42.EstaVivo() );
 	}

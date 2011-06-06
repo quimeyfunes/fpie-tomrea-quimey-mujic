@@ -19,7 +19,7 @@ public class Algo42DisparaYcambiaDeArmaTest extends TestCase{
 	private Avioneta avioneta;//sin un enemigo, el misil estalla xD, es necesario que exista al menos 1
 	private Algo42 algo42;
 	private Municion municion;
-	private Vector2D valor_esperado;
+	private Vector2D valor_esperado= new Vector2D(100,108);
 	private LanzadorMisiles misiles_dirigidos;
 	
 	@Before
@@ -37,13 +37,11 @@ public class Algo42DisparaYcambiaDeArmaTest extends TestCase{
 	misiles_dirigidos = new LanzadorMisiles(algo42.getBando(), new MovDirigido());
 	
 	algo42.agregarArma( misiles_dirigidos );
-	
-	//El misil es disparado y pasa a actuar como tal
 	municion = algo42.disparar();
 	municion.moverseIAsegunVel();
 	
 	// Ubicacion esperada del misil
-	valor_esperado.setLocation( 100 , 108 ); 
+	Assert.assertEquals(municion.getClass(), Laser.class);
 	Assert.assertEquals( valor_esperado , municion.getPosicion() );
 	
 	algo42.seleccionarSiguienteArma();

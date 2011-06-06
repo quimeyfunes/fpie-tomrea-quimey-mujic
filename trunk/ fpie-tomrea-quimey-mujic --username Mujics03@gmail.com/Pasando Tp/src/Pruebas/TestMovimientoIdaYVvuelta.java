@@ -14,12 +14,13 @@ public class TestMovimientoIdaYVvuelta {
 	
 	@Before
 	public void setUp() throws Exception {
-	avion = new Avioneta ( 100 , 100);
 	}
 	
 	
 	@Test
 	public void testMovimiento(){
+		
+		this.avion = new Avioneta ( 100 , 100);
 		
 		for( int i = 0 ; i < 19; i++ ){
 			avion.moverseIAsegunVel();
