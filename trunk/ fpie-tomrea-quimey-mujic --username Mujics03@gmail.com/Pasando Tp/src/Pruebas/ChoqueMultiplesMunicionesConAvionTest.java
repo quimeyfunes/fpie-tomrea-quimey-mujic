@@ -12,7 +12,17 @@ public class ChoqueMultiplesMunicionesConAvionTest extends TestCase{
 	// Variables
 	private Bombardero bombardero;
 	private Algo42 algo42; 
+	
+	/**
+	 * TODO Verificar comentarios
+	 * PABLO: ¿Van a utilizar "municion4" ? 
+	 */
+	
 	private Municion municion1, municion2, municion3, municion4;
+	
+	/**
+	 * TODO Crear una suite de test.
+	 */
 	
 	@Before
 	public void setUp() throws Exception {
