@@ -2,10 +2,7 @@ package Pruebas;
 import junit.framework.*;
 import Armas.Danio;
 import Escenario.Escenario;
-import Mapa.Vector2D;
 import Objetos_moviles.*;
-
-import org.hamcrest.core.IsInstanceOf;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
