@@ -67,9 +67,6 @@ public class Escenario
 			throw new FinEscenarioException();
 	}
 	
-	public static void ReemplazarNivel(){
-	}
-	
 	public void vivanTodos()
 	{
 		for (ObjetosMoviles movil : this.objetosVivos())

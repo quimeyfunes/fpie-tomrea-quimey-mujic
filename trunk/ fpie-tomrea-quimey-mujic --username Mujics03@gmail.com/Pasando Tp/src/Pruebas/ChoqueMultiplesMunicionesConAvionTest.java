@@ -42,7 +42,7 @@ public class ChoqueMultiplesMunicionesConAvionTest extends TestCase{
 	@Test
 	public void testChoqueMmconAvion(){
 		int i; 
-		for ( i = 0 ; i == 19 ; i++ ){
+		for ( i = 0 ; i <= 19 ; i++ ){
 			bombardero.arriba();
 		}
 		
@@ -58,6 +58,7 @@ public class ChoqueMultiplesMunicionesConAvionTest extends TestCase{
 		Assert.assertFalse( municion1.EstaVivo() );
 		Assert.assertFalse( municion2.EstaVivo() );
 		Assert.assertFalse( municion3.EstaVivo() );
+		Assert.assertFalse( municion4.EstaVivo() );
 	}
 	
 	
