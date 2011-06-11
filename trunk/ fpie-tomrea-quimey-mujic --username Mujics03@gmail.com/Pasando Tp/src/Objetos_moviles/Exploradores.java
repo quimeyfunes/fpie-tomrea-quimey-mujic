@@ -18,8 +18,8 @@ public class Exploradores extends Voladores
 		puntos = 50; 
 		Velocidad = 3;
 		// Verificar variables necesarias pra el movimientos circular
-		estrategia_vuelo = new Circular();
 		this.blindaje = new Blindaje((short)50);
 		this.ConfigurarCuerpo(3, 3);
+		estrategia_vuelo = new Circular( Circular.radioStandarSegunDistancia(this.getPosicion()));
 	}
 }
