@@ -1,6 +1,9 @@
 package Objetos_moviles;
 
 import Mapa.Vector2D;
+
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Point2D;
 import java.lang.Math;
 
 
@@ -23,15 +26,15 @@ public class Circular extends EstrategiaDeVuelo {
 		SafarDeLimiteIzquierdo = (this.VectorQueGira.y>0)&& (this.VectorQueGira.x>0);
 		SafarDeLimiteDerecho = (this.VectorQueGira.y<0) && (this.VectorQueGira.x<0);
 		
-		if ( (LimR) && (SafarDeLimiteIzquierdo==false) ){
+		if ( (LimR) && (!SafarDeLimiteIzquierdo) ){
 			objeto.abajo();
 		}
 		
-		if ( (LimL) && (SafarDeLimiteDerecho==false)){
+		if ( (LimL) && (!SafarDeLimiteDerecho)){
 			objeto.arriba();
 		}
 		
-		if ( (LimR=false) && (LimL=false)){
+		if ( (!LimR) && (!LimL)){
 			objeto.direccion(this.VectorQueGira);
 		}
 		
@@ -43,21 +46,16 @@ public class Circular extends EstrategiaDeVuelo {
 		
 		//http://www.velocityreviews.com/forums/t150749-rotate-around-non-origin-pivot-point.html
 			
-			double xtemp;
-			double a= this.MinimoAnguloCircular;
-			double x= this.VectorQueGira.x;
-			double y= this.VectorQueGira.y;
+		Point2D original = this.VectorQueGira;
+		AffineTransform at = AffineTransform.getRotateInstance(this.MinimoAnguloCircular, 0, 0);
+		Point2D rotated = at.transform(original, null);
 			
-			xtemp = (x * (float)Math.cos(a)) - (y * (float)Math.sin(a));
-			y = (x * (float)Math.sin(a)) + (y * (float)Math.cos(a));
-			x = xtemp;
-			
-			this.VectorQueGira.setLocation(x, y);
+			this.VectorQueGira.setLocation(rotated.getX(), rotated.getY());
 		
 	}
 
 	public static double radioStandarSegunDistancia(Vector2D posicion) {
-		return ((( posicion.y)/2.0)-50);
+		return ((( posicion.y)/2.0)-5);//numero magico para evitar borde
 	}
 	
 	public static double radioStandarSegunDistancia( double x,double y){
@@ -65,8 +63,22 @@ public class Circular extends EstrategiaDeVuelo {
 	}
 
 	public Circular(double radio){
-		this.MinimoAnguloCircular = Math.atan(EstrategiaDeVuelo.getMinimoMovimiento()/radio);
+		this.MinimoAnguloCircular = (Math.atan(EstrategiaDeVuelo.getMinimoMovimiento()/radio));
+		this.SentidoAgujasDelReloj();//default
 		this.VectorQueGira = new Vector2D(1,0);
+	}
+	
+	public void SentidoAgujasDelReloj(){
+		
+		if (this.MinimoAnguloCircular>0){
+			this.MinimoAnguloCircular=this.MinimoAnguloCircular*-1;
+		}
+	}
+	public void SentidoContraAgujasDelReloj(){
+		if (this.MinimoAnguloCircular<0){
+			this.MinimoAnguloCircular=this.MinimoAnguloCircular*-1;
+		}
+		
 	}
 	
 }
