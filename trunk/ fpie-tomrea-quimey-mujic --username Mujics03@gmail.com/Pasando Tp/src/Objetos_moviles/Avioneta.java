@@ -1,5 +1,7 @@
 package Objetos_moviles;
 import Armas.*;
+import EstrategiasDeMov.IdaYvuelta;
+import EstrategiasDeMov.LineaRectaDown;
 
 public class Avioneta extends Voladores {
 	

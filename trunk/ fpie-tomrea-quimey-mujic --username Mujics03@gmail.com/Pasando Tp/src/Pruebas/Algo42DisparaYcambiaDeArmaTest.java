@@ -11,6 +11,7 @@ import org.junit.Test;
 
 import Armas.*;
 import Escenario.Escenario;
+import EstrategiasDeMov.MovDirigido;
 
 public class Algo42DisparaYcambiaDeArmaTest extends TestCase{
 	// Testea el disparo de un torpedo dirigido por Algo42 contra una avioneta

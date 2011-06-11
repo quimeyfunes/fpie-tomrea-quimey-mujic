@@ -1,4 +1,6 @@
-package Objetos_moviles;
+package EstrategiasDeMov;
+
+import Objetos_moviles.ObjetosMoviles;
 
 public class LineaRectaUp extends EstrategiaDeVuelo{
 

@@ -1,6 +1,7 @@
-package Objetos_moviles;
+package EstrategiasDeMov;
 
 import Mapa.Ubicacion;
+import Objetos_moviles.ObjetosMoviles;
 
 public abstract class EstrategiaDeVuelo{
 	

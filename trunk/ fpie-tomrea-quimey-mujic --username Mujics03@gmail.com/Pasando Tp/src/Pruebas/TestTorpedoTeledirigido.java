@@ -10,9 +10,9 @@ import org.junit.Test;
 import Armas.ControladorArmas;
 import Armas.LanzadorMisiles;
 import Escenario.Escenario;
+import EstrategiasDeMov.MovDirigido;
 import Mapa.Vector2D;
 import Objetos_moviles.Algo42;
-import Objetos_moviles.MovDirigido;
 import Objetos_moviles.Municion;
 import Objetos_moviles.ObjetosMoviles;
 

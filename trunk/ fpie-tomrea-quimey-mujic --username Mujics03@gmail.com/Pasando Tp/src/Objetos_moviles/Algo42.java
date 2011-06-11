@@ -1,4 +1,5 @@
 package Objetos_moviles; 
+import EstrategiasDeMov.LineaRectaUp;
 import Excepciones.GameOverException;
 import Armas.*;
 

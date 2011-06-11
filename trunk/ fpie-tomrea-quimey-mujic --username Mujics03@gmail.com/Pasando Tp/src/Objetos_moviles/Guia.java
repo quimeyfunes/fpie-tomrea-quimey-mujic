@@ -3,6 +3,10 @@ package Objetos_moviles;
 import java.util.LinkedList;
 
 import Escenario.Escenario;
+import EstrategiasDeMov.IdaYvuelta;
+import EstrategiasDeMov.LineaRectaDown;
+import EstrategiasDeMov.LineaRectaUp;
+import EstrategiasDeMov.MovDirigido;
 import Armas.*;
 
 public class Guia extends Voladores

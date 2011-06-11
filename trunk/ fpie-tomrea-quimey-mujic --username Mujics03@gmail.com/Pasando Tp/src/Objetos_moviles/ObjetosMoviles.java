@@ -2,6 +2,7 @@ package Objetos_moviles;
 
 import Armas.Blindaje;
 import Armas.Danio;
+import EstrategiasDeMov.EstrategiaDeVuelo;
 import Excepciones.*;
 import Mapa.Ubicacion;
 import Mapa.Vector2D;

@@ -1,6 +1,7 @@
 package Objetos_moviles;
 
 import Armas.*;
+import EstrategiasDeMov.Circular;
 
 
 public class HelicopterosPoliciaCivil extends Voladores

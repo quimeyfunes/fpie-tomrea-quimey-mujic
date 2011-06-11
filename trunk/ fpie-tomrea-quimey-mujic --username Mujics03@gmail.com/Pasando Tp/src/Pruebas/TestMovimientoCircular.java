@@ -6,8 +6,8 @@ import org.junit.Assert;
 import org.junit.Before;
 
 import Escenario.Escenario;
+import EstrategiasDeMov.Circular;
 import Mapa.Vector2D;
-import Objetos_moviles.Circular;
 import Objetos_moviles.Exploradores;
 
 public class TestMovimientoCircular extends TestCase {
