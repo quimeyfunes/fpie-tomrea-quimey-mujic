@@ -2,6 +2,7 @@ package Pruebas;
 import junit.framework.*;
 import Armas.*;
 import Escenario.Escenario;
+import EstrategiasDeMov.LineaRectaUp;
 import Mapa.Vector2D;
 import Objetos_moviles.*;
 import org.junit.Assert;

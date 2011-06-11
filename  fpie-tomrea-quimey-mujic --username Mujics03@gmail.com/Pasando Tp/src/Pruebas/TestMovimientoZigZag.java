@@ -9,8 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Escenario.Escenario;
+import EstrategiasDeMov.EstrategiaDeVuelo;
 import Objetos_moviles.Bombardero;
-import Objetos_moviles.EstrategiaDeVuelo;
 
 public class TestMovimientoZigZag extends TestCase {
 	

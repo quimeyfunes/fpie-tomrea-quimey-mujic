@@ -6,11 +6,11 @@ import org.junit.Test;
 
 import Mapa.Vector2D;
 import Objetos_moviles.Algo42;
-import Objetos_moviles.LineaRectaUp;
 import Objetos_moviles.Municion;
 import Objetos_moviles.ObjetosMoviles;
 import Armas.*;
 import Escenario.Escenario;
+import EstrategiasDeMov.LineaRectaUp;
 import Excepciones.ChauBlindajeException;
 import Excepciones.GameOverException;
 

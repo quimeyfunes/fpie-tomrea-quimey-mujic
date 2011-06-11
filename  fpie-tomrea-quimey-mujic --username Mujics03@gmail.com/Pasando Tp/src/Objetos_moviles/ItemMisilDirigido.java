@@ -1,6 +1,7 @@
 package Objetos_moviles;
 
 import Armas.*;
+import EstrategiasDeMov.MovDirigido;
 
 public class ItemMisilDirigido extends Items{
 	

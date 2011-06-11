@@ -1,6 +1,7 @@
 package Objetos_moviles;
 
 import Armas.*;
+import EstrategiasDeMov.Circular;
 
 public class Exploradores extends Voladores
 {

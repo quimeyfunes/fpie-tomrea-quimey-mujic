@@ -1,5 +1,8 @@
 package Objetos_moviles;
 import Armas.*;
+import EstrategiasDeMov.LineaRectaDown;
+import EstrategiasDeMov.MovDirigido;
+import EstrategiasDeMov.ZigZag;
 
 public class Bombardero extends Voladores
 {

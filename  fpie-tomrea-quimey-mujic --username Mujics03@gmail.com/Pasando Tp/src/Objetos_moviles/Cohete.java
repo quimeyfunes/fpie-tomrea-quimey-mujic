@@ -1,6 +1,7 @@
 package Objetos_moviles;
 
 import Armas.Danio;
+import EstrategiasDeMov.EstrategiaDeVuelo;
 import Mapa.Vector2D;
 
 public class Cohete extends Municion

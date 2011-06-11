@@ -1,7 +1,7 @@
 package Armas;
 
+import EstrategiasDeMov.EstrategiaDeVuelo;
 import Mapa.Vector2D;
-import Objetos_moviles.EstrategiaDeVuelo;
 import Objetos_moviles.Municion;
 
 public abstract class ArmasFisicas {

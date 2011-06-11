@@ -1,5 +1,6 @@
 package Objetos_moviles;
 import Armas.*;
+import EstrategiasDeMov.LineaRectaDown;
 
 public class Caza extends Voladores
 {

@@ -1,6 +1,8 @@
-package Objetos_moviles;
+package EstrategiasDeMov;
 
 import Mapa.Vector2D;
+import Objetos_moviles.ObjetosMoviles;
+import Objetos_moviles.Rastreador;
 
 public class MovDirigido extends EstrategiaDeVuelo{
 	

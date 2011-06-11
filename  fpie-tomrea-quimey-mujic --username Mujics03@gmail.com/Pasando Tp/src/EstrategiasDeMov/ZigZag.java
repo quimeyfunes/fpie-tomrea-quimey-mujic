@@ -1,6 +1,7 @@
-package Objetos_moviles;
+package EstrategiasDeMov;
 
 import Mapa.Vector2D;
+import Objetos_moviles.ObjetosMoviles;
 
 public class ZigZag extends EstrategiaDeVuelo{
 

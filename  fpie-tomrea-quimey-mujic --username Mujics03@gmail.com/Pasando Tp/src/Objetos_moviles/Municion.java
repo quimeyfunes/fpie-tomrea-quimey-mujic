@@ -1,6 +1,7 @@
 package Objetos_moviles;
 import Armas.Danio;
 import Escenario.Escenario;
+import EstrategiasDeMov.EstrategiaDeVuelo;
 import Mapa.Ubicacion;
 import Mapa.Vector2D;
 

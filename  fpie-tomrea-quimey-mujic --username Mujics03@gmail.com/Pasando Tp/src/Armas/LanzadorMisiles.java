@@ -1,7 +1,7 @@
 package Armas;
+import EstrategiasDeMov.EstrategiaDeVuelo;
 import Excepciones.OutOfAmmoException;
 import Mapa.Vector2D;
-import Objetos_moviles.EstrategiaDeVuelo;
 import Objetos_moviles.Municion;
 import Objetos_moviles.TorpedoDirigido;
 
