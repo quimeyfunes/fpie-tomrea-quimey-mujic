@@ -14,7 +14,7 @@ public class ControladorAvioneta {
 		/*
 		 * Primero instancio mi modelo: una pelota que se mueve por una mesa
 		 */
-		Avioneta avioneta = new Avioneta( 100 , 700 );
+		Avioneta avioneta = new Avioneta( 100 , 800 );
 		Mesa unaMesa = new Mesa(10000, 10000);
 
 		/*

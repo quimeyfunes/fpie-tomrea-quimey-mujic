@@ -1,13 +1,14 @@
 package Mapa;
 
+import Escenario.Escenario;
 import EstrategiasDeMov.EstrategiaDeVuelo;
 import Excepciones.OffLimitsException;
 
 public class Ubicacion {
 	
 	Vector2D Punto ;
-	private static int LimiteX=10000;
-	private static int LimiteY=10000;
+	private static double LimiteX= Escenario.getLimiteX();
+	private static double LimiteY= Escenario.getLimiteX();
 	
 	//Metodo para uso privado.Verifica si se fue del rango, y si es asi, lanza excepcion.	
 	private void ComprobarOffLimits(Vector2D punto) throws OffLimitsException{
@@ -32,15 +33,6 @@ public class Ubicacion {
 	public static Ubicacion crearUbicacionEnXY(double X,double Y) throws OffLimitsException{
 		Vector2D punto = new Vector2D(X,Y);
 		return ( (new Ubicacion(punto) ));
-	}
-	
-	//Me parece que aca habria que implementar una especie de singleton, cosa de poder tener distintos escenarios
-	// con distintos tamanios. Por ahora lo dejo asi.
-	public static int getLimiteX(){ return LimiteX; }
-	public static int getLimiteY(){ return LimiteY; }
-	public static void SetLimiteXY(int x,int y){
-		LimiteX=x;
-		LimiteY=y;
 	}
 	
 	//Cercania a los limites.
@@ -69,7 +61,7 @@ public class Ubicacion {
 	
 	//Devuelven la distancia a los respectivos limites, desde la posicion actual.	
 	private double distanciaAlimiteDerecho(){
-		return ( (this.Punto).distance( Ubicacion.getLimiteX() , Punto.y) ) ;
+		return ( (this.Punto).distance( LimiteX , Punto.y) ) ;
 	}
 	
 	private double distanciaAlimiteInferior(){
@@ -81,7 +73,7 @@ public class Ubicacion {
 	}
 	
 	private double distanciaAlimiteSuperior(){
-		return ( (this.Punto).distance( Punto.x , Ubicacion.getLimiteY()) ) ;
+		return ( (this.Punto).distance( Punto.x , LimiteY) ) ;
 	}
 	
 	//Translada si no queda en posicion invalida.Sino, lanza OFFlimits.
