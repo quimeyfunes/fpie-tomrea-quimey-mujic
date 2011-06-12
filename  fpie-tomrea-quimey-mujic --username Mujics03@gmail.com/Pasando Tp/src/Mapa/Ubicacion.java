@@ -8,7 +8,7 @@ public class Ubicacion {
 	
 	Vector2D Punto ;
 	private static double LimiteX= Escenario.getLimiteX();
-	private static double LimiteY= Escenario.getLimiteX();
+	private static double LimiteY= Escenario.getLimiteY();
 	
 	//Metodo para uso privado.Verifica si se fue del rango, y si es asi, lanza excepcion.	
 	private void ComprobarOffLimits(Vector2D punto) throws OffLimitsException{

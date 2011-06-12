@@ -9,8 +9,8 @@ public class Escenario
 {
 	LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego;
 	int sumaDePuntos;
-	static double LimiteX=10000;
-	static double LimiteY=10000;
+	static double LimiteX=1000;
+	static double LimiteY=500;
 	private static Escenario instance = null;
 	
 	
