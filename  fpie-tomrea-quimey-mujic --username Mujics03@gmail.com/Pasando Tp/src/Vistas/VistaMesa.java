@@ -7,7 +7,7 @@ import ar.uba.fi.algo3.titiritero.vista.Cuadrado;
 public class VistaMesa extends Cuadrado {
 
 	public VistaMesa() {
-		super(210,210);
+		super(10000,10000);
 		setColor(Color.BLACK);
 	}
 
