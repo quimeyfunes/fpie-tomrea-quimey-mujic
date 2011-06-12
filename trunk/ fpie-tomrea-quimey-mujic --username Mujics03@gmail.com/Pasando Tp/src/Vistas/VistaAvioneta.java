@@ -6,7 +6,7 @@ import ar.uba.fi.algo3.titiritero.vista.Imagen;
 public class VistaAvioneta extends Imagen {
  
 	public VistaAvioneta() {
-		setNombreArchivoImagen("avionJpg.jpg");
+		setNombreArchivoImagen("avioneta.jpg");
 	}
 
 }
