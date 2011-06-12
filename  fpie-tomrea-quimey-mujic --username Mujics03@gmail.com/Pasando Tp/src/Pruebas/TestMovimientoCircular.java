@@ -21,8 +21,8 @@ public class TestMovimientoCircular extends TestCase {
 	public void setUp() throws Exception {
 		Escenario.reiniciarEscenario();
 		
-		 posicionX=800;
-		 posicionY=800;
+		 posicionX=300;
+		 posicionY=300;
 		
 		Avion = new Exploradores((double)posicionX,(double)posicionY);
 
