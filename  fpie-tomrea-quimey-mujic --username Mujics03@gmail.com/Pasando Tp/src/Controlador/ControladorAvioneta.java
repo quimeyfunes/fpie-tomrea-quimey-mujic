@@ -1,7 +1,8 @@
 package Controlador;
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
-import ar.uba.fi.algo3.titiritero.ejemplo.vista.VistaMesa;
-import ar.uba.fi.algo3.titiritero.ejemplo.vista.VistaPelota;
+import Vistas.VentanaPrincipal;
+import Vistas.VistaAvioneta;
+import Vistas.*;
 import ar.uba.fi.algo3.titiritero.vista.Ventana;
 import Objetos_moviles.Avioneta;
 
@@ -19,8 +20,8 @@ public class ControladorAvioneta {
 		/*
 		 * Luego instancio los objetos del framework: una ventana y el controlador
 		 */		
-		Ventana ventana = new VentanaPrincipal();
-		ControladorJuego controlador = new ControladorJuego();
+		ControladorJuego controlador = new ControladorJuego(true);
+		Ventana ventana = new VentanaPrincipal( controlador );
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
 		
@@ -55,7 +56,7 @@ public class ControladorAvioneta {
 		 * y comienzo a ejecutar
 		 */
 		controlador.setIntervaloSimulacion(20);
-		controlador.comenzar();
+		controlador.comenzarJuego();
 		
 	}
 }
