@@ -14,14 +14,14 @@ public class ControladorAvioneta {
 		/*
 		 * Primero instancio mi modelo: una pelota que se mueve por una mesa
 		 */
-		Avioneta avioneta = new Avioneta( 50 , 50 );
-		Mesa unaMesa = new Mesa(200, 200);
+		Avioneta avioneta = new Avioneta( 100 , 700 );
+		Mesa unaMesa = new Mesa(10000, 10000);
 
 		/*
 		 * Luego instancio los objetos del framework: una ventana y el controlador
 		 */		
 		ControladorJuego controlador = new ControladorJuego(true);
-		Ventana ventana = new VentanaPrincipal( controlador );
+		Ventana ventana = new VentanaPrincipal( controlador,800,800 );
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
 		

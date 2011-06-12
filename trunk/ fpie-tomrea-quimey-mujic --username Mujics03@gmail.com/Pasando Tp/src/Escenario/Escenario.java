@@ -9,6 +9,8 @@ public class Escenario
 {
 	LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego;
 	int sumaDePuntos;
+	//double LimiteX;
+	//double LimiteY;
 	private static Escenario instance = null;
 	
 	private synchronized static void createInstance() {
