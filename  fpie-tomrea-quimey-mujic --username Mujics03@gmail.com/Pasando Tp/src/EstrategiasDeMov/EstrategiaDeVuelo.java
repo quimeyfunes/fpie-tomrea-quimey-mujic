@@ -1,12 +1,12 @@
 package EstrategiasDeMov;
 
-import Mapa.Ubicacion;
+import Escenario.Escenario;
 import Objetos_moviles.ObjetosMoviles;
 
 public abstract class EstrategiaDeVuelo{
 	
 	//movimiento lateral igual a 1/10 del tamanio del escenario
-	private static double slide= (Ubicacion.getLimiteX()/10);
+	private static double slide= ( Escenario.getLimiteX()/10);
 	private static double MinimoMovimiento = 1;
 	
 	public double Parametro;

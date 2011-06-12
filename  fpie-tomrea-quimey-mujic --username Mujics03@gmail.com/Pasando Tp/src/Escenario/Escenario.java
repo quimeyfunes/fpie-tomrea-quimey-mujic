@@ -9,9 +9,17 @@ public class Escenario
 {
 	LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego;
 	int sumaDePuntos;
-	//double LimiteX;
-	//double LimiteY;
+	static double LimiteX=10000;
+	static double LimiteY=10000;
 	private static Escenario instance = null;
+	
+	
+	static public double getLimiteX(){
+		return LimiteX;
+	}
+	static public double getLimiteY(){
+		return LimiteY;
+	}
 	
 	private synchronized static void createInstance() {
 		if (instance == null) { 
@@ -69,13 +77,4 @@ public class Escenario
 			throw new FinEscenarioException();
 	}
 	
-	//Esto ya no va mas, se encarga el controlador	
-	//public void vivanTodos()
-	//{
-		//for (ObjetosMoviles movil : this.objetosVivos())
-		//{
-		//	movil.VIVIR();
-		//}
-		//this.limpiarListaYrecolectarPuntos();
-	//}
 }
