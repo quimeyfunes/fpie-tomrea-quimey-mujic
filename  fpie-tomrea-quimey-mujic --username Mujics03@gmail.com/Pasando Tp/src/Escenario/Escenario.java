@@ -67,6 +67,7 @@ public class Escenario
 			throw new FinEscenarioException();
 	}
 	
+	//Esto ya no va mas, se encarga el controlador	
 	public void vivanTodos()
 	{
 		for (ObjetosMoviles movil : this.objetosVivos())

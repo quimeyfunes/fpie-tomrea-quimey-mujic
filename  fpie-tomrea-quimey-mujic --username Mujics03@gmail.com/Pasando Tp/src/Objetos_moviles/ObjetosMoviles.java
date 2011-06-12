@@ -10,7 +10,9 @@ import Mapa.Vector2D;
 
 import java.awt.geom.Rectangle2D;
 
-public abstract class ObjetosMoviles {
+import ar.uba.fi.algo3.titiritero.Posicionable;
+
+public abstract class ObjetosMoviles implements Posicionable {
 
 	protected boolean Vivo;
 	protected Ubicacion ubicacion;
@@ -130,6 +132,17 @@ public abstract class ObjetosMoviles {
 		return pos;
 			
 	}
+	
+	//lo pide Posicionable
+	
+	public int getX(){
+		return (int)this.getPosicion().x;
+	}
+	
+	public int getY(){
+		return (int)this.getPosicion().y;
+	}
+	//Fin Posicionable
 	
 	public abstract boolean PuedeManejarItems();
 	
