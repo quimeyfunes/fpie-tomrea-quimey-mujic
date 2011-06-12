@@ -8,7 +8,7 @@ public class VistaMesa extends Cuadrado {
 
 	public VistaMesa() {
 		super(10000,10000);
-		setColor(Color.BLACK);
+		setColor(Color.white);
 	}
 
 }

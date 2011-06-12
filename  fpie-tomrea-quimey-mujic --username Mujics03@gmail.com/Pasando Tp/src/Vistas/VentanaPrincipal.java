@@ -7,7 +7,7 @@ public class VentanaPrincipal extends Ventana {
 
 	public VentanaPrincipal(ControladorJuego cont,int ancho,int alto) {
 		super(ancho,alto,cont);
-		this.setTitle("Ejemplo");
+		this.setTitle("Algo42 contra el mundo");
 	}
 
 	private static final long serialVersionUID = 1L;
