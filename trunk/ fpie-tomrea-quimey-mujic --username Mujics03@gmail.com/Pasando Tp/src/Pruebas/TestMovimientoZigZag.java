@@ -21,7 +21,7 @@ public class TestMovimientoZigZag extends TestCase {
 	public void setUp() throws Exception {
 		Escenario.reiniciarEscenario();
 		limiteDeSlide =  EstrategiaDeVuelo.getSlide();
-		avion = new Bombardero ( 2000, 2000);
+		avion = new Bombardero ( 400, 400);
 	}
 	
 	@Test
