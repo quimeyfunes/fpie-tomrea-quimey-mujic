@@ -1,27 +1,29 @@
 package Controlador;
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
-import Vistas.VentanaPrincipal;
-import Vistas.VistaAvioneta;
 import Vistas.*;
 import ar.uba.fi.algo3.titiritero.vista.Ventana;
+import Escenario.Escenario;
 import Objetos_moviles.Avioneta;
 
 public class ControladorAvioneta {
 
 	public static void main(String[] args) {
 		
+		double LimiteX = Escenario.getLimiteX();
+		double LimiteY = Escenario.getLimiteY();
+		
 
 		/*
 		 * Primero instancio mi modelo: una pelota que se mueve por una mesa
 		 */
-		Avioneta avioneta = new Avioneta( 100 , 800 );
-		Mesa unaMesa = new Mesa(10000, 10000);
+		Avioneta avioneta = new Avioneta( 100 , LimiteY-10 );
+		Mesa unaMesa = new Mesa((int)LimiteX,(int)LimiteY);
 
 		/*
 		 * Luego instancio los objetos del framework: una ventana y el controlador
 		 */		
 		ControladorJuego controlador = new ControladorJuego(true);
-		Ventana ventana = new VentanaPrincipal( controlador,800,800 );
+		Ventana ventana = new VentanaPrincipal( controlador,(int)LimiteX,(int)LimiteY );
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
 		
