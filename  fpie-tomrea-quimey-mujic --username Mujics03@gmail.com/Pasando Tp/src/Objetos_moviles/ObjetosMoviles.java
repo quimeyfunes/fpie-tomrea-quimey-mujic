@@ -10,9 +10,10 @@ import Mapa.Vector2D;
 
 import java.awt.geom.Rectangle2D;
 
+import ar.uba.fi.algo3.titiritero.ObjetoVivo;
 import ar.uba.fi.algo3.titiritero.Posicionable;
 
-public abstract class ObjetosMoviles implements Posicionable {
+public abstract class ObjetosMoviles implements Posicionable,ObjetoVivo {
 
 	protected boolean Vivo;
 	protected Ubicacion ubicacion;
@@ -79,7 +80,7 @@ public abstract class ObjetosMoviles implements Posicionable {
 		}
 	}
 	
-	public void VIVIR(){
+	public void vivir(){
 		if (this.EstaVivo()){
 			this.Actuar();
 		}

@@ -68,12 +68,12 @@ public class Escenario
 	}
 	
 	//Esto ya no va mas, se encarga el controlador	
-	public void vivanTodos()
-	{
-		for (ObjetosMoviles movil : this.objetosVivos())
-		{
-			movil.VIVIR();
-		}
-		this.limpiarListaYrecolectarPuntos();
-	}
+	//public void vivanTodos()
+	//{
+		//for (ObjetosMoviles movil : this.objetosVivos())
+		//{
+		//	movil.VIVIR();
+		//}
+		//this.limpiarListaYrecolectarPuntos();
+	//}
 }
