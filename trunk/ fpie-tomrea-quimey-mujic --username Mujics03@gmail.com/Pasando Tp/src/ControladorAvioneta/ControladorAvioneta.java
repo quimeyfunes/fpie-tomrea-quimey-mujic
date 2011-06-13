@@ -11,11 +11,12 @@ public class ControladorAvioneta {
 		
 		double LimiteX = Escenario.getLimiteX();
 		double LimiteY = Escenario.getLimiteY();
+		double AltDeEnemy = LimiteY-20;
 	
-		Caza caza = new Caza ( 350 , LimiteY - 100 );
-		Exploradores explorador = new Exploradores( 250, LimiteY - 50 );
-		Bombardero bombardero = new Bombardero( 160  ,LimiteY -10);
-		Avioneta avioneta = new Avioneta( 10 , 40 );
+		Caza caza = new Caza ( 20 , AltDeEnemy );
+		Exploradores explorador = new Exploradores( 300, AltDeEnemy );
+		Bombardero bombardero = new Bombardero( 700  ,AltDeEnemy);
+		Avioneta avioneta = new Avioneta( 500 , AltDeEnemy );
 		Mesa unaMesa = new Mesa((int)LimiteX+50,(int)LimiteY+50);
 
 		/*
