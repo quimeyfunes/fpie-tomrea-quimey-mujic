@@ -1,5 +1,7 @@
 package Objetos_moviles;
 
+import Vistas.VistaExplorador;
+import ar.uba.fi.algo3.titiritero.Dibujable;
 import Armas.*;
 import EstrategiasDeMov.Circular;
 
@@ -22,5 +24,10 @@ public class Exploradores extends Voladores
 		this.blindaje = new Blindaje((short)50);
 		this.ConfigurarCuerpo(3, 3);
 		estrategia_vuelo = new Circular( Circular.radioStandarSegunDistancia(this.getPosicion()));
+	}
+
+	@Override
+	public Dibujable getVista() {
+		return new VistaExplorador();
 	}
 }

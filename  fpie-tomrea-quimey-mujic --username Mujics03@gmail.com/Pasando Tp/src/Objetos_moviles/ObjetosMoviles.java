@@ -11,6 +11,7 @@ import Mapa.Vector2D;
 
 import java.awt.geom.Rectangle2D;
 
+import ar.uba.fi.algo3.titiritero.Dibujable;
 import ar.uba.fi.algo3.titiritero.ObjetoVivo;
 import ar.uba.fi.algo3.titiritero.Posicionable;
 
@@ -212,6 +213,8 @@ public abstract class ObjetosMoviles implements Posicionable,ObjetoVivo {
 		}
 
 	//Fin UNIMOV
+	
+	public abstract Dibujable getVista();
 	
 	//Interno
 	

@@ -1,5 +1,7 @@
 package Objetos_moviles;
 
+import ar.uba.fi.algo3.titiritero.Dibujable;
+
 public class ItemVida extends Items
 {
 	short hitPointsAsumar;
@@ -22,5 +24,10 @@ public class ItemVida extends Items
 	public void EstadoCorrecto() {
 		this.hitPointsAsumar=50;
 		this.ConfigurarCuerpo(1,1);
+	}
+
+	@Override
+	public Dibujable getVista() {
+		return new VistaItemVida();
 	}
 }	

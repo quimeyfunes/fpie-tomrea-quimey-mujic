@@ -2,6 +2,8 @@ package Escenario;
 
 import java.util.LinkedList;
 
+import ar.uba.fi.algo3.titiritero.ControladorJuego;
+
 import Excepciones.FinEscenarioException;
 import Objetos_moviles.ObjetosMoviles;
 
@@ -12,6 +14,7 @@ public class Escenario
 	static double LimiteX=1000;
 	static double LimiteY=500;
 	private static Escenario instance = null;
+	private ControladorJuego controlador=null;
 	
 	
 	static public double getLimiteX(){
@@ -42,6 +45,7 @@ public class Escenario
 	{
 		sumaDePuntos = 0;
 		todoLoQueEstaEnJuego = new LinkedList< ObjetosMoviles >();
+		controlador = new ControladorJuego(false);//cada escenario tiene su controlador de juego
 	}
 	
 	public LinkedList<ObjetosMoviles> objetosVivos() 
