@@ -55,12 +55,17 @@ public class Escenario
 	
 	public void agregarObjeto(ObjetosMoviles objeto)
 	{
-		this.todoLoQueEstaEnJuego.add(objeto);
+		this.todoLoQueEstaEnJuego.add(objeto);//agrego para que pueda interactuar con otros objetos
+		
+		this.controlador.agregarObjetoVivo(objeto);//agrego al gameloop
+		this.controlador.agregarDibujable(objeto.getVista());//agrego a visibles ( reee polimorfico mal )
 	}
 	
 	public void eliminarObjeto(ObjetosMoviles objeto)
 	{
 		this.todoLoQueEstaEnJuego.remove(objeto);
+		this.controlador.removerObjetoVivo(objeto);//lo saco del gameLoop
+		//COMO VAMOS A HACER PARA PONER EN FALSE LA VISTA :s
 	}
 	
 	private void limpiarListaYrecolectarPuntos()
