@@ -4,6 +4,8 @@ import Mapa.Vector2D;
 import Objetos_moviles.ObjetosMoviles;
 
 public class ZigZag extends EstrategiaDeVuelo{
+	
+	Vector2D dirAsc = new Vector2D(-1,-1);
 
 	@Override
 	public void CalcularMovimiento(ObjetosMoviles objeto) {

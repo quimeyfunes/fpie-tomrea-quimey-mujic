@@ -141,7 +141,7 @@ public abstract class ObjetosMoviles implements Posicionable,ObjetoVivo {
 	}
 	
 	public int getY(){
-		return (int)this.getPosicion().y;
+		return ((int)this.getPosicion().y);
 	}
 	//Fin Posicionable
 	
