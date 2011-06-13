@@ -11,6 +11,7 @@ import Objetos_moviles.ObjetosMoviles;
 public class Escenario
 {
 	LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego;
+	LinkedList<ObjetosMoviles> temp;
 	int sumaDePuntos;
 	static double LimiteX=1000;
 	static double LimiteY=500;
@@ -18,14 +19,14 @@ public class Escenario
 	private ControladorJuego controlador=null;
 	
 	
-	static public double getLimiteX(){
+	static synchronized public double getLimiteX(){
 		return LimiteX;
 	}
-	static public double getLimiteY(){
+	static synchronized public double getLimiteY(){
 		return LimiteY;
 	}
 	
-	 public static void  InicializarEscenario(ControladorJuego con){//si esto no se ejecuta primero, no funciona
+	 public synchronized static void  InicializarEscenario(ControladorJuego con){//si esto no se ejecuta primero, no funciona
 		 createInstance();
 		 instance.controlador=con;
 	}
@@ -40,7 +41,7 @@ public class Escenario
 		instance = new Escenario();
 	}
 	
-	public static Escenario getInstance() {
+	public static synchronized Escenario getInstance() {
 		if ( instance.controlador==null){
 			throw new RuntimeException();
 		}
@@ -53,14 +54,14 @@ public class Escenario
 		todoLoQueEstaEnJuego = new LinkedList< ObjetosMoviles >();
 	}
 	
-	public LinkedList<ObjetosMoviles> objetosVivos() 
+	public synchronized LinkedList<ObjetosMoviles> objetosVivos() 
 	{
 		return todoLoQueEstaEnJuego;
 	}
 	
-	public void agregarObjeto(ObjetosMoviles objeto)
+	public synchronized void agregarObjeto(ObjetosMoviles objeto)
 	{
-		this.todoLoQueEstaEnJuego.add(objeto);//agrego para que pueda interactuar con otros objetos
+		this.todoLoQueEstaEnJuego.add(objeto);
 		
 		this.controlador.agregarObjetoVivo(objeto);//agrego al gameloop
 		Dibujable vista = objeto.getVista();
@@ -68,15 +69,16 @@ public class Escenario
 		this.controlador.agregarDibujable(vista);//agrego a visibles ( reee polimorfico mal )
 	}
 	
-	public void eliminarObjeto(ObjetosMoviles objeto)
+	public  synchronized void eliminarObjeto(ObjetosMoviles objeto)
 	{
-		this.todoLoQueEstaEnJuego.remove(objeto);
+		//this.todoLoQueEstaEnJuego.remove(objeto);
 		//this.controlador.removerObjetoVivo(objeto);//lo saco del gameLoop
 		//COMO VAMOS A HACER PARA PONER EN FALSE LA VISTA :s
+	// si, se puede...hay que usar notifychanges() y poner set visible false en cada vista
 	}
 
 
-	private void limpiarListaYrecolectarPuntos()
+	private synchronized void limpiarListaYrecolectarPuntos()
 	{
 		//Itero sobre Muertos, borro sobre TodoLoQueEstaEnJuego , voy sumando puntos
 		LinkedList<ObjetosMoviles> muertos = new LinkedList<ObjetosMoviles>();

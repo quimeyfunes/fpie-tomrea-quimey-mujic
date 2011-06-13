@@ -23,7 +23,7 @@ public class AvionCivil extends Voladores {
 		this.estrategia_vuelo = IdaYVuelta();
 		this.blindaje = new Blindaje((short)100);
 
-		this.ConfigurarCuerpo(4,4);
+		this.ConfigurarCuerpo(6,6);
 	}
 	
 	private EstrategiaDeVuelo IdaYVuelta() {

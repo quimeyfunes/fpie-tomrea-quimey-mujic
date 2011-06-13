@@ -1,6 +1,7 @@
 package Objetos_moviles;
 
 import ar.uba.fi.algo3.titiritero.Dibujable;
+import Armas.Blindaje;
 import Armas.Danio;
 import EstrategiasDeMov.EstrategiaDeVuelo;
 import Mapa.Vector2D;
@@ -17,7 +18,8 @@ public class Cohete extends Municion
 	{
 		this.danio = new Danio((short)50);
 		this.Velocidad = 5;
-		this.ConfigurarCuerpo(3,3);
+		this.ConfigurarCuerpo(4,4);
+		this.blindaje= new Blindaje((short)50);
 
 	}
 
