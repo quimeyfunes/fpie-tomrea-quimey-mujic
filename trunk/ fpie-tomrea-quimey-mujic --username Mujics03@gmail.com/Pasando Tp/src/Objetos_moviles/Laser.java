@@ -27,8 +27,8 @@ public class Laser extends Municion
 	{
 		if(movil.getClass() != this.getClass())
 		{
-			movil.analizarDanio(this.daniar());
 			this.Vivo = false;
+			movil.analizarDanio(this.daniar());
 		}
 	}
 

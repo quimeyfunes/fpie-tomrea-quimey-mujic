@@ -38,7 +38,7 @@ public class TestTorpedoTeledirigido extends TestCase {
 	public void testTorpedo(){
 		Assert.assertTrue( objetivo.EstaVivo() );
 		
-		Vector2D pos = new Vector2D( (double)102,(double)93);
+		Vector2D pos = new Vector2D( (double)104,(double)93);
 
 		Municion misil = controladorArmas.dispararElArmaSeleccionada(pos);
 		Assert.assertTrue( misil.EstaVivo() );

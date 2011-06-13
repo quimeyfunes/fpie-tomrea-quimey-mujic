@@ -30,7 +30,7 @@ public class CazaMuerteYdejaVidaTest extends TestCase{
 		
 		danio = new Danio((short) 200);
 		caza.analizarDanio( danio );
-		algo42 = new Algo42( 100 , 99 );
+		algo42 = new Algo42( 100 , 100 );
 		
 		algo42.VerificarColision();
 		

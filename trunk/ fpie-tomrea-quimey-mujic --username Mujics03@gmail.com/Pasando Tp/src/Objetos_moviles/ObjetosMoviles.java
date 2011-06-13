@@ -182,8 +182,10 @@ public abstract class ObjetosMoviles implements Posicionable,ObjetoVivo {
 
 	protected boolean condicionComun(ObjetosMoviles obj){
 		boolean first = this.smallCondicion(obj);
-		boolean second = (obj.getCuerpo().intersects(this.Cuerpo));
-		return first && second;
+		
+		Rectangle2D bodyOther = obj.getCuerpo();
+		boolean second = ((this.Cuerpo).intersects(bodyOther));
+		return (first && second);
 		
 	}
 	//FIN MUY PRIVADO
