@@ -13,7 +13,7 @@ public class Caza extends Voladores
 	}	
 	
 	public void Actuar(){
-		if ( Timing >= 50 ) {
+		if ( Timing >= 30 ) {
 			Timing = 0;
 			this.seleccionarSiguienteArma();
 			this.disparar();
