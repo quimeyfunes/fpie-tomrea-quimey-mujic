@@ -44,7 +44,9 @@ public abstract class Voladores extends ObjetosMoviles{
 		int j; 
 		for ( j = 0 ; j < todoLoQueEstaEnJuego.size() ; j++ ){
 			ObjetosMoviles elemento = todoLoQueEstaEnJuego.get( j );
-			if ( this.condicionComun(elemento) ) elemento.ActuarAnteColision(this);
+			if ( this.condicionComun(elemento) ){ 
+				elemento.ActuarAnteColision(this);
+				}
 			}
 		}
 	
