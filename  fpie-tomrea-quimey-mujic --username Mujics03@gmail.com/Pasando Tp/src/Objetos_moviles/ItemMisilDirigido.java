@@ -1,5 +1,6 @@
 package Objetos_moviles;
 
+import ar.uba.fi.algo3.titiritero.Dibujable;
 import Armas.*;
 import EstrategiasDeMov.MovDirigido;
 
@@ -18,5 +19,10 @@ public class ItemMisilDirigido extends Items{
 	
 	public void EstadoCorrecto() {
 		this.ConfigurarCuerpo(2,2);
+	}
+
+	@Override
+	public Dibujable getVista() {
+		return VistaItemMisilDirigido();
 	}
 }

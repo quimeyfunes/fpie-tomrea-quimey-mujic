@@ -1,5 +1,6 @@
 package Objetos_moviles;
 
+import ar.uba.fi.algo3.titiritero.Dibujable;
 import Armas.*;
 import EstrategiasDeMov.Circular;
 
@@ -27,6 +28,11 @@ public class HelicopterosPoliciaCivil extends Voladores
 	
 	public boolean PuedeManejarItems(){
 		return false;
+	}
+
+	@Override
+	public Dibujable getVista() {
+		return VistaHelicopterosPoliciaCivil();
 	}
 
 }

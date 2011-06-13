@@ -4,6 +4,7 @@ import ar.uba.fi.algo3.titiritero.Dibujable;
 import Armas.Danio;
 import EstrategiasDeMov.EstrategiaDeVuelo;
 import Mapa.Vector2D;
+import Vistas.VistaMisil;
 
 public class Cohete extends Municion
 {
@@ -22,6 +23,7 @@ public class Cohete extends Municion
 
 	@Override
 	public Dibujable getVista() {
+		return new VistaMisil();
 	}
 
 }
