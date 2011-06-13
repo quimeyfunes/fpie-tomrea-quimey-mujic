@@ -3,11 +3,14 @@ package Objetos_moviles;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+import ar.uba.fi.algo3.titiritero.Dibujable;
+
 import Armas.Danio;
 import Escenario.Escenario;
 import EstrategiasDeMov.EstrategiaDeVuelo;
 import Excepciones.ChauBlindajeException;
 import Mapa.Vector2D;
+import Vistas.VistaTorpedo;
 
 public class TorpedoDirigido extends Municion implements Rastreador
 {
@@ -79,5 +82,10 @@ public class TorpedoDirigido extends Municion implements Rastreador
 		{
 			this.moverse();
 		} 
+	}
+
+	@Override
+	public Dibujable getVista() {
+		return new VistaTorpedo();
 	}
 }

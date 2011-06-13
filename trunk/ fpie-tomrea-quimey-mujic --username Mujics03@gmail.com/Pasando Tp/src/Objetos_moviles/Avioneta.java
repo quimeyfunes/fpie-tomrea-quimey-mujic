@@ -1,4 +1,6 @@
 package Objetos_moviles;
+import Vistas.VistaAvioneta;
+import ar.uba.fi.algo3.titiritero.Dibujable;
 import Armas.*;
 import EstrategiasDeMov.IdaYvuelta;
 import EstrategiasDeMov.LineaRectaDown;
@@ -33,6 +35,13 @@ public class Avioneta extends Voladores {
 		PistolaLaser pistola_laser = new PistolaLaser(this.bando,new LineaRectaDown());
 		this.weapons.add( pistola_laser );
 	}
+
+	@Override
+	public Dibujable getVista() {
+		return new VistaAvioneta();
+	}
+	
+	
 	
 	
 }

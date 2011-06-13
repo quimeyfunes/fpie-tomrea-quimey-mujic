@@ -1,4 +1,6 @@
 package Objetos_moviles;
+import Vistas.VistaCaza;
+import ar.uba.fi.algo3.titiritero.Dibujable;
 import Armas.*;
 import EstrategiasDeMov.IdaYvuelta;
 import EstrategiasDeMov.LineaRectaDown;
@@ -39,5 +41,10 @@ public class Caza extends Voladores
 		LanzadorCohetes lanzador_cohetes = new LanzadorCohetes(bando , new LineaRectaDown());
 		weapons.add( pistola_laser );
 		weapons.add( lanzador_cohetes );
+	}
+
+	@Override
+	public Dibujable getVista() {
+		return new VistaCaza();
 	}
 }

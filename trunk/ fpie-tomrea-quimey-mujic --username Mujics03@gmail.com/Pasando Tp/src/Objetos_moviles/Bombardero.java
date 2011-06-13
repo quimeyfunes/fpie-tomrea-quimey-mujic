@@ -1,4 +1,6 @@
 package Objetos_moviles;
+import Vistas.VistaBombardero;
+import ar.uba.fi.algo3.titiritero.Dibujable;
 import Armas.*;
 import EstrategiasDeMov.LineaRectaDown;
 import EstrategiasDeMov.MovDirigido;
@@ -43,6 +45,11 @@ public class Bombardero extends Voladores
 		this.weapons.add( pistola_laser );
 		this.weapons.add( lanzador_misiles );
 		this.weapons.add( lanzador_cohetes );
+	}
+
+	@Override
+	public Dibujable getVista() {
+		return new VistaBombardero();
 	}
 	
 }

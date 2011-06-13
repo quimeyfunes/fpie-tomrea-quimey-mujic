@@ -1,8 +1,10 @@
 package Objetos_moviles;
 
+import ar.uba.fi.algo3.titiritero.Dibujable;
 import Armas.Danio;
 import EstrategiasDeMov.EstrategiaDeVuelo;
 import Mapa.Vector2D;
+import Vistas.VistaLaser;
 
 public class Laser extends Municion
 {
@@ -26,6 +28,11 @@ public class Laser extends Municion
 			movil.analizarDanio(this.daniar());
 			this.Vivo = false;
 		}
+	}
+
+	@Override
+	public Dibujable getVista() {
+		return new VistaLaser();
 	}
 
 }
