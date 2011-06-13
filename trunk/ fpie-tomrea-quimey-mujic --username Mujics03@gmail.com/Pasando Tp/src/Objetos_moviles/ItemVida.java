@@ -24,7 +24,7 @@ public class ItemVida extends Items
 	
 	public void EstadoCorrecto() {
 		this.hitPointsAsumar=50;
-		this.ConfigurarCuerpo(3,3);
+		this.ConfigurarCuerpo(6,6);
 	}
 
 	@Override

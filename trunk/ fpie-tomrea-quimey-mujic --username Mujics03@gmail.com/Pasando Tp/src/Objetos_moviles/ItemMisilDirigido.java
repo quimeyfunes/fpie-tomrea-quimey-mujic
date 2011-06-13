@@ -19,7 +19,7 @@ public class ItemMisilDirigido extends Items{
 	}
 	
 	public void EstadoCorrecto() {
-		this.ConfigurarCuerpo(3,3);
+		this.ConfigurarCuerpo(6,6);
 	}
 
 	@Override
