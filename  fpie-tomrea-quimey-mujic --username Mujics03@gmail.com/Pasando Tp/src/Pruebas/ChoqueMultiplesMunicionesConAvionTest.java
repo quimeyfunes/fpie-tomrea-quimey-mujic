@@ -6,6 +6,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import ar.uba.fi.algo3.titiritero.ControladorJuego;
+
 public class ChoqueMultiplesMunicionesConAvionTest extends TestCase{
 	//Testea el choque de algo42 contra muchas balas y su subsecuente muerte
 	
@@ -13,12 +15,7 @@ public class ChoqueMultiplesMunicionesConAvionTest extends TestCase{
 	private Bombardero bombardero;
 	private Algo42 algo42; 
 	
-	/**
-	 * TODO Verificar comentarios
-	 * PABLO: ¿Van a utilizar "municion4" ? 
-	 */
-	
-	private Municion municion1, municion2, municion3, municion4;
+	private Municion municion1, municion2, municion3,municion4;
 	
 	/**
 	 * TODO Crear una suite de test.
@@ -28,6 +25,8 @@ public class ChoqueMultiplesMunicionesConAvionTest extends TestCase{
 	public void setUp() throws Exception {
 		//Creacion de unidades
 		Escenario.reiniciarEscenario();
+		Escenario.InicializarEscenario(new ControladorJuego(false));
+		
 		bombardero = new Bombardero ( 100 , 115 );
 		algo42 = new Algo42 ( 100 , 100 );
 		
@@ -58,7 +57,7 @@ public class ChoqueMultiplesMunicionesConAvionTest extends TestCase{
 		Assert.assertFalse( municion1.EstaVivo() );
 		Assert.assertFalse( municion2.EstaVivo() );
 		Assert.assertFalse( municion3.EstaVivo() );
-		Assert.assertFalse( municion4.EstaVivo() );
+		Assert.assertFalse( municion4.EstaVivo());
 	}
 	
 	

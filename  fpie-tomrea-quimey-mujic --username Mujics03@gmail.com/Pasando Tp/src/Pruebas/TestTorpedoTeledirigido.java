@@ -7,6 +7,8 @@ import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
+import ar.uba.fi.algo3.titiritero.ControladorJuego;
+
 import Armas.ControladorArmas;
 import Armas.LanzadorMisiles;
 import Escenario.Escenario;
@@ -24,6 +26,8 @@ public class TestTorpedoTeledirigido extends TestCase {
 	public void setUp() throws Exception {
 		
 		Escenario.reiniciarEscenario();
+		Escenario.InicializarEscenario(new ControladorJuego(false));
+		
 		objetivo = new Algo42( 107, 93 ); 
 		controladorArmas = new ControladorArmas();		 
 		armaF = new LanzadorMisiles(ObjetosMoviles.BandoEnemigo(),new MovDirigido());

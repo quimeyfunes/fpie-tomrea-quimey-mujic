@@ -9,6 +9,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import ar.uba.fi.algo3.titiritero.ControladorJuego;
+
 public class ControladorArmasYArmasFisicasTest extends TestCase{
 	
 	private PistolaLaser pistola_laser; 
@@ -19,6 +21,8 @@ public class ControladorArmasYArmasFisicasTest extends TestCase{
 	public void setUp() throws Exception {
 		
 		Escenario.reiniciarEscenario();
+		Escenario.InicializarEscenario(new ControladorJuego(false));
+		
 		pistola_laser = new PistolaLaser( ObjetosMoviles.BandoUsuario(), new LineaRectaUp() );
 		lanzador_cohetes = new LanzadorCohetes(  ObjetosMoviles.BandoUsuario(), new LineaRectaUp() );
 		controlador_armas = new ControladorArmas();

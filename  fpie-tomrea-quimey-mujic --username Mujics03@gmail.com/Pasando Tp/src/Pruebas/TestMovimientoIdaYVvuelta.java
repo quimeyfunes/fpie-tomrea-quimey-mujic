@@ -5,6 +5,8 @@ import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import ar.uba.fi.algo3.titiritero.ControladorJuego;
+
 import Escenario.Escenario;
 import Objetos_moviles.Avioneta;
 
@@ -16,6 +18,7 @@ public class TestMovimientoIdaYVvuelta {
 	@Before
 	public void setUp() throws Exception {
 		Escenario.reiniciarEscenario();
+		Escenario.InicializarEscenario(new ControladorJuego(false));
 	}
 	
 	

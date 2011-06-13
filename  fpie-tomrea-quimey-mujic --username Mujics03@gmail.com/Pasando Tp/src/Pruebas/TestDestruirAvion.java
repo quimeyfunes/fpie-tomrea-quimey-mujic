@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import ar.uba.fi.algo3.titiritero.ControladorJuego;
+
 import Mapa.Vector2D;
 import Objetos_moviles.Algo42;
 import Objetos_moviles.Municion;
@@ -22,6 +24,8 @@ public class TestDestruirAvion {
 	@Before
 	public void setUp() throws Exception {
 		Escenario.reiniciarEscenario();
+		Escenario.InicializarEscenario(new ControladorJuego(false));
+		
 		avion = new Algo42( 20,20);
 	}
 	@Test
