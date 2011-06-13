@@ -8,7 +8,7 @@ import EstrategiasDeMov.LineaRectaDown;
 public class Avioneta extends Voladores {
 	
 	public void Actuar(){
-		if ( Timing >= 50 ) {
+		if ( Timing >= 35 ) {
 			Timing = 0;
 			this.disparar();
 		} else { 
