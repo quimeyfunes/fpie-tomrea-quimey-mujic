@@ -33,6 +33,7 @@ public class ControladorAvioneta {
 		Exploradores explorador = new Exploradores( 300, AltDeEnemy );
 		Bombardero bombardero = new Bombardero( 700  ,AltDeEnemy);
 		Avioneta avioneta = new Avioneta( 500 , AltDeEnemy );
+		Algo42 algo42 = new Algo42(950,50);
 	
 
 		controlador.comenzarJuego();

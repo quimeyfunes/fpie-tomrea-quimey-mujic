@@ -26,7 +26,7 @@ public class Avioneta extends Voladores {
 		
 		this.bando = ObjetosMoviles.BandoEnemigo();
 		this.puntos = 20; 
-		this.Velocidad = 5;
+		this.Velocidad = 4;
 		this.estrategia_vuelo = new IdaYvuelta();
 		this.blindaje = new Blindaje((short)100);;
 		
