@@ -181,7 +181,9 @@ public abstract class ObjetosMoviles implements Posicionable,ObjetoVivo {
 	}
 
 	protected boolean condicionComun(ObjetosMoviles obj){
-		return (this.smallCondicion(obj))&& ( obj.getCuerpo()).intersects(this.Cuerpo);
+		boolean first = this.smallCondicion(obj);
+		boolean second = (obj.getCuerpo().intersects(this.Cuerpo));
+		return first && second;
 		
 	}
 	//FIN MUY PRIVADO

@@ -5,7 +5,7 @@ import ar.uba.fi.algo3.titiritero.Dibujable;
 
 public class ItemVida extends Items
 {
-	short hitPointsAsumar;
+	private short hitPointsAsumar;
 	
 	public ItemVida(double x,double y,byte bando){
 		this.constructor(x, y, bando, this);

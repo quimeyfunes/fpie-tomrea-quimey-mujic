@@ -37,7 +37,7 @@ public class CazaMuerteYdejaVidaTest extends TestCase{
 		danio.setearPoder( (short) 160 );
 		algo42.analizarDanio( danio );
 		//Algo sigue vivo debido a la vida del item obtenido 
-		Assert.assertFalse( algo42.EstaVivo() );
+		Assert.assertTrue( algo42.EstaVivo() );
 	}
 	
 
