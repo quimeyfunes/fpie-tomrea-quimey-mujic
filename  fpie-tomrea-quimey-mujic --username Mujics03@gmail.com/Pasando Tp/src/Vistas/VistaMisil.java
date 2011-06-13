@@ -4,7 +4,7 @@ import ar.uba.fi.algo3.titiritero.vista.Imagen;
 public class VistaMisil extends Imagen{
 	
 	public VistaMisil(){
-		setNombreArchivoImagen("misil.jpg");
+		setNombreArchivoImagen("cohete.jpg");
 	}
 }
 

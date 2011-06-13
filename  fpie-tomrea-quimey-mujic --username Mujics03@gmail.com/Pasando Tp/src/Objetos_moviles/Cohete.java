@@ -16,7 +16,7 @@ public class Cohete extends Municion
 	protected void EstadoCorrecto()
 	{
 		this.danio = new Danio((short)50);
-		this.Velocidad = 3;
+		this.Velocidad = 5;
 		this.ConfigurarCuerpo(3,3);
 
 	}
