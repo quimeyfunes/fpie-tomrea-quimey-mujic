@@ -1,4 +1,6 @@
 package Pruebas;
+import java.awt.geom.Rectangle2D;
+
 import junit.framework.TestCase;
 import Armas.Danio;
 import Escenario.Escenario;
@@ -32,7 +34,7 @@ public class CazaMuerteYdejaVidaTest extends TestCase{
 		caza.analizarDanio( danio );
 		algo42 = new Algo42( 100 , 100 );
 		
-		algo42.VerificarColision();
+		algo42.abajo();
 		
 		danio.setearPoder( (short) 160 );
 		algo42.analizarDanio( danio );

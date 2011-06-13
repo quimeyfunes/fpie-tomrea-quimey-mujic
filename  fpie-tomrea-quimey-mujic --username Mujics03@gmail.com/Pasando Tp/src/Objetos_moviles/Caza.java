@@ -25,7 +25,7 @@ public class Caza extends Voladores
 	
 	protected void Destructor(){
 		this.Vivo = false;
-		new ItemVida(this.getPosicion().x,this.getPosicion().y, this.getBando());
+		new ItemVida(this.ubicacion.XY().x,this.ubicacion.XY().y, this.getBando());
 	}
 	
 	public void EstadoCorrecto(){
@@ -35,7 +35,7 @@ public class Caza extends Voladores
 		estrategia_vuelo = new IdaYvuelta();
 		this.blindaje = new Blindaje((short)100);
 		
-		this.ConfigurarCuerpo(6,6);
+		this.ConfigurarCuerpo(10,10);
 		
 		PistolaLaser pistola_laser = new PistolaLaser(bando , new LineaRectaDown());
 		LanzadorCohetes lanzador_cohetes = new LanzadorCohetes(bando , new LineaRectaDown());

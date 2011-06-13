@@ -60,7 +60,7 @@ public class TorpedoDirigido extends Municion implements Rastreador
 		this.Velocidad = 1;
 		this.blindaje= new Blindaje((short)30);
 
-		this.ConfigurarCuerpo(3,2);
+		this.ConfigurarCuerpo(3,3);
 	}
 	
 	public void moverseIAsegunVel()

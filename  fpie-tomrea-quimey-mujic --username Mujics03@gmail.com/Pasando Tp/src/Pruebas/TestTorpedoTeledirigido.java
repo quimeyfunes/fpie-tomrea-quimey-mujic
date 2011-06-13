@@ -28,7 +28,7 @@ public class TestTorpedoTeledirigido extends TestCase {
 		Escenario.reiniciarEscenario();
 		Escenario.InicializarEscenario(new ControladorJuego(false));
 		
-		objetivo = new Algo42( 107, 93 ); 
+		objetivo = new Algo42( 110, 110 ); 
 		controladorArmas = new ControladorArmas();		 
 		armaF = new LanzadorMisiles(ObjetosMoviles.BandoEnemigo(),new MovDirigido());
 		controladorArmas.add(armaF);
@@ -38,10 +38,11 @@ public class TestTorpedoTeledirigido extends TestCase {
 	public void testTorpedo(){
 		Assert.assertTrue( objetivo.EstaVivo() );
 		
-		Vector2D pos = new Vector2D( (double)104,(double)93);
+		Vector2D pos = new Vector2D( 110,125);
 
 		Municion misil = controladorArmas.dispararElArmaSeleccionada(pos);
 		Assert.assertTrue( misil.EstaVivo() );
+		misil.moverseIAsegunVel();
 		misil.moverseIAsegunVel();
 
 		Assert.assertFalse (misil.EstaVivo() );
