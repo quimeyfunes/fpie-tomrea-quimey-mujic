@@ -10,6 +10,8 @@ import Armas.*;
 
 public class Algo42 extends Voladores implements KeyPressedObservador{
 	
+	private boolean banderaDisparar=false;
+	
 	public void Destructor() throws GameOverException {
 		Vivo = false; 
 		throw new GameOverException();
@@ -33,6 +35,10 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 
 	@Override
 	protected void Actuar() {
+		if (this.banderaDisparar){
+			this.disparar();
+			this.banderaDisparar=false;//dispara en su turno
+		}
 		
 	}
 	@Override
@@ -47,7 +53,7 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 		if(event.getKeyCode() == KeyEvent.VK_LEFT)
 			this.IzquierdaSpeed();
 		if(event.getKeyCode()== KeyEvent.VK_SPACE)
-			this.disparar();
+			this.banderaDisparar=true;
 			
 	}
 

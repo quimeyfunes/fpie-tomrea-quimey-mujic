@@ -49,13 +49,15 @@ public abstract class Municion extends ObjetosMoviles{
 
 	protected synchronized void VerificarColision() 
 	{
+		boolean bandera=false;
 		LinkedList<ObjetosMoviles> ObjVi =  Escenario.getInstance().objetosVivos();
 		Iterator<ObjetosMoviles> it = ObjVi.iterator();
 		
-		while(it.hasNext()){
+		while(it.hasNext() && !bandera){
 			ObjetosMoviles elemento = it.next();
 			if ( (this.condicionComun(elemento))&&(elemento.PuedeSerAtacado())){
 				this.ActuarAnteColision(elemento);
+				bandera=true;
 			}
 		}
 		
