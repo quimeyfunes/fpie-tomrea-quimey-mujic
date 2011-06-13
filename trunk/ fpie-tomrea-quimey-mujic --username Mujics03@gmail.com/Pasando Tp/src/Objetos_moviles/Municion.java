@@ -1,4 +1,7 @@
 package Objetos_moviles;
+import java.util.Iterator;
+import java.util.LinkedList;
+
 import Armas.Danio;
 import Escenario.Escenario;
 import EstrategiasDeMov.EstrategiaDeVuelo;
@@ -44,11 +47,17 @@ public abstract class Municion extends ObjetosMoviles{
 		return this.danio;
 	}
 
-	protected void VerificarColision() 
+	protected synchronized void VerificarColision() 
 	{
-		for (ObjetosMoviles movil : Escenario.getInstance().objetosVivos())
-			if(this.PuedeSerAtacado() && this.condicionComun(movil))
-				this.ActuarAnteColision(movil);			
+		LinkedList<ObjetosMoviles> ObjVi =  Escenario.getInstance().objetosVivos();
+		Iterator<ObjetosMoviles> it = ObjVi.iterator();
+		
+		while(it.hasNext()){
+			ObjetosMoviles elemento = it.next();
+			if ( (this.condicionComun(elemento))&&(elemento.PuedeSerAtacado())){
+				this.ActuarAnteColision(elemento);
+			}
+		}
 		
 	}
 	

@@ -139,14 +139,14 @@ public abstract class ObjetosMoviles implements Posicionable,ObjetoVivo {
 	//lo pide Posicionable
 	
 	public int getX(){
-		return (int)this.getPosicion().x;
+		return (int)this.Cuerpo.x;
 	}
 	
 	public int getY(){
 		
 		double lY = Escenario.getLimiteY();
 		
-		return ( (int)lY-(int)this.getPosicion().y);//un pequenisimo cambio de variables
+		return ( (int)lY-(int)this.Cuerpo.y);//un pequenisimo cambio de variables
 	}
 	//Fin Posicionable
 	

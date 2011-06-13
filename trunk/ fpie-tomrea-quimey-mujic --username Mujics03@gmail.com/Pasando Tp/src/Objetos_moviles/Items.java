@@ -1,5 +1,6 @@
 package Objetos_moviles;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 import Escenario.Escenario;
@@ -48,14 +49,17 @@ public abstract class Items extends ObjetosMoviles{
 
 
 	@Override
-	protected void VerificarColision() {
-		Escenario esc = Escenario.getInstance();
+	protected synchronized void VerificarColision() {
 		// buscar tipo generico Collection
-		LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego = esc.objetosVivos();
-		int j; 
-		for ( j = 0 ; j <= todoLoQueEstaEnJuego.size() ; j++ ){
-			ObjetosMoviles elemento = todoLoQueEstaEnJuego.get( j );
-			if ( elemento.condicionComun(elemento) && ( elemento.PuedeManejarItems() ) ) this.ActuarAnteColision(elemento);
+		LinkedList<ObjetosMoviles> ObjVi =  Escenario.getInstance().objetosVivos();
+		Iterator<ObjetosMoviles> it = ObjVi.iterator();
+		
+		while(it.hasNext()){
+			ObjetosMoviles elemento = it.next();
+			if ( (this.condicionComun(elemento))&&(elemento.PuedeManejarItems())){
+				this.ActuarAnteColision(elemento);
 			}
+			
+		}
 	}
 }
