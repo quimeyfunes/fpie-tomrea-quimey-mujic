@@ -1,4 +1,5 @@
 package Objetos_moviles;
+import java.util.Iterator;
 import java.util.LinkedList;
 import Escenario.*;
 import Excepciones.ChauBlindajeException; 
@@ -37,24 +38,24 @@ public abstract class Voladores extends ObjetosMoviles{
 	}
 	
 	
-	public void VerificarColision(){
-		Escenario esc = Escenario.getInstance();
-		// buscar tipo generico Collection
-		LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego = esc.objetosVivos();
-		for (int j = 0 ; j < todoLoQueEstaEnJuego.size() ; j++ ){
-			ObjetosMoviles elemento = todoLoQueEstaEnJuego.get( j );
-			if ( this.condicionComun(elemento) ){ 
+	public synchronized void  VerificarColision(){
+		LinkedList<ObjetosMoviles> ObjVi =  Escenario.getInstance().objetosVivos();
+		Iterator<ObjetosMoviles> it = ObjVi.iterator();
+		
+		while(it.hasNext()){
+			ObjetosMoviles elemento = it.next();
+			if ( (this.condicionComun(elemento))){
 				elemento.ActuarAnteColision(this);
-				}
 			}
 		}
+	}
 	
 	public void agregarArma( ArmasFisicas arma )  throws ChauBlindajeException {
 		if ( this.EstaVivo() ){ this.weapons.add(arma);} 
 		 else throw new ChauBlindajeException();
 	}
 		
-	public  Municion disparar()  throws ChauBlindajeException {
+	public  synchronized Municion disparar()  throws ChauBlindajeException {
 		// Corregir metodo weapons,lo puse como public
 		if ( this.EstaVivo() ){ 
 			return  weapons.dispararElArmaSeleccionada( this.ubicacion.XY() );

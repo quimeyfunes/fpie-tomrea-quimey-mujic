@@ -36,7 +36,7 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 		
 	}
 	@Override
-	public void keyPressed(KeyEvent event)
+	public synchronized void keyPressed(KeyEvent event)
 	{
 		if(event.getKeyCode() == KeyEvent.VK_UP)
 			this.ArribaSpeed();
@@ -48,6 +48,7 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 			this.IzquierdaSpeed();
 		if(event.getKeyCode()== KeyEvent.VK_SPACE)
 			this.disparar();
+			
 	}
 
 	@Override
@@ -55,25 +56,25 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 		return new VistaAlgo42();
 	}
 	
-	private void ArribaSpeed(){
+	private synchronized void ArribaSpeed(){
 		for(int i=0;i<Velocidad;i++){
 			this.arriba();
 		}
 	}
 	
-	private void AbajoSpeed(){
+	private synchronized void AbajoSpeed(){
 		for(int i=0;i<Velocidad;i++){
 			this.abajo();
 		}
 	}
 	
-	private void DerechaSpeed(){
+	private synchronized void DerechaSpeed(){
 		for(int i=0;i<Velocidad;i++){
 			this.derecha();
 		}
 	}
 	
-	private void IzquierdaSpeed(){
+	private synchronized void IzquierdaSpeed(){
 		for(int i=0;i<Velocidad;i++){
 			this.izquierda();
 		}
