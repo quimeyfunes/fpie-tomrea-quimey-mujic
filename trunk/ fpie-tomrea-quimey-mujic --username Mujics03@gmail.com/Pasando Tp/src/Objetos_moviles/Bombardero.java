@@ -14,7 +14,7 @@ public class Bombardero extends Voladores
 	}	
 	
 	public void Actuar(){
-		if ( Timing >= 6 ) {
+		if ( Timing >= 50 ) {
 			Timing = 0;
 			this.seleccionarSiguienteArma();
 			this.disparar();
@@ -41,7 +41,7 @@ public class Bombardero extends Voladores
 		
 		PistolaLaser pistola_laser = new PistolaLaser( bando , new LineaRectaDown() );
 		LanzadorMisiles lanzador_misiles = new LanzadorMisiles(bando, new MovDirigido());
-		LanzadorCohetes lanzador_cohetes = new LanzadorCohetes(bando, new MovDirigido());
+		LanzadorCohetes lanzador_cohetes = new LanzadorCohetes(bando, new LineaRectaDown());
 		this.weapons.add( pistola_laser );
 		this.weapons.add( lanzador_misiles );
 		this.weapons.add( lanzador_cohetes );

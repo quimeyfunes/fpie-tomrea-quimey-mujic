@@ -72,7 +72,7 @@ public class TorpedoDirigido extends Municion implements Rastreador
 				this.buscarObjetivoSegunBando();
 		}
 		else
-			throw new ChauBlindajeException();
+			this.Destructor();
 		//Misil inteligente.SI el objetivo que estaba persiguiendo es destruido, simplemente busca otro
 	}
 	

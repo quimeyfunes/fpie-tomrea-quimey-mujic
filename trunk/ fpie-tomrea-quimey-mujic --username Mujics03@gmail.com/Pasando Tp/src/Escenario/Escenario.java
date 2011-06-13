@@ -3,6 +3,7 @@ package Escenario;
 import java.util.LinkedList;
 
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
+import ar.uba.fi.algo3.titiritero.Dibujable;
 import ar.uba.fi.algo3.titiritero.vista.Ventana;
 
 import Excepciones.FinEscenarioException;
@@ -28,8 +29,9 @@ public class Escenario
 		return LimiteY;
 	}
 	
-	 public void  setControlador(ControladorJuego con){
-		 this.controlador=con;
+	 public static void  InicializarEscenario(ControladorJuego con){//si esto no se ejecuta primero, no funciona
+		 createInstance();
+		 instance.controlador=con;
 	}
 	
 	private synchronized static void createInstance() {
@@ -43,8 +45,9 @@ public class Escenario
 	}
 	
 	public static Escenario getInstance() {
-	    if (instance == null) 
-	    	createInstance();
+		if ( instance.controlador==null){
+			throw new RuntimeException();
+		}
 	    return instance;
 	}
 
@@ -64,13 +67,15 @@ public class Escenario
 		this.todoLoQueEstaEnJuego.add(objeto);//agrego para que pueda interactuar con otros objetos
 		
 		this.controlador.agregarObjetoVivo(objeto);//agrego al gameloop
-		this.controlador.agregarDibujable(objeto.getVista());//agrego a visibles ( reee polimorfico mal )
+		Dibujable vista = objeto.getVista();
+		vista.setPosicionable(objeto);
+		this.controlador.agregarDibujable(vista);//agrego a visibles ( reee polimorfico mal )
 	}
 	
 	public void eliminarObjeto(ObjetosMoviles objeto)
 	{
 		this.todoLoQueEstaEnJuego.remove(objeto);
-		this.controlador.removerObjetoVivo(objeto);//lo saco del gameLoop
+		//this.controlador.removerObjetoVivo(objeto);//lo saco del gameLoop
 		//COMO VAMOS A HACER PARA PONER EN FALSE LA VISTA :s
 	}
 

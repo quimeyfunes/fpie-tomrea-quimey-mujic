@@ -15,6 +15,7 @@ import ar.uba.fi.algo3.titiritero.audio.Reproductor;
 public class ControladorJuego implements Runnable {
 	
 	public ControladorJuego(boolean activarReproductor){
+		
 		this.objetosVivos = new ArrayList<ObjetoVivo>();
 		this.dibujables = new ArrayList<Dibujable>();
 		this.mouseClickObservadores = new ArrayList<MouseClickObservador>();
@@ -35,6 +36,7 @@ public class ControladorJuego implements Runnable {
 				simular();
 				dibujar();
 				Thread.sleep(intervaloSimulacion);
+				this.ActualizarListas();//Lo agregue para poder agregar cosas "mientras corre el loop"
 			}
 		}
 		catch (Exception e) {
@@ -82,19 +84,23 @@ public class ControladorJuego implements Runnable {
 	}
 	
 	public void agregarObjetoVivo(ObjetoVivo objetoVivo){
-		objetosVivos.add(objetoVivo);
+		//objetosVivos.add(objetoVivo);
+		this.ObjetosVivosAagregarAlFinalDeUnLoop.add(objetoVivo);
 	}
 	
 	public void removerObjetoVivo(ObjetoVivo objetoVivo){
-		objetosVivos.remove(objetoVivo);
+		//objetosVivos.remove(objetoVivo);
+		this.ObjetosVivosAeliminarAlFinalDeUnLoop.add(objetoVivo);
 	}
 
 	public void agregarDibujable(Dibujable unDibujable){
-		dibujables.add(unDibujable);
+		//dibujables.add(unDibujable);
+		this.DibujablesAagregarAlFinalDeUnLoop.add(unDibujable);
 	}
 	
 	public void removerDibujable(Dibujable unDibujable){
-		dibujables.remove(unDibujable);
+		//dibujables.remove(unDibujable);
+		this.DibujablesAeliminarAlFinalDeUnLoop.add(unDibujable);
 	}
 	
 	public long getIntervaloSimulacion() {
@@ -172,6 +178,63 @@ public class ControladorJuego implements Runnable {
 	public void removerKeyPressObservador(KeyPressedObservador unMouseClickObservador){
 		this.keyPressedObservadores.remove(unMouseClickObservador);
 	}
+	
+	//*****************************************************
+	private void ActualizarListas(){
+		
+	this.ActualizarObjetosVivosNuevos();
+	this.ActualizarDibujablesNuevos();
+	this.ActualizarObjetosVivosAeliminar();
+	this.ActualizarDibujablesAeliminar();
+	this.RestartearListasTemporales();
+		
+	}
+	
+	private void ActualizarObjetosVivosNuevos(){
+		if (!this.ObjetosVivosAagregarAlFinalDeUnLoop.isEmpty()){
+			for(ObjetoVivo obj :this.ObjetosVivosAagregarAlFinalDeUnLoop){			
+			this.objetosVivos.add(obj);
+		}
+		}
+	}
+
+	private void ActualizarDibujablesNuevos(){
+		if (!this.DibujablesAagregarAlFinalDeUnLoop.isEmpty()){
+			for(Dibujable dib :this.DibujablesAagregarAlFinalDeUnLoop){			
+			this.dibujables.add(dib);
+		}
+		}
+	}
+	
+	private void ActualizarObjetosVivosAeliminar(){
+	if (!this.ObjetosVivosAeliminarAlFinalDeUnLoop.isEmpty()){
+		for(ObjetoVivo obj :this.ObjetosVivosAeliminarAlFinalDeUnLoop){			
+		this.objetosVivos.remove(obj);
+		}
+		}
+	}
+	
+	private void ActualizarDibujablesAeliminar(){
+		if (!this.DibujablesAeliminarAlFinalDeUnLoop.isEmpty()){
+			for(Dibujable dib :this.DibujablesAeliminarAlFinalDeUnLoop){			
+			this.dibujables.remove(dib);
+			}
+			}
+		}
+	
+	private void RestartearListasTemporales(){
+		this.ObjetosVivosAagregarAlFinalDeUnLoop.clear();
+		this.ObjetosVivosAeliminarAlFinalDeUnLoop.clear();
+		this.DibujablesAagregarAlFinalDeUnLoop.clear();
+		this.DibujablesAeliminarAlFinalDeUnLoop.clear();
+		
+	}
+	//esto lo agregue yo para poder agregar cosas "mientras corre el loop"
+	private List<ObjetoVivo> ObjetosVivosAagregarAlFinalDeUnLoop= new ArrayList<ObjetoVivo>();
+	private List<Dibujable> DibujablesAagregarAlFinalDeUnLoop= new ArrayList<Dibujable>();
+	private List<ObjetoVivo> ObjetosVivosAeliminarAlFinalDeUnLoop= new ArrayList<ObjetoVivo>();
+	private List<Dibujable> DibujablesAeliminarAlFinalDeUnLoop= new ArrayList<Dibujable>();
+	//******************************************************************************
 	
 	private long intervaloSimulacion;
 	private boolean estaEnEjecucion;
