@@ -16,6 +16,7 @@ public class ControladorAvioneta {
 		/*
 		 * Primero instancio mi modelo: una pelota que se mueve por una mesa
 		 */
+		Caza caza = new Caza ( 350 , LimiteY - 100 );
 		Exploradores explorador = new Exploradores( 250, LimiteY - 50 );
 		Bombardero bombardero = new Bombardero( 160  ,LimiteY -10);
 		Avioneta avioneta = new Avioneta( 100 , LimiteY-10 );
@@ -41,10 +42,11 @@ public class ControladorAvioneta {
 		VistaExplorador vistaExplorador = new VistaExplorador();
 		VistaBombardero vistaBombardero = new VistaBombardero();
 		VistaAvioneta vistaAvioneta = new VistaAvioneta();
+		VistaCaza vistaCaza = new VistaCaza();
 		vistaAvioneta.setPosicionable(avioneta);
 		vistaBombardero.setPosicionable(bombardero);
 		vistaExplorador.setPosicionable(explorador);
-		
+		vistaCaza.setPosicionable(caza);
 		/*
 		 * agrego la pelota a la lista de objetos vivios del controlador
 		 * para que este le de vida dentro del gameloop
@@ -52,7 +54,7 @@ public class ControladorAvioneta {
 		controlador.agregarObjetoVivo(avioneta);
 		controlador.agregarObjetoVivo(bombardero);
 		controlador.agregarObjetoVivo(explorador);
-		
+		controlador.agregarObjetoVivo(caza);
 		/*
 		 * Agrego los objetos que actuan como vista a la lista de dibujables del controlador
 		 * para que sean repintados al final de cada gameloop
@@ -62,7 +64,7 @@ public class ControladorAvioneta {
 		controlador.agregarDibujable(vistaAvioneta);
 		controlador.agregarDibujable(vistaBombardero);
 		controlador.agregarDibujable(vistaExplorador);
-		
+		controlador.agregarDibujable(vistaCaza);
 		/*
 		 * finalmente establezco el intervalo de sleep dentro del gameloop
 		 * y comienzo a ejecutar
