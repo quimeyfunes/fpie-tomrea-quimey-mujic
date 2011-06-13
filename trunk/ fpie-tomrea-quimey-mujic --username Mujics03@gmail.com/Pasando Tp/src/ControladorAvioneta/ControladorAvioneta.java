@@ -11,15 +11,11 @@ public class ControladorAvioneta {
 		
 		double LimiteX = Escenario.getLimiteX();
 		double LimiteY = Escenario.getLimiteY();
-		
-
-		/*
-		 * Primero instancio mi modelo: una pelota que se mueve por una mesa
-		 */
+	
 		Caza caza = new Caza ( 350 , LimiteY - 100 );
 		Exploradores explorador = new Exploradores( 250, LimiteY - 50 );
 		Bombardero bombardero = new Bombardero( 160  ,LimiteY -10);
-		Avioneta avioneta = new Avioneta( 100 , LimiteY-10 );
+		Avioneta avioneta = new Avioneta( 10 , 40 );
 		Mesa unaMesa = new Mesa((int)LimiteX+50,(int)LimiteY+50);
 
 		/*
