@@ -9,6 +9,7 @@ import Mapa.Ubicacion;
 import Mapa.Vector2D;
 
 
+import java.awt.geom.Area;
 import java.awt.geom.Rectangle2D;
 
 import ar.uba.fi.algo3.titiritero.Dibujable;
@@ -182,9 +183,12 @@ public abstract class ObjetosMoviles implements Posicionable,ObjetoVivo {
 
 	protected boolean condicionComun(ObjetosMoviles obj){
 		boolean first = this.smallCondicion(obj);
+			
+		Rectangle2D.Double bodyOther = obj.getCuerpo();
+		Rectangle2D.Double bodyMine = this.getCuerpo();
 		
-		Rectangle2D bodyOther = obj.getCuerpo();
-		boolean second = ((this.Cuerpo).intersects(bodyOther));
+		boolean second = bodyMine.intersects(bodyOther);
+		
 		return (first && second);
 		
 	}
