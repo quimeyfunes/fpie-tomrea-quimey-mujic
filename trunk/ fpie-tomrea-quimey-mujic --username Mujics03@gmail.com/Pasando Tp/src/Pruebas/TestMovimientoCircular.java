@@ -5,6 +5,8 @@ import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Before;
 
+import ar.uba.fi.algo3.titiritero.ControladorJuego;
+
 import Escenario.Escenario;
 import EstrategiasDeMov.Circular;
 import Mapa.Vector2D;
@@ -20,6 +22,7 @@ public class TestMovimientoCircular extends TestCase {
 	@Before
 	public void setUp() throws Exception {
 		Escenario.reiniciarEscenario();
+		Escenario.InicializarEscenario(new ControladorJuego(false));
 		
 		 posicionX=300;
 		 posicionY=300;

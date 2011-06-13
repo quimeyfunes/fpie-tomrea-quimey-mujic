@@ -7,6 +7,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import ar.uba.fi.algo3.titiritero.ControladorJuego;
+
 import Armas.Danio;
 import Escenario.Escenario;
 import Mapa.Vector2D;
@@ -19,6 +21,7 @@ public class TestCreacionAvion {
 	@Before
 	public void setUp() throws Exception {
 		Escenario.reiniciarEscenario();
+		Escenario.InicializarEscenario(new ControladorJuego(false));
 	}
 	
 	@Test

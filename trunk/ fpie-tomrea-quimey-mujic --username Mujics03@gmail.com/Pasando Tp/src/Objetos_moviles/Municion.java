@@ -34,8 +34,8 @@ public abstract class Municion extends ObjetosMoviles{
 
 	protected void ActuarAnteColision(ObjetosMoviles movil) 
 	{
-		movil.analizarDanio(this.daniar());
 		this.Destructor();
+		movil.analizarDanio(this.daniar());
 	}
 	
 

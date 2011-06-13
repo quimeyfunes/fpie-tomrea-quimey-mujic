@@ -8,6 +8,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import ar.uba.fi.algo3.titiritero.ControladorJuego;
+
 import Escenario.Escenario;
 import EstrategiasDeMov.EstrategiaDeVuelo;
 import Objetos_moviles.Bombardero;
@@ -20,6 +22,8 @@ public class TestMovimientoZigZag extends TestCase {
 	@Before
 	public void setUp() throws Exception {
 		Escenario.reiniciarEscenario();
+		Escenario.InicializarEscenario(new ControladorJuego(false));
+		
 		limiteDeSlide =  EstrategiaDeVuelo.getSlide();
 		avion = new Bombardero ( 400, 400);
 	}

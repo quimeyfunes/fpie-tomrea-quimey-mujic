@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import ar.uba.fi.algo3.titiritero.ControladorJuego;
+
 import Escenario.Escenario;
 import Objetos_moviles.Algo42;
 import Objetos_moviles.Avioneta;
@@ -18,6 +20,7 @@ public class Choque2avionesTest
 	@Before
 	public void setUp() throws Exception {
 		Escenario.reiniciarEscenario();
+		Escenario.InicializarEscenario(new ControladorJuego(false));
 	}
 	
 	@Test

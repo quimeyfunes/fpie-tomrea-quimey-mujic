@@ -1,11 +1,13 @@
 package Pruebas;
-import junit.framework.*;
+import junit.framework.TestCase;
 import Armas.Danio;
 import Escenario.Escenario;
 import Objetos_moviles.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import ar.uba.fi.algo3.titiritero.ControladorJuego;
 
 public class CazaMuerteYdejaVidaTest extends TestCase{
 	// Testea la muerte del caza y que algo sigue vivo debido al item liberado por este.
@@ -18,6 +20,7 @@ public class CazaMuerteYdejaVidaTest extends TestCase{
 	@Before
 	public void setUp() throws Exception {
 		Escenario.reiniciarEscenario();
+		Escenario.InicializarEscenario(new ControladorJuego(false));
 	}
 	
 	@Test
