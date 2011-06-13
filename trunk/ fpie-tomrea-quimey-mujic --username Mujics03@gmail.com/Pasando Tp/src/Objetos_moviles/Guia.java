@@ -2,9 +2,11 @@ package Objetos_moviles;
 
 import java.util.LinkedList;
 
+import Vistas.VistaGuia;
 import ar.uba.fi.algo3.titiritero.Dibujable;
 
 import Escenario.Escenario;
+import EstrategiasDeMov.DerechaIzquierda;
 import EstrategiasDeMov.IdaYvuelta;
 import EstrategiasDeMov.LineaRectaDown;
 import EstrategiasDeMov.LineaRectaUp;
@@ -19,7 +21,7 @@ public class Guia extends Voladores
 	}
 	
 	public void Actuar(){
-		if ( Timing >= 2 ) {
+		if ( Timing >= 60 ) {
 			Timing = 0;
 			this.seleccionarSiguienteArma();
 			this.disparar();
@@ -42,7 +44,7 @@ public class Guia extends Voladores
 		bando = ObjetosMoviles.BandoEnemigo();
 		puntos = 0; 
 		Velocidad = 10;
-		estrategia_vuelo = new IdaYvuelta();//aca hay que poner de derecha a izquierda
+		estrategia_vuelo = new DerechaIzquierda();
 		this.blindaje = new Blindaje((short)1000);
 		this.ConfigurarCuerpo(3,3);
 		PistolaLaser pistola_laser = new PistolaLaser(bando , new LineaRectaDown());
@@ -71,7 +73,6 @@ public class Guia extends Voladores
 	@Override
 	public Dibujable getVista()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return new VistaGuia();
 	}
 }
