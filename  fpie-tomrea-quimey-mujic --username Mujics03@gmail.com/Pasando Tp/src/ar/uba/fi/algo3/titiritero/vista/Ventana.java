@@ -29,6 +29,7 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 	public Ventana(ControladorJuego unControlador){
 		this.controlador = unControlador;
 		this.addMouseListener(new MouseClickController(this.controlador));
+		this.addKeyListener(new KeyPressedController(this.controlador));
 	}
 	// es llamado internamente por el metodo repaint() de la clase Frame
 	public void update(Graphics g) {
@@ -63,6 +64,8 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 	
 	public Ventana(int ancho,int alto, ControladorJuego unControlador){
 		this.addMouseListener(new MouseClickController(unControlador));
+		this.addKeyListener(new KeyPressedController (unControlador));
+		
 		setSize(ancho, alto);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		Dimension frameSize = getSize();
