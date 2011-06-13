@@ -37,7 +37,7 @@ public abstract class ObjetosMoviles implements Posicionable,ObjetoVivo {
 	}
 	//Fin
 	
-	public void Destructor(){
+	protected void Destructor(){
 		Vivo = false;
 	}
 	

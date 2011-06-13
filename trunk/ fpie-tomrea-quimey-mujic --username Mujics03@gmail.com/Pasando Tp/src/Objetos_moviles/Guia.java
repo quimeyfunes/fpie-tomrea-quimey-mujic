@@ -29,7 +29,7 @@ public class Guia extends Voladores
 		}
 	}
 	
-	protected void DESTRUCTOR(){
+	protected void Destructor(){
 		Vivo = false;
 		this.Huyan();
 	}

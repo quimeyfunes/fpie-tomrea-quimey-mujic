@@ -23,7 +23,7 @@ public class Caza extends Voladores
 		}
 	}
 	
-	public void DESTRUCTOR(){
+	protected void Destructor(){
 		this.Vivo = false;
 		new ItemVida(this.getPosicion().x,this.getPosicion().y, this.getBando());
 	}
