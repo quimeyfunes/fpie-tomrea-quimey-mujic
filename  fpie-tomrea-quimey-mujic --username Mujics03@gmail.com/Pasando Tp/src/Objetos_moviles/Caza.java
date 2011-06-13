@@ -1,5 +1,6 @@
 package Objetos_moviles;
 import Armas.*;
+import EstrategiasDeMov.IdaYvuelta;
 import EstrategiasDeMov.LineaRectaDown;
 
 public class Caza extends Voladores
@@ -29,7 +30,7 @@ public class Caza extends Voladores
 		this.bando = ObjetosMoviles.BandoEnemigo();
 		this.puntos = 30; 
 		Velocidad = 3;
-		estrategia_vuelo = new LineaRectaDown();
+		estrategia_vuelo = new IdaYvuelta();
 		this.blindaje = new Blindaje((short)100);
 		
 		this.ConfigurarCuerpo(4,4);
