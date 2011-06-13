@@ -1,5 +1,6 @@
 package Objetos_moviles;
 import Armas.*;
+import EstrategiasDeMov.EstrategiaDeVuelo;
 import EstrategiasDeMov.LineaRectaDown;
 
 
@@ -18,12 +19,17 @@ public class AvionCivil extends Voladores {
 		this.bando = ObjetosMoviles.BandoUsuario();
 		this.puntos = -300;
 		this.Velocidad = 1;
-		this.estrategia_vuelo = new LineaRectaDown();
+		this.estrategia_vuelo = IdaYVuelta();
 		this.blindaje = new Blindaje((short)100);
 
 		this.ConfigurarCuerpo(4,4);
 	}
 	
+	private EstrategiaDeVuelo IdaYVuelta() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	public boolean PuedeManejarItems(){
 		return false;
 	}
