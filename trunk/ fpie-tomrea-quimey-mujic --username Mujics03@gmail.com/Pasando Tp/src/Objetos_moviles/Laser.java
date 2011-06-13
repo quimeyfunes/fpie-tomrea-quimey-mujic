@@ -1,6 +1,7 @@
 package Objetos_moviles;
 
 import ar.uba.fi.algo3.titiritero.Dibujable;
+import Armas.Blindaje;
 import Armas.Danio;
 import EstrategiasDeMov.EstrategiaDeVuelo;
 import Mapa.Vector2D;
@@ -17,7 +18,8 @@ public class Laser extends Municion
 	{
 		this.danio = new Danio((short)25);
 		this.Velocidad = 8;
-		this.ConfigurarCuerpo(1,1);
+		this.ConfigurarCuerpo(2,2);
+		this.blindaje= new Blindaje((short)1);
 
 	}
 	

@@ -55,7 +55,7 @@ public abstract class Voladores extends ObjetosMoviles{
 		 else throw new ChauBlindajeException();
 	}
 		
-	public Municion disparar()  throws ChauBlindajeException {
+	public  Municion disparar()  throws ChauBlindajeException {
 		// Corregir metodo weapons,lo puse como public
 		if ( this.EstaVivo() ){ 
 			return  weapons.dispararElArmaSeleccionada( this.ubicacion.XY() );

@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 import ar.uba.fi.algo3.titiritero.Dibujable;
 
+import Armas.Blindaje;
 import Armas.Danio;
 import Escenario.Escenario;
 import EstrategiasDeMov.EstrategiaDeVuelo;
@@ -56,9 +57,10 @@ public class TorpedoDirigido extends Municion implements Rastreador
 	protected void EstadoCorrecto()
 	{
 		this.danio = new Danio((short)40);
-		this.Velocidad = 4;
+		this.Velocidad = 1;
+		this.blindaje= new Blindaje((short)30);
 
-		this.ConfigurarCuerpo(2,2);
+		this.ConfigurarCuerpo(3,2);
 	}
 	
 	public void moverseIAsegunVel()

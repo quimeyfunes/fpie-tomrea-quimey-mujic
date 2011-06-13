@@ -25,7 +25,7 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 		this.Velocidad = 5;
 		this.blindaje = new Blindaje((short) 150);
 		
-		this.ConfigurarCuerpo(4,4);
+		this.ConfigurarCuerpo(6,6);
 		
 		PistolaLaser pistola_laser = new PistolaLaser( this.bando ,new LineaRectaUp());
 		this.weapons.add( pistola_laser );
@@ -39,17 +39,46 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 	public void keyPressed(KeyEvent event)
 	{
 		if(event.getKeyCode() == KeyEvent.VK_UP)
-			this.arriba();
+			this.ArribaSpeed();
 		if(event.getKeyCode() == KeyEvent.VK_DOWN)
-			this.abajo();
+			this.AbajoSpeed();
 		if(event.getKeyCode() == KeyEvent.VK_RIGHT)
-			this.derecha();
+			this.DerechaSpeed();
 		if(event.getKeyCode() == KeyEvent.VK_LEFT)
-			this.izquierda();
+			this.IzquierdaSpeed();
+		if(event.getKeyCode()== KeyEvent.VK_SPACE)
+			this.disparar();
 	}
 
 	@Override
 	public Dibujable getVista() {
 		return new VistaAlgo42();
 	}
+	
+	private void ArribaSpeed(){
+		for(int i=0;i<Velocidad;i++){
+			this.arriba();
+		}
+	}
+	
+	private void AbajoSpeed(){
+		for(int i=0;i<Velocidad;i++){
+			this.abajo();
+		}
+	}
+	
+	private void DerechaSpeed(){
+		for(int i=0;i<Velocidad;i++){
+			this.derecha();
+		}
+	}
+	
+	private void IzquierdaSpeed(){
+		for(int i=0;i<Velocidad;i++){
+			this.izquierda();
+		}
+		
+		
+	}
+	
 }
