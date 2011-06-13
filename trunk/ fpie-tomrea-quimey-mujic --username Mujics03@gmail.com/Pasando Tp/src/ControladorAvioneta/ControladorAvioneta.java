@@ -17,6 +17,8 @@ public class ControladorAvioneta {
 		Exploradores explorador = new Exploradores( 300, AltDeEnemy );
 		Bombardero bombardero = new Bombardero( 700  ,AltDeEnemy);
 		Avioneta avioneta = new Avioneta( 500 , AltDeEnemy );
+		
+		
 		Mesa unaMesa = new Mesa((int)LimiteX+50,(int)LimiteY+50);
 
 		/*
@@ -33,39 +35,9 @@ public class ControladorAvioneta {
 		VistaMesa vistaMesa = new VistaMesa();
 		vistaMesa.setPosicionable(unaMesa);
 		
-		/*
-		 * Instancio una imagen para que actue como vista de la pelota
-		 */
-		VistaExplorador vistaExplorador = new VistaExplorador();
-		VistaBombardero vistaBombardero = new VistaBombardero();
-		VistaAvioneta vistaAvioneta = new VistaAvioneta();
-		VistaCaza vistaCaza = new VistaCaza();
-		vistaAvioneta.setPosicionable(avioneta);
-		vistaBombardero.setPosicionable(bombardero);
-		vistaExplorador.setPosicionable(explorador);
-		vistaCaza.setPosicionable(caza);
-		/*
-		 * agrego la pelota a la lista de objetos vivios del controlador
-		 * para que este le de vida dentro del gameloop
-		 */
-		controlador.agregarObjetoVivo(avioneta);
-		controlador.agregarObjetoVivo(bombardero);
-		controlador.agregarObjetoVivo(explorador);
-		controlador.agregarObjetoVivo(caza);
-		/*
-		 * Agrego los objetos que actuan como vista a la lista de dibujables del controlador
-		 * para que sean repintados al final de cada gameloop
-		 */
 		
 		controlador.agregarDibujable(vistaMesa);
-		controlador.agregarDibujable(vistaAvioneta);
-		controlador.agregarDibujable(vistaBombardero);
-		controlador.agregarDibujable(vistaExplorador);
-		controlador.agregarDibujable(vistaCaza);
-		/*
-		 * finalmente establezco el intervalo de sleep dentro del gameloop
-		 * y comienzo a ejecutar
-		 */
+
 		controlador.setIntervaloSimulacion(20);
 		controlador.comenzarJuego();
 		

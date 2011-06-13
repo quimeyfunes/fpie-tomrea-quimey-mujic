@@ -1,4 +1,6 @@
 package Objetos_moviles; 
+import ar.uba.fi.algo3.titiritero.Dibujable;
+import Vistas.VistaAlgo42;
 import EstrategiasDeMov.LineaRectaUp;
 import Excepciones.GameOverException;
 import Armas.*;
@@ -28,7 +30,11 @@ public class Algo42 extends Voladores{
 
 	@Override
 	protected void Actuar() {
-		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public Dibujable getVista() {
+		return new VistaAlgo42();
 	}
 }

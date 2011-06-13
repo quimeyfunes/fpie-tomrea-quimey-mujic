@@ -3,9 +3,13 @@ package Escenario;
 import java.util.LinkedList;
 
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
+import ar.uba.fi.algo3.titiritero.vista.Ventana;
 
 import Excepciones.FinEscenarioException;
 import Objetos_moviles.ObjetosMoviles;
+import Vistas.Mesa;
+import Vistas.VentanaPrincipal;
+import Vistas.VistaMesa;
 
 public class Escenario
 {
@@ -24,6 +28,10 @@ public class Escenario
 		return LimiteY;
 	}
 	
+	 public void  setControlador(ControladorJuego con){
+		 this.controlador=con;
+	}
+	
 	private synchronized static void createInstance() {
 		if (instance == null) { 
 			instance = new Escenario();
@@ -32,7 +40,6 @@ public class Escenario
 	
 	public synchronized static void reiniciarEscenario() {
 		instance = new Escenario();
-	
 	}
 	
 	public static Escenario getInstance() {
@@ -45,7 +52,6 @@ public class Escenario
 	{
 		sumaDePuntos = 0;
 		todoLoQueEstaEnJuego = new LinkedList< ObjetosMoviles >();
-		controlador = new ControladorJuego(false);//cada escenario tiene su controlador de juego
 	}
 	
 	public LinkedList<ObjetosMoviles> objetosVivos() 
@@ -67,7 +73,8 @@ public class Escenario
 		this.controlador.removerObjetoVivo(objeto);//lo saco del gameLoop
 		//COMO VAMOS A HACER PARA PONER EN FALSE LA VISTA :s
 	}
-	
+
+
 	private void limpiarListaYrecolectarPuntos()
 	{
 		//Itero sobre Muertos, borro sobre TodoLoQueEstaEnJuego , voy sumando puntos
@@ -86,4 +93,8 @@ public class Escenario
 			throw new FinEscenarioException();
 	}
 	
+
+	
+	
 }
+
