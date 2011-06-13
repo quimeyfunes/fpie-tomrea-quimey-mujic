@@ -2,6 +2,8 @@ package Objetos_moviles;
 
 import java.util.LinkedList;
 
+import ar.uba.fi.algo3.titiritero.Dibujable;
+
 import Escenario.Escenario;
 import EstrategiasDeMov.IdaYvuelta;
 import EstrategiasDeMov.LineaRectaDown;
@@ -64,5 +66,12 @@ public class Guia extends Voladores
 	
 	protected void run( ObjetosMoviles elemento ){
 		elemento.CambiarEstrategiaDeVuelo( new LineaRectaUp() );
+	}
+
+	@Override
+	public Dibujable getVista()
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
