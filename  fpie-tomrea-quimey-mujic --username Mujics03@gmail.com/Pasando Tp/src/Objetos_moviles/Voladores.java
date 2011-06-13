@@ -39,13 +39,16 @@ public abstract class Voladores extends ObjetosMoviles{
 	
 	
 	public synchronized void  VerificarColision(){
+		
+		boolean bandera=false;
 		LinkedList<ObjetosMoviles> ObjVi =  Escenario.getInstance().objetosVivos();
 		Iterator<ObjetosMoviles> it = ObjVi.iterator();
 		
-		while(it.hasNext()){
+		while(it.hasNext() && !bandera){
 			ObjetosMoviles elemento = it.next();
 			if ( (this.condicionComun(elemento))){
 				elemento.ActuarAnteColision(this);
+				bandera=true;
 			}
 		}
 	}
