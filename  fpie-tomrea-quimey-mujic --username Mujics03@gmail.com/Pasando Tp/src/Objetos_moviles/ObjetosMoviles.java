@@ -2,6 +2,7 @@ package Objetos_moviles;
 
 import Armas.Blindaje;
 import Armas.Danio;
+import Escenario.Escenario;
 import EstrategiasDeMov.EstrategiaDeVuelo;
 import Excepciones.*;
 import Mapa.Ubicacion;
@@ -141,7 +142,10 @@ public abstract class ObjetosMoviles implements Posicionable,ObjetoVivo {
 	}
 	
 	public int getY(){
-		return ((int)this.getPosicion().y);
+		
+		double lY = Escenario.getLimiteY();
+		
+		return ( (int)lY-(int)this.getPosicion().y);//un pequenisimo cambio de variables
 	}
 	//Fin Posicionable
 	
