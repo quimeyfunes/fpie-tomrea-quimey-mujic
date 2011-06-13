@@ -21,16 +21,16 @@ public class PruebaVisual {
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
 		
-		controlador.setIntervaloSimulacion(35);
+		controlador.setIntervaloSimulacion(20);
 		//fin seteo controlador
 		Escenario.InicializarEscenario(controlador);
 	
-		Caza caza = new Caza ( 40 , AltDeEnemy );
-		Exploradores explorador = new Exploradores( 300, AltDeEnemy );
+		//Caza caza = new Caza ( 40 , AltDeEnemy );
+		//Exploradores explorador = new Exploradores( 300, AltDeEnemy );
 		Bombardero bombardero = new Bombardero( 700  ,AltDeEnemy);
-		Avioneta avioneta = new Avioneta( 500 , AltDeEnemy );
+		//Avioneta avioneta = new Avioneta( 500 , AltDeEnemy );
 		Algo42 algo42 = new Algo42(950,50);
-		Guia guia = new Guia(20,400);
+		//Guia guia = new Guia(20,400);
 	
 		controlador.agregarKeyPressObservador(algo42);
 		controlador.comenzarJuego();
