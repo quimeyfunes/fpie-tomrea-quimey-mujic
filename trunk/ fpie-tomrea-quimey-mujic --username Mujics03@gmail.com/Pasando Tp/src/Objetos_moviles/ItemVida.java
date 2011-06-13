@@ -1,5 +1,6 @@
 package Objetos_moviles;
 
+import Vistas.VistaItemVida;
 import ar.uba.fi.algo3.titiritero.Dibujable;
 
 public class ItemVida extends Items

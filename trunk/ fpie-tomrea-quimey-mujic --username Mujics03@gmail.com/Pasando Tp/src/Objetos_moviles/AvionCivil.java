@@ -1,4 +1,5 @@
 package Objetos_moviles;
+import Vistas.VistaAvionCivil;
 import ar.uba.fi.algo3.titiritero.Dibujable;
 import Armas.*;
 import EstrategiasDeMov.EstrategiaDeVuelo;
