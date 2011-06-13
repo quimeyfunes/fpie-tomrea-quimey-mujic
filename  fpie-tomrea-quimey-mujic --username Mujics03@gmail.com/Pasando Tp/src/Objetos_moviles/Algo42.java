@@ -1,11 +1,14 @@
 package Objetos_moviles; 
+import java.awt.event.KeyEvent;
+
 import ar.uba.fi.algo3.titiritero.Dibujable;
+import ar.uba.fi.algo3.titiritero.KeyPressedObservador;
 import Vistas.VistaAlgo42;
 import EstrategiasDeMov.LineaRectaUp;
 import Excepciones.GameOverException;
 import Armas.*;
 
-public class Algo42 extends Voladores{
+public class Algo42 extends Voladores implements KeyPressedObservador{
 	
 	public void Destructor() throws GameOverException {
 		Vivo = false; 
@@ -31,6 +34,18 @@ public class Algo42 extends Voladores{
 	@Override
 	protected void Actuar() {
 		
+	}
+	@Override
+	public void keyPressed(KeyEvent event)
+	{
+		if(event.getKeyCode() == KeyEvent.VK_UP)
+			this.arriba();
+		if(event.getKeyCode() == KeyEvent.VK_DOWN)
+			this.abajo();
+		if(event.getKeyCode() == KeyEvent.VK_RIGHT)
+			this.derecha();
+		if(event.getKeyCode() == KeyEvent.VK_LEFT)
+			this.izquierda();
 	}
 
 	@Override
