@@ -7,7 +7,7 @@ import Armas.*;
 
 public class Algo42 extends Voladores{
 	
-	protected void DESTRUCTOR() throws GameOverException {
+	public void Destructor() throws GameOverException {
 		Vivo = false; 
 		throw new GameOverException();
 	}

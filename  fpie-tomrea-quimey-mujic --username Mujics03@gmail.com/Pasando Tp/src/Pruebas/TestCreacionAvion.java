@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import Armas.Danio;
 import Escenario.Escenario;
 import Mapa.Vector2D;
 import Objetos_moviles.Avioneta;
@@ -45,7 +46,7 @@ public class TestCreacionAvion {
 		Assert.assertTrue( posA.x == posBuscada.x );
 		Assert.assertTrue( posA.y == posBuscada.y );
 
-		a.Destructor();
+		a.analizarDanio(new Danio((short)300));
 
 		//muere y entrega los puntos
 		Assert.assertTrue( a.RecolectarPuntos() > 0);
