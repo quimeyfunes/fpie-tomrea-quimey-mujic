@@ -86,8 +86,8 @@ public abstract class ObjetosMoviles implements Posicionable,ObjetoVivo {
 		if (this.EstaVivo()){
 			this.Actuar();
 		}
-		else
-			throw new ChauBlindajeException();
+		//else
+			//throw new ChauBlindajeException();
 		
 	}
 	
