@@ -7,7 +7,6 @@ import ar.uba.fi.algo3.titiritero.Dibujable;
 
 import Escenario.Escenario;
 import EstrategiasDeMov.DerechaIzquierda;
-import EstrategiasDeMov.IdaYvuelta;
 import EstrategiasDeMov.LineaRectaDown;
 import EstrategiasDeMov.LineaRectaUp;
 import EstrategiasDeMov.MovDirigido;

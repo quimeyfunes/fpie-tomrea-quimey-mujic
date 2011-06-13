@@ -4,13 +4,9 @@ import java.util.LinkedList;
 
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
 import ar.uba.fi.algo3.titiritero.Dibujable;
-import ar.uba.fi.algo3.titiritero.vista.Ventana;
 
 import Excepciones.FinEscenarioException;
 import Objetos_moviles.ObjetosMoviles;
-import Vistas.Mesa;
-import Vistas.VentanaPrincipal;
-import Vistas.VistaMesa;
 
 public class Escenario
 {

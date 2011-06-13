@@ -3,7 +3,6 @@ import Vistas.VistaAvionCivil;
 import ar.uba.fi.algo3.titiritero.Dibujable;
 import Armas.*;
 import EstrategiasDeMov.EstrategiaDeVuelo;
-import EstrategiasDeMov.LineaRectaDown;
 
 
 public class AvionCivil extends Voladores {
