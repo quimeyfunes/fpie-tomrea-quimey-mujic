@@ -8,7 +8,6 @@ import ar.uba.fi.algo3.titiritero.Dibujable;
 import Armas.Danio;
 import Escenario.Escenario;
 import EstrategiasDeMov.EstrategiaDeVuelo;
-import Excepciones.ChauBlindajeException;
 import Mapa.Vector2D;
 import Vistas.VistaTorpedo;
 
