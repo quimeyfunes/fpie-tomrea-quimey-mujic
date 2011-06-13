@@ -1,11 +1,11 @@
-package ControladorAvioneta;
+package PruebaVisual;
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
 import Vistas.*;
 import ar.uba.fi.algo3.titiritero.vista.Ventana;
 import Escenario.Escenario;
 import Objetos_moviles.*;
 
-public class ControladorAvioneta {
+public class PruebaVisual {
 
 	public static void main(String[] args) {
 		
