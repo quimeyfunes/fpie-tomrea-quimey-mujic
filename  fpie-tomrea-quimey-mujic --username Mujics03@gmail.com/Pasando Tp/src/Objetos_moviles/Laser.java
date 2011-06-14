@@ -18,7 +18,7 @@ public class Laser extends Municion
 	{
 		this.danio = new Danio((short)25);
 		this.Velocidad = 8;
-		this.ConfigurarCuerpo(3,3);
+		this.ConfigurarCuerpo(3,7);
 		this.blindaje= new Blindaje((short)1);
 
 	}
@@ -27,7 +27,7 @@ public class Laser extends Municion
 	{
 		if(movil.getClass() != this.getClass())
 		{
-			this.Vivo = false;
+			this.Destructor();
 			movil.analizarDanio(this.daniar());
 		}
 	}

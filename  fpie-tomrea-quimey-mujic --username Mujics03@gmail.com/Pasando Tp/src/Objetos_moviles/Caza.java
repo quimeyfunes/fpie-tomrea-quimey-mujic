@@ -35,7 +35,7 @@ public class Caza extends Voladores
 		estrategia_vuelo = new IdaYvuelta();
 		this.blindaje = new Blindaje((short)100);
 		
-		this.ConfigurarCuerpo(10,10);
+		this.ConfigurarCuerpo(15,12);
 		
 		PistolaLaser pistola_laser = new PistolaLaser(bando , new LineaRectaDown());
 		LanzadorCohetes lanzador_cohetes = new LanzadorCohetes(bando , new LineaRectaDown());
