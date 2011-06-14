@@ -61,6 +61,7 @@ public class Escenario
 	
 	public synchronized void agregarObjeto(ObjetosMoviles objeto)
 	{
+		this.limpiarListaYrecolectarPuntos();//hay que buscar un lugar para esto.Un controlador o algo asi
 		this.todoLoQueEstaEnJuego.add(objeto);
 		
 		this.controlador.agregarObjetoVivo(objeto);//agrego al gameloop
@@ -71,10 +72,9 @@ public class Escenario
 	
 	public  synchronized void eliminarObjeto(ObjetosMoviles objeto)
 	{
-		//this.todoLoQueEstaEnJuego.remove(objeto);
+		this.todoLoQueEstaEnJuego.remove(objeto);
 		//this.controlador.removerObjetoVivo(objeto);//lo saco del gameLoop
-		//COMO VAMOS A HACER PARA PONER EN FALSE LA VISTA :s
-	// si, se puede...hay que usar notifychanges() y poner set visible false en cada vista
+		//COMO VAMOS A HACER PARA ELIMINAR AL VISTA
 	}
 
 
