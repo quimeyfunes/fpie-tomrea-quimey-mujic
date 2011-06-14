@@ -1,11 +1,15 @@
 package PruebaVis;
+import java.util.ArrayList;
+
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
 import ar.uba.fi.algo3.titiritero.Dibujable;
+import ar.uba.fi.algo3.titiritero.ObjetoVivo;
 import Vistas.*;
 import ar.uba.fi.algo3.titiritero.vista.ImagenDinamica;
 import ar.uba.fi.algo3.titiritero.vista.Ventana;
 import Escenario.BlindajeAlgo42;
 import Escenario.Escenario;
+import Excepciones.GameOverException;
 import Objetos_moviles.*;
 
 public class PruebaVisual {
@@ -40,10 +44,19 @@ public class PruebaVisual {
 		((ImagenDinamica) vistaAlgo).setMonitoreable(blindaje);
 		controlador.agregarDibujable(vistaAlgo);
 		//Guia guia = new Guia(20,400);
-		//AvionCivil avion = new AvionCivil(50,50);
+		AvionCivil avion = new AvionCivil(50,50);
 	
 		controlador.agregarKeyPressObservador(algo42);
-		controlador.comenzarJuego();
+		try
+		{
+			controlador.comenzarJuego();
+		}
+		catch(GameOverException e)
+		{
+			controlador.detenerJuego();
+			Dibujable vistaGameOver = new VistaGameOver();
+			controlador.agregarDibujable(vistaGameOver);
+		}
 		
 	}
 }
