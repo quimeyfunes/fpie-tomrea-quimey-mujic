@@ -1,8 +1,12 @@
 package PruebaVis;
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
+import ar.uba.fi.algo3.titiritero.Dibujable;
 import Vistas.*;
+import ar.uba.fi.algo3.titiritero.vista.ImagenDinamica;
 import ar.uba.fi.algo3.titiritero.vista.Panel;
 import ar.uba.fi.algo3.titiritero.vista.Ventana;
+import Armas.Blindaje;
+import Escenario.BlindajeAlgo42;
 import Escenario.Escenario;
 import Objetos_moviles.*;
 
@@ -30,6 +34,13 @@ public class PruebaVisual {
 		//Bombardero bombardero = new Bombardero( 700  ,AltDeEnemy);
 		//Avioneta avioneta = new Avioneta( 500 , AltDeEnemy );
 		Algo42 algo42 = new Algo42(950,50);
+		
+		
+		Dibujable vistaAlgo = new VistaVidaAlgo42();
+		BlindajeAlgo42 blindaje = new BlindajeAlgo42(algo42);
+		vistaAlgo.setPosicionable(blindaje);
+		((ImagenDinamica) vistaAlgo).setMonitoreable(blindaje);
+		controlador.agregarDibujable(vistaAlgo);
 		//Guia guia = new Guia(20,400);
 		AvionCivil avion = new AvionCivil(50,50);
 	

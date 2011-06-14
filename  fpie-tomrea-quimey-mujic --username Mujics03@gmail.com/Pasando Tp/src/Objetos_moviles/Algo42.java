@@ -58,7 +58,7 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 		if(event.getKeyCode() == KeyEvent.VK_LEFT)
 			this.IzquierdaSpeed();
 		if(event.getKeyCode()== KeyEvent.VK_SPACE)
-			this.banderaDisparar=true;
+			this.banderaDisparar=true;  
 		if(event.getKeyCode()== KeyEvent.VK_Z){
 			this.banderacambiarArma=true;
 		}
