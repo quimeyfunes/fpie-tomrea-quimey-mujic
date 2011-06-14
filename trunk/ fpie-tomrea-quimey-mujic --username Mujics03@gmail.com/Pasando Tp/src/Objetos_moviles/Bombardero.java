@@ -37,7 +37,7 @@ public class Bombardero extends Voladores
 		this.estrategia_vuelo = new ZigZag();
 		this.blindaje = new Blindaje((short)200);
 
-		this.ConfigurarCuerpo(60,20);
+		this.ConfigurarCuerpo(60,60);
 		
 		PistolaLaser pistola_laser = new PistolaLaser( bando , new LineaRectaDown() );
 		LanzadorMisiles lanzador_misiles = new LanzadorMisiles(bando, new MovDirigido());

@@ -2,7 +2,7 @@ package Objetos_moviles;
 import Vistas.VistaAvionCivil;
 import ar.uba.fi.algo3.titiritero.Dibujable;
 import Armas.*;
-import EstrategiasDeMov.EstrategiaDeVuelo;
+import EstrategiasDeMov.DerechaIzquierda;
 
 
 public class AvionCivil extends Voladores {
@@ -20,15 +20,10 @@ public class AvionCivil extends Voladores {
 		this.bando = ObjetosMoviles.BandoUsuario();
 		this.puntos = -300;
 		this.Velocidad = 1;
-		this.estrategia_vuelo = IdaYVuelta();
+		this.estrategia_vuelo = new DerechaIzquierda();
 		this.blindaje = new Blindaje((short)100);
 
 		this.ConfigurarCuerpo(10,10);
-	}
-	
-	private EstrategiaDeVuelo IdaYVuelta() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	public boolean PuedeManejarItems(){
