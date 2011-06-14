@@ -36,8 +36,7 @@ public abstract class Voladores extends ObjetosMoviles{
 	public boolean PuedeSerAtacado(){
 		return true;
 	}
-	
-	
+		
 	public synchronized void  VerificarColision(){
 		
 		boolean bandera=false;
