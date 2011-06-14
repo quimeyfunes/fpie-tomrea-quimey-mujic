@@ -28,7 +28,7 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 		this.Velocidad = 5;
 		this.blindaje = new Blindaje((short) 150);
 		
-		this.ConfigurarCuerpo(10,10);
+		this.ConfigurarCuerpo(20,10);
 		
 		PistolaLaser pistola_laser = new PistolaLaser( this.bando ,new LineaRectaUp());
 		this.weapons.add( pistola_laser );
