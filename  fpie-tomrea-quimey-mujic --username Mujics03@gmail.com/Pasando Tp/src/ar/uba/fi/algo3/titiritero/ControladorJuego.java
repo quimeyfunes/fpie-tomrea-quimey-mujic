@@ -84,12 +84,12 @@ public class ControladorJuego implements Runnable {
 	 * Detiene el juego provocando la salida del gameloop.
 	 */
 	public void detenerJuego(){
-		this.estaEnEjecucion = false;
-		if(reproductor!=null)
-			this.reproductor.apagar();
 		this.objetosVivos.clear();
 		this.keyPressedObservadores.clear();
 		this.dibujables.clear();
+		this.estaEnEjecucion = false;
+		if(reproductor!=null)
+			this.reproductor.apagar();
 	}
 	
 	public void agregarObjetoVivo(ObjetoVivo objetoVivo){
