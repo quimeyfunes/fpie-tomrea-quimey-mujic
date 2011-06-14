@@ -45,6 +45,8 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 			this.banderacambiarArma=false;
 		}
 		
+		this.VerificarColision();
+		
 	}
 	@Override
 	public synchronized void keyPressed(KeyEvent event)

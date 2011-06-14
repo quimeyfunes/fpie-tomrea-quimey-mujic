@@ -23,7 +23,6 @@ public class BlindajeAlgo42 implements Posicionable, Monitoreable{
 
 	@Override
 	public int getY() {
-		// TODO Auto-generated method stub
 		return 400;
 	}
 
