@@ -26,22 +26,18 @@ public class ImagenDinamica extends Imagen{
 		short vida = this.monitoreable.getBlindajeReferencia();
 		if(vida > 145){
 			grafico.drawImage(this.imagen, this.posicionable.getX(), this.posicionable.getY(), null);
-			System.out.print(this.monitoreable.getBlindajeReferencia());
 		}
 		else if(vida < 130 && vida >=100){
 			setNombreArchivoImagen("vida90.jpg");
 			grafico.drawImage(this.imagen, this.posicionable.getX(), this.posicionable.getY(), null);
-			System.out.print(this.monitoreable.getBlindajeReferencia());
 		}
 		else if(vida < 100  && vida >=80){
 			setNombreArchivoImagen("vida40.jpg");
 			grafico.drawImage(this.imagen, this.posicionable.getX(), this.posicionable.getY(), null);
-			System.out.print(this.monitoreable.getBlindajeReferencia());
 		}
 		else if(this.monitoreable.getBlindajeReferencia() < 80){
 			setNombreArchivoImagen("vida10.jpg");
 			grafico.drawImage(this.imagen, this.posicionable.getX(), this.posicionable.getY(), null);
-			System.out.print(this.monitoreable.getBlindajeReferencia());
 		}
 		
 		
