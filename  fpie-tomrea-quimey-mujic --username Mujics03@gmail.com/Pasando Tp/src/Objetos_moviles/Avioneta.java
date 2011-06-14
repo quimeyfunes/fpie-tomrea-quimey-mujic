@@ -30,7 +30,7 @@ public class Avioneta extends Voladores {
 		this.estrategia_vuelo = new IdaYvuelta();
 		this.blindaje = new Blindaje((short)100);;
 		
-		this.ConfigurarCuerpo(10,10);
+		this.ConfigurarCuerpo(25,15);
 		
 		PistolaLaser pistola_laser = new PistolaLaser(this.bando,new LineaRectaDown());
 		this.weapons.add( pistola_laser );

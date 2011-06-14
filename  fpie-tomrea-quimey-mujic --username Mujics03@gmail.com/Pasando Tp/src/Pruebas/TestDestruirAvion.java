@@ -26,14 +26,14 @@ public class TestDestruirAvion {
 		Escenario.reiniciarEscenario();
 		Escenario.InicializarEscenario(new ControladorJuego(false));
 		
-		avion = new Algo42( 20,20);
+		avion = new Algo42( 40,40);
 	}
 	@Test
 	public void testDestruir() {
 		
 		this.ControladorA= new ControladorArmas();
 		this.ControladorA.add( new PistolaLaser( ObjetosMoviles.BandoEnemigo(),new LineaRectaUp()));
-		this.municion = ControladorA.dispararElArmaSeleccionada( new Vector2D(20,15));
+		this.municion = ControladorA.dispararElArmaSeleccionada( new Vector2D(40,40));
 		this.municion.moverseIAsegunVel();
 		
 		try{

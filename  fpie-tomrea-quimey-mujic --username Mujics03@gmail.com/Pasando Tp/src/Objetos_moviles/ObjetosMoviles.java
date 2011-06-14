@@ -188,8 +188,9 @@ public abstract class ObjetosMoviles implements Posicionable,ObjetoVivo {
 		Rectangle2D.Double bodyMine = this.getCuerpo();
 		
 		boolean second = bodyMine.intersects(bodyOther);
+		boolean third = bodyOther.intersects(bodyMine);
 		
-		return (first && second);
+		return (first && second)||(first && third);
 		
 	}
 	//FIN MUY PRIVADO
