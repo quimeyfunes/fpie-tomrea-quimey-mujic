@@ -25,8 +25,7 @@ public class Bombardero extends Voladores
 	}
 	
 	public void Destructor(){
-		this.Vivo = false;
-		
+		this.Vivo = false;		
 		new ItemMisilDirigido(this.ubicacion.XY().x,this.ubicacion.XY().y,this.getBando());
 	}
 	

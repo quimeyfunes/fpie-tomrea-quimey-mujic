@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import Excepciones.GameOverException;
 import ar.uba.fi.algo3.titiritero.audio.Reproductor;
+import ar.uba.fi.algo3.titiritero.vista.KeyPressedController;
 
 /**
  * @author Nicolas
@@ -39,8 +41,12 @@ public class ControladorJuego implements Runnable {
 				this.ActualizarListas();//Lo agregue para poder agregar cosas "mientras corre el loop"
 			}
 		}
-		catch (Exception e) {
-			e.printStackTrace();
+		catch (Exception e) 
+		{
+			if(e.getClass()== GameOverException.class)
+				throw (GameOverException)e;
+			else
+				e.printStackTrace();
 		}
 	}
 
@@ -81,6 +87,9 @@ public class ControladorJuego implements Runnable {
 		this.estaEnEjecucion = false;
 		if(reproductor!=null)
 			this.reproductor.apagar();
+		this.objetosVivos.clear();
+		this.keyPressedObservadores.clear();
+		this.dibujables.clear();
 	}
 	
 	public void agregarObjetoVivo(ObjetoVivo objetoVivo){
@@ -177,7 +186,8 @@ public class ControladorJuego implements Runnable {
 	
 	public void removerKeyPressObservador(KeyPressedObservador unMouseClickObservador){
 		this.keyPressedObservadores.remove(unMouseClickObservador);
-	}
+	}	
+	
 	
 	//*****************************************************
 	private void ActualizarListas(){
