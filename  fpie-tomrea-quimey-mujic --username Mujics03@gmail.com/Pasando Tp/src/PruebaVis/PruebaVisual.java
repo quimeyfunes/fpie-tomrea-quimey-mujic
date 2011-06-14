@@ -27,9 +27,9 @@ public class PruebaVisual {
 		//fin seteo controlador
 		Escenario.InicializarEscenario(controlador);
 	
-		//Caza caza = new Caza ( 40 , AltDeEnemy );
-		//Exploradores explorador = new Exploradores( 300, AltDeEnemy );
-		//Bombardero bombardero = new Bombardero( 700  ,AltDeEnemy);
+		Caza caza = new Caza ( 40 , AltDeEnemy );
+		Exploradores explorador = new Exploradores( 300, AltDeEnemy );
+		Bombardero bombardero = new Bombardero( 700  ,AltDeEnemy);
 		Avioneta avioneta = new Avioneta( 500 , AltDeEnemy );
 		Algo42 algo42 = new Algo42(950,50);
 		
