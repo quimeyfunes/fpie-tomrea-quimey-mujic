@@ -2,7 +2,6 @@ package Vistas;
 
 import java.awt.Graphics;
 
-import Escenario.Escenario;
 import ar.uba.fi.algo3.titiritero.DibujableExtra;
 import ar.uba.fi.algo3.titiritero.Monitoreable;
 import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;

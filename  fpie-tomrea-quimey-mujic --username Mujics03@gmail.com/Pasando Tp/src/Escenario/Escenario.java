@@ -5,11 +5,13 @@ import java.util.LinkedList;
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
 import ar.uba.fi.algo3.titiritero.Dibujable;
 import ar.uba.fi.algo3.titiritero.DibujableExtra;
+import ar.uba.fi.algo3.titiritero.ObjetoVivo;
+import ar.uba.fi.algo3.titiritero.vista.ObjetoDeTexto;
 
 import Excepciones.FinEscenarioException;
 import Objetos_moviles.ObjetosMoviles;
 
-public class Escenario
+public class Escenario implements ObjetoVivo,ObjetoDeTexto
 {
 	LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego;
 	LinkedList<ObjetosMoviles> temp;
@@ -62,9 +64,7 @@ public class Escenario
 	}
 	
 	public synchronized void agregarObjeto(ObjetosMoviles objeto)
-	{
-		this.limpiarListaYrecolectarPuntos();//hay que pasarle esto al escenario tmb, asi le da vivir:D
-		
+	{		
 		this.todoLoQueEstaEnJuego.add(objeto);
 		
 		this.controlador.agregarObjetoVivo(objeto);//agrego al gameloop
@@ -95,8 +95,21 @@ public class Escenario
 			this.eliminarObjeto(movil);
 		}
 		
-		if(this.sumaDePuntos >= 1000)
-			throw new FinEscenarioException();
+		if(this.sumaDePuntos >= 1000){
+			this.controlador.detenerJuego();
+		}
+	}
+	@Override
+	public void vivir() {
+		this.limpiarListaYrecolectarPuntos();
+	}
+	
+	public int getPuntos(){
+		return this.sumaDePuntos;
+	}
+	@Override
+	public String getTexto() {
+		return String.valueOf((this.sumaDePuntos)) ;
 	}
 	
 
