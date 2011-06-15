@@ -1,5 +1,9 @@
 package PruebaVis;
 
+import java.awt.Event;
+import java.awt.Menu;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.Random;
 
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
@@ -10,6 +14,8 @@ import ar.uba.fi.algo3.titiritero.vista.Ventana;
 import Escenario.Escenario;
 import Excepciones.GameOverException;
 import ManejoXml.ParserNivelesXml;
+
+import Menu.MenuInicial;
 import Objetos_moviles.*;
 import Persistencia.*;
 
@@ -26,11 +32,35 @@ public class PruebaVisual
 
 		// seteo el controlador y lo dejo listo para correr
 		ControladorJuego controlador = new ControladorJuego(false);
+		
+		Ventana ventanaMenu = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
+		controlador.setSuperficieDeDibujo(ventanaMenu);
+		ventanaMenu.setVisible(true);
+		controlador.setIntervaloSimulacion(20);
+		
+		
+		MenuInicial menuListener = new MenuInicial();
+		VistaEmpezarNivelBoton vistaEmpezar = new VistaEmpezarNivelBoton();
+		VistaSalirJuegoBoton vistaSalir = new VistaSalirJuegoBoton();
+
+		menuListener.setControlador(controlador);
+
+		controlador.agregarMouseClickObservador(menuListener);
+		controlador.agregarDibujable(vistaEmpezar);
+		controlador.agregarDibujable(vistaSalir);
+		
+		try{
+			controlador.comenzarJuego();
+
+		}catch(Exception e){
+			
+		}
+		ventanaMenu.setVisible(false);
 		Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
 
-		controlador.setIntervaloSimulacion(20);
+		//controlador.setIntervaloSimulacion(20);
 		// fin seteo controlador
 		//Escenario.InicializarEscenario(controlador);
 
@@ -40,7 +70,7 @@ public class PruebaVisual
 		while ((!perdio) && (!gano))
 		{
 			Escenario.InicializarEscenario(controlador);
-			
+
 			Random r = new Random();
 			for (int i = 0; i < parser.getCantCazas(); i++)
 			{
@@ -111,5 +141,7 @@ public class PruebaVisual
 				partida.CargarPartida();
 		}
 
+		
+		
 	}
 }
