@@ -15,7 +15,7 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 	
 	public void Destructor() throws GameOverException {
 		Vivo = false; 
-		throw new GameOverException();
+		//throw new GameOverException();
 	}
 	
 	public Algo42(double x, double y)

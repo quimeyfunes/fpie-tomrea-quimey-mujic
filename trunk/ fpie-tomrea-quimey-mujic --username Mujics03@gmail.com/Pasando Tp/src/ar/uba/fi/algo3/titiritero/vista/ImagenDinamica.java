@@ -41,6 +41,11 @@ public class ImagenDinamica extends Imagen{
 			setNombreArchivoImagen("vida20.jpg");
 			grafico.drawImage(this.imagen, this.posicionable.getX(), this.posicionable.getY(), null);
 		}
+		else if(this.monitoreable.getBlindajeReferencia()<0){
+			setNombreArchivoImagen("Game over.jpg");
+			grafico.drawImage(this.imagen, 500, 500, null);
+			
+		}
 		
 		
 	}
