@@ -62,6 +62,9 @@ public class PruebaVisual
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
 
+		VistaFondoJuego fondoJuego = new VistaFondoJuego();
+		controlador.agregarDibujable(fondoJuego);
+
 		//controlador.setIntervaloSimulacion(20);
 		// fin seteo controlador
 		//Escenario.InicializarEscenario(controlador);
@@ -107,7 +110,9 @@ public class PruebaVisual
 			}
 
 			controlador.agregarObjetoVivo(Escenario.getInstance());
-
+			
+	
+			
 			Algo42 algo42 = new Algo42(950, 50);
 
 			DibujableExtra vistaAlgo = new VistaBlindajeAlgo42();
