@@ -9,6 +9,7 @@ import ar.uba.fi.algo3.titiritero.ObjetoVivo;
 import ar.uba.fi.algo3.titiritero.vista.ObjetoDeTexto;
 
 import Excepciones.FinEscenarioException;
+import Objetos_moviles.Algo42;
 import Objetos_moviles.ObjetosMoviles;
 
 public class Escenario implements ObjetoVivo,ObjetoDeTexto
@@ -95,7 +96,7 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 			this.eliminarObjeto(movil);
 		}
 		
-		if(this.sumaDePuntos >= 1000){//aca va la logistica de pasar de level
+		if( (this.sumaDePuntos >= 1000 )&& (this.NoQuedanEnemigos())){//aca va la logistica de pasar de level
 			this.controlador.detenerJuego();
 		}
 	}
@@ -112,8 +113,17 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 		return String.valueOf((this.sumaDePuntos)) ;
 	}
 	
+	 private boolean NoQuedanEnemigos(){
+		 boolean bandera=false;
+		 if( (this.objetosVivos().size()==1) && (this.objetosVivos().getFirst().getClass()==Algo42.class)){
+			 bandera=true;
+		 }
+		 return bandera;
+		 }
+			 
+		
+	}
+	
 
-	
-	
-}
+
 
