@@ -4,4 +4,6 @@
        <cantidad name="cazas" value="6"/>
        <cantidad name="avionetas" value="7"/>
        <cantidad name="exploradores" value="7"/>
+	   <cantidad name="avioncivil" value="2"/>
+	   <cantidad name="helicoptero" value="2"/>
 </cantidades>
