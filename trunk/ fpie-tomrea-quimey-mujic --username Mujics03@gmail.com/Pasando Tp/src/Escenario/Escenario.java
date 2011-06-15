@@ -56,12 +56,14 @@ public class Escenario
 	
 	public synchronized LinkedList<ObjetosMoviles> objetosVivos() 
 	{
+		
 		return todoLoQueEstaEnJuego;
 	}
 	
 	public synchronized void agregarObjeto(ObjetosMoviles objeto)
 	{
 		this.limpiarListaYrecolectarPuntos();//hay que buscar un lugar para esto.Un controlador o algo asi
+		
 		this.todoLoQueEstaEnJuego.add(objeto);
 		
 		this.controlador.agregarObjetoVivo(objeto);//agrego al gameloop
@@ -71,10 +73,10 @@ public class Escenario
 	}
 	
 	public  synchronized void eliminarObjeto(ObjetosMoviles objeto)
-	{
+	{//hay que hacer esto bien de alguna forma
 		this.todoLoQueEstaEnJuego.remove(objeto);
 		//this.controlador.removerObjetoVivo(objeto);//lo saco del gameLoop
-		//COMO VAMOS A HACER PARA ELIMINAR AL VISTA
+		//this.controlador.removerDibujable(objeto.getVista());
 	}
 
 
