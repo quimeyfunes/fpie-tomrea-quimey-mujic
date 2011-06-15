@@ -29,7 +29,7 @@ public class PruebaVisual
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
 
-		controlador.setIntervaloSimulacion(25);
+		controlador.setIntervaloSimulacion(20);
 		// fin seteo controlador
 		Escenario.InicializarEscenario(controlador);
 

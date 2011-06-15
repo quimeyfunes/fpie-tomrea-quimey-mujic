@@ -8,6 +8,7 @@ import java.util.List;
 import Excepciones.GameOverException;
 import ar.uba.fi.algo3.titiritero.audio.Reproductor;
 import ar.uba.fi.algo3.titiritero.vista.KeyPressedController;
+import Excepciones.FinEscenarioException;
 
 /**
  * @author Nicolas
@@ -46,7 +47,11 @@ public class ControladorJuego implements Runnable {
 			if(e.getClass()== GameOverException.class)
 				throw (GameOverException)e;
 			else
-				e.printStackTrace();
+				if(e.getClass()== FinEscenarioException.class)
+					this.detenerJuego();
+				else{
+					e.printStackTrace();					
+				}
 		}
 	}
 

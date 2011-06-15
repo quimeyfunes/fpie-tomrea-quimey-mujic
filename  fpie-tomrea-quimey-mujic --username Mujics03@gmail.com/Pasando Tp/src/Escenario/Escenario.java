@@ -10,6 +10,7 @@ import ar.uba.fi.algo3.titiritero.ObjetoVivo;
 import ar.uba.fi.algo3.titiritero.vista.ObjetoDeTexto;
 import Objetos_moviles.Algo42;
 import Objetos_moviles.ObjetosMoviles;
+import Excepciones.FinEscenarioException;
 
 public class Escenario implements ObjetoVivo,ObjetoDeTexto
 {
@@ -96,7 +97,8 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 		}
 		
 		if( (this.sumaDePuntos >= 1000 )|| (this.NoQuedanEnemigos())){//aca va la logistica de pasar de level
-			this.controlador.detenerJuego();
+			//this.controlador.detenerJuego();
+			throw new FinEscenarioException();
 		}
 	}
 		
