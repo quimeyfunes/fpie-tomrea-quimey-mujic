@@ -33,7 +33,7 @@ public class TestDestruirAvion {
 		
 		this.ControladorA= new ControladorArmas();
 		this.ControladorA.add( new PistolaLaser( ObjetosMoviles.BandoEnemigo(),new LineaRectaUp()));
-		this.municion = ControladorA.dispararElArmaSeleccionada( new Vector2D(100,100));
+		this.municion = ControladorA.dispararElArmaSeleccionada( new Vector2D(99,99));
 		this.municion.moverseIAsegunVel();
 		
 		try{

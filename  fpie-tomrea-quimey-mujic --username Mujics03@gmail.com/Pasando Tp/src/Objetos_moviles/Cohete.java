@@ -18,7 +18,7 @@ public class Cohete extends Municion
 	{
 		this.danio = new Danio((short)50);
 		this.Velocidad = 5;
-		this.ConfigurarCuerpo(4,4);
+		this.ConfigurarCuerpo(8,8);
 		this.blindaje= new Blindaje((short)50);
 
 	}
