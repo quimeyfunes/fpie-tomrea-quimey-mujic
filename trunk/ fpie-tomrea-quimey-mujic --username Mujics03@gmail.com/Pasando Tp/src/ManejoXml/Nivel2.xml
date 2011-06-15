@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cantidades>
+       <cantidad name="bombarderos" value="4"/>
+       <cantidad name="cazas" value="5"/>
+       <cantidad name="avionetas" value="5"/>
+       <cantidad name="exploradores" value="6"/>
+</cantidades>
