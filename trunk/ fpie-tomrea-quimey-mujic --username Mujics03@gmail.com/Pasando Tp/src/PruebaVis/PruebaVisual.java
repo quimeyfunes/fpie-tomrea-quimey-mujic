@@ -41,7 +41,7 @@ public class PruebaVisual {
 		vistaAlgo.setPosicionable(blindaje);
 		((ImagenDinamica) vistaAlgo).setMonitoreable(blindaje);
 		controlador.agregarDibujable(vistaAlgo);
-		//Guia guia = new Guia(20,400);
+		Guia guia = new Guia(20,400);
 		AvionCivil avion = new AvionCivil(50,50);
 	
 		controlador.agregarKeyPressObservador(algo42);
