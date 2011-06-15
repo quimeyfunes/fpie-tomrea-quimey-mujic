@@ -7,8 +7,8 @@ import ar.uba.fi.algo3.titiritero.Posicionable;
 
 
 public class BlindajeAlgo42 implements Posicionable, Monitoreable{
-
 	
+		
 	private Algo42 referenciaAlgo42;
 	
 	public BlindajeAlgo42(Algo42 algo){
