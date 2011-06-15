@@ -94,33 +94,32 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 	}
 	
 	private synchronized void ArribaSpeed(){
-		
-		if(!this.EstaCercaAlAlimiteSuperior()){
 			for(int i=0;i<Velocidad;i++){
-				this.arriba();
+				if(!this.EstaCercaAlAlimiteSuperior()){
+					this.arriba();
+					}
 				}
 			}
-		}
 	
 	private synchronized void AbajoSpeed(){
-		if(!this.EstaCercaAlAlimiteInferior()){
 			for(int i=0;i<Velocidad;i++){
-				this.abajo();
+				if(!this.EstaCercaAlAlimiteInferior()){
+					this.abajo();
+					}
 				}
 			}
-		}
 	
 	private synchronized void DerechaSpeed(){
-		if(!this.EstaCercaAlAlimiteDerecho()){
 			for(int i=0;i<Velocidad;i++){
+				if(!this.EstaCercaAlAlimiteDerecho()){
 				this.derecha();
 				}
 			}
 		}
 	
 	private synchronized void IzquierdaSpeed(){
-		if(!this.EstaCercaAlAlimiteIzquierdo()){
 			for(int i=0;i<Velocidad;i++){
+				if(!this.EstaCercaAlAlimiteIzquierdo()){
 				this.izquierda();
 				}
 			}
