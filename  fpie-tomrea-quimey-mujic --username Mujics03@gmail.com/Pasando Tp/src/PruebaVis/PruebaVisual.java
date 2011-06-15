@@ -31,13 +31,14 @@ public class PruebaVisual
 
 		controlador.setIntervaloSimulacion(20);
 		// fin seteo controlador
-		Escenario.InicializarEscenario(controlador);
+		//Escenario.InicializarEscenario(controlador);
 
 		ParserNivelesXml parser = new ParserNivelesXml();
 		boolean perdio = false;
 		boolean gano = false;
 		while ((!perdio) && (!gano))
 		{
+			Escenario.InicializarEscenario(controlador);
 			Random r = new Random();
 			for (int i = 0; i < parser.getCantCazas(); i++)
 			{
