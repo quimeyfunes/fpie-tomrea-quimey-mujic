@@ -77,7 +77,7 @@ public class PruebaVisual {
 		controlador.agregarDibujable(vistaAlgo);
 
 		Guia guia = new Guia(20,400);
-		guia.setBlindaje((short) 255);
+		guia.setBlindaje(parser.getVidaGuia());
 
 	
 		controlador.agregarKeyPressObservador(algo42);
