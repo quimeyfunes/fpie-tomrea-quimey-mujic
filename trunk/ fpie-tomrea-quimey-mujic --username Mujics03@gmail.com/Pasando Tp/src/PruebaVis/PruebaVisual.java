@@ -1,9 +1,7 @@
 package PruebaVis;
-import java.util.ArrayList;
 
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
 import ar.uba.fi.algo3.titiritero.Dibujable;
-import ar.uba.fi.algo3.titiritero.ObjetoVivo;
 import Vistas.*;
 import ar.uba.fi.algo3.titiritero.vista.ImagenDinamica;
 import ar.uba.fi.algo3.titiritero.vista.Ventana;
