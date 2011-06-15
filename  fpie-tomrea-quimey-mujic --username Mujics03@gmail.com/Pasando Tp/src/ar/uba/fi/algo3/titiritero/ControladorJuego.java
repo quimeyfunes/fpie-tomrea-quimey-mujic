@@ -6,6 +6,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import Excepciones.GameOverException;
+import ar.uba.fi.algo3.titiritero.audio.Elemento;
+import ar.uba.fi.algo3.titiritero.audio.Piano;
 import ar.uba.fi.algo3.titiritero.audio.Reproductor;
 import ar.uba.fi.algo3.titiritero.vista.KeyPressedController;
 import Excepciones.FinEscenarioException;
@@ -25,7 +27,9 @@ public class ControladorJuego implements Runnable {
 		this.keyPressedObservadores = new ArrayList<KeyPressedObservador>();
 		this.estaReproductorActivo = activarReproductor;
 		if(this.estaReproductorActivo)
-			this.reproductor = new Reproductor();		
+			this.reproductor = new Reproductor();
+			
+		
 	}
 	
 	public boolean estaEnEjecucion(){

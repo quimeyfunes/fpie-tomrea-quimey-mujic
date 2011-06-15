@@ -22,7 +22,8 @@ public class Imagen implements Dibujable{
 
 	public void dibujar(SuperficieDeDibujo superficeDeDibujo) {
 		Graphics grafico = (Graphics)superficeDeDibujo.getBuffer();
-		grafico.drawImage(this.imagen, this.posicionable.getX(), this.posicionable.getY(), null);
+		grafico.drawImage(this.imagen, this.posicionable.getX(), this.posicionable.getY(),null, null);
+		//grafico.drawImage(this.imagen, this.posicionable.getX(), this.posicionable.getY(), null);
 	}
 	    
 	public String getNombreArchivoImagen() {
