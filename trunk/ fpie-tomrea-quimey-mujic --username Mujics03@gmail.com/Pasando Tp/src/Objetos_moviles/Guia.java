@@ -59,7 +59,7 @@ public class Guia extends Voladores
 		Escenario escenario = Escenario.getInstance();
 		// buscar tipo generico Collection
 		LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego = escenario.objetosVivos();
-		for ( int j = 0  ; j == todoLoQueEstaEnJuego.size() ; j=j+1 ){
+		for ( int j = 0  ; j < todoLoQueEstaEnJuego.size() ; j=j+1 ){
 			ObjetosMoviles elemento = todoLoQueEstaEnJuego.get( j );
 			if ( this.condicion(elemento) )this.run(elemento);
 		}
