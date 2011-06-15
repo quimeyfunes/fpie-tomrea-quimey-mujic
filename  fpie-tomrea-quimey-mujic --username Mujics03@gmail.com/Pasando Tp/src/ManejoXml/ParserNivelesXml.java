@@ -89,5 +89,15 @@ public class ParserNivelesXml
 	{
 		return this.getCantAviones("avionetas");
 	}
+	
+	public byte getCantHelicopteros()
+	{
+		return this.getCantAviones("helicoptero");
+	}
+	
+	public byte getCantAvionCivil()
+	{
+		return this.getCantAviones("avioncivil");
+	}
 
 }
