@@ -28,11 +28,11 @@ public class VistaBlindajeAlgo42 extends Imagen implements DibujableExtra{
 		if(relacion >= 0.95){
 			setNombreArchivoImagen("vida.jpg");
 			grafico.drawImage(this.imagen, CoordenadaX, CoordenadaY, null);
-		}else
+		}else 
 			if(relacion<0.95 && relacion>=0.85){
 				setNombreArchivoImagen("vida90.jpg");
 				grafico.drawImage(this.imagen, CoordenadaX, CoordenadaY, null);
-			}else
+			}else 
 				if(relacion<0.85 && relacion>=0.75){
 					setNombreArchivoImagen("vida80.jpg");
 					grafico.drawImage(this.imagen, CoordenadaX, CoordenadaY, null);
