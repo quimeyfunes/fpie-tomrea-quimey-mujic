@@ -40,12 +40,14 @@ public class PruebaVisual
 		
 		
 		MenuInicial menuListener = new MenuInicial();
+		VistaFondoMenuInicial fondo = new VistaFondoMenuInicial();
 		VistaEmpezarNivelBoton vistaEmpezar = new VistaEmpezarNivelBoton();
 		VistaSalirJuegoBoton vistaSalir = new VistaSalirJuegoBoton();
 
 		menuListener.setControlador(controlador);
 
 		controlador.agregarMouseClickObservador(menuListener);
+		controlador.agregarDibujable(fondo);
 		controlador.agregarDibujable(vistaEmpezar);
 		controlador.agregarDibujable(vistaSalir);
 		
