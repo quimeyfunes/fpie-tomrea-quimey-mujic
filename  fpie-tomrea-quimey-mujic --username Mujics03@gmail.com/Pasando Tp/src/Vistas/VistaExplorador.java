@@ -1,9 +1,9 @@
 package Vistas;
 
 
-import ar.uba.fi.algo3.titiritero.vista.Imagen;
+import ar.uba.fi.algo3.titiritero.vista.ImagenDinamicaObjetos;
 
-public class VistaExplorador extends Imagen {
+public class VistaExplorador extends ImagenDinamicaObjetos {
  
 	public VistaExplorador() {
 		setNombreArchivoImagen("explorador.jpg");

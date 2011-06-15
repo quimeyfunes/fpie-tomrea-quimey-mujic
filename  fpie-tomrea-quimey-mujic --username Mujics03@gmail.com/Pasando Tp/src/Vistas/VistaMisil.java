@@ -1,7 +1,7 @@
 package Vistas;
-import ar.uba.fi.algo3.titiritero.vista.Imagen;
+import ar.uba.fi.algo3.titiritero.vista.ImagenDinamicaObjetos;
 
-public class VistaMisil extends Imagen{
+public class VistaMisil extends ImagenDinamicaObjetos{
 	
 	public VistaMisil(){
 		setNombreArchivoImagen("cohete.jpg");

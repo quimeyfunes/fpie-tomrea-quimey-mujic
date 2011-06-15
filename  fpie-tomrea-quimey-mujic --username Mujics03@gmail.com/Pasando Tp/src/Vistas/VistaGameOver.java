@@ -1,11 +1,8 @@
 package Vistas;
 
-import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
-import ar.uba.fi.algo3.titiritero.vista.Figura;
-import ar.uba.fi.algo3.titiritero.vista.Imagen;
+import ar.uba.fi.algo3.titiritero.vista.ImagenDinamicaObjetos;
 
-public class VistaGameOver extends Imagen
-{
+public class VistaGameOver extends ImagenDinamicaObjetos {
 	public VistaGameOver()
 	{
 		setNombreArchivoImagen("Game over.jpg");
