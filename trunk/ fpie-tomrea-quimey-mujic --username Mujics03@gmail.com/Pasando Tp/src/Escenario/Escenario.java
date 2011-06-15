@@ -16,7 +16,7 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 {
 	LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego;
 	LinkedList<ObjetosMoviles> temp;
-	int sumaDePuntos;
+	int sumaDePuntos;//si se ponen como variable de clase, se pueden ir acumulando puntos
 	static double LimiteX=1200;
 	static double LimiteY=500;
 	private static Escenario instance = null;
@@ -75,10 +75,10 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 	}
 	
 	public  synchronized void eliminarObjeto(ObjetosMoviles objeto)
-	{//hay que hacer esto bien de alguna forma
+	{
 		this.todoLoQueEstaEnJuego.remove(objeto);
 		this.controlador.removerObjetoVivo(objeto);//lo saco del gameLoop
-		this.controlador.removerDibujable(objeto.getVista());
+		//this.controlador.removerDibujable(objeto.getVista());
 	}
 
 
