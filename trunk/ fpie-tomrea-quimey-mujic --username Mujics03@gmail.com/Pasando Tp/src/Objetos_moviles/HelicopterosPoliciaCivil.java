@@ -21,7 +21,7 @@ public class HelicopterosPoliciaCivil extends Voladores
 		bando = ObjetosMoviles.BandoUsuario();
 		puntos = 200;
 		Velocidad = 1;
-		this.ConfigurarCuerpo(6,6);
+		this.ConfigurarCuerpo(20,20);
 		estrategia_vuelo = new Circular(Circular.radioStandarSegunDistancia(this.getPosicion())) ; // estrategia de vuelo circular
 		this.blindaje = new Blindaje((short)100);
 
