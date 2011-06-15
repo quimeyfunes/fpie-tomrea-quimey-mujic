@@ -120,7 +120,7 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 		 boolean Algo42EstaVivo=false;
 		 Iterator<ObjetosMoviles> it = this.todoLoQueEstaEnJuego.iterator();
 		 
-		 while(NoHayEnemigos && it.hasNext()&& Algo42EstaVivo){
+		 while(NoHayEnemigos && it.hasNext()){
 			 ObjetosMoviles obj = it.next();
 			 
 			 if (obj.getBando()!=ObjetosMoviles.BandoUsuario()){
