@@ -4,10 +4,9 @@ import java.util.Random;
 
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
 import ar.uba.fi.algo3.titiritero.Dibujable;
+import ar.uba.fi.algo3.titiritero.DibujableExtra;
 import Vistas.*;
-import ar.uba.fi.algo3.titiritero.vista.ImagenDinamica;
 import ar.uba.fi.algo3.titiritero.vista.Ventana;
-import Escenario.BlindajeAlgo42;
 import Escenario.Escenario;
 import Excepciones.GameOverException;
 import ManejoXml.ParserNivelesXml;
@@ -73,13 +72,12 @@ public class PruebaVisual {
 		Algo42 algo42 = new Algo42(950,50);
 		
 		
-		Dibujable vistaAlgo = new VistaVidaAlgo42();
-		BlindajeAlgo42 blindaje = new BlindajeAlgo42(algo42);
-		vistaAlgo.setPosicionable(blindaje);
-		((ImagenDinamica) vistaAlgo).setMonitoreable(blindaje);
+		DibujableExtra vistaAlgo =  new VistaBlindajeAlgo42();
+		 vistaAlgo.setMonitoreable(algo42);
 		controlador.agregarDibujable(vistaAlgo);
-		Guia guia = new Guia(20,400);
-		
+
+		//Guia guia = new Guia(20,400);
+
 	
 		controlador.agregarKeyPressObservador(algo42);
 		try
