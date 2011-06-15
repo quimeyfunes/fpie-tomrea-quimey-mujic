@@ -95,7 +95,7 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 			this.eliminarObjeto(movil);
 		}
 		
-		if(this.sumaDePuntos >= 1000){
+		if(this.sumaDePuntos >= 1000){//aca va la logistica de pasar de level
 			this.controlador.detenerJuego();
 		}
 	}

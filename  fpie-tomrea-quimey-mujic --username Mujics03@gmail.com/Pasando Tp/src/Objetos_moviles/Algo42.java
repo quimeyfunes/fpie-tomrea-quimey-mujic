@@ -30,7 +30,7 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 	protected void EstadoCorrecto(){ 
 		this.bando = ObjetosMoviles.BandoUsuario();
 		this.Velocidad = 5;
-		this.blindaje = new Blindaje((short) 150);
+		this.blindaje = new Blindaje((short) 250);
 		
 		this.ConfigurarCuerpo(30,30);
 		
