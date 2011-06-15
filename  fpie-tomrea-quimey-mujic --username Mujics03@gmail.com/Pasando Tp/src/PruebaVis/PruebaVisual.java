@@ -1,5 +1,7 @@
 package PruebaVis;
 
+import java.util.Random;
+
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
 import ar.uba.fi.algo3.titiritero.Dibujable;
 import Vistas.*;
@@ -8,6 +10,7 @@ import ar.uba.fi.algo3.titiritero.vista.Ventana;
 import Escenario.BlindajeAlgo42;
 import Escenario.Escenario;
 import Excepciones.GameOverException;
+import ManejoXml.ParserNivelesXml;
 import Objetos_moviles.*;
 
 public class PruebaVisual {
@@ -29,11 +32,44 @@ public class PruebaVisual {
 		//fin seteo controlador
 		Escenario.InicializarEscenario(controlador);
 	
-		Caza caza = new Caza ( 40 , AltDeEnemy );
-		Exploradores explorador = new Exploradores( 300, AltDeEnemy );
-		Bombardero bombardero = new Bombardero( 700  ,AltDeEnemy);
-		Bombardero bombarder = new Bombardero( 500  ,AltDeEnemy);
-		Avioneta avioneta = new Avioneta( 500 , AltDeEnemy );
+		ParserNivelesXml parser = new ParserNivelesXml();
+		Random r = new Random();
+		for (int i = 0; i < parser.getCantCazas(); i++)
+		{
+			Caza caza = new Caza ( (double)r.nextInt((int) Escenario.getLimiteX()), AltDeEnemy );
+		}
+		
+		for (int i = 0; i < parser.getCantExploradores(); i++)
+		{
+			Exploradores explorador = new Exploradores( (double)r.nextInt((int) Escenario.getLimiteX()),
+					AltDeEnemy );
+		}
+		
+		for (int i = 0; i < parser.getCantAvionetas(); i++)
+		{
+			Avioneta avioneta = new Avioneta( (double)r.nextInt((int) Escenario.getLimiteX()) , 
+					AltDeEnemy );
+		}
+		
+		for (int i = 0; i < parser.getCantBombarderos(); i++)
+		{
+			Bombardero bombardero = new Bombardero( (double)r.nextInt((int) Escenario.getLimiteX()),
+					AltDeEnemy);
+		}
+		
+		for (int i = 0; i < parser.getCantAvionCivil(); i++)
+		{
+			AvionCivil avion = new AvionCivil((double)r.nextInt((int) Escenario.getLimiteX()),
+					(double)r.nextInt((int) Escenario.getLimiteY()));
+		}
+		
+		for (int i = 0; i < parser.getCantHelicopteros(); i++)
+		{
+			HelicopterosPoliciaCivil hel = new HelicopterosPoliciaCivil((double)r.nextInt((int) 
+					Escenario.getLimiteX()), (double)r.nextInt((int) Escenario.getLimiteY()));
+		}
+			
+		
 		Algo42 algo42 = new Algo42(950,50);
 		
 		
@@ -42,8 +78,8 @@ public class PruebaVisual {
 		vistaAlgo.setPosicionable(blindaje);
 		((ImagenDinamica) vistaAlgo).setMonitoreable(blindaje);
 		controlador.agregarDibujable(vistaAlgo);
-		//Guia guia = new Guia(20,400);
-		AvionCivil avion = new AvionCivil(50,50);
+		Guia guia = new Guia(20,400);
+		
 	
 		controlador.agregarKeyPressObservador(algo42);
 		try
