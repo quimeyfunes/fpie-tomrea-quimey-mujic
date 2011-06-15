@@ -13,7 +13,7 @@ public class Escenario
 	LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego;
 	LinkedList<ObjetosMoviles> temp;
 	int sumaDePuntos;
-	static double LimiteX=1000;
+	static double LimiteX=1200;
 	static double LimiteY=500;
 	private static Escenario instance = null;
 	private ControladorJuego controlador=null;

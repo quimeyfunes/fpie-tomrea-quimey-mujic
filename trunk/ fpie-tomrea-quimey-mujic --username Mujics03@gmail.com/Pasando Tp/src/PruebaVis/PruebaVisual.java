@@ -32,6 +32,7 @@ public class PruebaVisual {
 		Caza caza = new Caza ( 40 , AltDeEnemy );
 		Exploradores explorador = new Exploradores( 300, AltDeEnemy );
 		Bombardero bombardero = new Bombardero( 700  ,AltDeEnemy);
+		Bombardero bombarder = new Bombardero( 500  ,AltDeEnemy);
 		Avioneta avioneta = new Avioneta( 500 , AltDeEnemy );
 		Algo42 algo42 = new Algo42(950,50);
 		
@@ -41,7 +42,7 @@ public class PruebaVisual {
 		vistaAlgo.setPosicionable(blindaje);
 		((ImagenDinamica) vistaAlgo).setMonitoreable(blindaje);
 		controlador.agregarDibujable(vistaAlgo);
-		Guia guia = new Guia(20,400);
+		//Guia guia = new Guia(20,400);
 		AvionCivil avion = new AvionCivil(50,50);
 	
 		controlador.agregarKeyPressObservador(algo42);
