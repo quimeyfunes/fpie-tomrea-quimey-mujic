@@ -25,7 +25,9 @@ public class ImagenDinamica extends Imagen{
 		Graphics grafico = (Graphics)superficeDeDibujo.getBuffer();
 		short vida = this.monitoreable.getBlindajeReferencia();
 		if(vida > 145){
+			setNombreArchivoImagen("vida.jpg");
 			grafico.drawImage(this.imagen, this.posicionable.getX(), this.posicionable.getY(), null);
+			
 		}
 		else if(vida < 130 && vida >=100){
 			setNombreArchivoImagen("vida90.jpg");
@@ -36,7 +38,7 @@ public class ImagenDinamica extends Imagen{
 			grafico.drawImage(this.imagen, this.posicionable.getX(), this.posicionable.getY(), null);
 		}
 		else if(this.monitoreable.getBlindajeReferencia() < 80){
-			setNombreArchivoImagen("vida10.jpg");
+			setNombreArchivoImagen("vida20.jpg");
 			grafico.drawImage(this.imagen, this.posicionable.getX(), this.posicionable.getY(), null);
 		}
 		
