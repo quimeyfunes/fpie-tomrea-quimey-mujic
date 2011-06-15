@@ -17,6 +17,7 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 	LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego;
 	LinkedList<ObjetosMoviles> temp;
 	int sumaDePuntos;//si se ponen como variable de clase, se pueden ir acumulando puntos
+	int sumaTOTAL;
 	static double LimiteX=1200;
 	static double LimiteY=500;
 	private static Escenario instance = null;
@@ -98,6 +99,7 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 		
 		if( (this.sumaDePuntos >= 1000 )|| (this.NoQuedanEnemigos())){//aca va la logistica de pasar de level
 			//this.controlador.detenerJuego();
+			sumaTOTAL=sumaTOTAL+this.sumaDePuntos;
 			throw new FinEscenarioException();
 		}
 	}
@@ -131,6 +133,10 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 				 }
 		 }
 		 return( NoHayEnemigos)&&(Algo42EstaVivo ); 
+	 }
+	 
+	 public int getPuntosTotales(){
+		 return sumaTOTAL;
 	 }
 			 
 		

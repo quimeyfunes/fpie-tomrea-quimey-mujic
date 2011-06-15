@@ -39,6 +39,7 @@ public class PruebaVisual
 		while ((!perdio) && (!gano))
 		{
 			Escenario.InicializarEscenario(controlador);
+			
 			Random r = new Random();
 			for (int i = 0; i < parser.getCantCazas(); i++)
 			{
