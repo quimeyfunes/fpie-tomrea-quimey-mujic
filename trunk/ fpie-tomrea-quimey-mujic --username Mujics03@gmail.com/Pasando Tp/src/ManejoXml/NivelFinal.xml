@@ -6,5 +6,5 @@
        <cantidad name="exploradores" value="7"/>
 	   <cantidad name="avioncivil" value="2"/>
 	   <cantidad name="helicoptero" value="2"/>
-	   <cantidad name="vidaguia" value="400"/>
+	   <cantidad name="vidaguia" value="1000"/>
 </cantidades>
