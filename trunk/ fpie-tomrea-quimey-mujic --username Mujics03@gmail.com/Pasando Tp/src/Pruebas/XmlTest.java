@@ -11,7 +11,7 @@ public class XmlTest
 
 
 	@Test
-	public void testBlindaje()
+	public void testXml()
 	{
 		parser = new ParserNivelesXml();
 		Assert.assertTrue( parser.getCantCazas() == 4);
