@@ -1,5 +1,6 @@
 package Escenario;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
@@ -77,8 +78,8 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 	public  synchronized void eliminarObjeto(ObjetosMoviles objeto)
 	{//hay que hacer esto bien de alguna forma
 		this.todoLoQueEstaEnJuego.remove(objeto);
-		//this.controlador.removerObjetoVivo(objeto);//lo saco del gameLoop
-		//this.controlador.removerDibujable(objeto.getVista());
+		this.controlador.removerObjetoVivo(objeto);//lo saco del gameLoop
+		this.controlador.removerDibujable(objeto.getVista());
 	}
 
 
@@ -100,6 +101,7 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 			this.controlador.detenerJuego();
 		}
 	}
+		
 	@Override
 	public void vivir() {
 		this.limpiarListaYrecolectarPuntos();
@@ -114,12 +116,24 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 	}
 	
 	 private boolean NoQuedanEnemigos(){
-		 boolean bandera=false;
-		 if( (this.objetosVivos().size()==1) && (this.objetosVivos().getFirst().getClass()==Algo42.class)){
-			 bandera=true;
+		 boolean NoHayEnemigos=true;
+		 boolean Algo42EstaVivo=false;
+		 Iterator<ObjetosMoviles> it = this.todoLoQueEstaEnJuego.iterator();
+		 
+		 while(NoHayEnemigos && it.hasNext()&& Algo42EstaVivo){
+			 ObjetosMoviles obj = it.next();
+			 
+			 if (obj.getBando()!=ObjetosMoviles.BandoUsuario()){
+				 NoHayEnemigos=false;	 
+			 }else
+				 if(obj.getClass()==Algo42.class){//no esta mal porque estamos pidiendo por el user
+					 Algo42EstaVivo=true; 
+				 }
 		 }
-		 return bandera;
-		 }
+		 
+		 return( NoHayEnemigos)&&(Algo42EstaVivo );
+		 
+	 }
 			 
 		
 	}
