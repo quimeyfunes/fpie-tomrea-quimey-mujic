@@ -96,7 +96,7 @@ public class PruebaVisual
 				controlador.detenerJuego();
 				perdio = true;
 			}
-			if(parser.getUltimoNivel())
+			if(!perdio && parser.getUltimoNivel())
 				gano = true;
 			else if(!perdio)
 				parser.pasarNivel();
