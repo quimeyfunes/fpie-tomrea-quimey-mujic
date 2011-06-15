@@ -38,5 +38,10 @@ public class BlindajeAlgo42 implements Posicionable, Monitoreable{
 	public short getBlindajeReferencia() {
 		return referenciaAlgo42.getVida();
 	}
+
+	@Override
+	public boolean EstaVivo() {
+		return true;
+	}
 	
 }
