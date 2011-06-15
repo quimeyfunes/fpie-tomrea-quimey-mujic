@@ -56,7 +56,7 @@ public class ParserNivelesXml
 		this.setNivelYArchivo(this.nivelActual);
 	}
 	
-	private byte getCantAviones(String name)
+	private short getCantAviones(String name)
 	{
 		List<Node> nodes = this.documentoActual.selectNodes("//cantidades/cantidad");
 		for (Node node : nodes)
@@ -64,40 +64,45 @@ public class ParserNivelesXml
 			String tipoAvion = node.valueOf("@name");
 			if (tipoAvion.startsWith(name) )
 			{
-				return (byte) Integer.parseInt(node.valueOf("@value"));
+				return (short) Integer.parseInt(node.valueOf("@value"));
 			}
 		}
 		return 0;
 	}
 
-	public byte getCantCazas()
+	public short getCantCazas()
 	{
 		return this.getCantAviones("cazas");
 	}
 	
-	public byte getCantBombarderos()
+	public short getCantBombarderos()
 	{
 		return this.getCantAviones("bombarderos");
 	}
 	
-	public byte getCantExploradores()
+	public short getCantExploradores()
 	{
 		return this.getCantAviones("exploradores");
 	}
 	
-	public byte getCantAvionetas()
+	public short getCantAvionetas()
 	{
 		return this.getCantAviones("avionetas");
 	}
 	
-	public byte getCantHelicopteros()
+	public short getCantHelicopteros()
 	{
 		return this.getCantAviones("helicoptero");
 	}
 	
-	public byte getCantAvionCivil()
+	public short getCantAvionCivil()
 	{
 		return this.getCantAviones("avioncivil");
+	}
+	
+	public short getVidaGuia()
+	{
+		return this.getCantAviones("vidaguia");
 	}
 
 }

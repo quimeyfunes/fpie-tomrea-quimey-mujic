@@ -14,20 +14,22 @@ public class XmlTest
 	public void testXml()
 	{
 		parser = new ParserNivelesXml();
-		Assert.assertTrue( parser.getCantCazas() == 4);
-		Assert.assertTrue( parser.getCantExploradores() == 6);
+		Assert.assertTrue( parser.getCantCazas() == 3);
+		Assert.assertTrue( parser.getCantExploradores() == 5);
 		Assert.assertTrue( parser.getCantAvionetas() == 4);
 		Assert.assertTrue( parser.getCantBombarderos() == 3);
 		Assert.assertTrue( parser.getCantHelicopteros() == 1);
 		Assert.assertTrue( parser.getCantAvionCivil() == 1);
+		Assert.assertTrue( parser.getVidaGuia() == 100);
 		
 		parser.pasarNivel();
-		Assert.assertTrue( parser.getCantCazas() == 5);
+		Assert.assertTrue( parser.getCantCazas() == 4);
 		Assert.assertTrue( parser.getCantExploradores() == 6);
 		Assert.assertTrue( parser.getCantAvionetas() == 5);
-		Assert.assertTrue( parser.getCantBombarderos() == 4);
+		Assert.assertTrue( parser.getCantBombarderos() == 3);
 		Assert.assertTrue( parser.getCantHelicopteros() == 2);
 		Assert.assertTrue( parser.getCantAvionCivil() == 1);
+		Assert.assertTrue( parser.getVidaGuia() == 200);
 		
 		parser.pasarNivel();
 		Assert.assertTrue( parser.getCantCazas() == 6);
@@ -36,6 +38,7 @@ public class XmlTest
 		Assert.assertTrue( parser.getCantBombarderos() == 5);
 		Assert.assertTrue( parser.getCantHelicopteros() == 2);
 		Assert.assertTrue( parser.getCantAvionCivil() == 2);
+		Assert.assertTrue( parser.getVidaGuia() == 400);
 		
 	}
 }

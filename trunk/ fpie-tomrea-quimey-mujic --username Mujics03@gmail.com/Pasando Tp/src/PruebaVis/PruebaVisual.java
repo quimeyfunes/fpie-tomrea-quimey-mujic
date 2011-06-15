@@ -76,12 +76,13 @@ public class PruebaVisual {
 		 vistaAlgo.setMonitoreable(algo42);
 		controlador.agregarDibujable(vistaAlgo);
 
-		//Guia guia = new Guia(20,400);
+		Guia guia = new Guia(20,400);
+		guia.setBlindaje((short) 255);
 
 	
 		controlador.agregarKeyPressObservador(algo42);
 		try
-		{
+		{ 
 			controlador.comenzarJuego();
 		}
 		catch(GameOverException e)
