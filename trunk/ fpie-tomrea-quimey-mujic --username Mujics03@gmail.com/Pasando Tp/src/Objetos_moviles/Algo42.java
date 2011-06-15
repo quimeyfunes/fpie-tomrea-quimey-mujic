@@ -12,6 +12,10 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 	
 	private boolean banderaDisparar=false;
 	private boolean banderacambiarArma=false;
+	private boolean up=false;
+	private boolean down=false;
+	private boolean right=false;
+	private boolean left=false;
 	
 	public void Destructor() throws GameOverException {
 		Vivo = false; 
@@ -46,23 +50,39 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 			this.banderacambiarArma=false;
 		}
 		
+		if(this.right){
+			this.DerechaSpeed();
+			this.right=false;
+		}
+		if(this.left){
+			this.IzquierdaSpeed();
+			this.left=false;
+		}
+		if(this.up){
+			this.ArribaSpeed();
+			this.up=false;
+		}
+		if(this.down){
+			this.AbajoSpeed();
+			this.down=false;
+		}
+		
 	}
 	@Override
 	public synchronized void keyPressed(KeyEvent event)
 	{
 		if(event.getKeyCode() == KeyEvent.VK_UP)
-			this.ArribaSpeed();
+			this.up=true;
 		if(event.getKeyCode() == KeyEvent.VK_DOWN)
-			this.AbajoSpeed();
+			this.down=true;
 		if(event.getKeyCode() == KeyEvent.VK_RIGHT)
-			this.DerechaSpeed();
+			this.right=true;
 		if(event.getKeyCode() == KeyEvent.VK_LEFT)
-			this.IzquierdaSpeed();
+			this.left=true;
 		if(event.getKeyCode()== KeyEvent.VK_SPACE)
 			this.banderaDisparar=true;  
-		if(event.getKeyCode()== KeyEvent.VK_Z){
+		if(event.getKeyCode()== KeyEvent.VK_Z)
 			this.banderacambiarArma=true;
-		}
 			
 	}
 	

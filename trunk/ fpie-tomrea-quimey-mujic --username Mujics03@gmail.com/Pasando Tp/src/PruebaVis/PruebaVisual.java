@@ -27,7 +27,7 @@ public class PruebaVisual {
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
 		
-		controlador.setIntervaloSimulacion(20);
+		controlador.setIntervaloSimulacion(25);
 		//fin seteo controlador
 		Escenario.InicializarEscenario(controlador);
 	
@@ -67,20 +67,26 @@ public class PruebaVisual {
 			HelicopterosPoliciaCivil hel = new HelicopterosPoliciaCivil((double)r.nextInt((int) 
 					Escenario.getLimiteX()), (double)r.nextInt((int) Escenario.getLimiteY()));
 		}
-			
 		
+		controlador.agregarObjetoVivo(Escenario.getInstance());
+	
 		Algo42 algo42 = new Algo42(950,50);
-		
 		
 		DibujableExtra vistaAlgo =  new VistaBlindajeAlgo42();
 		 vistaAlgo.setMonitoreable(algo42);
 		controlador.agregarDibujable(vistaAlgo);
+		
+		Dibujable VistaPuntos = new VistaPuntos(Escenario.getInstance());
+		controlador.agregarDibujable(VistaPuntos);
 
+		
+		
 		Guia guia = new Guia(20,400);
 		guia.setBlindaje(parser.getVidaGuia());
 
 	
 		controlador.agregarKeyPressObservador(algo42);
+		
 		try
 		{ 
 			controlador.comenzarJuego();
@@ -88,8 +94,6 @@ public class PruebaVisual {
 		catch(GameOverException e)
 		{
 			controlador.detenerJuego();
-			Dibujable vistaGameOver = new VistaGameOver();
-			controlador.agregarDibujable(vistaGameOver);
 		}
 		
 	}
