@@ -44,7 +44,7 @@ public class Guia extends Voladores
 		puntos = 0; 
 		Velocidad = 10;
 		estrategia_vuelo = new DerechaIzquierda();
-		this.blindaje = new Blindaje((short)1000);
+		this.blindaje = new Blindaje((short)10);
 		this.ConfigurarCuerpo(3,3);
 		PistolaLaser pistola_laser = new PistolaLaser(bando , new LineaRectaDown());
 		LanzadorMisiles lanzador_misiles = new LanzadorMisiles(bando, new MovDirigido());

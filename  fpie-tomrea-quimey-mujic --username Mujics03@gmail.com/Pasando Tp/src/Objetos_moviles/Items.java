@@ -4,18 +4,23 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 import Escenario.Escenario;
+import Excepciones.OffLimitsException;
 import Mapa.Ubicacion;
 
 public abstract class Items extends ObjetosMoviles{
 	
 	protected void constructor(double x, double y,byte bando,Items item) {
 		
+		try{		
 		item.setPosicion(Ubicacion.crearUbicacionEnXY(x, y));
 		item.EstadoCorrecto();
 		item.Vivo=true;
 		item.puntos=0;
 		item.setBando(bando);
 		Escenario.getInstance().agregarObjeto(item);//entra al mundo de los vivos
+		}
+		catch(OffLimitsException e){
+		}
 		
 	}
 
