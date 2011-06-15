@@ -6,6 +6,7 @@ import ar.uba.fi.algo3.titiritero.DibujableExtra;
 import ar.uba.fi.algo3.titiritero.Monitoreable;
 import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
 import ar.uba.fi.algo3.titiritero.vista.Imagen;
+import Excepciones.GameOverException;
 
 public class VistaBlindajeAlgo42 extends Imagen implements DibujableExtra{
 	
@@ -69,10 +70,8 @@ public class VistaBlindajeAlgo42 extends Imagen implements DibujableExtra{
 											}
 		
 	 if(!(this.monitoreable.EstaVivo()) ){
-			setNombreArchivoImagen("Gameover.jpg");
-			grafico.drawImage(this.imagen, 225, 150, null);
-			}
-		
+			throw new GameOverException();
+	 }
 	}
 	    
 	
