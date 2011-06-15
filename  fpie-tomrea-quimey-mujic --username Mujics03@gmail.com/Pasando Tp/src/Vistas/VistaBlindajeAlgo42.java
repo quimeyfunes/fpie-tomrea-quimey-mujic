@@ -12,7 +12,7 @@ public class VistaBlindajeAlgo42 extends Imagen implements DibujableExtra{
 	
 	private int CoordenadaX=20;
 	private int CoordenadaY=400;
-	private short VidaIni;
+	private double VidaIni;
 	
 	public VistaBlindajeAlgo42(){
 		
@@ -21,7 +21,7 @@ public class VistaBlindajeAlgo42 extends Imagen implements DibujableExtra{
 	public void dibujar(SuperficieDeDibujo superficeDeDibujo) {
 		Graphics grafico = (Graphics)superficeDeDibujo.getBuffer();
 		
-		short vida = this.monitoreable.getVida();
+		double vida = this.monitoreable.getVida();
 		
 		double relacion = vida/this.VidaIni;
 		
@@ -71,7 +71,7 @@ public class VistaBlindajeAlgo42 extends Imagen implements DibujableExtra{
 		
 	 if(!(this.monitoreable.EstaVivo()) ){
 			setNombreArchivoImagen("Gameover.jpg");
-			grafico.drawImage(this.imagen, 150, 150, null);
+			grafico.drawImage(this.imagen, 225, 150, null);
 			}
 		
 	}
