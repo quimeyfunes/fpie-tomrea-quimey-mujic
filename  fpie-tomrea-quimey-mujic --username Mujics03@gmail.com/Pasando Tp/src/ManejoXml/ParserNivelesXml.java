@@ -1,6 +1,8 @@
 package ManejoXml;
 
 import java.io.File;
+import java.util.List;
+
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.io.SAXReader;
@@ -30,16 +32,16 @@ public class ParserNivelesXml
 		if (!archivoActual.exists())
 			this.archivoActual = new File(currentPath + "NivelFinal.xml");
 
-		this.documentoActual = this.getDocument(archivoActual.getPath());
+		this.documentoActual = this.getDocument();
 	}
 
-	public Document getDocument(String xmlFileName)
+	public Document getDocument()
 	{
 		Document document = null;
 		SAXReader reader = new SAXReader();
 		try
 		{
-			document = reader.read(xmlFileName);
+			document = reader.read(this.archivoActual);
 		}
 		catch (DocumentException e)
 		{
@@ -53,10 +55,39 @@ public class ParserNivelesXml
 		this.nivelActual++;
 		this.setNivelYArchivo(this.nivelActual);
 	}
-
-	public File getFile()
+	
+	private byte getCantAviones(String name)
 	{
-		return this.archivoActual;
+		List<Node> nodes = this.documentoActual.selectNodes("//cantidades/cantidad");
+		for (Node node : nodes)
+		{
+			String tipoAvion = node.valueOf("@name");
+			if (tipoAvion.startsWith(name) )
+			{
+				return (byte) Integer.parseInt(node.valueOf("@value"));
+			}
+		}
+		return 0;
+	}
+
+	public byte getCantCazas()
+	{
+		return this.getCantAviones("cazas");
+	}
+	
+	public byte getCantBombarderos()
+	{
+		return this.getCantAviones("bombarderos");
+	}
+	
+	public byte getCantExploradores()
+	{
+		return this.getCantAviones("exploradores");
+	}
+	
+	public byte getCantAvionetas()
+	{
+		return this.getCantAviones("avionetas");
 	}
 
 }
