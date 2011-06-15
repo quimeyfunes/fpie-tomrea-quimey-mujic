@@ -32,8 +32,8 @@ public class Imagen implements Dibujable{
 	}
 
 	/**
-	 * Estable la imagen con la que se dibujará el objeto.
-	 * @param nombreArchivoImagen es el nombre del archivo que contiene l a imagen. Se espera que dicho archivo sea .jpg y esté ubicado en....
+	 * Estable la imagen con la que se dibujarï¿½ el objeto.
+	 * @param nombreArchivoImagen es el nombre del archivo que contiene l a imagen. Se espera que dicho archivo sea .jpg y estï¿½ ubicado en....
 	 */
 	public void setNombreArchivoImagen(String nombreArchivoImagen) {
 		this.nombreArchivoImagen = nombreArchivoImagen;
@@ -41,6 +41,7 @@ public class Imagen implements Dibujable{
 			URL u = this.getClass().getResource(this.nombreArchivoImagen);
 			this.imagen = ImageIO.read(u);
 		}catch(Exception ex){
+			//this.imagen = null;
 
 		}			
 	}
