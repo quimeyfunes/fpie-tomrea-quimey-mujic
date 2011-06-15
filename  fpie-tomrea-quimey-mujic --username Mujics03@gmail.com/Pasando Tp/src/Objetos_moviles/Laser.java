@@ -18,7 +18,7 @@ public class Laser extends Municion
 	{
 		this.danio = new Danio((short)25);
 		this.Velocidad = 8;
-		this.ConfigurarCuerpo(3,7);
+		this.ConfigurarCuerpo(5,5);
 		this.blindaje= new Blindaje((short)1);
 
 	}
