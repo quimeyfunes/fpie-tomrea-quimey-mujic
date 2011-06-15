@@ -2,6 +2,7 @@ package Vistas;
 
 import java.awt.Graphics;
 
+import Escenario.Escenario;
 import ar.uba.fi.algo3.titiritero.DibujableExtra;
 import ar.uba.fi.algo3.titiritero.Monitoreable;
 import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
@@ -68,9 +69,9 @@ public class VistaBlindajeAlgo42 extends Imagen implements DibujableExtra{
 												grafico.drawImage(this.imagen, CoordenadaX, CoordenadaY, null);
 											}
 		
-	 if(!this.monitoreable.EstaVivo()){
-			setNombreArchivoImagen("Game over.jpg");
-			grafico.drawImage(this.imagen, 500, 500, null);
+	 if(!(this.monitoreable.EstaVivo()) ){
+			setNombreArchivoImagen("Gameover.jpg");
+			grafico.drawImage(this.imagen, 150, 150, null);
 			}
 		
 	}
