@@ -1,13 +1,10 @@
 package Menu;
 
-import java.awt.Window;
 
 import Vistas.VistaEmpezarNivelBoton;
 import Vistas.VistaSalirJuegoBoton;
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
 import ar.uba.fi.algo3.titiritero.MouseClickObservador;
-import ar.uba.fi.algo3.titiritero.Posicionable;
-import ar.uba.fi.algo3.titiritero.vista.Ventana;
 
 
 public class MenuInicial implements MouseClickObservador{
@@ -23,7 +20,7 @@ public class MenuInicial implements MouseClickObservador{
 			if( y >= VistaEmpezarNivelBoton.getPosY() &&  y <= VistaEmpezarNivelBoton.getPosY() + VistaEmpezarNivelBoton.getAlto()  ){
 				//se seleciono empezar
 				System.out.print("empezar");
-				this.controlador.detenerJuego();
+				this.controlador.DetenerBorrarJuego();
 			}
 			else if( y >= VistaSalirJuegoBoton.getPosY() &&  y <= VistaSalirJuegoBoton.getPosY() + VistaSalirJuegoBoton.getAlto()  ){
 				System.exit(0);
