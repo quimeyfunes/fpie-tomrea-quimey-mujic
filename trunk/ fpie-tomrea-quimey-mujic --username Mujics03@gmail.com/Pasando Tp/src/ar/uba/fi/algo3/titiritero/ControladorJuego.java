@@ -48,10 +48,7 @@ public class ControladorJuego implements Runnable {
 				throw (GameOverException)e;
 			else
 				if(e.getClass()== FinEscenarioException.class)
-					this.detenerJuego();
-				else{
-					e.printStackTrace();					
-				}
+					this.DetenerBorrarJuego();
 		}
 	}
 
@@ -88,10 +85,18 @@ public class ControladorJuego implements Runnable {
 	/**
 	 * Detiene el juego provocando la salida del gameloop.
 	 */
-	public void detenerJuego(){
+	public void DetenerBorrarJuego(){
 		this.objetosVivos.clear();
 		this.keyPressedObservadores.clear();
+		this.mouseClickObservadores.clear();
 		this.dibujables.clear();
+		this.RestartearListasTemporales();
+		this.estaEnEjecucion = false;
+		if(reproductor!=null)
+			this.reproductor.apagar();
+	}
+	
+	public void detenerJuego(){
 		this.estaEnEjecucion = false;
 		if(reproductor!=null)
 			this.reproductor.apagar();

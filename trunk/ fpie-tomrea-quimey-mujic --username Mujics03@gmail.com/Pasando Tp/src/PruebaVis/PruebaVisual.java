@@ -1,9 +1,5 @@
 package PruebaVis;
 
-import java.awt.Event;
-import java.awt.Menu;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.util.Random;
 
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
@@ -64,10 +60,6 @@ public class PruebaVisual
 
 		VistaFondoJuego fondoJuego = new VistaFondoJuego();
 		controlador.agregarDibujable(fondoJuego);
-
-		//controlador.setIntervaloSimulacion(20);
-		// fin seteo controlador
-		//Escenario.InicializarEscenario(controlador);
 
 		ParserNivelesXml parser = new ParserNivelesXml();
 		boolean perdio = false;
@@ -131,21 +123,24 @@ public class PruebaVisual
 			try
 			{
 				controlador.comenzarJuego();
-				Guardar partida = new Guardar();
-				partida.GuardarPartida(algo42, Escenario.getInstance());
+				//Guardar partida = new Guardar();
+				//partida.GuardarPartida(algo42, Escenario.getInstance());
 			}
 			catch (GameOverException e)
 			{
 				System.out.println("Llgo al catch");
 				VistaGameOver game_over = new VistaGameOver();
+				controlador.DetenerBorrarJuego();
 				controlador.agregarDibujable(game_over);
+				controlador.comenzarJuego();
+				controlador.detenerJuego();
 			}
 			if(!perdio && parser.getUltimoNivel())
 				gano = true;
 			else if(!perdio)
 				parser.pasarNivel();
-				Cargar partida = new Cargar();
-				partida.CargarPartida();
+				//Cargar partida = new Cargar();
+				//partida.CargarPartida();
 		}
 
 		
