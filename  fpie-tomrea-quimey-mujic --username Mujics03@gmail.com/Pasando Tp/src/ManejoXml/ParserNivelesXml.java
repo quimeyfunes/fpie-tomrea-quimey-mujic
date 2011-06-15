@@ -13,6 +13,7 @@ public class ParserNivelesXml
 	private byte nivelActual;
 	private File archivoActual;
 	private Document documentoActual;
+	private boolean ultimoNivel;
 
 	public ParserNivelesXml()
 	{
@@ -23,14 +24,23 @@ public class ParserNivelesXml
 	{
 		this.setNivelYArchivo(nivelInicial);
 	}
+	
+	public boolean getUltimoNivel()
+	{
+		return this.ultimoNivel;
+	}
 
 	private void setNivelYArchivo(byte nivel)
 	{
+		this.ultimoNivel = false;
 		this.nivelActual = nivel;
 		String currentPath = System.getProperty("user.dir") + "/src/ManejoXml/";
 		this.archivoActual = new File(currentPath + "Nivel" + nivel + ".xml");
 		if (!archivoActual.exists())
+		{
 			this.archivoActual = new File(currentPath + "NivelFinal.xml");
+			this.ultimoNivel = true;
+		}
 
 		this.documentoActual = this.getDocument();
 	}
@@ -55,14 +65,14 @@ public class ParserNivelesXml
 		this.nivelActual++;
 		this.setNivelYArchivo(this.nivelActual);
 	}
-	
+
 	private short getCantAviones(String name)
 	{
 		List<Node> nodes = this.documentoActual.selectNodes("//cantidades/cantidad");
 		for (Node node : nodes)
 		{
 			String tipoAvion = node.valueOf("@name");
-			if (tipoAvion.startsWith(name) )
+			if (tipoAvion.startsWith(name))
 			{
 				return (short) Integer.parseInt(node.valueOf("@value"));
 			}
@@ -74,32 +84,32 @@ public class ParserNivelesXml
 	{
 		return this.getCantAviones("cazas");
 	}
-	
+
 	public short getCantBombarderos()
 	{
 		return this.getCantAviones("bombarderos");
 	}
-	
+
 	public short getCantExploradores()
 	{
 		return this.getCantAviones("exploradores");
 	}
-	
+
 	public short getCantAvionetas()
 	{
 		return this.getCantAviones("avionetas");
 	}
-	
+
 	public short getCantHelicopteros()
 	{
 		return this.getCantAviones("helicoptero");
 	}
-	
+
 	public short getCantAvionCivil()
 	{
 		return this.getCantAviones("avioncivil");
 	}
-	
+
 	public short getVidaGuia()
 	{
 		return this.getCantAviones("vidaguia");
