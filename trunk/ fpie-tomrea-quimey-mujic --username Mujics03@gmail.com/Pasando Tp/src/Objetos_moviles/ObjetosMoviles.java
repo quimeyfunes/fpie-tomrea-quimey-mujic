@@ -8,15 +8,13 @@ import Excepciones.*;
 import Mapa.Ubicacion;
 import Mapa.Vector2D;
 
-
-import java.awt.geom.Area;
 import java.awt.geom.Rectangle2D;
 
-import ar.uba.fi.algo3.titiritero.Dibujable;
+import ar.uba.fi.algo3.titiritero.DibujableExtra;
+import ar.uba.fi.algo3.titiritero.Monitoreable;
 import ar.uba.fi.algo3.titiritero.ObjetoVivo;
-import ar.uba.fi.algo3.titiritero.Posicionable;
 
-public abstract class ObjetosMoviles implements Posicionable,ObjetoVivo {
+public abstract class ObjetosMoviles implements ObjetoVivo,Monitoreable {
 
 	protected boolean Vivo;
 	protected Ubicacion ubicacion;
@@ -224,7 +222,7 @@ public abstract class ObjetosMoviles implements Posicionable,ObjetoVivo {
 
 	//Fin UNIMOV
 	
-	public abstract Dibujable getVista();
+	public abstract DibujableExtra getVista();
 	
 	//Interno
 	

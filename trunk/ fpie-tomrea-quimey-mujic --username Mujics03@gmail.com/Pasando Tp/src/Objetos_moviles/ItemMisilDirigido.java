@@ -1,7 +1,7 @@
 package Objetos_moviles;
 
 import Vistas.VistaItemMisilDirigido;
-import ar.uba.fi.algo3.titiritero.Dibujable;
+import ar.uba.fi.algo3.titiritero.DibujableExtra;
 import Armas.*;
 import EstrategiasDeMov.MovDirigido;
 
@@ -23,7 +23,7 @@ public class ItemMisilDirigido extends Items{
 	}
 
 	@Override
-	public Dibujable getVista() {
+	public DibujableExtra getVista() {
 		return new VistaItemMisilDirigido();
 	}
 }

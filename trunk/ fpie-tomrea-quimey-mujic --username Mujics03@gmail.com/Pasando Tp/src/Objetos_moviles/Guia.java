@@ -3,7 +3,7 @@ package Objetos_moviles;
 import java.util.LinkedList;
 
 import Vistas.VistaGuia;
-import ar.uba.fi.algo3.titiritero.Dibujable;
+import ar.uba.fi.algo3.titiritero.DibujableExtra;
 
 import Escenario.Escenario;
 import EstrategiasDeMov.DerechaIzquierda;
@@ -70,7 +70,7 @@ public class Guia extends Voladores
 	}
 
 	@Override
-	public Dibujable getVista()
+	public DibujableExtra getVista()
 	{
 		return new VistaGuia();
 	}
