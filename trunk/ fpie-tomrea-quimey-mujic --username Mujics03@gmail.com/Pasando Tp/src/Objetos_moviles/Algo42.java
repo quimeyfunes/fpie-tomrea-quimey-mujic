@@ -36,6 +36,7 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 
 	@Override
 	protected void Actuar() {
+		
 		if (this.banderaDisparar){
 			this.disparar();
 			this.banderaDisparar=false;//dispara en su turno
@@ -44,8 +45,6 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 			this.seleccionarSiguienteArma();
 			this.banderacambiarArma=false;
 		}
-		
-		this.VerificarColision();
 		
 	}
 	@Override
@@ -66,6 +65,7 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 		}
 			
 	}
+	
 
 	@Override
 	public DibujableExtra getVista() {
@@ -73,29 +73,36 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 	}
 	
 	private synchronized void ArribaSpeed(){
-		for(int i=0;i<Velocidad;i++){
-			this.arriba();
+		
+		if(!this.EstaCercaAlAlimiteSuperior()){
+			for(int i=0;i<Velocidad;i++){
+				this.arriba();
+				}
+			}
 		}
-	}
 	
 	private synchronized void AbajoSpeed(){
-		for(int i=0;i<Velocidad;i++){
-			this.abajo();
+		if(!this.EstaCercaAlAlimiteInferior()){
+			for(int i=0;i<Velocidad;i++){
+				this.abajo();
+				}
+			}
 		}
-	}
 	
 	private synchronized void DerechaSpeed(){
-		for(int i=0;i<Velocidad;i++){
-			this.derecha();
+		if(!this.EstaCercaAlAlimiteDerecho()){
+			for(int i=0;i<Velocidad;i++){
+				this.derecha();
+				}
+			}
 		}
-	}
 	
 	private synchronized void IzquierdaSpeed(){
-		for(int i=0;i<Velocidad;i++){
-			this.izquierda();
+		if(!this.EstaCercaAlAlimiteIzquierdo()){
+			for(int i=0;i<Velocidad;i++){
+				this.izquierda();
+				}
+			}
 		}
-		
-		
-	}
 	
 }
