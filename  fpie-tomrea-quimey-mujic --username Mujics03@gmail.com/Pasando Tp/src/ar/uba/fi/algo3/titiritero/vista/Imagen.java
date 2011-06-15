@@ -22,8 +22,6 @@ public class Imagen implements Dibujable{
 
 	public void dibujar(SuperficieDeDibujo superficeDeDibujo) {
 		Graphics grafico = (Graphics)superficeDeDibujo.getBuffer();
-
-		
 		grafico.drawImage(this.imagen, this.posicionable.getX(), this.posicionable.getY(), null);
 	}
 	    
@@ -41,7 +39,6 @@ public class Imagen implements Dibujable{
 			URL u = this.getClass().getResource(this.nombreArchivoImagen);
 			this.imagen = ImageIO.read(u);
 		}catch(Exception ex){
-			//this.imagen = null;
 
 		}			
 	}

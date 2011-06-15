@@ -1,6 +1,6 @@
 package Objetos_moviles;
 
-import ar.uba.fi.algo3.titiritero.Dibujable;
+import ar.uba.fi.algo3.titiritero.DibujableExtra;
 import Armas.Blindaje;
 import Armas.Danio;
 import EstrategiasDeMov.EstrategiaDeVuelo;
@@ -24,7 +24,7 @@ public class Cohete extends Municion
 	}
 
 	@Override
-	public Dibujable getVista() {
+	public DibujableExtra getVista() {
 		return new VistaMisil();
 	}
 

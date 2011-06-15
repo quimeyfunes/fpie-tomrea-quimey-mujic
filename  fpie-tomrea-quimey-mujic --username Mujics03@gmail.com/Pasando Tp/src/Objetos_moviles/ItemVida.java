@@ -1,7 +1,7 @@
 package Objetos_moviles;
 
 import Vistas.VistaItemVida;
-import ar.uba.fi.algo3.titiritero.Dibujable;
+import ar.uba.fi.algo3.titiritero.DibujableExtra;
 
 public class ItemVida extends Items
 {
@@ -28,7 +28,7 @@ public class ItemVida extends Items
 	}
 
 	@Override
-	public Dibujable getVista() {
+	public DibujableExtra getVista() {
 		return new VistaItemVida();
 	}
 }	

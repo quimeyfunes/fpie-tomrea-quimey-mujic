@@ -1,7 +1,7 @@
 package Objetos_moviles;
 
 import Vistas.VistaExplorador;
-import ar.uba.fi.algo3.titiritero.Dibujable;
+import ar.uba.fi.algo3.titiritero.DibujableExtra;
 import Armas.*;
 import EstrategiasDeMov.Circular;
 
@@ -27,7 +27,7 @@ public class Exploradores extends Voladores
 	}
 
 	@Override
-	public Dibujable getVista() {
+	public DibujableExtra getVista() {
 		return new VistaExplorador();
 	}
 }

@@ -1,7 +1,7 @@
 package Objetos_moviles; 
 import java.awt.event.KeyEvent;
 
-import ar.uba.fi.algo3.titiritero.Dibujable;
+import ar.uba.fi.algo3.titiritero.DibujableExtra;
 import ar.uba.fi.algo3.titiritero.KeyPressedObservador;
 import Vistas.VistaAlgo42;
 import EstrategiasDeMov.LineaRectaUp;
@@ -68,7 +68,7 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 	}
 
 	@Override
-	public Dibujable getVista() {
+	public DibujableExtra getVista() {
 		return new VistaAlgo42();
 	}
 	

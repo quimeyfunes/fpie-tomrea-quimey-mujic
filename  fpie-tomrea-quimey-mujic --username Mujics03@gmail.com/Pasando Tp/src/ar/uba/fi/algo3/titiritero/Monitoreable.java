@@ -1,8 +1,11 @@
 package ar.uba.fi.algo3.titiritero;
 
-import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
+/**
+ * Extiende funcionalidad de Posicionable
+ */
 
-public interface Monitoreable {
+public interface Monitoreable extends Posicionable {
 
-	public short getBlindajeReferencia ();
+	public short getVida();
+	public boolean EstaVivo();
 }

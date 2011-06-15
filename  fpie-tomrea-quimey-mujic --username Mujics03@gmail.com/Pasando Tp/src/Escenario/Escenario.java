@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
 import ar.uba.fi.algo3.titiritero.Dibujable;
+import ar.uba.fi.algo3.titiritero.DibujableExtra;
 
 import Excepciones.FinEscenarioException;
 import Objetos_moviles.ObjetosMoviles;
@@ -62,14 +63,14 @@ public class Escenario
 	
 	public synchronized void agregarObjeto(ObjetosMoviles objeto)
 	{
-		this.limpiarListaYrecolectarPuntos();//hay que buscar un lugar para esto.Un controlador o algo asi
+		this.limpiarListaYrecolectarPuntos();//hay que pasarle esto al escenario tmb, asi le da vivir:D
 		
 		this.todoLoQueEstaEnJuego.add(objeto);
 		
 		this.controlador.agregarObjetoVivo(objeto);//agrego al gameloop
-		Dibujable vista = objeto.getVista();
-		vista.setPosicionable(objeto);
-		this.controlador.agregarDibujable(vista);//agrego a visibles ( reee polimorfico mal )
+		DibujableExtra vista = objeto.getVista();
+		vista.setMonitoreable(objeto);
+		this.controlador.agregarDibujable((Dibujable)vista);//agrego a visibles ( reee polimorfico mal )
 	}
 	
 	public  synchronized void eliminarObjeto(ObjetosMoviles objeto)

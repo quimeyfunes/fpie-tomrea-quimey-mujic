@@ -8,6 +8,5 @@ public interface Posicionable {
 	
 	public int getX();
 	public int getY();
-	public boolean EstaVivo();
 
 }

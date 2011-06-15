@@ -1,6 +1,6 @@
 package Objetos_moviles;
 import Vistas.VistaBombardero;
-import ar.uba.fi.algo3.titiritero.Dibujable;
+import ar.uba.fi.algo3.titiritero.DibujableExtra;
 import Armas.*;
 import EstrategiasDeMov.LineaRectaDown;
 import EstrategiasDeMov.MovDirigido;
@@ -47,7 +47,7 @@ public class Bombardero extends Voladores
 	}
 
 	@Override
-	public Dibujable getVista() {
+	public DibujableExtra getVista() {
 		return new VistaBombardero();
 	}
 	

@@ -1,7 +1,7 @@
 package Objetos_moviles;
 
 import Vistas.VistaHelicoptero;
-import ar.uba.fi.algo3.titiritero.Dibujable;
+import ar.uba.fi.algo3.titiritero.DibujableExtra;
 import Armas.*;
 import EstrategiasDeMov.Circular;
 
@@ -32,7 +32,7 @@ public class HelicopterosPoliciaCivil extends Voladores
 	}
 
 	@Override
-	public Dibujable getVista() {
+	public DibujableExtra getVista() {
 		return new VistaHelicoptero();
 	}
 
