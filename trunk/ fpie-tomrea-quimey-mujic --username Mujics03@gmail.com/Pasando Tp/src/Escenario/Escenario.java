@@ -8,8 +8,6 @@ import ar.uba.fi.algo3.titiritero.Dibujable;
 import ar.uba.fi.algo3.titiritero.DibujableExtra;
 import ar.uba.fi.algo3.titiritero.ObjetoVivo;
 import ar.uba.fi.algo3.titiritero.vista.ObjetoDeTexto;
-
-import Excepciones.FinEscenarioException;
 import Objetos_moviles.Algo42;
 import Objetos_moviles.ObjetosMoviles;
 
@@ -130,9 +128,7 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 					 Algo42EstaVivo=true; 
 				 }
 		 }
-		 
-		 return( NoHayEnemigos)&&(Algo42EstaVivo );
-		 
+		 return( NoHayEnemigos)&&(Algo42EstaVivo ); 
 	 }
 			 
 		
