@@ -30,6 +30,7 @@ public class PruebaVisual
 		ControladorJuego controlador = new ControladorJuego(false);
 		controlador.setIntervaloSimulacion(20);
 		Escenario.InicializarEscenario(controlador);
+		controlador.agregarObjetoVivo(Escenario.getInstance());
 		//+++++++++++++++++++++++++++++++
 		
 		Ventana ventanaMenu = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
@@ -106,20 +107,17 @@ public class PruebaVisual
 				HelicopterosPoliciaCivil hel = new HelicopterosPoliciaCivil((double) r.nextInt((int) Escenario
 						.getLimiteX()), (double) r.nextInt((int) Escenario.getLimiteY()));
 			}
-
-			controlador.agregarObjetoVivo(Escenario.getInstance());
 			
-			Algo42 algo42 = new Algo42(950, 50);
-
+			Guia guia = new Guia(20, 400);
+			guia.setBlindaje(parser.getVidaGuia());
+			
+			Algo42 algo42 = new Algo42(950, 50);//ver de definir esto afuera
 			DibujableExtra vistaAlgo = new VistaBlindajeAlgo42();
 			vistaAlgo.setMonitoreable(algo42);
 			controlador.agregarDibujable(vistaAlgo);
-
 			Dibujable VistaPuntos = new VistaPuntos(Escenario.getInstance());
 			controlador.agregarDibujable(VistaPuntos);
 
-			Guia guia = new Guia(20, 400);
-			guia.setBlindaje(parser.getVidaGuia());
 
 			controlador.agregarKeyPressObservador(algo42);
 			
@@ -133,8 +131,8 @@ public class PruebaVisual
 			catch (GameOverException e)
 			{
 				System.out.println("Llgo al catch");
-				VistaGameOver game_over = new VistaGameOver();
 				controlador.DetenerBorrarJuego();
+				VistaGameOver game_over = new VistaGameOver();
 				controlador.agregarDibujable(game_over);
 				controlador.comenzarJuego();//forma facil de borrar
 				controlador.detenerJuego();
