@@ -139,7 +139,7 @@ public class PruebaVisual
 			}
 			else if(!perdio){
 				parser.pasarNivel();
-			System.out.println("paso");
+			System.out.println("nivel ganado");
 				//Cargar partida = new Cargar();
 				//partida.CargarPartida();
 			}
