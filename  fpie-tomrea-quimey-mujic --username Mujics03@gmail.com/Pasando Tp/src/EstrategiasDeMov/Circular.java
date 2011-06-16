@@ -29,10 +29,12 @@ public class Circular extends EstrategiaDeVuelo {
 		
 		if ( (LimR) && (!SafarDeLimiteIzquierdo) ){
 			objeto.abajo();
+			objeto.izquierda();
 		}
 		
 		if ( (LimL) && (!SafarDeLimiteDerecho)){
 			objeto.arriba();
+			objeto.derecha();
 		}
 		
 		if ( (!LimR) && (!LimL)){
