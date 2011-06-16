@@ -64,9 +64,6 @@ public class PruebaVisual
 		Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
-
-		
-		controlador.agregarObjetoVivo(Escenario.getInstance());
 		
 
 		ParserNivelesXml parser = new ParserNivelesXml();
@@ -76,6 +73,8 @@ public class PruebaVisual
 		{
 			VistaFondoJuego fondoJuego = new VistaFondoJuego();
 			controlador.agregarDibujable(fondoJuego);
+			
+			controlador.agregarObjetoVivo(Escenario.getInstance());
 
 			Random r = new Random();
 			for (int i = 0; i < parser.getCantCazas(); i++)
