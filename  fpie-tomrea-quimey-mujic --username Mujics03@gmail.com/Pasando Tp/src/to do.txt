@@ -3,4 +3,4 @@ portaaviones
 pasar todo a .jar
 tutorial
 cuando pasas de nivel, se te duplica el puntaje
-
+los exploradores se van de la pantalla y mueren, no deberia pasar
