@@ -67,6 +67,7 @@ public class PruebaVisual
 
 		
 		controlador.agregarObjetoVivo(Escenario.getInstance());
+		
 
 		ParserNivelesXml parser = new ParserNivelesXml();
 		boolean perdio = false;
@@ -113,6 +114,7 @@ public class PruebaVisual
 			guia.setBlindaje(parser.getVidaGuia());
 			
 			Algo42 algo42 = new Algo42(950, 50);//ver de definir esto afuera
+			
 			DibujableExtra vistaAlgo = new VistaBlindajeAlgo42();
 			vistaAlgo.setMonitoreable(algo42);
 			controlador.agregarDibujable(vistaAlgo);
@@ -134,6 +136,7 @@ public class PruebaVisual
 				perdio=true;
 				System.out.println("Perdiste, entrena mas nw");
 			}
+			
 			if(!perdio && parser.getUltimoNivel()){
 				gano = true;
 			}
