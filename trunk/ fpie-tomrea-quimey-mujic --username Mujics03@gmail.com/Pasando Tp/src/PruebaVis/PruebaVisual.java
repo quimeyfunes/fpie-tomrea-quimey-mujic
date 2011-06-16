@@ -28,11 +28,13 @@ public class PruebaVisual
 
 		// seteo el controlador y lo dejo listo para correr
 		ControladorJuego controlador = new ControladorJuego(false);
+		controlador.setIntervaloSimulacion(20);
+		Escenario.InicializarEscenario(controlador);
+		//+++++++++++++++++++++++++++++++
 		
 		Ventana ventanaMenu = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
 		controlador.setSuperficieDeDibujo(ventanaMenu);
 		ventanaMenu.setVisible(true);
-		controlador.setIntervaloSimulacion(20);
 		
 		
 		MenuInicial menuListener = new MenuInicial();
@@ -55,7 +57,9 @@ public class PruebaVisual
 		controlador.DetenerBorrarJuego();
 		controlador.comenzarJuego(1);
 		menuListener=null;//ya no esta mas
-		ventanaMenu.dispose();
+		vistaEmpezar=null;
+		vistaSalir=null;
+		ventanaMenu.dispose();//asi no queda colgado atras
 		
 		Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
 		controlador.setSuperficieDeDibujo(ventana);
@@ -69,7 +73,6 @@ public class PruebaVisual
 		boolean gano = false;
 		while ((!perdio) && (!gano))
 		{
-			Escenario.InicializarEscenario(controlador);
 
 			Random r = new Random();
 			for (int i = 0; i < parser.getCantCazas(); i++)
@@ -106,8 +109,6 @@ public class PruebaVisual
 
 			controlador.agregarObjetoVivo(Escenario.getInstance());
 			
-	
-			
 			Algo42 algo42 = new Algo42(950, 50);
 
 			DibujableExtra vistaAlgo = new VistaBlindajeAlgo42();
@@ -135,7 +136,7 @@ public class PruebaVisual
 				VistaGameOver game_over = new VistaGameOver();
 				controlador.DetenerBorrarJuego();
 				controlador.agregarDibujable(game_over);
-				controlador.comenzarJuego();
+				controlador.comenzarJuego();//forma facil de borrar
 				controlador.detenerJuego();
 			}
 			if(!perdio && parser.getUltimoNivel())

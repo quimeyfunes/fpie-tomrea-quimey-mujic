@@ -16,8 +16,7 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 {
 	LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego;
 	LinkedList<ObjetosMoviles> temp;
-	int sumaDePuntos;//si se ponen como variable de clase, se pueden ir acumulando puntos
-	int sumaTOTAL;
+	int sumaDePuntos;
 	static double LimiteX=1200;
 	static double LimiteY=500;
 	private static Escenario instance = null;
@@ -31,10 +30,10 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 		return LimiteY;
 	}
 	
-	 public synchronized static void  InicializarEscenario(ControladorJuego con){//si esto no se ejecuta primero, no funciona
+	 public synchronized static void  InicializarEscenario(ControladorJuego con){
 		 createInstance();
 		 instance.controlador=con;
-	}
+	}//si esto no se ejecuta primero, no funciona
 	
 	private synchronized static void createInstance() {
 		if (instance == null) { 
@@ -97,9 +96,10 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 			this.eliminarObjeto(movil);
 		}
 		
-		if( (this.sumaDePuntos >= 1000 )|| (this.NoQuedanEnemigos())){//aca va la logistica de pasar de level
+		//if( (this.sumaDePuntos >= 1000 )|| (this.NoQuedanEnemigos())){//aca va la logistica de pasar de level
+		if( (this.NoQuedanEnemigos())){//aca va la logistica de pasar de level
 			//this.controlador.detenerJuego();
-			sumaTOTAL=sumaTOTAL+this.sumaDePuntos;
+			sumaDePuntos=sumaDePuntos+this.sumaDePuntos;
 			throw new FinEscenarioException();
 		}
 	}
@@ -136,7 +136,7 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 	 }
 	 
 	 public int getPuntosTotales(){
-		 return sumaTOTAL;
+		 return this.sumaDePuntos;
 	 }
 			 
 		
