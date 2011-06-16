@@ -117,7 +117,6 @@ public class PruebaVisual
 			guia.setBlindaje(parser.getVidaGuia());
 			
 			Algo42 algo42 = new Algo42(950, 50);//ver de definir esto afuera
-			
 			DibujableExtra vistaAlgo = new VistaBlindajeAlgo42();
 			vistaAlgo.setMonitoreable(algo42);
 			controlador.agregarDibujable(vistaAlgo);
