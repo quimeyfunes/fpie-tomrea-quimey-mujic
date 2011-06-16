@@ -3,7 +3,7 @@
        <cantidad name="bombarderos" value="3"/>
        <cantidad name="cazas" value="4"/>
        <cantidad name="avionetas" value="5"/>
-       <cantidad name="exploradores" value="6"/>
+       <cantidad name="exploradores" value="3"/>
 	   <cantidad name="avioncivil" value="1"/>
 	   <cantidad name="helicoptero" value="2"/>
 	   <cantidad name="vidaguia" value="750"/>
