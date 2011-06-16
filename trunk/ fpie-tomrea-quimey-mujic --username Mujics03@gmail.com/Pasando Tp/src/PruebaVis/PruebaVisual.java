@@ -137,6 +137,7 @@ public class PruebaVisual
 			{
 				perdio=true;
 				System.out.println("Perdiste, entrena mas nw");
+				testsong.cambiarTema("Whispering.mid");
 			}
 			
 			if(!perdio && parser.getUltimoNivel()){

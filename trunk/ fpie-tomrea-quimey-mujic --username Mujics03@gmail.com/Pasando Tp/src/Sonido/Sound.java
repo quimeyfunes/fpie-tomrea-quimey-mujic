@@ -12,6 +12,11 @@ public class Sound // Holds one audio file
 
 	public Sound(String filename)
 	{
+		setSong(filename);
+	}
+
+	private void setSong(String filename)
+	{
 		try
 		{
 			songPath = new URL(getCodeBase(),filename);//Load the Sound
@@ -21,6 +26,13 @@ public class Sound // Holds one audio file
 		{
 			e.printStackTrace();
 		} // Satisfy the catch
+	}
+	
+	public void cambiarTema(String filename)
+	{
+		this.stopSound();
+		this.setSong(filename);
+		this.playSound();
 	}
 
 	private URL getCodeBase()
