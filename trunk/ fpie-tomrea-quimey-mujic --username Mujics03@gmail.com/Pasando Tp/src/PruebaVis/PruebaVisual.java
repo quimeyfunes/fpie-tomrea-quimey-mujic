@@ -27,7 +27,7 @@ public class PruebaVisual
 		double AltDeEnemy = LimiteY - 20;
 		// esos son limites que uso para probar la simulacion
 
-		Sound testsong = new Sound("Whispering.mid");
+		Sound testsong = new Sound("Laguerradelasgalaxias.mid");
 		testsong.playSound();
 		
 		// seteo el controlador y lo dejo listo para correr
