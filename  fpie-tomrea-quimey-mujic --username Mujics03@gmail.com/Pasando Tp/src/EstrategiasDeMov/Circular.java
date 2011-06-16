@@ -56,7 +56,7 @@ public class Circular extends EstrategiaDeVuelo {
 	}
 
 	public static double radioStandarSegunDistancia(Vector2D posicion) {
-		return ((( posicion.y)/2.0)-5);//numero magico para evitar borde
+		return ((( posicion.y)/2.0)-50);//numero magico para evitar borde
 	}
 	
 	public static double radioStandarSegunDistancia( double x,double y){
