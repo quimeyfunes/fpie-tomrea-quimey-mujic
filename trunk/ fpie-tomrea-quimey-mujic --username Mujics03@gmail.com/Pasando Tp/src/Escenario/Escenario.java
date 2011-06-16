@@ -106,6 +106,7 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 		
 	@Override
 	public void vivir() {
+		
 		this.limpiarListaYrecolectarPuntos();
 	}
 	
@@ -132,6 +133,8 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 					 Algo42EstaVivo=true; 
 				 }
 		 }
+		 System.out.println(NoHayEnemigos);
+		 System.out.println(Algo42EstaVivo);
 		 return( NoHayEnemigos)&&(Algo42EstaVivo ); 
 	 }
 	 
