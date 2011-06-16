@@ -52,7 +52,7 @@ public class ControladorJuego implements Runnable {
 				throw (GameOverException)e;
 			else
 				if(e.getClass()== FinEscenarioException.class)
-					this.DetenerBorrarJuego();
+					this.DetenerBorrarJuego();//esto se puede mejorar deteniendo en escenario
 		}
 	}
 

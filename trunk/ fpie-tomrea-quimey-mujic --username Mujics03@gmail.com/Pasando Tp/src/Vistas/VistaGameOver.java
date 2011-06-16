@@ -13,6 +13,6 @@ public class VistaGameOver extends Imagen {
 	
 	public void dibujar(SuperficieDeDibujo superficeDeDibujo) {
 		Graphics grafico = (Graphics)superficeDeDibujo.getBuffer();
-		grafico.drawImage(this.imagen, 50, 50, null);
+		grafico.drawImage(this.imagen, 100, 50, null);
 	}
 }

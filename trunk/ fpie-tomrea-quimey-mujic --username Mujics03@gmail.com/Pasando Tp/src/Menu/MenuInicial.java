@@ -20,7 +20,7 @@ public class MenuInicial implements MouseClickObservador{
 			if( y >= VistaEmpezarNivelBoton.getPosY() &&  y <= VistaEmpezarNivelBoton.getPosY() + VistaEmpezarNivelBoton.getAlto()  ){
 				//se seleciono empezar
 				System.out.print("empezar");
-				this.controlador.DetenerBorrarJuego();
+				this.controlador.detenerJuego();
 			}
 			else if( y >= VistaSalirJuegoBoton.getPosY() &&  y <= VistaSalirJuegoBoton.getPosY() + VistaSalirJuegoBoton.getAlto()  ){
 				System.exit(0);

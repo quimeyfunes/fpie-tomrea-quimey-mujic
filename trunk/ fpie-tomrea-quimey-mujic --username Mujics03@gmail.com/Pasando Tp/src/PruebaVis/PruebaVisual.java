@@ -49,11 +49,14 @@ public class PruebaVisual
 		
 		try{
 			controlador.comenzarJuego();
-
 		}catch(Exception e){
 			
 		}
-		ventanaMenu.setVisible(false);
+		controlador.DetenerBorrarJuego();
+		controlador.comenzarJuego(1);
+		menuListener=null;//ya no esta mas
+		ventanaMenu.dispose();
+		
 		Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
