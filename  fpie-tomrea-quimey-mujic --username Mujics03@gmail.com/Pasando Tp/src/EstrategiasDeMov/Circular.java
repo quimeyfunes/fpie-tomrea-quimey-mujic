@@ -18,11 +18,15 @@ public class Circular extends EstrategiaDeVuelo {
 	public void CalcularMovimiento(ObjetosMoviles objeto) {
 		boolean LimR;
 		boolean LimL;
+		boolean LimS;
+		boolean LimI;
 		boolean SafarDeLimiteIzquierdo;
 		boolean SafarDeLimiteDerecho;
 		
 		LimR = objeto.EstaCercaAlAlimiteDerecho();
 		LimL = objeto.EstaCercaAlAlimiteIzquierdo();
+		LimS = objeto.EstaCercaAlAlimiteSuperior();
+		LimI = objeto.EstaCercaAlAlimiteInferior();
 		
 		SafarDeLimiteIzquierdo = (this.VectorQueGira.y>0)&& (this.VectorQueGira.x>0);
 		SafarDeLimiteDerecho = (this.VectorQueGira.y<0) && (this.VectorQueGira.x<0);
@@ -35,6 +39,14 @@ public class Circular extends EstrategiaDeVuelo {
 		if ( (LimL) && (!SafarDeLimiteDerecho)){
 			objeto.arriba();
 			objeto.derecha();
+		}
+		
+		if ( LimS ) {
+			objeto.abajo();
+		}
+		
+		if ( LimI ) {
+			objeto.arriba();
 		}
 		
 		if ( (!LimR) && (!LimL)){
