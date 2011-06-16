@@ -3,6 +3,7 @@ package Menu;
 
 import Vistas.VistaEmpezarNivelBoton;
 import Vistas.VistaSalirJuegoBoton;
+import Vistas.VistaTutorialBoton;
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
 import ar.uba.fi.algo3.titiritero.MouseClickObservador;
 
@@ -10,6 +11,7 @@ import ar.uba.fi.algo3.titiritero.MouseClickObservador;
 public class MenuInicial implements MouseClickObservador{
 	
 	private boolean exitClicked = false;
+	private boolean tutorialButonClicked;
 	
 	private ControladorJuego controlador;
 
@@ -24,6 +26,11 @@ public class MenuInicial implements MouseClickObservador{
 			}
 			else if( y >= VistaSalirJuegoBoton.getPosY() &&  y <= VistaSalirJuegoBoton.getPosY() + VistaSalirJuegoBoton.getAlto()  ){
 				System.exit(0);
+					
+			}
+			else if( y >= VistaTutorialBoton.getPosY() &&  y <= VistaTutorialBoton.getPosY() + VistaTutorialBoton.getAlto()  ){
+				this.tutorialButonClicked = true;
+				this.controlador.detenerJuego();
 				
 				
 			}
@@ -45,6 +52,14 @@ public class MenuInicial implements MouseClickObservador{
 
 	public boolean isExitClicked() {
 		return exitClicked;
+	}
+
+	public void setTutorialButonClicked(boolean tutorialButonClicked) {
+		this.tutorialButonClicked = tutorialButonClicked;
+	}
+
+	public boolean isTutorialButonClicked() {
+		return tutorialButonClicked;
 	}
 
 

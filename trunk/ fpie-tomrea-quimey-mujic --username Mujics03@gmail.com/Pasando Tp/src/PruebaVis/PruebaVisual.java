@@ -12,6 +12,7 @@ import Excepciones.GameOverException;
 import ManejoXml.ParserNivelesXml;
 
 import Menu.MenuInicial;
+import Menu.MenuTutorial;
 import Objetos_moviles.*;
 import Persistencia.*;
 
@@ -41,6 +42,7 @@ public class PruebaVisual
 		VistaFondoMenuInicial fondo = new VistaFondoMenuInicial();
 		VistaEmpezarNivelBoton vistaEmpezar = new VistaEmpezarNivelBoton();
 		VistaSalirJuegoBoton vistaSalir = new VistaSalirJuegoBoton();
+		VistaTutorialBoton vistaTutorialBoton = new VistaTutorialBoton();
 
 		menuListener.setControlador(controlador);
 
@@ -48,6 +50,7 @@ public class PruebaVisual
 		controlador.agregarDibujable(fondo);
 		controlador.agregarDibujable(vistaEmpezar);
 		controlador.agregarDibujable(vistaSalir);
+		controlador.agregarDibujable(vistaTutorialBoton);
 		
 		try{
 			controlador.comenzarJuego();
@@ -56,15 +59,17 @@ public class PruebaVisual
 		}
 		controlador.DetenerBorrarJuego();
 		controlador.comenzarJuego(1);
-		menuListener=null;//ya no esta mas
+		//menuListener=null;
 		vistaEmpezar=null;
 		vistaSalir=null;
 		ventanaMenu.dispose();//asi no queda colgado atras
 		
-		Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
-		controlador.setSuperficieDeDibujo(ventana);
-		ventana.setVisible(true);
-		
+		if(!menuListener.isTutorialButonClicked()){
+			Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
+			controlador.setSuperficieDeDibujo(ventana);
+			ventana.setVisible(true);
+			
+			controlador.agregarObjetoVivo(Escenario.getInstance());
 
 		ParserNivelesXml parser = new ParserNivelesXml();
 		boolean perdio = false;
@@ -79,29 +84,29 @@ public class PruebaVisual
 			Random r = new Random();
 			for (int i = 0; i < parser.getCantCazas(); i++)
 			{
-				Caza caza = new Caza((double) r.nextInt((int) Escenario.getLimiteX()), AltDeEnemy);
-			}
+				VistaFondoJuego fondoJuego = new VistaFondoJuego();
+				controlador.agregarDibujable(fondoJuego);
 
-			for (int i = 0; i < parser.getCantExploradores(); i++)
-			{
-				Exploradores explorador = new Exploradores((double) r.nextInt((int) Escenario.getLimiteX()), AltDeEnemy);
-			}
+				Random r = new Random();
+				for (int i = 0; i < parser.getCantCazas(); i++)
+				{
+					Caza caza = new Caza((double) r.nextInt((int) Escenario.getLimiteX()), AltDeEnemy);
+				}
 
-			for (int i = 0; i < parser.getCantAvionetas(); i++)
-			{
-				Avioneta avioneta = new Avioneta((double) r.nextInt((int) Escenario.getLimiteX()), AltDeEnemy);
-			}
+				for (int i = 0; i < parser.getCantExploradores(); i++)
+				{
+					Exploradores explorador = new Exploradores((double) r.nextInt((int) Escenario.getLimiteX()), AltDeEnemy);
+				}
 
-			for (int i = 0; i < parser.getCantBombarderos(); i++)
-			{
-				Bombardero bombardero = new Bombardero((double) r.nextInt((int) Escenario.getLimiteX()), AltDeEnemy);
-			}
+				for (int i = 0; i < parser.getCantAvionetas(); i++)
+				{
+					Avioneta avioneta = new Avioneta((double) r.nextInt((int) Escenario.getLimiteX()), AltDeEnemy);
+				}
 
-			for (int i = 0; i < parser.getCantAvionCivil(); i++)
-			{
-				AvionCivil avion = new AvionCivil((double) r.nextInt((int) Escenario.getLimiteX()), (double) r
-						.nextInt((int) Escenario.getLimiteY()));
-			}
+				for (int i = 0; i < parser.getCantBombarderos(); i++)
+				{
+					Bombardero bombardero = new Bombardero((double) r.nextInt((int) Escenario.getLimiteX()), AltDeEnemy);
+				}
 
 			for (int i = 0; i < parser.getCantHelicopteros(); i++)
 			{
@@ -120,10 +125,60 @@ public class PruebaVisual
 			Dibujable VistaPuntos = new VistaPuntos(Escenario.getInstance());
 			controlador.agregarDibujable(VistaPuntos);
 
+				for (int i = 0; i < parser.getCantHelicopteros(); i++)
+				{
+					HelicopterosPoliciaCivil hel = new HelicopterosPoliciaCivil((double) r.nextInt((int) Escenario
+							.getLimiteX()), (double) r.nextInt((int) Escenario.getLimiteY()));
+				}
+				
+				Guia guia = new Guia(20, 400);
+				guia.setBlindaje(parser.getVidaGuia());
+				
+				Algo42 algo42 = new Algo42(950, 50);//ver de definir esto afuera
+				DibujableExtra vistaAlgo = new VistaBlindajeAlgo42();
+				vistaAlgo.setMonitoreable(algo42);
+				controlador.agregarDibujable(vistaAlgo);
+				Dibujable VistaPuntos = new VistaPuntos(Escenario.getInstance());
+				controlador.agregarDibujable(VistaPuntos);
 
-			controlador.agregarKeyPressObservador(algo42);
+
+				controlador.agregarKeyPressObservador(algo42);
+				
+				
+				try
+				{
+					controlador.comenzarJuego();
+					//Guardar partida = new Guardar();
+					//partida.GuardarPartida(algo42, Escenario.getInstance());
+				}
+				catch (GameOverException e)
+				{
+					perdio=true;
+					System.out.println("Perdiste, entrena mas nw");
+				}
+				if(!perdio && parser.getUltimoNivel()){
+					gano = true;
+				}
+				else if(!perdio){
+					parser.pasarNivel();
+				System.out.println("nivel ganado");
+					//Cargar partida = new Cargar();
+					//partida.CargarPartida();
+				}
+			}
 			
-			
+			controlador.DetenerBorrarJuego();
+			VistaGameOver game_over = new VistaGameOver();
+			MenuTutorial menuTutorial = new MenuTutorial();
+			controlador.agregarMouseClickObservador(menuTutorial);
+			controlador.agregarDibujable(game_over);
+			controlador.comenzarJuego();
+		}else{
+			Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
+			controlador.setSuperficieDeDibujo(ventana);
+			ventana.setVisible(true);
+			VistaTutorial vistaTutorial = new VistaTutorial();
+			controlador.agregarDibujable(vistaTutorial);
 			try
 			{
 				controlador.comenzarJuego();
@@ -147,10 +202,7 @@ public class PruebaVisual
 			}
 		}
 		
-		controlador.DetenerBorrarJuego();
-		VistaGameOver game_over = new VistaGameOver();
-		controlador.agregarDibujable(game_over);
-		controlador.comenzarJuego();
+		
 
 		
 		
