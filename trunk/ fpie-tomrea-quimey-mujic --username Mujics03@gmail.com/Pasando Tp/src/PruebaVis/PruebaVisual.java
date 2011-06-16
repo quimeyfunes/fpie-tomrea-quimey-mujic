@@ -143,11 +143,18 @@ public class PruebaVisual
 			if(!perdio && parser.getUltimoNivel()){
 				gano = true;
 			}
-			else if(!perdio){
+			else if(!perdio)
+			{
 				parser.pasarNivel();
-			System.out.println("nivel ganado");
+				System.out.println("nivel ganado");
 				//Cargar partida = new Cargar();
 				//partida.CargarPartida();
+				controlador.DetenerBorrarJuego();
+				controlador.agregarDibujable(fondoJuego);
+				VistaNextLevel nextLevel = new VistaNextLevel();
+				controlador.agregarDibujable(nextLevel);
+				controlador.comenzarJuego(100);
+				controlador.DetenerBorrarJuego();							
 			}
 		}
 		
