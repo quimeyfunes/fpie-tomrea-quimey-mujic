@@ -79,10 +79,15 @@ public class ControladorJuego implements Runnable {
 				dibujar();
 				Thread.sleep(intervaloSimulacion);
 				contador++;
+				this.ActualizarListas();//Lo agregue para poder agregar cosas "mientras corre el loop"
 			}
 		}
 		catch (Exception e) {
-			e.printStackTrace();
+			if(e.getClass()== GameOverException.class)
+				throw (GameOverException)e;
+			else
+				if(e.getClass()== FinEscenarioException.class)
+					this.DetenerBorrarJuego();//esto se puede mejorar deteniendo en escenario
 		}
 	}
 	
