@@ -30,7 +30,6 @@ public class PruebaVisual
 		ControladorJuego controlador = new ControladorJuego(false);
 		controlador.setIntervaloSimulacion(20);
 		Escenario.InicializarEscenario(controlador);
-		controlador.agregarObjetoVivo(Escenario.getInstance());
 		//+++++++++++++++++++++++++++++++
 		
 		Ventana ventanaMenu = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
@@ -66,14 +65,16 @@ public class PruebaVisual
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
 
-		VistaFondoJuego fondoJuego = new VistaFondoJuego();
-		controlador.agregarDibujable(fondoJuego);
+		
+		controlador.agregarObjetoVivo(Escenario.getInstance());
 
 		ParserNivelesXml parser = new ParserNivelesXml();
 		boolean perdio = false;
 		boolean gano = false;
 		while ((!perdio) && (!gano))
 		{
+			VistaFondoJuego fondoJuego = new VistaFondoJuego();
+			controlador.agregarDibujable(fondoJuego);
 
 			Random r = new Random();
 			for (int i = 0; i < parser.getCantCazas(); i++)
@@ -130,20 +131,24 @@ public class PruebaVisual
 			}
 			catch (GameOverException e)
 			{
-				System.out.println("Llgo al catch");
-				controlador.DetenerBorrarJuego();
-				VistaGameOver game_over = new VistaGameOver();
-				controlador.agregarDibujable(game_over);
-				controlador.comenzarJuego();//forma facil de borrar
-				controlador.detenerJuego();
+				perdio=true;
+				System.out.println("Perdiste, entrena mas nw");
 			}
-			if(!perdio && parser.getUltimoNivel())
+			if(!perdio && parser.getUltimoNivel()){
 				gano = true;
-			else if(!perdio)
+			}
+			else if(!perdio){
 				parser.pasarNivel();
+			System.out.println("paso");
 				//Cargar partida = new Cargar();
 				//partida.CargarPartida();
+			}
 		}
+		
+		controlador.DetenerBorrarJuego();
+		VistaGameOver game_over = new VistaGameOver();
+		controlador.agregarDibujable(game_over);
+		controlador.comenzarJuego();
 
 		
 		
