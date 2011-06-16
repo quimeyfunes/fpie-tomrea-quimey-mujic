@@ -152,11 +152,16 @@ public class PruebaVisual
 		}
 		
 		controlador.DetenerBorrarJuego();
-		VistaGameOver game_over = new VistaGameOver();
-		controlador.agregarDibujable(game_over);
+		if(perdio)
+		{
+			VistaGameOver game_over = new VistaGameOver();
+			controlador.agregarDibujable(game_over);
+		}
+		else
+		{
+			VistaWinner winner = new VistaWinner();
+			controlador.agregarDibujable(winner);
+		}
 		controlador.comenzarJuego();
-
-		
-		
 	}
 }
