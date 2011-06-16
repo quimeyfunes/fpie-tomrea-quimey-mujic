@@ -36,7 +36,7 @@ public class PruebaVisual
 		controlador.setSuperficieDeDibujo(ventanaMenu);
 		ventanaMenu.setVisible(true);
 		
-		
+		 
 		MenuInicial menuListener = new MenuInicial();
 		VistaFondoMenuInicial fondo = new VistaFondoMenuInicial();
 		VistaEmpezarNivelBoton vistaEmpezar = new VistaEmpezarNivelBoton();
