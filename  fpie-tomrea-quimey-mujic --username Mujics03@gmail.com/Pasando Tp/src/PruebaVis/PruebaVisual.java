@@ -11,17 +11,14 @@ import ar.uba.fi.algo3.titiritero.vista.Ventana;
 import Escenario.Escenario;
 import Excepciones.GameOverException;
 import ManejoXml.ParserNivelesXml;
-
 import Menu.MenuInicial;
 import Objetos_moviles.*;
 import Persistencia.*;
 
 public class PruebaVisual
 {
-
 	public static void main(String[] args)
 	{
-
 		double LimiteX = Escenario.getLimiteX();
 		double LimiteY = Escenario.getLimiteY();
 		double AltDeEnemy = LimiteY - 20;
@@ -40,7 +37,6 @@ public class PruebaVisual
 		controlador.setSuperficieDeDibujo(ventanaMenu);
 		ventanaMenu.setVisible(true);
 		
-		 
 		MenuInicial menuListener = new MenuInicial();
 		VistaFondoMenuInicial fondo = new VistaFondoMenuInicial();
 		VistaEmpezarNivelBoton vistaEmpezar = new VistaEmpezarNivelBoton();
@@ -122,10 +118,7 @@ public class PruebaVisual
 			controlador.agregarDibujable(vistaAlgo);
 			Dibujable VistaPuntos = new VistaPuntos(Escenario.getInstance());
 			controlador.agregarDibujable(VistaPuntos);
-
-
 			controlador.agregarKeyPressObservador(algo42);
-			
 			
 			try
 			{
