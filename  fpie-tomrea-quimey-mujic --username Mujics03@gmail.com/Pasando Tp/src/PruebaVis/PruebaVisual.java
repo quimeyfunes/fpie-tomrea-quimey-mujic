@@ -28,7 +28,7 @@ public class PruebaVisual
 		
 		// seteo el controlador y lo dejo listo para correr
 		ControladorJuego controlador = new ControladorJuego(false);
-		controlador.setIntervaloSimulacion(20);
+		controlador.setIntervaloSimulacion(25);
 		Escenario.InicializarEscenario(controlador);
 		//+++++++++++++++++++++++++++++++
 		
