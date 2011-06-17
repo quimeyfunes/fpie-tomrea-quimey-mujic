@@ -1,7 +1,7 @@
 package Objetos_moviles; 
 import java.awt.event.KeyEvent;
 
-import ar.uba.fi.algo3.titiritero.DibujableExtra;
+import ar.uba.fi.algo3.titiritero.Dibujable;
 import ar.uba.fi.algo3.titiritero.KeyPressedObservador;
 import Vistas.VistaAlgo42;
 import EstrategiasDeMov.LineaRectaUp;
@@ -12,14 +12,10 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 	
 	private boolean banderaDisparar=false;
 	private boolean banderacambiarArma=false;
-	private boolean up=false;
-	private boolean down=false;
-	private boolean right=false;
-	private boolean left=false;
 	
 	public void Destructor() throws GameOverException {
 		Vivo = false; 
-		//throw new GameOverException();
+		throw new GameOverException();
 	}
 	
 	public Algo42(double x, double y)
@@ -30,9 +26,9 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 	protected void EstadoCorrecto(){ 
 		this.bando = ObjetosMoviles.BandoUsuario();
 		this.Velocidad = 5;
-		this.blindaje = new Blindaje((short) 250);
+		this.blindaje = new Blindaje((short) 150);
 		
-		this.ConfigurarCuerpo(25,25);
+		this.ConfigurarCuerpo(20,20);
 		
 		PistolaLaser pistola_laser = new PistolaLaser( this.bando ,new LineaRectaUp());
 		this.weapons.add( pistola_laser );
@@ -40,7 +36,6 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 
 	@Override
 	protected void Actuar() {
-		
 		if (this.banderaDisparar){
 			this.disparar();
 			this.banderaDisparar=false;//dispara en su turno
@@ -50,79 +45,57 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 			this.banderacambiarArma=false;
 		}
 		
-		if(this.right){
-			this.DerechaSpeed();
-			this.right=false;
-		}
-		if(this.left){
-			this.IzquierdaSpeed();
-			this.left=false;
-		}
-		if(this.up){
-			this.ArribaSpeed();
-			this.up=false;
-		}
-		if(this.down){
-			this.AbajoSpeed();
-			this.down=false;
-		}
+		this.VerificarColision();
 		
 	}
 	@Override
 	public synchronized void keyPressed(KeyEvent event)
 	{
 		if(event.getKeyCode() == KeyEvent.VK_UP)
-			this.up=true;
+			this.ArribaSpeed();
 		if(event.getKeyCode() == KeyEvent.VK_DOWN)
-			this.down=true;
+			this.AbajoSpeed();
 		if(event.getKeyCode() == KeyEvent.VK_RIGHT)
-			this.right=true;
+			this.DerechaSpeed();
 		if(event.getKeyCode() == KeyEvent.VK_LEFT)
-			this.left=true;
+			this.IzquierdaSpeed();
 		if(event.getKeyCode()== KeyEvent.VK_SPACE)
 			this.banderaDisparar=true;  
-		if(event.getKeyCode()== KeyEvent.VK_Z)
+		if(event.getKeyCode()== KeyEvent.VK_Z){
 			this.banderacambiarArma=true;
-
+		}
 			
 	}
-	
 
 	@Override
-	public DibujableExtra getVista() {
+	public Dibujable getVista() {
 		return new VistaAlgo42();
 	}
 	
 	private synchronized void ArribaSpeed(){
-			for(int i=0;i<Velocidad;i++){
-				if(!this.EstaCercaAlAlimiteSuperior()){
-					this.arriba();
-					}
-				}
-			}
+		for(int i=0;i<Velocidad;i++){
+			this.arriba();
+		}
+	}
 	
 	private synchronized void AbajoSpeed(){
-			for(int i=0;i<Velocidad;i++){
-				if(!this.EstaCercaAlAlimiteInferior()){
-					this.abajo();
-					}
-				}
-			}
+		for(int i=0;i<Velocidad;i++){
+			this.abajo();
+		}
+	}
 	
 	private synchronized void DerechaSpeed(){
-			for(int i=0;i<Velocidad;i++){
-				if(!this.EstaCercaAlAlimiteDerecho()){
-				this.derecha();
-				}
-			}
+		for(int i=0;i<Velocidad;i++){
+			this.derecha();
 		}
+	}
 	
 	private synchronized void IzquierdaSpeed(){
-			for(int i=0;i<Velocidad;i++){
-				if(!this.EstaCercaAlAlimiteIzquierdo()){
-				this.izquierda();
-				}
-			}
+		for(int i=0;i<Velocidad;i++){
+			this.izquierda();
 		}
+		
+		
+	}
 	
 }

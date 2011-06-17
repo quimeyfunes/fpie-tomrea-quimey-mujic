@@ -3,7 +3,7 @@ package Objetos_moviles;
 import java.util.LinkedList;
 
 import Vistas.VistaGuia;
-import ar.uba.fi.algo3.titiritero.DibujableExtra;
+import ar.uba.fi.algo3.titiritero.Dibujable;
 
 import Escenario.Escenario;
 import EstrategiasDeMov.DerechaIzquierda;
@@ -44,7 +44,7 @@ public class Guia extends Voladores
 		puntos = 0; 
 		Velocidad = 10;
 		estrategia_vuelo = new DerechaIzquierda();
-		this.blindaje = new Blindaje((short)1000);
+		this.blindaje = new Blindaje((short)450);
 		this.ConfigurarCuerpo(10,10);
 		PistolaLaser pistola_laser = new PistolaLaser(bando , new LineaRectaDown());
 		LanzadorMisiles lanzador_misiles = new LanzadorMisiles(bando, new MovDirigido());
@@ -70,7 +70,7 @@ public class Guia extends Voladores
 	}
 
 	@Override
-	public DibujableExtra getVista()
+	public Dibujable getVista()
 	{
 		return new VistaGuia();
 	}

@@ -1,6 +1,6 @@
 package Objetos_moviles;
 import Vistas.VistaAvionCivil;
-import ar.uba.fi.algo3.titiritero.DibujableExtra;
+import ar.uba.fi.algo3.titiritero.Dibujable;
 import Armas.*;
 import EstrategiasDeMov.DerechaIzquierda;
 
@@ -23,7 +23,7 @@ public class AvionCivil extends Voladores {
 		this.estrategia_vuelo = new DerechaIzquierda();
 		this.blindaje = new Blindaje((short)100);
 
-		this.ConfigurarCuerpo(30,30);
+		this.ConfigurarCuerpo(50,50);
 	}
 
 	public boolean PuedeManejarItems(){
@@ -31,7 +31,7 @@ public class AvionCivil extends Voladores {
 	}
 
 	@Override
-	public DibujableExtra getVista() {
+	public Dibujable getVista() {
 		return new VistaAvionCivil();
 	}
 	
