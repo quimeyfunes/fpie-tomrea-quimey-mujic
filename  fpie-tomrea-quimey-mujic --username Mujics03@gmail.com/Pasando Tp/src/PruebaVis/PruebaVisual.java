@@ -9,7 +9,6 @@ import Sonido.Sound;
 import Vistas.*;
 import ar.uba.fi.algo3.titiritero.vista.Ventana;
 import Escenario.Escenario;
-import Excepciones.GameOverException;
 import ManejoXml.ParserNivelesXml;
 import Menu.MenuInicial;
 import Objetos_moviles.*;
