@@ -5,6 +5,7 @@ import ar.uba.fi.algo3.titiritero.Dibujable;
 import ar.uba.fi.algo3.titiritero.KeyPressedObservador;
 import Vistas.VistaAlgo42;
 import EstrategiasDeMov.LineaRectaUp;
+import Excepciones.ChauBlindajeException;
 import Excepciones.GameOverException;
 import Armas.*;
 
@@ -36,6 +37,8 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 
 	@Override
 	protected void Actuar() {
+		try{
+		
 		if (this.banderaDisparar){
 			this.disparar();
 			this.banderaDisparar=false;//dispara en su turno
@@ -47,8 +50,14 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 		
 		this.VerificarColision();
 		
+		}
+		catch(ChauBlindajeException e){
+			
+		}
+		
+		
 	}
-	@Override
+	
 	public synchronized void keyPressed(KeyEvent event)
 	{
 		if(event.getKeyCode() == KeyEvent.VK_UP)
@@ -61,9 +70,8 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 			this.IzquierdaSpeed();
 		if(event.getKeyCode()== KeyEvent.VK_SPACE)
 			this.banderaDisparar=true;  
-		if(event.getKeyCode()== KeyEvent.VK_Z){
+		if(event.getKeyCode()== KeyEvent.VK_Z)
 			this.banderacambiarArma=true;
-		}
 			
 	}
 
@@ -99,3 +107,4 @@ public class Algo42 extends Voladores implements KeyPressedObservador{
 	}
 	
 }
+
