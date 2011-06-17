@@ -1,6 +1,6 @@
 package Objetos_moviles;
 import Vistas.VistaAvioneta;
-import ar.uba.fi.algo3.titiritero.DibujableExtra;
+import ar.uba.fi.algo3.titiritero.Dibujable;
 import Armas.*;
 import EstrategiasDeMov.IdaYvuelta;
 import EstrategiasDeMov.LineaRectaDown;
@@ -37,7 +37,7 @@ public class Avioneta extends Voladores {
 	}
 
 	@Override
-	public DibujableExtra getVista() {
+	public Dibujable getVista() {
 		return new VistaAvioneta();
 	}
 	

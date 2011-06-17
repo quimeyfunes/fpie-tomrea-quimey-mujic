@@ -1,23 +1,19 @@
 package Escenario;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
 import ar.uba.fi.algo3.titiritero.Dibujable;
-import ar.uba.fi.algo3.titiritero.DibujableExtra;
-import ar.uba.fi.algo3.titiritero.ObjetoVivo;
-import ar.uba.fi.algo3.titiritero.vista.ObjetoDeTexto;
-import Objetos_moviles.Algo42;
-import Objetos_moviles.ObjetosMoviles;
-import Excepciones.FinEscenarioException;
 
-public class Escenario implements ObjetoVivo,ObjetoDeTexto
+import Excepciones.FinEscenarioException;
+import Objetos_moviles.ObjetosMoviles;
+
+public class Escenario
 {
 	LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego;
 	LinkedList<ObjetosMoviles> temp;
 	int sumaDePuntos;
-	static double LimiteX=1200;
+	static double LimiteX=1000;
 	static double LimiteY=500;
 	private static Escenario instance = null;
 	private ControladorJuego controlador=null;
@@ -30,10 +26,10 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 		return LimiteY;
 	}
 	
-	 public synchronized static void  InicializarEscenario(ControladorJuego con){
+	 public synchronized static void  InicializarEscenario(ControladorJuego con){//si esto no se ejecuta primero, no funciona
 		 createInstance();
 		 instance.controlador=con;
-	}//si esto no se ejecuta primero, no funciona
+	}
 	
 	private synchronized static void createInstance() {
 		if (instance == null) { 
@@ -65,19 +61,21 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 	}
 	
 	public synchronized void agregarObjeto(ObjetosMoviles objeto)
-	{		
+	{
+		this.limpiarListaYrecolectarPuntos();//hay que buscar un lugar para esto.Un controlador o algo asi
+		
 		this.todoLoQueEstaEnJuego.add(objeto);
 		
 		this.controlador.agregarObjetoVivo(objeto);//agrego al gameloop
-		DibujableExtra vista = objeto.getVista();
-		vista.setMonitoreable(objeto);
-		this.controlador.agregarDibujable((Dibujable)vista);//agrego a visibles ( reee polimorfico mal )
+		Dibujable vista = objeto.getVista();
+		vista.setPosicionable(objeto);
+		this.controlador.agregarDibujable(vista);//agrego a visibles ( reee polimorfico mal )
 	}
 	
 	public  synchronized void eliminarObjeto(ObjetosMoviles objeto)
-	{
+	{//hay que hacer esto bien de alguna forma
 		this.todoLoQueEstaEnJuego.remove(objeto);
-		this.controlador.removerObjetoVivo(objeto);//lo saco del gameLoop
+		//this.controlador.removerObjetoVivo(objeto);//lo saco del gameLoop
 		//this.controlador.removerDibujable(objeto.getVista());
 	}
 
@@ -96,53 +94,12 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 			this.eliminarObjeto(movil);
 		}
 		
-		//if( (this.sumaDePuntos >= 1000 )|| (this.NoQuedanEnemigos())){//aca va la logistica de pasar de level
-		if( (this.NoQuedanEnemigos())){//aca va la logistica de pasar de level
-			//this.controlador.detenerJuego();
-			sumaDePuntos=sumaDePuntos+this.sumaDePuntos;
+		if(this.sumaDePuntos >= 1000)
 			throw new FinEscenarioException();
-		}
-	}
-		
-	@Override
-	public void vivir() {
-		
-		this.limpiarListaYrecolectarPuntos();
-	}
-	
-	public int getPuntos(){
-		return this.sumaDePuntos;
-	}
-	@Override
-	public String getTexto() {
-		return String.valueOf((this.sumaDePuntos)) ;
-	}
-	
-	 private boolean NoQuedanEnemigos(){
-		 boolean NoHayEnemigos=true;
-		 boolean Algo42EstaVivo=false;
-		 Iterator<ObjetosMoviles> it = this.todoLoQueEstaEnJuego.iterator();
-		 
-		 while(NoHayEnemigos && it.hasNext()){
-			 ObjetosMoviles obj = it.next();
-			 
-			 if (obj.getBando()!=ObjetosMoviles.BandoUsuario()){
-				 NoHayEnemigos=false;	 
-			 }else
-				 if(obj.getClass()==Algo42.class){//no esta mal porque estamos pidiendo por el user
-					 Algo42EstaVivo=true; 
-				 }
-		 }
-		 return( NoHayEnemigos)&&(Algo42EstaVivo ); 
-	 }
-	 
-	 public int getPuntosTotales(){
-		 return this.sumaDePuntos;
-	 }
-			 
-		
 	}
 	
 
-
+	
+	
+}
 
