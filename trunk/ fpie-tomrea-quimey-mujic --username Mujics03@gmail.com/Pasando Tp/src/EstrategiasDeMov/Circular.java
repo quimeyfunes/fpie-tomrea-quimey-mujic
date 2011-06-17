@@ -22,8 +22,6 @@ public class Circular extends EstrategiaDeVuelo {
 		boolean LimI;
 		boolean SafarDeLimiteIzquierdo;
 		boolean SafarDeLimiteDerecho;
-		boolean SafarDeLimiteInferior;
-		boolean SafarDeLimiteSuperior;
 		
 		LimR = objeto.EstaCercaAlAlimiteDerecho();
 		LimL = objeto.EstaCercaAlAlimiteIzquierdo();
@@ -72,7 +70,7 @@ public class Circular extends EstrategiaDeVuelo {
 	}
 
 	public static double radioStandarSegunDistancia(Vector2D posicion) {
-		return ((( posicion.y)/2.0)-5);//numero magico para evitar borde
+		return ((( posicion.y)/2.0)-50);//numero magico para evitar borde
 	}
 	
 	public static double radioStandarSegunDistancia( double x,double y){
