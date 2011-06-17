@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cantidades>
+       <cantidad name="bombarderos" value="3"/>
+       <cantidad name="cazas" value="3"/>
+       <cantidad name="avionetas" value="4"/>
+       <cantidad name="exploradores" value="5"/>
+	   <cantidad name="avioncivil" value="1"/>
+	   <cantidad name="helicoptero" value="1"/>
+	   <cantidad name="vidaguia" value="500"/>
+	   
+</cantidades>
