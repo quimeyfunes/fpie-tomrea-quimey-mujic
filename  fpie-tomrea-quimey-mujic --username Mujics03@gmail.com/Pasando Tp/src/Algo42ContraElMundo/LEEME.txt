@@ -2,6 +2,10 @@ Para funcionar bien, el jar tiene que estar en la misma carpeta que los contenid
 
 O sea, las imagenes y los sonidos y los niveles en xml,( por eso puse sound y imagenes de vista dentro de src )
 
-Haciendo un rar de esta carpeta y pasandoselo a sus amistades, con solo hacer click en el .JAR ya funca todo bien.
+Bajen esto a sus pcs, borren las carpetas de svn que se crearon aca dentro(para no asustar a los usuarios con cosas raras), hagan un rar de todo, y pasenselo a sus amistades.
+
+Con solo hacer click en el .JAR ya funca todo bien.
 
 Si lo venden y gana plata, tienen que compartir con los otros integrantes del grupo. =)
+
+Pd : sin el tutorial, nos vamos a ver obligados a explicar como jugar xD, en cuanto este hecho va a ser mejor
