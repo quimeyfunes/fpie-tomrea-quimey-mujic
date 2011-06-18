@@ -4,7 +4,7 @@ O sea, las imagenes y los sonidos y los niveles en xml,( por eso puse sound y im
 
 Bajen esto a sus pcs, borren las carpetas de svn que se crearon aca dentro(para no asustar a los usuarios con cosas raras), hagan un rar de todo, y pasenselo a sus amistades.
 
-Con solo hacer click en el .JAR ya funca todo bien.
+Con solo hacer click en Algo42ContraElmundo.JAR ya funca todo bien.
 
 Si lo venden y gana plata, tienen que compartir con los otros integrantes del grupo. =)
 
