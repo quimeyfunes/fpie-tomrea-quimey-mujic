@@ -12,9 +12,9 @@ import Escenario.Escenario;
 import ManejoXml.ParserNivelesXml;
 import Menu.MenuInicial;
 import Objetos_moviles.*;
-import Persistencia.*;
+//import Persistencia.*;
 
-public class PruebaVisual
+public class Main
 {
 	public static void main(String[] args)
 	{
