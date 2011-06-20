@@ -18,9 +18,7 @@ public class Main
 		while(menu.EmpiezaJuego()==false){
 			
 		}
-		juego.jugar();
-		
-
+		if (menu.EmpiezaJuego()==true)juego.jugar();
 		
 		}
 		

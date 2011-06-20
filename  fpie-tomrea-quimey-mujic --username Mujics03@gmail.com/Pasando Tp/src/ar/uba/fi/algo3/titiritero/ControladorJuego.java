@@ -4,12 +4,9 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 import Excepciones.GameOverException;
-import ar.uba.fi.algo3.titiritero.audio.Elemento;
-import ar.uba.fi.algo3.titiritero.audio.Piano;
 import ar.uba.fi.algo3.titiritero.audio.Reproductor;
-import ar.uba.fi.algo3.titiritero.vista.KeyPressedController;
+
 import Excepciones.FinEscenarioException;
 
 /**
