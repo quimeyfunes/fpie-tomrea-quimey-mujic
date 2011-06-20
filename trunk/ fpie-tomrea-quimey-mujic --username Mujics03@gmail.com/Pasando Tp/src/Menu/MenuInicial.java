@@ -5,21 +5,19 @@ package Menu;
 
 import java.awt.Button;
 import java.awt.Frame;
-import java.awt.Label;
+import java.awt.Image;
+import java.awt.MediaTracker;
 import java.awt.Panel;
-import java.awt.TextField;
+import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import ControladorInterfaz.ControladorMenu;
-import Vistas.VistaEmpezarNivelBoton;
-import Vistas.VistaSalirJuegoBoton;
-import Vistas.VistaTutorialBoton;
-import ar.uba.fi.algo3.titiritero.ControladorJuego;
-import ar.uba.fi.algo3.titiritero.MouseClickObservador;
 
 
 public class MenuInicial {
+	
+	private Image img;
 	
 	private Frame frameTemp; //marco que contendrá los controles
 
@@ -38,14 +36,18 @@ public class MenuInicial {
 	public MenuInicial(ControladorMenu control)
 	{	
 		//armado de la ventana
-		frameTemp = new Frame("Control de temperatura"); //creamos el marco
-		frameTemp.add("North", new Label("Algo42ContraElMundo"));  //agregamos un titulo
+		frameTemp = new Frame("Algo42ContraElMundo"); //creamos el marco
 		Panel panelBotones = new Panel(); //creamos un panel para los botones
 		panelBotones.add(botonEmpezar); 
 		panelBotones.add(botonSalir);  	
 		panelBotones.add(botonTutorial);
 		frameTemp.add("South", panelBotones);  //agregamos el panel al marco
-		frameTemp.setSize(300,100);  //seteamos las dimensiones del marco
+		
+		MediaTracker mt = new MediaTracker(frameTemp);
+		  this.img = Toolkit.getDefaultToolkit().getImage("fondojuego.jpg");
+		  mt.addImage(img,0);
+		  
+		frameTemp.setSize(1000,1000);  //seteamos las dimensiones del marco
 		frameTemp.setVisible(true);  //mostramos el marco
 
 		//agregamos el listener del evento de cerrado de la ventana		
@@ -54,6 +56,7 @@ public class MenuInicial {
 		botonEmpezar.addActionListener(control.getListenerBotonEmpezar());
 		botonSalir.addActionListener(control.getListenerBotonSalir());	
 		botonTutorial.addActionListener(control.getListenerBotonTutorial());
+		
 	}
 
 
