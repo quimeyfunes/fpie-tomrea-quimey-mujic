@@ -34,28 +34,27 @@ public class Main
 		Escenario.InicializarEscenario(controlador);
 		//+++++++++++++++++++++++++++++++
 		
-		Ventana ventanaMenu = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
-		controlador.setSuperficieDeDibujo(ventanaMenu);
-		ventanaMenu.setVisible(true);
+		//Ventana ventanaMenu = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
+		//controlador.setSuperficieDeDibujo(ventanaMenu);
+		//ventanaMenu.setVisible(true);
 		
 		MenuInicial menu = new MenuInicial( conMenu );
 		
-		try{
-			controlador.comenzarJuego();
-		}catch(Exception e){
+		//try{
+			//controlador.comenzarJuego();
+		//}catch(Exception e){
 			
-		}
-		controlador.DetenerBorrarJuego();
-		controlador.comenzarJuego(1);
+		//}
+		//controlador.DetenerBorrarJuego();
+		//controlador.comenzarJuego(1);
 		//menu=null;//ya no esta mas
 		//vistaEmpezar=null;
 		//vistaSalir=null;
-		ventanaMenu.dispose();//asi no queda colgado atras
+		//ventanaMenu.dispose();//asi no queda colgado atras
 		
 		Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
-		
 
 		ParserNivelesXml parser = new ParserNivelesXml();
 		boolean perdio = false;
