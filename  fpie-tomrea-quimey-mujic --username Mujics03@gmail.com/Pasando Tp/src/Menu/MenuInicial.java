@@ -53,12 +53,13 @@ public class MenuInicial {
 		botonSalir.addActionListener(control.getListenerBotonSalir());	
 		botonTutorial.addActionListener(control.getListenerBotonTutorial(this));
 		
+		this.CrearTutorial();
+		
 	}
 	
-	public void MostrarTutorial(){
+	public void CrearTutorial(){
 		
 		Button botonSalir = new Button("Salir"); 
-		this.frameTemp.setVisible(false);
 		
 		tuto = new PanelFondo("Tutorial"); //creamos el marco
 		tuto.setImage("fondotutorial.jpg");
@@ -67,11 +68,16 @@ public class MenuInicial {
 		tuto.add("South", panelBotones);  //agregamos el panel al marco
 		
 		tuto.setSize(1300 ,750);  //seteamos las dimensiones del marco
-		tuto.setVisible(true);  //mostramos el marco
 
 		//agregamos el listener del evento de cerrado de la ventana		
 		botonSalir.addActionListener(control.getListenerBotonAtras(this));	
 	}
+	
+	public void MostrarTutorial(){
+		this.tuto.setVisible(true);
+		this.frameTemp.setVisible(false);
+	}
+	
 	
 	public void MostrarMenuInicial(){
 		this.frameTemp.setVisible(true);
@@ -79,6 +85,10 @@ public class MenuInicial {
 	}
 
 	public void MostrarEmpezarJuego() {
+		this.frameTemp.setVisible(false);
+		this.tuto.setVisible(false);
+		Juego juego= new Juego();
+		juego.jugar();
 		
 	}
 

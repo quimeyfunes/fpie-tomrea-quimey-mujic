@@ -27,16 +27,16 @@ import ar.uba.fi.algo3.titiritero.vista.Ventana;
 
 public class Juego {
 	
-	double LimiteX = Escenario.getLimiteX();
-	double LimiteY = Escenario.getLimiteY();
-	double AltDeEnemy = LimiteY - 20;
-	// esos son limites que uso para probar la simulacion
-	
 	public Juego(){
 		
 	}
 	
 	public void jugar(){
+		
+	double LimiteX = Escenario.getLimiteX();
+	double LimiteY = Escenario.getLimiteY();
+	double AltDeEnemy = LimiteY - 20;
+		// esos son limites que uso para probar la simulacion
 		
 	Sound testsong = new Sound("Laguerradelasgalaxias.mid");
 	testsong.playSound();
