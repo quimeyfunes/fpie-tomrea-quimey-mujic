@@ -4,7 +4,6 @@ package Menu;
 
 
 import java.awt.Button;
-import java.awt.Image;
 import java.awt.Panel;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
