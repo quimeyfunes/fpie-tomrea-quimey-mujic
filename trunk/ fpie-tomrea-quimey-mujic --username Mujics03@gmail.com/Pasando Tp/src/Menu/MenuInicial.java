@@ -18,10 +18,6 @@ public class MenuInicial {
 	private PanelFondo frameTemp; //marco que contendrá los controles
 	private PanelFondo tuto;
 
-	private Button botonEmpezar = new Button("Empezar"); 
-	private Button botonSalir = new Button("Salir"); 
-	private Button botonTutorial = new Button("Tutorial"); 
-
 	//Clase auxiliar para escuchar el evento de cerrado de la ventana
 	public static class CloseListener extends WindowAdapter
 	{	public void windowClosing(WindowEvent e)
@@ -34,19 +30,24 @@ public class MenuInicial {
 	{
 		this.control=control;
 		//armado de la ventana
-		frameTemp = new PanelFondo("Algo42ContraElMundo"); //creamos el marco
-		frameTemp.setImage("fondomenu.jpg");
+		this.frameTemp = new PanelFondo("Algo42ContraElMundo"); //creamos el marco
+		this.frameTemp.setImage("fondomenu.jpg");
 		Panel panelBotones = new Panel(); //creamos un panel para los botones
+		
+		 Button botonEmpezar = new Button("Empezar"); 
+		 Button botonSalir = new Button("Salir"); 
+		 Button botonTutorial = new Button("Tutorial"); 
+		
 		panelBotones.add(botonEmpezar); 
 		panelBotones.add(botonSalir);  	
 		panelBotones.add(botonTutorial);
-		frameTemp.add("South", panelBotones);  //agregamos el panel al marco
+		this.frameTemp.add("South", panelBotones);  //agregamos el panel al marco
 		
-		frameTemp.setSize(1000,700);  //seteamos las dimensiones del marco
-		frameTemp.setVisible(true);  //mostramos el marco
+		this.frameTemp.setSize(1000,700);  //seteamos las dimensiones del marco
+		this.frameTemp.setVisible(true);  //mostramos el marco
 
 		//agregamos el listener del evento de cerrado de la ventana		
-		frameTemp.addWindowListener(new CloseListener());
+		this.frameTemp.addWindowListener(new CloseListener());
 	
 		botonEmpezar.addActionListener(control.getListenerBotonEmpezar(this));
 		botonSalir.addActionListener(control.getListenerBotonSalir());	
@@ -56,6 +57,7 @@ public class MenuInicial {
 	
 	public void MostrarTutorial(){
 		
+		Button botonSalir = new Button("Salir"); 
 		this.frameTemp.setVisible(false);
 		
 		tuto = new PanelFondo("Tutorial"); //creamos el marco
