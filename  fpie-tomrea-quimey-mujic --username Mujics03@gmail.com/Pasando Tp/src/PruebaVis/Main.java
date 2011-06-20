@@ -39,14 +39,6 @@ public class Main
 		ventanaMenu.setVisible(true);
 		
 		MenuInicial menu = new MenuInicial( conMenu );
-		VistaFondoMenuInicial fondo = new VistaFondoMenuInicial();
-		VistaEmpezarNivelBoton vistaEmpezar = new VistaEmpezarNivelBoton();
-		VistaSalirJuegoBoton vistaSalir = new VistaSalirJuegoBoton();
-
-
-		controlador.agregarDibujable(fondo);
-		controlador.agregarDibujable(vistaEmpezar);
-		controlador.agregarDibujable(vistaSalir);
 		
 		try{
 			controlador.comenzarJuego();
@@ -55,9 +47,9 @@ public class Main
 		}
 		controlador.DetenerBorrarJuego();
 		controlador.comenzarJuego(1);
-		menuListener=null;//ya no esta mas
-		vistaEmpezar=null;
-		vistaSalir=null;
+		//menu=null;//ya no esta mas
+		//vistaEmpezar=null;
+		//vistaSalir=null;
 		ventanaMenu.dispose();//asi no queda colgado atras
 		
 		Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
