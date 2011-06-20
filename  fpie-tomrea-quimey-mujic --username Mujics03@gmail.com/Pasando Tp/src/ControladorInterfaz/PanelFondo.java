@@ -14,7 +14,7 @@ public class PanelFondo extends Frame implements SuperficieDeDibujo{
 
   public PanelFondo(String hola){
   super(hola);
-  imagenFondo = Toolkit.getDefaultToolkit().getImage("fondomenu.jpg");
+  imagenFondo = Toolkit.getDefaultToolkit().getImage(  "fondomenu.jpg");
   MediaTracker mt = new MediaTracker(this);
   mt.addImage(imagenFondo,0);
   try {
