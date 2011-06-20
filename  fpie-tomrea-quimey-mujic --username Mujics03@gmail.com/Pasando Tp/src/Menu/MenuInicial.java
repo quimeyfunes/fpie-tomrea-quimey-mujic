@@ -68,7 +68,7 @@ public class MenuInicial {
 		tuto.setVisible(true);  //mostramos el marco
 
 		//agregamos el listener del evento de cerrado de la ventana		
-		botonSalir.addActionListener(control.getListenerBotonAtras());	
+		botonSalir.addActionListener(control.getListenerBotonAtras(this));	
 	}
 	
 	public void MostrarMenuInicial(){
