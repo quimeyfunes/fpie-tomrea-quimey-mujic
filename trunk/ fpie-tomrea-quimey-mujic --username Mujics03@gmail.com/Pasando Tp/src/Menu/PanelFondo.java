@@ -4,7 +4,8 @@ import java.awt.*;
 
 import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
 
-public class PanelFondo extends Frame implements SuperficieDeDibujo{
+public class PanelFondo extends Frame //implements SuperficieDeDibujo{
+{
   /**
 	 * 
 	 */
@@ -32,6 +33,7 @@ public class PanelFondo extends Frame implements SuperficieDeDibujo{
   g.clearRect(0, 0, getSize().width, getSize().height);
   }
 
+  /**
 @Override
 public void limpiar() {
 	if(this.imagenFondo == null)
@@ -51,4 +53,5 @@ public void actualizar() {
 public Object getBuffer() {
 		return this.imagenFondo.getGraphics();
 		}
+		 */
 }

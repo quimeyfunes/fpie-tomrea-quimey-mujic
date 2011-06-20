@@ -5,8 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ControladorMenu {
-
-		
 		
 		public ControladorMenu()
 		{
@@ -14,15 +12,17 @@ public class ControladorMenu {
 		
 		private class EscuchaBotonEmpezar implements ActionListener
 		{	public void actionPerformed(ActionEvent e)
-			{	
+			{
+				
+			
 
 			}
 		}
 		
 		private class EscuchaBotonSalir implements ActionListener
-		{	public void actionPerformed(ActionEvent e)
-			{
-			
+		{	
+			public void actionPerformed(ActionEvent e){
+				System.exit(0);
 			}
 		}
 		
