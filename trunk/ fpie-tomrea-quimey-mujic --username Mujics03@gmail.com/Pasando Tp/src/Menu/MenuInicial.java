@@ -15,7 +15,7 @@ public class MenuInicial {
 	
 	private ControladorMenu control;
 	
-	private PanelFondo frameTemp; //marco que contendrá los controles
+	private PanelFondo frameTemp; 
 	private PanelFondo tuto;
 	private boolean banderaJuego=false;
 
@@ -60,7 +60,7 @@ public class MenuInicial {
 		
 	}
 	
-	public void CrearTutorial(){
+	private void CrearTutorial(){
 		
 		Button botonSalir = new Button("Salir"); 
 		

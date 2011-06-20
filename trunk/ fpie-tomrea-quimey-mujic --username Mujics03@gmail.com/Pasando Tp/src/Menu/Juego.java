@@ -1,10 +1,7 @@
 package Menu;
 
-import java.util.Observable;
-import java.util.Observer;
-import java.util.Random;
 
-import ControladorInterfaz.ControladorMenu;
+import java.util.Random;
 import Escenario.Escenario;
 import ManejoXml.ParserNivelesXml;
 import Objetos_moviles.Algo42;
