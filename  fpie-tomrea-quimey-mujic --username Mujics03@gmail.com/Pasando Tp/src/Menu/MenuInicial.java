@@ -11,6 +11,7 @@ import java.awt.TextField;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import ControladorInterfaz.ControladorMenu;
 import Vistas.VistaEmpezarNivelBoton;
 import Vistas.VistaSalirJuegoBoton;
 import Vistas.VistaTutorialBoton;
@@ -34,7 +35,7 @@ public class MenuInicial {
 		}
 	}
 	
-	public MenuInicial(Controlador control)
+	public MenuInicial(ControladorMenu control)
 	{	
 		//armado de la ventana
 		frameTemp = new Frame("Control de temperatura"); //creamos el marco
