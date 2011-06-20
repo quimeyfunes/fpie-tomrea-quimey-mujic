@@ -6,9 +6,7 @@ package Menu;
 import java.awt.Button;
 import java.awt.Frame;
 import java.awt.Image;
-import java.awt.MediaTracker;
 import java.awt.Panel;
-import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
