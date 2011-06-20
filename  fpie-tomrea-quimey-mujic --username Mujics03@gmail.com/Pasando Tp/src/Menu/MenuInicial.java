@@ -7,11 +7,12 @@ import java.awt.Button;
 import java.awt.Panel;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.Observable;
 
 import ControladorInterfaz.ControladorMenu;
 
 
-public class MenuInicial {
+public class MenuInicial extends Observable {
 	
 	private ControladorMenu control;
 	
@@ -26,8 +27,9 @@ public class MenuInicial {
 		}
 	}
 	
-	public MenuInicial(ControladorMenu control)
+	public MenuInicial(ControladorMenu control,Juego juego)
 	{
+		this.addObserver(juego);
 		this.control=control;
 		//armado de la ventana
 		this.frameTemp = new PanelFondo("Algo42ContraElMundo"); //creamos el marco
@@ -84,10 +86,12 @@ public class MenuInicial {
 		this.tuto.setVisible(false);
 	}
 
-	public void MostrarEmpezarJuego() {
+	public synchronized void MostrarEmpezarJuego() {
 		this.frameTemp.setVisible(false);
 		this.tuto.setVisible(false);
-		
+		this.frameTemp.dispose();
+		this.tuto.dispose();
+		this.notify();
 	}
 
 
