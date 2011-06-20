@@ -2,8 +2,6 @@ package Menu;
 
 import java.awt.*;
 
-import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
-
 public class PanelFondo extends Frame //implements SuperficieDeDibujo{
 {
   /**
@@ -15,24 +13,28 @@ public class PanelFondo extends Frame //implements SuperficieDeDibujo{
 
   public PanelFondo(String hola){
   super(hola);
-  //con getResource funciona todo lindo =)
-  imagenFondo = Toolkit.getDefaultToolkit().getImage( this.getClass().getResource("fondomenu.jpg"));
-  MediaTracker mt = new MediaTracker(this);
-  mt.addImage(imagenFondo,0);
-  try {
-	mt.waitForID(0);
-} catch (InterruptedException e) {
-	e.printStackTrace();
-}
   }
+  //con getResource funciona todo lindo =)
+
+  
+  public void setImage(String file){
+	  imagenFondo = Toolkit.getDefaultToolkit().getImage( this.getClass().getResource(file));
+	  MediaTracker mt = new MediaTracker(this);
+	  mt.addImage(imagenFondo,0);
+	  try {
+		  mt.waitForID(0);
+		  } catch (InterruptedException e) {
+			  e.printStackTrace();
+			  }
+		  }
   
   public void paint(Graphics g){
   if(imagenFondo != null)
-  g.drawImage(imagenFondo, 0, 0, this);
+  g.drawImage(imagenFondo, 0,10, this);
   else
   g.clearRect(0, 0, getSize().width, getSize().height);
   }
-
+  
   /**
 @Override
 public void limpiar() {

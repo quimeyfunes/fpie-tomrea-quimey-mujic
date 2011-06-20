@@ -13,7 +13,10 @@ import ControladorInterfaz.ControladorMenu;
 
 public class MenuInicial {
 	
+	private ControladorMenu control;
+	
 	private PanelFondo frameTemp; //marco que contendrá los controles
+	private PanelFondo tuto;
 
 	private Button botonEmpezar = new Button("Empezar"); 
 	private Button botonSalir = new Button("Salir"); 
@@ -29,8 +32,10 @@ public class MenuInicial {
 	
 	public MenuInicial(ControladorMenu control)
 	{
+		this.control=control;
 		//armado de la ventana
 		frameTemp = new PanelFondo("Algo42ContraElMundo"); //creamos el marco
+		frameTemp.setImage("fondomenu.jpg");
 		Panel panelBotones = new Panel(); //creamos un panel para los botones
 		panelBotones.add(botonEmpezar); 
 		panelBotones.add(botonSalir);  	
@@ -43,9 +48,35 @@ public class MenuInicial {
 		//agregamos el listener del evento de cerrado de la ventana		
 		frameTemp.addWindowListener(new CloseListener());
 	
-		botonEmpezar.addActionListener(control.getListenerBotonEmpezar());
+		botonEmpezar.addActionListener(control.getListenerBotonEmpezar(this));
 		botonSalir.addActionListener(control.getListenerBotonSalir());	
-		botonTutorial.addActionListener(control.getListenerBotonTutorial());
+		botonTutorial.addActionListener(control.getListenerBotonTutorial(this));
+		
+	}
+	
+	public void MostrarTutorial(){
+		
+		this.frameTemp.setVisible(false);
+		
+		tuto = new PanelFondo("Tutorial"); //creamos el marco
+		tuto.setImage("fondotutorial.jpg");
+		Panel panelBotones = new Panel(); //creamos un panel para los botones
+		panelBotones.add(botonSalir); 
+		tuto.add("South", panelBotones);  //agregamos el panel al marco
+		
+		tuto.setSize(1300 ,750);  //seteamos las dimensiones del marco
+		tuto.setVisible(true);  //mostramos el marco
+
+		//agregamos el listener del evento de cerrado de la ventana		
+		botonSalir.addActionListener(control.getListenerBotonAtras());	
+	}
+	
+	public void MostrarMenuInicial(){
+		this.frameTemp.setVisible(true);
+		this.tuto.setVisible(false);
+	}
+
+	public void MostrarEmpezarJuego() {
 		
 	}
 
