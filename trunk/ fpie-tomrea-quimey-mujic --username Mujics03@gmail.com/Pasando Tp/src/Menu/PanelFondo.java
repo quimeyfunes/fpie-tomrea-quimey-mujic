@@ -1,4 +1,4 @@
-package ControladorInterfaz;
+package Menu;
 
 import java.awt.*;
 
@@ -14,7 +14,8 @@ public class PanelFondo extends Frame implements SuperficieDeDibujo{
 
   public PanelFondo(String hola){
   super(hola);
-  imagenFondo = Toolkit.getDefaultToolkit().getImage(  "fondomenu.jpg");
+  //con getResource funciona todo lindo =)
+  imagenFondo = Toolkit.getDefaultToolkit().getImage( this.getClass().getResource("fondomenu.jpg"));
   MediaTracker mt = new MediaTracker(this);
   mt.addImage(imagenFondo,0);
   try {
@@ -26,7 +27,7 @@ public class PanelFondo extends Frame implements SuperficieDeDibujo{
   
   public void paint(Graphics g){
   if(imagenFondo != null)
-  g.drawImage(imagenFondo, 100, 100, this);
+  g.drawImage(imagenFondo, 0, 0, this);
   else
   g.clearRect(0, 0, getSize().width, getSize().height);
   }

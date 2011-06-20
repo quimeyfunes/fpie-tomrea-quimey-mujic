@@ -4,19 +4,15 @@ package Menu;
 
 
 import java.awt.Button;
-import java.awt.Frame;
 import java.awt.Image;
 import java.awt.Panel;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import ControladorInterfaz.ControladorMenu;
-import ControladorInterfaz.PanelFondo;
 
 
 public class MenuInicial {
-	
-	private Image img;
 	
 	private PanelFondo frameTemp; //marco que contendrá los controles
 
@@ -33,7 +29,7 @@ public class MenuInicial {
 	}
 	
 	public MenuInicial(ControladorMenu control)
-	{	
+	{
 		//armado de la ventana
 		frameTemp = new PanelFondo("Algo42ContraElMundo"); //creamos el marco
 		Panel panelBotones = new Panel(); //creamos un panel para los botones
@@ -42,7 +38,7 @@ public class MenuInicial {
 		panelBotones.add(botonTutorial);
 		frameTemp.add("South", panelBotones);  //agregamos el panel al marco
 		
-		frameTemp.setSize(800,800);  //seteamos las dimensiones del marco
+		frameTemp.setSize(1000,700);  //seteamos las dimensiones del marco
 		frameTemp.setVisible(true);  //mostramos el marco
 
 		//agregamos el listener del evento de cerrado de la ventana		
