@@ -7,7 +7,6 @@ import java.awt.Button;
 import java.awt.Panel;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.Observable;
 
 import ControladorInterfaz.ControladorMenu;
 
@@ -31,6 +30,13 @@ public class MenuInicial {
 	public MenuInicial(ControladorMenu control)
 	{
 		this.control=control;
+		this.CrearMenuPrincipal();
+		this.CrearTutorial();
+		this.MostrarMenuInicial();
+		
+	}
+	
+	private void CrearMenuPrincipal(){
 		//armado de la ventana
 		this.frameTemp = new PanelFondo("Algo42ContraElMundo"); //creamos el marco
 		this.frameTemp.setImage("fondomenu.jpg");
@@ -44,18 +50,13 @@ public class MenuInicial {
 		panelBotones.add(botonSalir);  	
 		panelBotones.add(botonTutorial);
 		this.frameTemp.add("South", panelBotones);  //agregamos el panel al marco
-		
 		this.frameTemp.setSize(1000,700);  //seteamos las dimensiones del marco
-		this.frameTemp.setVisible(true);  //mostramos el marco
-
 		//agregamos el listener del evento de cerrado de la ventana		
 		this.frameTemp.addWindowListener(new CloseListener());
 	
 		botonEmpezar.addActionListener(control.getListenerBotonEmpezar(this));
 		botonSalir.addActionListener(control.getListenerBotonSalir());	
 		botonTutorial.addActionListener(control.getListenerBotonTutorial(this));
-		
-		this.CrearTutorial();
 		
 	}
 	
