@@ -19,7 +19,7 @@ public class ControladorMenu {
 				this.men=men;
 				}
 		
-			public void actionPerformed(ActionEvent e)
+			public synchronized void actionPerformed(ActionEvent e)
 			{
 				men.MostrarEmpezarJuego();
 				}

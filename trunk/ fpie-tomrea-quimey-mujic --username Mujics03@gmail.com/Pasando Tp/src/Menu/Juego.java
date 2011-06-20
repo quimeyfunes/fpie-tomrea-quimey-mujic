@@ -28,23 +28,10 @@ import ar.uba.fi.algo3.titiritero.Dibujable;
 import ar.uba.fi.algo3.titiritero.DibujableExtra;
 import ar.uba.fi.algo3.titiritero.vista.Ventana;
 
-public class Juego implements Observer{
+public class Juego {
 	
 	public Juego(){
 		
-	}
-	
-	public synchronized void activarMenu(){
-		ControladorMenu conMenu = new ControladorMenu();
-		
-		MenuInicial menu = new MenuInicial( conMenu,this );
-		
-		try {
-			this.wait();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-			System.out.println("bue");
-		}
 	}
 	
 	public void jugar(){
@@ -166,11 +153,6 @@ public class Juego implements Observer{
 	}
 	controlador.comenzarJuego();
 }
-
-	@Override
-	public void update(Observable o, Object arg) {
-		System.out.println("nwwwwwwwwwwwwwwwwwwwwwwwww");
-	}
 
 
 }

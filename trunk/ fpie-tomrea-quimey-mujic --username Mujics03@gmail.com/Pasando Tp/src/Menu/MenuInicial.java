@@ -18,6 +18,7 @@ public class MenuInicial extends Observable {
 	
 	private PanelFondo frameTemp; //marco que contendrá los controles
 	private PanelFondo tuto;
+	private boolean banderaJuego=false;
 
 	//Clase auxiliar para escuchar el evento de cerrado de la ventana
 	public static class CloseListener extends WindowAdapter
@@ -27,9 +28,8 @@ public class MenuInicial extends Observable {
 		}
 	}
 	
-	public MenuInicial(ControladorMenu control,Juego juego)
+	public MenuInicial(ControladorMenu control)
 	{
-		this.addObserver(juego);
 		this.control=control;
 		//armado de la ventana
 		this.frameTemp = new PanelFondo("Algo42ContraElMundo"); //creamos el marco
@@ -87,11 +87,13 @@ public class MenuInicial extends Observable {
 	}
 
 	public synchronized void MostrarEmpezarJuego() {
-		this.frameTemp.setVisible(false);
-		this.tuto.setVisible(false);
 		this.frameTemp.dispose();
 		this.tuto.dispose();
-		this.notify();
+		this.banderaJuego=true;
+	}
+	
+	public boolean EmpiezaJuego(){
+		return this.banderaJuego;
 	}
 
 

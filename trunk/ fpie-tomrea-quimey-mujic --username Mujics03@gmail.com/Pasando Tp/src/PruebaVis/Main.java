@@ -1,6 +1,8 @@
 package PruebaVis;
 
+import ControladorInterfaz.ControladorMenu;
 import Menu.Juego;
+import Menu.MenuInicial;
 
 //import Persistencia.*;
 
@@ -8,9 +10,17 @@ public class Main
 {
 	public static void main(String[] args)
 	{
-		Juego juego= new Juego();
-		juego.activarMenu();
+		ControladorMenu conMenu = new ControladorMenu();
 		
+		MenuInicial menu = new MenuInicial( conMenu );
+		Juego juego= new Juego();
+		
+		while(menu.EmpiezaJuego()==false){
+			
+		}
+		juego.jugar();
+		
+
 		
 		}
 		
