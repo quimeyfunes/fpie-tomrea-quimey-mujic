@@ -49,11 +49,15 @@ public class ControladorMenu {
 
 		private class EscuchaBotonAtras implements ActionListener
 		{
+			private MenuInicial men;
+			
+			EscuchaBotonAtras( MenuInicial men ){
+				this.men=men;
+			}
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				
+				this.men.MostrarMenuInicial();
 			}
 			
 		}
@@ -70,8 +74,8 @@ public class ControladorMenu {
 		return new EscuchaBotonTutorial(men);
 	}
 	
-	public ActionListener getListenerBotonAtras(MenuInicial men){
-		return EscuchaBotonAtras(men);
-		
+
+	public ActionListener getListenerBotonAtras(MenuInicial men) {
+		return new EscuchaBotonAtras(men);
 	}
 }
