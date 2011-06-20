@@ -87,8 +87,6 @@ public class MenuInicial {
 	public void MostrarEmpezarJuego() {
 		this.frameTemp.setVisible(false);
 		this.tuto.setVisible(false);
-		Juego juego= new Juego();
-		juego.jugar();
 		
 	}
 
