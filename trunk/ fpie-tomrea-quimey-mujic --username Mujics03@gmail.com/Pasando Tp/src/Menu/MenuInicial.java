@@ -12,7 +12,7 @@ import java.util.Observable;
 import ControladorInterfaz.ControladorMenu;
 
 
-public class MenuInicial extends Observable {
+public class MenuInicial {
 	
 	private ControladorMenu control;
 	
