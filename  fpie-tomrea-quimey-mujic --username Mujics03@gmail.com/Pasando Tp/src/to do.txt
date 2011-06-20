@@ -1,4 +1,3 @@
 persistencia: preguntar entre nivel y nivel si queres guardar. poner load en el menu
 portaaviones
-pasar todo a .jar
 tutorial
