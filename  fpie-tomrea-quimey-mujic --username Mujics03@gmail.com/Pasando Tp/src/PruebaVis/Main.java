@@ -8,6 +8,7 @@ import ar.uba.fi.algo3.titiritero.DibujableExtra;
 import Sonido.Sound;
 import Vistas.*;
 import ar.uba.fi.algo3.titiritero.vista.Ventana;
+import ControladorInterfaz.ControladorMenu;
 import Escenario.Escenario;
 import ManejoXml.ParserNivelesXml;
 import Menu.MenuInicial;
@@ -28,6 +29,7 @@ public class Main
 		
 		// seteo el controlador y lo dejo listo para correr
 		ControladorJuego controlador = new ControladorJuego(false);
+		ControladorMenu conMenu = new ControladorMenu();
 		controlador.setIntervaloSimulacion(25);
 		Escenario.InicializarEscenario(controlador);
 		//+++++++++++++++++++++++++++++++
@@ -36,14 +38,12 @@ public class Main
 		controlador.setSuperficieDeDibujo(ventanaMenu);
 		ventanaMenu.setVisible(true);
 		
-		MenuInicial menuListener = new MenuInicial();
+		MenuInicial menu = new MenuInicial( conMenu );
 		VistaFondoMenuInicial fondo = new VistaFondoMenuInicial();
 		VistaEmpezarNivelBoton vistaEmpezar = new VistaEmpezarNivelBoton();
 		VistaSalirJuegoBoton vistaSalir = new VistaSalirJuegoBoton();
 
-		menuListener.setControlador(controlador);
 
-		controlador.agregarMouseClickObservador(menuListener);
 		controlador.agregarDibujable(fondo);
 		controlador.agregarDibujable(vistaEmpezar);
 		controlador.agregarDibujable(vistaSalir);
