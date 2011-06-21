@@ -7,14 +7,28 @@ import Escenario.*;
 import Objetos_moviles.ObjetosMoviles;
 
 public class Persistencia {
-	Escenario escenario = Escenario.getInstance();
-	XStream xstream = new XStream();
-	LinkedList<String> lista_xml = new LinkedList<String>();
+	private Escenario escenario;
+	private XStream xstream;
+	private static LinkedList<String> lista_xml;
 	
-	private void Persistir(){
+	public Persistencia(){
+		this.escenario = Escenario.getInstance();
+		this.xstream = new XStream();
+		this.lista_xml = new LinkedList<String>();
+	}
+	
+	public void Persistir(){
 		for (ObjetosMoviles elemento: escenario.objetosVivos() ){
 			String xml = xstream.toXML(elemento);
 			lista_xml.add( xml );
+		}
+	}
+	
+	public void Cargar(){
+		for (String elementoXml: lista_xml){
+			
+			ObjetosMoviles objetoMovil = (ObjetosMoviles)xstream.fromXML(elementoXml);
+			escenario.agregarObjeto(objetoMovil);
 		}
 	}
 

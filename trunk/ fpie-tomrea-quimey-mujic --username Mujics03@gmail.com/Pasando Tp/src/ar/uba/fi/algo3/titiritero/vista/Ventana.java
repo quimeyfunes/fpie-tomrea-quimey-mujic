@@ -5,6 +5,9 @@ import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Menu;
+import java.awt.MenuBar;
+import java.awt.MenuItem;
 import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -79,5 +82,45 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 			}
 		});
 	}
+	
+	public void InicializaMenus() {
+
+	     MenuBar mbarra = new MenuBar();
+
+	     Menu m = new Menu( "Archivo" );
+
+	     m.add( new MenuItem( "Nuevo") );
+
+	     m.add( new MenuItem( "Abrir") );
+
+	     m.add( new MenuItem( "Guardar") );
+
+	     m.add( new MenuItem( "Guardar como") );
+
+	     m.add( new MenuItem( "Imprimir") );
+
+	     m.addSeparator();
+
+	     m.add( new MenuItem( "Salir") );
+
+	     mbarra.add( m );
+
+
+
+	     m = new Menu( "Ayuda" );
+
+	     m.add( new MenuItem( "Ayuda!" ) );
+
+	     m.addSeparator();
+
+	     m.add( new MenuItem( "Acerca de..." ) );
+
+	     mbarra.add( m );
+
+
+
+	     setMenuBar( mbarra );
+
+	     }
 	
 }
