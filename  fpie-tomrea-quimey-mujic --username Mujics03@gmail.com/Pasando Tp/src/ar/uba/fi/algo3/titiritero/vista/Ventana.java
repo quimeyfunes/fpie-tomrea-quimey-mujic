@@ -31,7 +31,6 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 	protected ControladorJuego controlador;
 	
 	public Ventana(ControladorJuego unControlador){
-		inicializarMenus();
 		this.controlador = unControlador;
 		this.addMouseListener(new MouseClickController(this.controlador));
 		this.addKeyListener(new KeyPressedController(this.controlador));
@@ -68,7 +67,6 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 	}
 	
 	public Ventana(int ancho,int alto, ControladorJuego unControlador){
-		inicializarMenus();
 		this.controlador=unControlador;
 		this.addMouseListener(new MouseClickController(unControlador));
 		this.addKeyListener(new KeyPressedController (unControlador));
@@ -87,50 +85,6 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 		});
 	}
 	
-	private void inicializarMenus() {
-
-	     MenuBar mbarra = new MenuBar();
-
-	     Menu m = new Menu( "Juego" );
-	     MenuItem pausar = new MenuItem( "Pausar");
-	     pausar.addActionListener(new ControladorMenuJuego(controlador));
-	     m.add( pausar);
-
-	     MenuItem guardar = new MenuItem( "Guardar");
-	     guardar.addActionListener(new ControladorMenuJuego(controlador));
-	     m.add( guardar );
-
-	     m.addSeparator();
-	     
-	     MenuItem salir = new MenuItem( "Salir");
-	     salir.addActionListener(new ControladorMenuJuego(controlador));
-	     m.add(  salir );
-
-	     mbarra.add( m );
-
-
-
-	     m = new Menu( "Sonido" );
-
-	     MenuItem activar = new MenuItem( "Activar" ) ;
-	     activar.addActionListener(new ControladorMenuJuego(controlador));
-	     m.add( activar );
-
-	     m.addSeparator();
-
-	     MenuItem desactivar = new MenuItem( "Desactivar" ) ;
-	     desactivar.addActionListener(new ControladorMenuJuego(controlador));
-	     m.add( desactivar );
-
-
-	     mbarra.add( m );
-
-
-
-	     setMenuBar( mbarra );
-	     
-	     
-
-	     }
+	
 	
 }

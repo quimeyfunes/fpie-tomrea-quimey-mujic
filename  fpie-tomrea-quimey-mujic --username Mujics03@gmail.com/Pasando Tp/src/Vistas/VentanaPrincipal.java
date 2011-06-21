@@ -1,8 +1,12 @@
 package Vistas;
 
+import java.awt.Menu;
+import java.awt.MenuBar;
+import java.awt.MenuItem;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import ControladorInterfaz.ControladorMenuJuego;
 import Sonido.Sound;
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
 import ar.uba.fi.algo3.titiritero.vista.Ventana;
@@ -17,6 +21,7 @@ public class VentanaPrincipal extends Ventana implements KeyListener {
 		this.addKeyListener(this);
 		testsong = new Sound("Laguerradelasgalaxias.mid");
 		testsong.playSound();
+		inicializarMenus();
 		
 	}
 
@@ -48,6 +53,52 @@ public class VentanaPrincipal extends Ventana implements KeyListener {
 	public void keyTyped(KeyEvent e) {
 		
 	}
+	
+	private void inicializarMenus() {
+
+	     MenuBar mbarra = new MenuBar();
+
+	     Menu m = new Menu( "Juego" );
+	     MenuItem pausar = new MenuItem( "Pausar");
+	     pausar.addActionListener(new ControladorMenuJuego(controlador,testsong));
+	     m.add( pausar);
+
+	     MenuItem guardar = new MenuItem( "Guardar");
+	     guardar.addActionListener(new ControladorMenuJuego(controlador,testsong));
+	     m.add( guardar );
+
+	     m.addSeparator();
+	     
+	     MenuItem salir = new MenuItem( "Salir");
+	     salir.addActionListener(new ControladorMenuJuego(controlador,testsong));
+	     m.add(  salir );
+
+	     mbarra.add( m );
+
+
+
+	     m = new Menu( "Sonido" );
+
+	     MenuItem activar = new MenuItem( "Activar (a)" ) ;
+	     activar.addActionListener(new ControladorMenuJuego(controlador,testsong));
+	     m.add( activar );
+
+	     m.addSeparator();
+
+	     MenuItem desactivar = new MenuItem( "Desactivar (s)" ) ;
+	     desactivar.addActionListener(new ControladorMenuJuego(controlador,testsong));
+	     m.add( desactivar );
+
+
+	     mbarra.add( m );
+
+
+
+	     setMenuBar( mbarra );
+	     
+	     
+
+	     }
 		
 
 }
