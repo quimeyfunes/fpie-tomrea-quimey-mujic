@@ -30,6 +30,9 @@ public class ControladorMenuJuego implements ActionListener{
 		System.exit(0);
 	}
 	if (opcion.equalsIgnoreCase("Guardar") ){
+		System.out.println("Llego");
+		PopUpUsuario popUp = new PopUpUsuario();
+		popUp.start();
 		
 	}
 	if (opcion.equalsIgnoreCase("Activar (a)") ){
@@ -40,7 +43,7 @@ public class ControladorMenuJuego implements ActionListener{
 		this.testSong.stopSound();
 	}
 	 
-		
+	
 	}
 	
 	
