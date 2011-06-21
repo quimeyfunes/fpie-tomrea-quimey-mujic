@@ -4,7 +4,9 @@ package Menu;
 
 
 import java.awt.Button;
+import java.awt.Label;
 import java.awt.Panel;
+import java.awt.TextField;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -45,10 +47,13 @@ public class MenuInicial {
 		 Button botonEmpezar = new Button("Empezar"); 
 		 Button botonSalir = new Button("Salir"); 
 		 Button botonTutorial = new Button("Tutorial"); 
-		
+		 TextField Caja_texto = new TextField(15);
+		 Label lblUsuario = new Label ("Introduzca Usuario:"); 
 		panelBotones.add(botonEmpezar); 
 		panelBotones.add(botonSalir);  	
 		panelBotones.add(botonTutorial);
+		panelBotones.add(lblUsuario);
+		panelBotones.add(Caja_texto);
 		this.frameTemp.add("South", panelBotones);  //agregamos el panel al marco
 		this.frameTemp.setSize(1000,700);  //seteamos las dimensiones del marco
 		//agregamos el listener del evento de cerrado de la ventana		
@@ -57,7 +62,6 @@ public class MenuInicial {
 		botonEmpezar.addActionListener(control.getListenerBotonEmpezar(this));
 		botonSalir.addActionListener(control.getListenerBotonSalir());	
 		botonTutorial.addActionListener(control.getListenerBotonTutorial(this));
-		
 	}
 	
 	private void CrearTutorial(){
