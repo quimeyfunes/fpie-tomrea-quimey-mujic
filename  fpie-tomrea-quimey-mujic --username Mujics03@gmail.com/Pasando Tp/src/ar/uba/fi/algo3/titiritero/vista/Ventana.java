@@ -12,6 +12,7 @@ import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import ControladorInterfaz.ControladorMenuJuego;
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
 import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
 /*
@@ -30,6 +31,7 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 	protected ControladorJuego controlador;
 	
 	public Ventana(ControladorJuego unControlador){
+		inicializarMenus();
 		this.controlador = unControlador;
 		this.addMouseListener(new MouseClickController(this.controlador));
 		this.addKeyListener(new KeyPressedController(this.controlador));
@@ -66,6 +68,7 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 	}
 	
 	public Ventana(int ancho,int alto, ControladorJuego unControlador){
+		inicializarMenus();
 		this.controlador=unControlador;
 		this.addMouseListener(new MouseClickController(unControlador));
 		this.addKeyListener(new KeyPressedController (unControlador));
@@ -84,43 +87,49 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 		});
 	}
 	
-	public void InicializaMenus() {
+	private void inicializarMenus() {
 
 	     MenuBar mbarra = new MenuBar();
 
-	     Menu m = new Menu( "Archivo" );
+	     Menu m = new Menu( "Juego" );
+	     MenuItem pausar = new MenuItem( "Pausar");
+	     pausar.addActionListener(new ControladorMenuJuego(controlador));
+	     m.add( pausar);
 
-	     m.add( new MenuItem( "Nuevo") );
-
-	     m.add( new MenuItem( "Abrir") );
-
-	     m.add( new MenuItem( "Guardar") );
-
-	     m.add( new MenuItem( "Guardar como") );
-
-	     m.add( new MenuItem( "Imprimir") );
+	     MenuItem guardar = new MenuItem( "Guardar");
+	     guardar.addActionListener(new ControladorMenuJuego(controlador));
+	     m.add( guardar );
 
 	     m.addSeparator();
-
-	     m.add( new MenuItem( "Salir") );
+	     
+	     MenuItem salir = new MenuItem( "Salir");
+	     salir.addActionListener(new ControladorMenuJuego(controlador));
+	     m.add(  salir );
 
 	     mbarra.add( m );
 
 
 
-	     m = new Menu( "Ayuda" );
+	     m = new Menu( "Sonido" );
 
-	     m.add( new MenuItem( "Ayuda!" ) );
+	     MenuItem activar = new MenuItem( "Activar" ) ;
+	     activar.addActionListener(new ControladorMenuJuego(controlador));
+	     m.add( activar );
 
 	     m.addSeparator();
 
-	     m.add( new MenuItem( "Acerca de..." ) );
+	     MenuItem desactivar = new MenuItem( "Desactivar" ) ;
+	     desactivar.addActionListener(new ControladorMenuJuego(controlador));
+	     m.add( desactivar );
+
 
 	     mbarra.add( m );
 
 
 
 	     setMenuBar( mbarra );
+	     
+	     
 
 	     }
 	
