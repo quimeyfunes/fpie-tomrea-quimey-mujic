@@ -32,18 +32,15 @@ public class Juego {
 	private double LimiteX = Escenario.getLimiteX();
 	private double LimiteY = Escenario.getLimiteY();
 	private double AltDeEnemy = LimiteY - 20;
+	private ControladorJuego controlador = new ControladorJuego(false);
 	
 	public Juego(){
+		controlador.setIntervaloSimulacion(intervaloSimulacion);
+		Escenario.InicializarEscenario(controlador);
 		
 	}
 	
 	public void jugar(){
-		// esos son limites que uso para probar la simulacion
-	
-	// seteo el controlador y lo dejo listo para correr
-	ControladorJuego controlador = new ControladorJuego(false);
-	controlador.setIntervaloSimulacion(intervaloSimulacion);
-	Escenario.InicializarEscenario(controlador);
 	//+++++++++++++++++++++++++++++++
 	
 
@@ -161,9 +158,11 @@ public class Juego {
 }
 
 	public void cargar() {
+		
+		//OJO, muchas de estas cosas estan creadas como privado del metodo juego, no se si les sirven esos.
 			
-		Sound testsong = new Sound("Laguerradelasgalaxias.mid");
-		testsong.playSound();
+		//Sound testsong = new Sound("Laguerradelasgalaxias.mid");
+		//testsong.playSound();
 		
 		// seteo el controlador y lo dejo listo para correr
 		ControladorJuego controlador = new ControladorJuego(false);
