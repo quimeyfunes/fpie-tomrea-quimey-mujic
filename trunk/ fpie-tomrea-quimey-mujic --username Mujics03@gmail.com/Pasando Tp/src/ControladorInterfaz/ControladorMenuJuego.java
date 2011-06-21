@@ -3,14 +3,17 @@ package ControladorInterfaz;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import Sonido.Sound;
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
 
 public class ControladorMenuJuego implements ActionListener{
 
 	private ControladorJuego controlador;
+	private Sound testSong;
 
-	public ControladorMenuJuego(ControladorJuego controlador) {
+	public ControladorMenuJuego(ControladorJuego controlador, Sound testsong) {
 		this.controlador = controlador;
+		this.testSong = testsong;
 	}
 
 	@Override
@@ -29,11 +32,12 @@ public class ControladorMenuJuego implements ActionListener{
 	if (opcion.equalsIgnoreCase("Guardar") ){
 		
 	}
-	if (opcion.equalsIgnoreCase("Activar") ){
+	if (opcion.equalsIgnoreCase("Activar (a)") ){
+		this.testSong.playSound();
 		
 	}
-	if (opcion.equalsIgnoreCase("Desactivar") ){
-		
+	if (opcion.equalsIgnoreCase("Desactivar (s)") ){
+		this.testSong.stopSound();
 	}
 	 
 		
