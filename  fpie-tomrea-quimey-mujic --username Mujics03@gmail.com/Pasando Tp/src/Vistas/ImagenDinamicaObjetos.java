@@ -26,7 +26,7 @@ public class ImagenDinamicaObjetos extends Imagen implements DibujableExtra{
 			else {	
 				if(efecto<5){
 					efecto=efecto+1;
-					this.setNombreArchivoImagen("fuego.jpg");
+					this.setNombreArchivoImagen("fuego.png");
 					grafico.drawImage(this.imagen, this.mon.getX(), this.mon.getY(), null);
 					}
 				else{
