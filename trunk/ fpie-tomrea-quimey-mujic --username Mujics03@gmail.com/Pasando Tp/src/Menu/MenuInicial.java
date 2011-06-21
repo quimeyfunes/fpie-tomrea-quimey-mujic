@@ -20,6 +20,7 @@ public class MenuInicial {
 	private PanelFondo frameTemp; 
 	private PanelFondo tuto;
 	private boolean banderaJuego=false;
+	private boolean banderaCargarJuego=false;
 
 	//Clase auxiliar para escuchar el evento de cerrado de la ventana
 	public static class CloseListener extends WindowAdapter
@@ -47,11 +48,13 @@ public class MenuInicial {
 		 Button botonEmpezar = new Button("Empezar"); 
 		 Button botonSalir = new Button("Salir"); 
 		 Button botonTutorial = new Button("Tutorial"); 
+		 Button botonCargarJuego = new Button("Cargar Juego"); 
 		 TextField Caja_texto = new TextField(15);
 		 Label lblUsuario = new Label ("Introduzca Usuario:"); 
 		panelBotones.add(botonEmpezar); 
 		panelBotones.add(botonSalir);  	
 		panelBotones.add(botonTutorial);
+		panelBotones.add(botonCargarJuego);
 		panelBotones.add(lblUsuario);
 		panelBotones.add(Caja_texto);
 		this.frameTemp.add("South", panelBotones);  //agregamos el panel al marco
@@ -62,6 +65,7 @@ public class MenuInicial {
 		botonEmpezar.addActionListener(control.getListenerBotonEmpezar(this));
 		botonSalir.addActionListener(control.getListenerBotonSalir());	
 		botonTutorial.addActionListener(control.getListenerBotonTutorial(this));
+		botonCargarJuego.addActionListener(control.getListenerBotonCargarPartida(this));
 	}
 	
 	private void CrearTutorial(){
@@ -99,6 +103,17 @@ public class MenuInicial {
 	
 	public boolean EmpiezaJuego(){
 		return this.banderaJuego;
+	}
+	
+	public synchronized void MostrarCargarJuego() {
+		this.frameTemp.dispose();
+		this.tuto.dispose();
+		this.banderaJuego=true;
+		this.banderaCargarJuego = true;
+	}
+
+	public boolean getCargarJuego() {
+		return this.banderaCargarJuego;
 	}
 
 
