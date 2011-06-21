@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import Menu.MenuInicial;
 
+
 public class ControladorMenu {
 		
 		public ControladorMenu()
@@ -46,6 +47,20 @@ public class ControladorMenu {
 				men.MostrarTutorial();
 			}
 		}
+		
+		private class EscuchaBotonCargarPartida implements ActionListener
+		{	
+			private MenuInicial men;
+			
+			EscuchaBotonCargarPartida(MenuInicial men){
+				this.men=men;
+			}
+			
+			public void actionPerformed(ActionEvent e)
+			{
+				//men.MostrarCargarJuego();
+			}
+		}
 
 		private class EscuchaBotonAtras implements ActionListener
 		{
@@ -62,6 +77,8 @@ public class ControladorMenu {
 			
 		}
 		
+		
+		
 	public ActionListener getListenerBotonEmpezar(MenuInicial men) {
 		return new EscuchaBotonEmpezar(men);
 	}
@@ -73,9 +90,13 @@ public class ControladorMenu {
 	public ActionListener getListenerBotonTutorial(MenuInicial men) {
 		return new EscuchaBotonTutorial(men);
 	}
+	public ActionListener getListenerBotonCargarPartida(MenuInicial men) {
+		return new EscuchaBotonCargarPartida(men);
+	}
 	
 
 	public ActionListener getListenerBotonAtras(MenuInicial men) {
 		return new EscuchaBotonAtras(men);
 	}
+
 }

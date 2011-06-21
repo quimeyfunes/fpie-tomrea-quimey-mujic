@@ -47,10 +47,14 @@ public class Juego {
 	Escenario.InicializarEscenario(controlador);
 	//+++++++++++++++++++++++++++++++
 	
+
+
 	
 	Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
 	controlador.setSuperficieDeDibujo(ventana);
 	ventana.setVisible(true);
+	ventana.InicializaMenus();
+	
 
 	ParserNivelesXml parser = new ParserNivelesXml();
 	boolean perdio = false;
@@ -150,6 +154,29 @@ public class Juego {
 	}
 	controlador.comenzarJuego();
 }
+
+	public void cargar() {
+		
+		double LimiteX = Escenario.getLimiteX();
+		double LimiteY = Escenario.getLimiteY();
+		double AltDeEnemy = LimiteY - 20;
+			// esos son limites que uso para probar la simulacion
+			
+		Sound testsong = new Sound("Laguerradelasgalaxias.mid");
+		testsong.playSound();
+		
+		// seteo el controlador y lo dejo listo para correr
+		ControladorJuego controlador = new ControladorJuego(false);
+		controlador.setIntervaloSimulacion(25);
+		Escenario.InicializarEscenario(controlador);
+		//+++++++++++++++++++++++++++++++
+		
+		
+		Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
+		controlador.setSuperficieDeDibujo(ventana);
+		ventana.setVisible(true);
+		
+	}
 
 
 }
