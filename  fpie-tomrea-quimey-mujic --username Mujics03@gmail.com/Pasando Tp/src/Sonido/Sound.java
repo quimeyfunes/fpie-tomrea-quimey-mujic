@@ -63,6 +63,10 @@ public class Sound // Holds one audio file
 		}
 		return null;
 	}
+	
+	public boolean estaSonando(){
+		return this.sonando;
+	}
 
 	public void playSound()
 	{
