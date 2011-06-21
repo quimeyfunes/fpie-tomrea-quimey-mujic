@@ -20,7 +20,7 @@ public class VistaPuntos extends TextoDinamico {
 		Graphics grafico = (Graphics)superfice.getBuffer();
 		grafico.setColor(this.getColor());
 		grafico.setFont(this.fuente);
-		grafico.drawString(getTexto(), 20, 25);
+		grafico.drawString(getTexto(), 20, 45);
 	}
 
 	
