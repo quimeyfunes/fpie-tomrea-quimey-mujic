@@ -55,5 +55,9 @@ public class Imagen implements Dibujable{
 	private String nombreArchivoImagen;
     protected BufferedImage imagen;
     protected Posicionable posicionable;
+	@Override
+	public boolean Borrar() {
+		return false;
+	}
 
 }
