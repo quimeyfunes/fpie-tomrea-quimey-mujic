@@ -40,9 +40,15 @@ public class Sound // Holds one audio file
 	public void cambiarEstadoSonido()
 	{
 		if(this.sonando)
+		{
 			this.stopSound();
+			this.sonando = false;			
+		}
 		else
+		{
 			this.playSound();
+			this.sonando = true;	
+		}
 	}
 
 	private URL getCodeBase()
