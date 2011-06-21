@@ -16,15 +16,16 @@ public class ImagenDinamicaObjetos extends Imagen implements DibujableExtra{
 		public ImagenDinamicaObjetos(){		
 		}
 
-		public void dibujar(SuperficieDeDibujo superficeDeDibujo) {
-			Graphics grafico = (Graphics)superficeDeDibujo.getBuffer();
+		public void dibujar(SuperficieDeDibujo superficeDeDibujo){
 			boolean EstaVivo = this.mon.EstaVivo();
 			
 			if( EstaVivo ){
+				Graphics grafico = (Graphics)superficeDeDibujo.getBuffer();
 				grafico.drawImage(this.imagen, this.mon.getX(), this.mon.getY(), null);
 			} 
 			else {	
-				if(efecto<5){
+				if(efecto<3){
+					Graphics grafico = (Graphics)superficeDeDibujo.getBuffer();
 					efecto=efecto+1;
 					this.setNombreArchivoImagen("fuego.png");
 					grafico.drawImage(this.imagen, this.mon.getX(), this.mon.getY(), null);

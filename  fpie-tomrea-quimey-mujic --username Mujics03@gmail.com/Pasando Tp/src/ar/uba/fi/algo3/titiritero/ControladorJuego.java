@@ -35,6 +35,7 @@ public class ControladorJuego implements Runnable {
 	
 	public void comenzarJuego(){
 		estaEnEjecucion = true;
+		
 		try{
 			while(estaEnEjecucion){
 				simular();
@@ -143,13 +144,13 @@ public class ControladorJuego implements Runnable {
 		Iterator<Dibujable> iterador = dibujables.iterator();
 		while(iterador.hasNext()){
 			Dibujable dibujable = iterador.next();			
-			dibujable.dibujar(this.superficieDeDibujo);
+			dibujable.dibujar(this.superficieDeDibujo);	
 			
-			if ( dibujable.Borrar()){
+			if (dibujable.Borrar()){
 				this.removerDibujable(dibujable);
-			}
+				}
 			
-		}		
+			}		
 		this.superficieDeDibujo.actualizar();
 	}
 	

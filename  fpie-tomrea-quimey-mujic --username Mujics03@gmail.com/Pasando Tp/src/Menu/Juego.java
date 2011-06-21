@@ -27,20 +27,22 @@ import ar.uba.fi.algo3.titiritero.vista.Ventana;
 
 public class Juego {
 	
+	private int intervaloSimulacion = 10;
+	
+	private double LimiteX = Escenario.getLimiteX();
+	private double LimiteY = Escenario.getLimiteY();
+	private double AltDeEnemy = LimiteY - 20;
+	
 	public Juego(){
 		
 	}
 	
 	public void jugar(){
-		
-	double LimiteX = Escenario.getLimiteX();
-	double LimiteY = Escenario.getLimiteY();
-	double AltDeEnemy = LimiteY - 20;
 		// esos son limites que uso para probar la simulacion
 	
 	// seteo el controlador y lo dejo listo para correr
 	ControladorJuego controlador = new ControladorJuego(false);
-	controlador.setIntervaloSimulacion(25);
+	controlador.setIntervaloSimulacion(intervaloSimulacion);
 	Escenario.InicializarEscenario(controlador);
 	//+++++++++++++++++++++++++++++++
 	
@@ -152,22 +154,15 @@ public class Juego {
 }
 
 	public void cargar() {
-		
-		double LimiteX = Escenario.getLimiteX();
-		double LimiteY = Escenario.getLimiteY();
-		double AltDeEnemy = LimiteY - 20;
-			// esos son limites que uso para probar la simulacion
 			
 		Sound testsong = new Sound("Laguerradelasgalaxias.mid");
 		testsong.playSound();
 		
 		// seteo el controlador y lo dejo listo para correr
 		ControladorJuego controlador = new ControladorJuego(false);
-		controlador.setIntervaloSimulacion(25);
+		controlador.setIntervaloSimulacion(intervaloSimulacion);
 		Escenario.InicializarEscenario(controlador);
 		//+++++++++++++++++++++++++++++++
-		
-		
 		Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
