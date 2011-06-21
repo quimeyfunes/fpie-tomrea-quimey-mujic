@@ -144,6 +144,11 @@ public class ControladorJuego implements Runnable {
 		while(iterador.hasNext()){
 			Dibujable dibujable = iterador.next();			
 			dibujable.dibujar(this.superficieDeDibujo);
+			
+			if ( dibujable.Borrar()){
+				this.removerDibujable(dibujable);
+			}
+			
 		}		
 		this.superficieDeDibujo.actualizar();
 	}
