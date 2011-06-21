@@ -142,7 +142,7 @@ public class ControladorJuego implements Runnable {
 	private void dibujar() {
 		Iterator<Dibujable> iterador = dibujables.iterator();
 		while(iterador.hasNext()){
-			Dibujable dibujable = iterador.next();
+			Dibujable dibujable = iterador.next();			
 			dibujable.dibujar(this.superficieDeDibujo);
 		}		
 		this.superficieDeDibujo.actualizar();
