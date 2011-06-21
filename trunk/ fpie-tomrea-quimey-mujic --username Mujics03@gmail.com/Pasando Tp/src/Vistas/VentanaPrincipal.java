@@ -28,7 +28,7 @@ public class VentanaPrincipal extends Ventana implements KeyListener {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public void keyPressed(KeyEvent e) {
+	public synchronized void keyPressed(KeyEvent e) {
 		if (e.getKeyCode()==KeyEvent.VK_P){
 			this.controlador.detenerJuego();
 		}

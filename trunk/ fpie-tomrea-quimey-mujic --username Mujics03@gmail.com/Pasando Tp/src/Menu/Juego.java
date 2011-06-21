@@ -27,7 +27,7 @@ import ar.uba.fi.algo3.titiritero.vista.Ventana;
 
 public class Juego {
 	
-	private int intervaloSimulacion = 12;
+	private int intervaloSimulacion = 21;
 	
 	private double LimiteX = Escenario.getLimiteX();
 	private double LimiteY = Escenario.getLimiteY();

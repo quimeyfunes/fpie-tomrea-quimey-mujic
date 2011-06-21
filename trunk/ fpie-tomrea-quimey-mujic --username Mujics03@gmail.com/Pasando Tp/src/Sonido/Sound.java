@@ -71,11 +71,13 @@ public class Sound // Holds one audio file
 	public void playSound()
 	{
 		song.loop(); // Play
+		this.sonando=true;
 	}
 
 	public void stopSound()
 	{
 		song.stop(); // Stop
+		this.sonando=false;
 	}
 
 	public void playSoundOnce()
