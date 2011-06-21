@@ -9,6 +9,7 @@ public interface DibujableExtra extends Dibujable {
 	
 	public Monitoreable getMonitoreable();
 	public void setMonitoreable(Monitoreable monitoreable);
+	public boolean Borrar();
 	
 
 }

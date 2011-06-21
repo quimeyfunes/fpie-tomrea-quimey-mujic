@@ -87,4 +87,9 @@ public class VistaBlindajeAlgo42 extends Imagen implements DibujableExtra{
 
     private Monitoreable monitoreable;
 
+	@Override
+	public boolean Borrar() {
+		return false;
+	}
+
 }
