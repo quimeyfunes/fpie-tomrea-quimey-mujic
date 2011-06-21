@@ -9,6 +9,7 @@ public class Sound // Holds one audio file
 {
 	private AudioClip song; // Sound player
 	private URL songPath; // Sound path
+	private boolean sonando;
 
 	public Sound(String filename)
 	{
@@ -21,11 +22,12 @@ public class Sound // Holds one audio file
 		{
 			songPath = new URL(getCodeBase(),filename);//Load the Sound
 			song = Applet.newAudioClip(songPath);
+			this.sonando = true;
 		}
 		catch (Exception e)
 		{
 			e.printStackTrace();
-		} // Satisfy the catch
+		} 
 	}
 	
 	public void cambiarTema(String filename)
@@ -33,6 +35,14 @@ public class Sound // Holds one audio file
 		this.stopSound();
 		this.setSong(filename);
 		this.playSound();
+	}
+	
+	public void cambiarEstadoSonido()
+	{
+		if(this.sonando)
+			this.stopSound();
+		else
+			this.playSound();
 	}
 
 	private URL getCodeBase()
