@@ -40,7 +40,8 @@ public class ControladorMenuJuego implements ActionListener{
 		
 	}
 	if (opcion.equalsIgnoreCase("Activar (a)") ){
-		this.testSong.playSound();
+		if(!this.testSong.estaSonando())
+			this.testSong.playSound();
 		
 	}
 	if (opcion.equalsIgnoreCase("Desactivar (s)") ){
