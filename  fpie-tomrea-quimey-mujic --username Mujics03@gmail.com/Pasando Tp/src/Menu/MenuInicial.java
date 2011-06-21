@@ -7,9 +7,6 @@ import java.awt.Button;
 import java.awt.Label;
 import java.awt.Panel;
 
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-
 import java.awt.TextField;
 
 import java.awt.event.WindowAdapter;
