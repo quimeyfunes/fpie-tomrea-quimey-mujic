@@ -6,14 +6,19 @@ package Menu;
 import java.awt.Button;
 import java.awt.Label;
 import java.awt.Panel;
+
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
 import java.awt.TextField;
+
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import ControladorInterfaz.ControladorMenu;
 
 
-public class MenuInicial {
+public class MenuInicial{
 	
 	private ControladorMenu control;
 	
@@ -70,7 +75,7 @@ public class MenuInicial {
 	
 	private void CrearTutorial(){
 		
-		Button botonSalir = new Button("Salir"); 
+		Button botonSalir = new Button("Volver a Menu Principal"); 
 		
 		tuto = new PanelFondo("Tutorial"); //creamos el marco
 		tuto.setImage("fondotutorial.jpg");
@@ -96,8 +101,8 @@ public class MenuInicial {
 	}
 
 	public synchronized void MostrarEmpezarJuego() {
-		this.frameTemp.dispose();
-		this.tuto.dispose();
+		this.tuto.setVisible(false);
+		this.frameTemp.setVisible(false);
 		this.banderaJuego=true;
 	}
 	
@@ -115,7 +120,5 @@ public class MenuInicial {
 	public boolean getCargarJuego() {
 		return this.banderaCargarJuego;
 	}
-
-
 	
 }
