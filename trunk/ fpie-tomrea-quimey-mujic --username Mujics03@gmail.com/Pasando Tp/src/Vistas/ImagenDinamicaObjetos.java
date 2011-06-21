@@ -49,8 +49,7 @@ public class ImagenDinamicaObjetos extends Imagen implements DibujableExtra{
 
 		@Override
 		public boolean Borrar() {
-			// TODO Auto-generated method stub
-			return false;
+			return this.bandera;
 		}
 		
 			
