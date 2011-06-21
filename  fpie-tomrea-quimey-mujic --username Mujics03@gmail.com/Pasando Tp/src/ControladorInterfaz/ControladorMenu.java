@@ -58,7 +58,7 @@ public class ControladorMenu {
 			
 			public void actionPerformed(ActionEvent e)
 			{
-				//men.MostrarCargarJuego();
+				men.MostrarCargarJuego();
 			}
 		}
 

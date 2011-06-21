@@ -19,7 +19,7 @@ public class Main
 		while(menu.EmpiezaJuego()==false){
 			
 		}
-		boolean b = false; // menu.getCargarJuego();
+		boolean b =  menu.getCargarJuego();
 		if( b ){
 			juego.cargar();
 		}else{
