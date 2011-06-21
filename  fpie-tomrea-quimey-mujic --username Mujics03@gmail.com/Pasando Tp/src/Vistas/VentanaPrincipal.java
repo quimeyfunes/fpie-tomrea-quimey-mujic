@@ -59,7 +59,7 @@ public class VentanaPrincipal extends Ventana implements KeyListener {
 	     MenuBar mbarra = new MenuBar();
 
 	     Menu m = new Menu( "Juego" );
-	     MenuItem pausar = new MenuItem( "Pausar");
+	     MenuItem pausar = new MenuItem( "Pausar/Despausar (p)");
 	     pausar.addActionListener(new ControladorMenuJuego(controlador,testsong));
 	     m.add( pausar);
 
