@@ -34,10 +34,6 @@ public class VentanaPrincipal extends Ventana implements KeyListener {
 			this.controlador.detenerJuego();
 			this.controlador.changePausado();
 		}
-		if(e.getKeyCode()==KeyEvent.VK_K){
-			this.controlador.comenzarJuego();
-			System.out.println("comenzar juego");
-			}
 		
 		if(e.getKeyCode()==KeyEvent.VK_S){
 			this.testsong.stopSound();
