@@ -110,7 +110,13 @@ public class Juego {
 		
 		try
 		{
-			controlador.comenzarJuego();
+			while(controlador.getSeguirEjecutando())
+			{
+				if(!controlador.getPausado())
+				{
+					controlador.comenzarJuego();
+				}
+			}
 			//Guardar partida = new Guardar();
 			//partida.GuardarPartida(algo42, Escenario.getInstance());
 		}
@@ -135,7 +141,8 @@ public class Juego {
 			VistaNextLevel nextLevel = new VistaNextLevel();
 			controlador.agregarDibujable(nextLevel);
 			controlador.comenzarJuego(100);
-			controlador.DetenerBorrarJuego();							
+			controlador.DetenerBorrarJuego();
+			controlador.setSeguirEjecutando(true);
 		}
 	}
 	
