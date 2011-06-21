@@ -24,7 +24,7 @@ public class ControladorMenuJuego implements ActionListener{
 		 controlador.detenerJuego();
 	}
 	if (opcion.equalsIgnoreCase("Salir") ){
-		
+		System.exit(0);
 	}
 	if (opcion.equalsIgnoreCase("Guardar") ){
 		
