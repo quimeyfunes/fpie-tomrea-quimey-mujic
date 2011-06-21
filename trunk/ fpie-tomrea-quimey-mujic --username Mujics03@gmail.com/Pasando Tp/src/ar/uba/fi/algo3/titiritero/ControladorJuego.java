@@ -26,6 +26,8 @@ public class ControladorJuego implements Runnable {
 		if(this.estaReproductorActivo)
 			this.reproductor = new Reproductor();
 			
+		this.estaPausado = false;
+		this.seguirEjecutando = true;
 		
 	}
 	
@@ -33,7 +35,29 @@ public class ControladorJuego implements Runnable {
 		return this.estaEnEjecucion;
 	}
 	
-	public void comenzarJuego(){
+	public void changePausado()
+	{
+		this.estaPausado = !this.estaPausado;
+	}
+	
+	public boolean getPausado()
+	{
+		return this.estaPausado;
+	}
+	
+	public void setSeguirEjecutando(boolean s)
+	{
+		this.seguirEjecutando = s;
+	}
+	
+	public boolean getSeguirEjecutando()
+	{
+		return this.seguirEjecutando;
+	}
+	
+	public void comenzarJuego()
+	{
+		this.setSeguirEjecutando(true);
 		estaEnEjecucion = true;
 		
 		try{
@@ -50,8 +74,10 @@ public class ControladorJuego implements Runnable {
 				throw (GameOverException)e;
 			}
 			else{
-				if(e.getClass()== FinEscenarioException.class){
-				this.DetenerBorrarJuego();//esto se puede mejorar deteniendo en escenario
+				if(e.getClass()== FinEscenarioException.class)
+				{
+					this.DetenerBorrarJuego();//esto se puede mejorar deteniendo en escenario
+					this.setSeguirEjecutando(false);
 				}
 			}
 		}
@@ -281,6 +307,8 @@ public class ControladorJuego implements Runnable {
 	private Reproductor reproductor;
 	private Thread hiloAudio;
 	private boolean estaReproductorActivo;
+	private boolean estaPausado;
+	private boolean seguirEjecutando;
 	
 	public void run() {
 		this.comenzarJuego();
