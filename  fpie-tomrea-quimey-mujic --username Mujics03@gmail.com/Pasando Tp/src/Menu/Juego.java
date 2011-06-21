@@ -37,9 +37,6 @@ public class Juego {
 	double LimiteY = Escenario.getLimiteY();
 	double AltDeEnemy = LimiteY - 20;
 		// esos son limites que uso para probar la simulacion
-		
-	Sound testsong = new Sound("Laguerradelasgalaxias.mid");
-	testsong.playSound();
 	
 	// seteo el controlador y lo dejo listo para correr
 	ControladorJuego controlador = new ControladorJuego(false);
@@ -120,7 +117,7 @@ public class Juego {
 		{
 			perdio=true;
 			System.out.println("Perdiste, entrena mas nw");
-			testsong.cambiarTema("Whispering.mid");
+			//testsong.cambiarTema("Whispering.mid");
 		}
 		
 		if(!perdio && parser.getUltimoNivel()){
