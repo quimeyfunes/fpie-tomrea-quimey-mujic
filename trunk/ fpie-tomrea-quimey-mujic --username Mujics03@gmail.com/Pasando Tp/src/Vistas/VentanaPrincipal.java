@@ -39,7 +39,8 @@ public class VentanaPrincipal extends Ventana implements KeyListener {
 			this.testsong.stopSound();
 		}
 		if(e.getKeyCode()==KeyEvent.VK_A){
-			this.testsong.playSound();
+			
+			if (!this.testsong.estaSonando()){this.testsong.playSound();}
 		}
 		
 	}
