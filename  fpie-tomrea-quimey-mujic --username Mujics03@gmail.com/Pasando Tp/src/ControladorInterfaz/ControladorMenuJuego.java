@@ -34,6 +34,9 @@ public class ControladorMenuJuego implements ActionListener{
 		System.out.println("Llego");
 		PopUpUsuario popUp = new PopUpUsuario();
 		popUp.start();
+		popUp.setVisible(true);
+		popUp.setSize(80, 80);
+		
 		
 	}
 	if (opcion.equalsIgnoreCase("Activar (a)") ){
