@@ -23,7 +23,6 @@ public class ControladorMenuJuego implements ActionListener{
 	String opcion = arg0.getActionCommand();
 	
 	if (opcion.equalsIgnoreCase("Pausar") ){
-		System.out.println(arg0.toString());
 		 controlador.detenerJuego();
 		 controlador.changePausado();
 	}
