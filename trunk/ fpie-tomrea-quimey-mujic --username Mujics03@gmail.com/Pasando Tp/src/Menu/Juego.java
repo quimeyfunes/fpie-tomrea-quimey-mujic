@@ -50,7 +50,6 @@ public class Juego {
 	Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
 	controlador.setSuperficieDeDibujo(ventana);
 	ventana.setVisible(true);
-	ventana.InicializaMenus();
 	
 
 	ParserNivelesXml parser = new ParserNivelesXml();
