@@ -29,18 +29,21 @@ public class VentanaPrincipal extends Ventana implements KeyListener {
 
 	@Override
 	public synchronized void keyPressed(KeyEvent e) {
+		
 		if (e.getKeyCode()==KeyEvent.VK_P){
 			this.controlador.detenerJuego();
+			System.out.println("parar juego");
 		}
 		if(e.getKeyCode()==KeyEvent.VK_K){
 			this.controlador.comenzarJuego();
-		}
+			System.out.println("comenzar juego");
+			}
+		
 		if(e.getKeyCode()==KeyEvent.VK_S){
 			this.testsong.stopSound();
 		}
 		if(e.getKeyCode()==KeyEvent.VK_A){
-			
-			if (!this.testsong.estaSonando()){this.testsong.playSound();}
+		if (!this.testsong.estaSonando()){this.testsong.playSound();}
 		}
 		
 	}
