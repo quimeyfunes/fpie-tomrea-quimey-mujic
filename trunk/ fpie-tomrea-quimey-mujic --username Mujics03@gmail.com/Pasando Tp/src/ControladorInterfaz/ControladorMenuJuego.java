@@ -35,7 +35,8 @@ public class ControladorMenuJuego implements ActionListener{
 		popUp.start();
 		popUp.setVisible(true);
 		popUp.setSize(80, 80);
-		
+		controlador.detenerJuego();
+		controlador.changePausado();
 		
 	}
 	if (opcion.equalsIgnoreCase("Activar (a)") ){
