@@ -162,7 +162,7 @@ public class Juego {
 }
 
 	public void cargar(String usuario) {
-		
+		System.out.println("Entro en cargar de Juego");
 		//OJO, muchas de estas cosas estan creadas como privado del metodo juego, no se si les sirven esos.
 			
 		//Sound testsong = new Sound("Laguerradelasgalaxias.mid");
@@ -178,7 +178,8 @@ public class Juego {
 		Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
-		
+		controlador.comenzarJuego(100); 
+		controlador.DetenerBorrarJuego(); 
 	}
 
 

@@ -56,9 +56,9 @@ public class MenuInicial{
 		panelBotones.add(botonEmpezar); 
 		panelBotones.add(botonSalir);  	
 		panelBotones.add(botonTutorial);
-		panelBotones.add(botonCargarJuego);
 		panelBotones.add(lblUsuario);
 		panelBotones.add(Caja_texto);
+		panelBotones.add(botonCargarJuego);
 		this.frameTemp.add("South", panelBotones);  //agregamos el panel al marco
 		this.frameTemp.setSize(1000,700);  //seteamos las dimensiones del marco
 		//agregamos el listener del evento de cerrado de la ventana		
@@ -108,10 +108,12 @@ public class MenuInicial{
 	}
 	
 	public synchronized void MostrarCargarJuego() {
+		System.out.println("----Entro en MostrarCargarJuego");
 		this.frameTemp.dispose();
 		this.tuto.dispose();
-		this.banderaJuego=true;
 		this.banderaCargarJuego = true;
+		this.banderaJuego=true;
+		
 	}
 
 	public boolean getCargarJuego() {
