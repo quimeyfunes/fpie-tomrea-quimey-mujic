@@ -21,7 +21,7 @@ public class Main
 		}
 		boolean b =  menu.getCargarJuego();
 		if( b ){
-			juego.cargar();
+			juego.cargar(menu.getUsuario());
 		}else{
 			juego.jugar();
 			}
