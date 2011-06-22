@@ -1,5 +1,6 @@
 package Escenario;
 
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -21,7 +22,7 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 	static double LimiteY=500;
 	private static Escenario instance = null;
 	private ControladorJuego controlador=null;
-	
+	Hashtable Usuarios = new Hashtable();
 	
 	static synchronized public double getLimiteX(){
 		return LimiteX;
@@ -138,6 +139,10 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 	 
 	 public int getPuntosTotales(){
 		 return this.sumaDePuntos;
+	 }
+	 
+	 public Hashtable getUsuarios(){
+		 return Usuarios;
 	 }
 			 
 		
