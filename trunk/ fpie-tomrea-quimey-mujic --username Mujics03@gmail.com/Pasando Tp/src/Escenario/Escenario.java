@@ -18,6 +18,7 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 	LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego;
 	LinkedList<ObjetosMoviles> temp;
 	int sumaDePuntos;
+	static int nivelActual;
 	static double LimiteX=1200;
 	static double LimiteY=500;
 	private static Escenario instance = null;
@@ -143,6 +144,13 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 	 
 	 public Hashtable getUsuarios(){
 		 return Usuarios;
+	 }
+	 
+	 public int getNivelActiual(){
+		 return nivelActual;
+	 }
+	 public static void aumentarNivel(){
+		 nivelActual++;
 	 }
 			 
 		

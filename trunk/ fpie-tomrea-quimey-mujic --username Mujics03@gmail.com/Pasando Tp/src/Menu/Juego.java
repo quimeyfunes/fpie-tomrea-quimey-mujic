@@ -130,6 +130,7 @@ public class Juego {
 		else if(!perdio)
 		{
 			parser.pasarNivel();
+			Escenario.aumentarNivel();
 			System.out.println("nivel ganado");
 			//Cargar partida = new Cargar();
 			//partida.CargarPartida();
