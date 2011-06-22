@@ -1,6 +1,8 @@
 package Menu;
 
 
+import java.util.Hashtable;
+import java.util.LinkedList;
 import java.util.Random;
 import Escenario.Escenario;
 import ManejoXml.ParserNivelesXml;
@@ -12,6 +14,7 @@ import Objetos_moviles.Caza;
 import Objetos_moviles.Exploradores;
 import Objetos_moviles.Guia;
 import Objetos_moviles.HelicopterosPoliciaCivil;
+import Persistencia.Persistencia;
 import Sonido.Sound;
 import Vistas.VentanaPrincipal;
 import Vistas.VistaBlindajeAlgo42;
@@ -158,7 +161,7 @@ public class Juego {
 	controlador.comenzarJuego();
 }
 
-	public void cargar() {
+	public void cargar(String usuario) {
 		
 		//OJO, muchas de estas cosas estan creadas como privado del metodo juego, no se si les sirven esos.
 			
@@ -169,7 +172,7 @@ public class Juego {
 		Escenario escenario = Escenario.getInstance();
 		Hashtable Usuarios = escenario.getUsuarios();
 		Persistencia persis = new Persistencia();
-		persis.Cargar((LinkedList<String>) Usuarios.get(usuario));
+		persis.Cargar((LinkedList<String>) (Usuarios.get(usuario)));
 		ControladorJuego controlador = new ControladorJuego(false);
 		controlador.setIntervaloSimulacion(intervaloSimulacion);
 		Escenario.InicializarEscenario(controlador);
