@@ -39,11 +39,10 @@ public class PopUpUsuario  extends JFrame {
 	    { 
 	     String strUsuario = txtUsuario.getText ();
 	     System.out.println(strUsuario);
-	     Persistencia persis = new Persistencia();
-	     persis.Persistir();
 	     Escenario escenario = Escenario.getInstance();
 	     Hashtable usuarios = escenario.getUsuarios();
-	     usuarios.put(strUsuario, persis.getPartida());	    
+	     Persistencia persis = new Persistencia();
+	     persis.Persistir(strUsuario, usuarios);	    
 	     System.exit(0);
 	    }
 	   }); 
