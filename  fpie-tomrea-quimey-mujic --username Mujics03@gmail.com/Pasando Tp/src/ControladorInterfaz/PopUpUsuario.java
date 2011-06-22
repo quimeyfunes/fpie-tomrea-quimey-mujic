@@ -6,7 +6,10 @@ import java.awt.Label;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Hashtable;
 
+import Persistencia.Persistencia;
+import Escenario.*;
 import javax.swing.JFrame;
 
 public class PopUpUsuario  extends JFrame { 
@@ -16,8 +19,10 @@ public class PopUpUsuario  extends JFrame {
 	}
 	
 	
+	
 	 TextField txtUsuario;
-
+	 String strUsuario;
+	 
 	 public void init () 
 	 { 
 	  // Establece color azul para el applet 
@@ -34,11 +39,18 @@ public class PopUpUsuario  extends JFrame {
 	    { 
 	     String strUsuario = txtUsuario.getText ();
 	     System.out.println(strUsuario);
-	    // Con este usuario guardamos la partida en un hash
-	     System.exit(0); 
-	    
-	     	    } 
+	     Persistencia persis = new Persistencia();
+	     persis.Persistir();
+	     Escenario escenario = Escenario.getInstance();
+	     Hashtable usuarios = escenario.getUsuarios();
+	     usuarios.put(strUsuario, persis.getPartida());	    
+	     System.exit(0);
+	    }
 	   }); 
-	  add (txtUsuario); 
+	  add (txtUsuario);
+	  
 	 } 
-	} 
+	 
+}
+
+	
