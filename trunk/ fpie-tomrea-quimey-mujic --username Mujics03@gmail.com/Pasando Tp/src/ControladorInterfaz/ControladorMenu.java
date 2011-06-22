@@ -5,6 +5,7 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import Menu.Juego;
 import Menu.MenuInicial;
 
 
@@ -52,16 +53,17 @@ public class ControladorMenu {
 		private class EscuchaBotonCargarPartida implements ActionListener
 		{	
 			private MenuInicial men;
-			private TextField caja_texto;
+			private String usuario;
 			
-			EscuchaBotonCargarPartida(MenuInicial men, TextField caja){
+			EscuchaBotonCargarPartida(MenuInicial men){
 				this.men = men;
-				this.caja_texto = caja;
 			}
 			
 			public void actionPerformed(ActionEvent e)
 			{
+				
 				men.MostrarCargarJuego();
+				
 			}
 		}
 
@@ -93,8 +95,8 @@ public class ControladorMenu {
 	public ActionListener getListenerBotonTutorial(MenuInicial men) {
 		return new EscuchaBotonTutorial(men);
 	}
-	public ActionListener getListenerBotonCargarPartida(MenuInicial men, TextField caja) {
-		return new EscuchaBotonCargarPartida(men,caja);
+	public ActionListener getListenerBotonCargarPartida(MenuInicial men) {
+		return new EscuchaBotonCargarPartida(men);
 	}
 	
 
