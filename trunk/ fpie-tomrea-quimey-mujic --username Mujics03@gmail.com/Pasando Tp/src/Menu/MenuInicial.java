@@ -23,7 +23,7 @@ public class MenuInicial{
 	private PanelFondo tuto;
 	private boolean banderaJuego=false;
 	private boolean banderaCargarJuego=false;
-	private TextField Caja_texto;
+	private TextField Caja_texto = new TextField(15);
 	
 	//Clase auxiliar para escuchar el evento de cerrado de la ventana
 	public static class CloseListener extends WindowAdapter
@@ -52,7 +52,6 @@ public class MenuInicial{
 		 Button botonSalir = new Button("Salir"); 
 		 Button botonTutorial = new Button("Tutorial"); 
 		 Button botonCargarJuego = new Button("Cargar Juego"); 
-		 TextField Caja_texto = new TextField(15);
 		 Label lblUsuario = new Label ("Introduzca Usuario:"); 
 		panelBotones.add(botonEmpezar); 
 		panelBotones.add(botonSalir);  	
@@ -120,6 +119,8 @@ public class MenuInicial{
 	}
 
 	public String getUsuario(){
+		System.out.println("Leggo al getUsuario, el usuario es: ");
+		System.out.println(Caja_texto.getText());
 		return Caja_texto.getText();
 	}
 	
