@@ -102,6 +102,7 @@ public class ControladorJuego implements Runnable {
 		estaEnEjecucion = true;
 		try{
 			while(contador < cantidadDeCiclos && estaEnEjecucion){
+				System.out.println(contador);
 				simular();
 				dibujar();
 				Thread.sleep(intervaloSimulacion);
