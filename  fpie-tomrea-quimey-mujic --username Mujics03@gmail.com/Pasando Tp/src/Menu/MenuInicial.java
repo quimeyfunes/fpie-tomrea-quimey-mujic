@@ -67,7 +67,7 @@ public class MenuInicial{
 		botonEmpezar.addActionListener(control.getListenerBotonEmpezar(this));
 		botonSalir.addActionListener(control.getListenerBotonSalir());	
 		botonTutorial.addActionListener(control.getListenerBotonTutorial(this));
-		botonCargarJuego.addActionListener(control.getListenerBotonCargarPartida(this));
+		botonCargarJuego.addActionListener(control.getListenerBotonCargarPartida(this,Caja_texto));
 	}
 	
 	private void CrearTutorial(){
