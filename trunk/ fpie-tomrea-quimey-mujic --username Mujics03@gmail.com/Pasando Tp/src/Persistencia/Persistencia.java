@@ -22,6 +22,8 @@ public class Persistencia {
 	}
 	
 	public void Persistir(String Usuario, Hashtable Usuarios){
+		System.out.println("Cantidad en Persistir");
+		System.out.println((escenario.objetosVivos()).size());
 		for (ObjetosMoviles elemento: escenario.objetosVivos() ) {
 			lista_xml.add( elemento );
 		}
@@ -38,7 +40,11 @@ public class Persistencia {
 	public void Cargar(String usuario){
 		try {
 			Hashtable Usuarios_persistidos = (Hashtable) xstream.fromXML(new FileInputStream("Hash_usuarios.xml"));
-			for ( ObjetosMoviles elemento : (LinkedList<ObjetosMoviles>) Usuarios_persistidos.get(usuario) )	escenario.agregarObjeto(elemento);
+			LinkedList<ObjetosMoviles> lista_a_cargar = (LinkedList<ObjetosMoviles>) Usuarios_persistidos.get(usuario);
+			System.out.println("Cantidad en cargar");
+			while ( lista_a_cargar == null ){
+			}
+			for ( ObjetosMoviles elemento : lista_a_cargar )	escenario.agregarObjeto(elemento);
 		} catch (FileNotFoundException e) {
 			System.out.println("Error archivo en Cargar");
 			e.printStackTrace();
