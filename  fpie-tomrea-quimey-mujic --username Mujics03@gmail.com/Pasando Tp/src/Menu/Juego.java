@@ -166,6 +166,10 @@ public class Juego {
 		//testsong.playSound();
 		
 		// seteo el controlador y lo dejo listo para correr
+		Escenario escenario = Escenario.getInstance();
+		Hashtable Usuarios = escenario.getUsuarios();
+		Persistencia persis = new Persistencia();
+		persis.Cargar((LinkedList<String>) Usuarios.get(usuario));
 		ControladorJuego controlador = new ControladorJuego(false);
 		controlador.setIntervaloSimulacion(intervaloSimulacion);
 		Escenario.InicializarEscenario(controlador);

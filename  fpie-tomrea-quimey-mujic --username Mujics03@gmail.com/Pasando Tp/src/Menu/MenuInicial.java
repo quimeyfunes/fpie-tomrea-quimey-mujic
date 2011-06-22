@@ -23,7 +23,8 @@ public class MenuInicial{
 	private PanelFondo tuto;
 	private boolean banderaJuego=false;
 	private boolean banderaCargarJuego=false;
-
+	private TextField Caja_texto;
+	
 	//Clase auxiliar para escuchar el evento de cerrado de la ventana
 	public static class CloseListener extends WindowAdapter
 	{	public void windowClosing(WindowEvent e)
@@ -67,7 +68,7 @@ public class MenuInicial{
 		botonEmpezar.addActionListener(control.getListenerBotonEmpezar(this));
 		botonSalir.addActionListener(control.getListenerBotonSalir());	
 		botonTutorial.addActionListener(control.getListenerBotonTutorial(this));
-		botonCargarJuego.addActionListener(control.getListenerBotonCargarPartida(this,Caja_texto));
+		botonCargarJuego.addActionListener(control.getListenerBotonCargarPartida(this));
 	}
 	
 	private void CrearTutorial(){
@@ -116,6 +117,10 @@ public class MenuInicial{
 
 	public boolean getCargarJuego() {
 		return this.banderaCargarJuego;
+	}
+
+	public String getUsuario(){
+		return Caja_texto.getText();
 	}
 	
 }
