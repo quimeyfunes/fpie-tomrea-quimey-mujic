@@ -24,8 +24,8 @@ public class Persistencia {
 		}
 	}
 	
-	public void Cargar(){
-		for (String elementoXml: lista_xml){
+	public void Cargar(LinkedList lista_objetos){
+		for (String elementoXml: lista_objetos){
 			
 			ObjetosMoviles objetoMovil = (ObjetosMoviles)xstream.fromXML(elementoXml);
 			escenario.agregarObjeto(objetoMovil);
