@@ -30,7 +30,6 @@ public class ControladorMenuJuego implements ActionListener{
 		System.exit(0);
 	}
 	if (opcion.equalsIgnoreCase("Guardar") ){
-		System.out.println("Llego");
 		PopUpUsuario popUp = new PopUpUsuario();
 		popUp.start();
 		popUp.setVisible(true);
