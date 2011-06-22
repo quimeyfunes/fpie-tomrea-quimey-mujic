@@ -31,6 +31,10 @@ public class Persistencia {
 			escenario.agregarObjeto(objetoMovil);
 		}
 	}
+	
+	public LinkedList getPartida(){
+		return lista_xml;
+	}
 
 }
 
