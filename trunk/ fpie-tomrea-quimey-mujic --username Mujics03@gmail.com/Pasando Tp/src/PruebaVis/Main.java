@@ -1,6 +1,6 @@
 package PruebaVis;
 
-import ControladorInterfaz.ControladorMenu;
+import ControladorInterfaz.*;
 import Menu.Juego;
 import Menu.MenuInicial;
 
