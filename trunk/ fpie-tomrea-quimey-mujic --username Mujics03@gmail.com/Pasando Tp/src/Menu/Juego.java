@@ -169,13 +169,18 @@ public class Juego {
 		//testsong.playSound();
 		
 		// seteo el controlador y lo dejo listo para correr
-		Persistencia persis = new Persistencia();
-		persis.Cargar(usuario);
+		
 		ControladorJuego controlador = new ControladorJuego(false);
 		controlador.setIntervaloSimulacion(intervaloSimulacion);
 		Escenario.InicializarEscenario(controlador);
 		//+++++++++++++++++++++++++++++++
+		VistaFondoJuego fondoJuego = new VistaFondoJuego();
+		controlador.agregarDibujable(fondoJuego);
+		
+		controlador.agregarObjetoVivo(Escenario.getInstance());
 		Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
+		Persistencia persis = new Persistencia();
+		persis.Cargar(usuario);
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
 		controlador.comenzarJuego(100); 
