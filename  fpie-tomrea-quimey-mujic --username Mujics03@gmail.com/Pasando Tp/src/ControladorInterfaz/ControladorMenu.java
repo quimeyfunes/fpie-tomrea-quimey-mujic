@@ -53,7 +53,6 @@ public class ControladorMenu {
 		private class EscuchaBotonCargarPartida implements ActionListener
 		{	
 			private MenuInicial men;
-			private String usuario;
 			
 			EscuchaBotonCargarPartida(MenuInicial men){
 				this.men = men;
