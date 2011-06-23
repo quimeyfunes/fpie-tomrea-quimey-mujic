@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.Hashtable;
 import java.util.LinkedList;
+import Menu.*;
 
 import com.thoughtworks.xstream.XStream;
 
@@ -45,13 +46,14 @@ public class Persistencia {
 		try {
 			Hashtable Usuarios_persistidos = (Hashtable) xstream.fromXML(new FileInputStream("Hash_usuarios.xml"));
 			LinkedList<ObjetosMoviles> lista_a_cargar = (LinkedList<ObjetosMoviles>) Usuarios_persistidos.get(usuario);
-			System.out.println("Cantidad en cargar");
-			while ( lista_a_cargar == null ){
+			if (lista_a_cargar == null ) {
+				Juego juego = new Juego();
+				juego.jugar();
 			}
 			for ( ObjetosMoviles elemento : lista_a_cargar )	escenario.agregarObjeto(elemento);
 		} catch (FileNotFoundException e) {
-			System.out.println("Error archivo en Cargar");
-			e.printStackTrace();
+			Juego juego = new Juego();
+			juego.jugar();
 		}
 	}
 	
