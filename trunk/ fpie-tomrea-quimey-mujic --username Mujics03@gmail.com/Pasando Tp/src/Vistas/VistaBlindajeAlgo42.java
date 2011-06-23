@@ -12,7 +12,7 @@ public class VistaBlindajeAlgo42 extends Imagen implements DibujableExtra{
 	
 	private int CoordenadaX=20;
 	private int CoordenadaY=400;
-	private double VidaIni;
+	private double VidaIni = 250;
 	
 	public VistaBlindajeAlgo42(){
 		
@@ -77,7 +77,6 @@ public class VistaBlindajeAlgo42 extends Imagen implements DibujableExtra{
 	
 	public void setMonitoreable(Monitoreable monitoreable) {
 		this.monitoreable = monitoreable;
-		this.VidaIni=monitoreable.getVida();
 	}
 
 	public Monitoreable getMonitoreable() {
