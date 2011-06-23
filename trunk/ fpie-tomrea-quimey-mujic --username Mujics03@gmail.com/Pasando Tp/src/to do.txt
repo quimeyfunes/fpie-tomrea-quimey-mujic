@@ -1,1 +1,0 @@
-persistencia: preguntar entre nivel y nivel si queres guardar. poner load en el menu
