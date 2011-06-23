@@ -56,6 +56,15 @@ public class Persistencia {
 	public LinkedList getPartida(){
 		return lista_xml;
 	}
-
+	public int getPuntos(String Usuario){
+		Hashtable Usuarios_persistidos;
+		try {
+			Usuarios_persistidos = (Hashtable) xstream.fromXML(new FileInputStream("Hash_usuarios.xml"));
+			String puntos = Usuario + "Puntos";
+			return (Integer) Usuarios_persistidos.get(puntos);
+		} catch (FileNotFoundException e) {
+			return 0;
+		}
+	}
 }
 
