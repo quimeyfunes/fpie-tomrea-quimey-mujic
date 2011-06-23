@@ -18,7 +18,7 @@ public class AvionCivil extends Voladores {
 	
 	protected void EstadoCorrecto(){
 		this.bando = ObjetosMoviles.BandoUsuario();
-		this.puntos = -300;
+		this.puntos = -50;
 		this.Velocidad = 1;
 		this.estrategia_vuelo = new DerechaIzquierda();
 		this.blindaje = new Blindaje((short)100);
