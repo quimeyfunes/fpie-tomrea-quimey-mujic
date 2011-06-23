@@ -170,6 +170,8 @@ public class Juego {
 		//testsong.playSound();
 		
 		// seteo el controlador y lo dejo listo para correr
+		boolean perdio = false;
+		boolean gano = false;
 		
 		ControladorJuego controlador = new ControladorJuego(false);
 		controlador.setIntervaloSimulacion(intervaloSimulacion);
@@ -183,6 +185,7 @@ public class Juego {
 		Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
 		Persistencia persis = new Persistencia();
 		persis.Cargar(usuario);
+		try{
 		for ( ObjetosMoviles elemento : escenario.objetosVivos() )
 			if ( elemento instanceof Algo42 ) {
 				DibujableExtra vistaAlgo = new VistaBlindajeAlgo42();
@@ -197,21 +200,29 @@ public class Juego {
 			}
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
-		controlador.comenzarJuego(); 
+		while(controlador.getSeguirEjecutando())
+		{
+			if(!controlador.getPausado())
+			{
+				controlador.comenzarJuego();
+			}
+		} 
 		controlador.DetenerBorrarJuego(); 
+		}catch(Exception e){
+			perdio=true;
+			System.out.println("Perdiste, entrena mas nw");
+		}
 	
 		//Niveles siguientes
 		
 		ParserNivelesXml parser = new ParserNivelesXml();
-		//AVANZAR NIVEL LA CANTIDAD DE VECES
-		parser.pasarNivel();
-		Escenario.aumentarNivel();
-		parser.pasarNivel();
-		Escenario.aumentarNivel();
+		for ( int i = 0; i < persis.getNivel(usuario)+1; i++){
+			parser.pasarNivel();
+			Escenario.aumentarNivel();
+		}
 		
 	
-		boolean perdio = false;
-		boolean gano = false;
+		
 		while ((!perdio) && (!gano))
 		{
 			
