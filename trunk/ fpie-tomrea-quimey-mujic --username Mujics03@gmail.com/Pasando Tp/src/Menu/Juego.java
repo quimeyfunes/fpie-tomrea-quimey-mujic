@@ -14,6 +14,7 @@ import Objetos_moviles.Caza;
 import Objetos_moviles.Exploradores;
 import Objetos_moviles.Guia;
 import Objetos_moviles.HelicopterosPoliciaCivil;
+import Objetos_moviles.ObjetosMoviles;
 import Persistencia.Persistencia;
 import Sonido.Sound;
 import Vistas.VentanaPrincipal;
@@ -174,6 +175,7 @@ public class Juego {
 		controlador.setIntervaloSimulacion(intervaloSimulacion);
 		Escenario.InicializarEscenario(controlador);
 		//+++++++++++++++++++++++++++++++
+		Escenario escenario = Escenario.getInstance();
 		VistaFondoJuego fondoJuego = new VistaFondoJuego();
 		controlador.agregarDibujable(fondoJuego);
 		
@@ -181,9 +183,19 @@ public class Juego {
 		Ventana ventana = new VentanaPrincipal(controlador, (int) LimiteX + 50, (int) LimiteY + 50);
 		Persistencia persis = new Persistencia();
 		persis.Cargar(usuario);
+		for ( ObjetosMoviles elemento : escenario.objetosVivos() )
+			if ( elemento instanceof Algo42 ) {
+				DibujableExtra vistaAlgo = new VistaBlindajeAlgo42();
+				vistaAlgo.setMonitoreable(elemento);
+				controlador.agregarDibujable(vistaAlgo);
+				controlador.agregarKeyPressObservador((Algo42) elemento);
+				Dibujable VistaPuntos = new VistaPuntos(Escenario.getInstance());
+				controlador.agregarDibujable(VistaPuntos);
+				
+			}
 		controlador.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
-		controlador.comenzarJuego(100); 
+		controlador.comenzarJuego(); 
 		controlador.DetenerBorrarJuego(); 
 	}
 
