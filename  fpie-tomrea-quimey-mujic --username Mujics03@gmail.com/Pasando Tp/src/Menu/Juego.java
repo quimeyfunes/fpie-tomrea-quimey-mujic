@@ -199,13 +199,15 @@ public class Juego {
 		ventana.setVisible(true);
 		controlador.comenzarJuego(); 
 		controlador.DetenerBorrarJuego(); 
-		/*
+	
 		//Niveles siguientes
 		
 		ParserNivelesXml parser = new ParserNivelesXml();
 		//AVANZAR NIVEL LA CANTIDAD DE VECES
-		//parser.pasarNivel();
-		//Escenario.aumentarNivel();
+		parser.pasarNivel();
+		Escenario.aumentarNivel();
+		parser.pasarNivel();
+		Escenario.aumentarNivel();
 		
 	
 		boolean perdio = false;
@@ -311,7 +313,7 @@ public class Juego {
 			VistaWinner winner = new VistaWinner();
 			controlador.agregarDibujable(winner);
 		}
-		controlador.comenzarJuego();*/
+		controlador.comenzarJuego();
 	}
 
 
