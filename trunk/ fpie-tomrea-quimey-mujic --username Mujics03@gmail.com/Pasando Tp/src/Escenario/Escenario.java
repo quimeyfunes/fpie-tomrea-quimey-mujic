@@ -115,6 +115,9 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 	public int getPuntos(){
 		return this.sumaDePuntos;
 	}
+	public void setPuntos(int puntos){
+		this.sumaDePuntos = puntos ;
+	}
 	
 	public String getTexto() {
 		return String.valueOf((this.sumaDePuntos)) ;
