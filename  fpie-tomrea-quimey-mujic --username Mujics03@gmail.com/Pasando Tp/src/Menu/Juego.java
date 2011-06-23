@@ -189,7 +189,9 @@ public class Juego {
 				vistaAlgo.setMonitoreable(elemento);
 				controlador.agregarDibujable(vistaAlgo);
 				controlador.agregarKeyPressObservador((Algo42) elemento);
-				Dibujable VistaPuntos = new VistaPuntos(Escenario.getInstance());
+				int puntos = persis.getPuntos(usuario);
+				escenario.setPuntos(puntos);
+				Dibujable VistaPuntos = new VistaPuntos(escenario);
 				controlador.agregarDibujable(VistaPuntos);
 				
 			}
@@ -197,6 +199,119 @@ public class Juego {
 		ventana.setVisible(true);
 		controlador.comenzarJuego(); 
 		controlador.DetenerBorrarJuego(); 
+		/*
+		//Niveles siguientes
+		
+		ParserNivelesXml parser = new ParserNivelesXml();
+		//AVANZAR NIVEL LA CANTIDAD DE VECES
+		//parser.pasarNivel();
+		//Escenario.aumentarNivel();
+		
+	
+		boolean perdio = false;
+		boolean gano = false;
+		while ((!perdio) && (!gano))
+		{
+			
+			controlador.agregarDibujable(fondoJuego);
+			
+			controlador.agregarObjetoVivo(Escenario.getInstance());
+
+			Random r = new Random();
+			for (int i = 0; i < parser.getCantCazas(); i++)
+			{
+				Caza caza = new Caza((double) r.nextInt((int) Escenario.getLimiteX()), AltDeEnemy);
+			}
+
+			for (int i = 0; i < parser.getCantExploradores(); i++)
+			{
+				Exploradores explorador = new Exploradores((double) r.nextInt((int) Escenario.getLimiteX()), AltDeEnemy);
+			}
+
+			for (int i = 0; i < parser.getCantAvionetas(); i++)
+			{
+				Avioneta avioneta = new Avioneta((double) r.nextInt((int) Escenario.getLimiteX()), AltDeEnemy);
+			}
+
+			for (int i = 0; i < parser.getCantBombarderos(); i++)
+			{
+				Bombardero bombardero = new Bombardero((double) r.nextInt((int) Escenario.getLimiteX()), AltDeEnemy);
+			}
+
+			for (int i = 0; i < parser.getCantAvionCivil(); i++)
+			{
+				AvionCivil avion = new AvionCivil((double) r.nextInt((int) Escenario.getLimiteX()), (double) r
+						.nextInt((int) Escenario.getLimiteY()));
+			}
+
+			for (int i = 0; i < parser.getCantHelicopteros(); i++)
+			{
+				HelicopterosPoliciaCivil hel = new HelicopterosPoliciaCivil((double) r.nextInt((int) Escenario
+						.getLimiteX()), (double) r.nextInt((int) Escenario.getLimiteY()));
+			}
+			
+			Guia guia = new Guia(20, 400);
+			guia.setBlindaje(parser.getVidaGuia());
+			
+			Algo42 algo42 = new Algo42(950, 50);//ver de definir esto afuera
+			DibujableExtra vistaAlgo = new VistaBlindajeAlgo42();
+			vistaAlgo.setMonitoreable(algo42);
+			controlador.agregarDibujable(vistaAlgo);
+			Dibujable VistaPuntos = new VistaPuntos(Escenario.getInstance());
+			controlador.agregarDibujable(VistaPuntos);
+			controlador.agregarKeyPressObservador(algo42);
+			
+			try
+			{
+				while(controlador.getSeguirEjecutando())
+				{
+					if(!controlador.getPausado())
+					{
+						controlador.comenzarJuego();
+					}
+				}
+				//Guardar partida = new Guardar();
+				//partida.GuardarPartida(algo42, Escenario.getInstance());
+			}
+			catch (Exception e)
+			{
+				perdio=true;
+				System.out.println("Perdiste, entrena mas nw");
+				//testsong.cambiarTema("Whispering.mid");
+			}
+			
+			if(!perdio && parser.getUltimoNivel()){
+				gano = true;
+			}
+			else if(!perdio)
+			{
+				parser.pasarNivel();
+				Escenario.aumentarNivel();
+				System.out.println("nivel ganado");
+				//Cargar partida = new Cargar();
+				//partida.CargarPartida();
+				controlador.DetenerBorrarJuego();
+				controlador.agregarDibujable(fondoJuego);
+				VistaNextLevel nextLevel = new VistaNextLevel();
+				controlador.agregarDibujable(nextLevel);
+				controlador.comenzarJuego(100);
+				controlador.DetenerBorrarJuego();
+				controlador.setSeguirEjecutando(true);
+			}
+		}
+		
+		controlador.DetenerBorrarJuego();
+		if(perdio)
+		{
+			VistaGameOver game_over = new VistaGameOver();
+			controlador.agregarDibujable(game_over);
+		}
+		else
+		{
+			VistaWinner winner = new VistaWinner();
+			controlador.agregarDibujable(winner);
+		}
+		controlador.comenzarJuego();*/
 	}
 
 
