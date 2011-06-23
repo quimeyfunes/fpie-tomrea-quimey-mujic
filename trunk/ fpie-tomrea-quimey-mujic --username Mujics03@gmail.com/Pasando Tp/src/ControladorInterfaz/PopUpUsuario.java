@@ -56,6 +56,7 @@ public class PopUpUsuario  extends JFrame {
 
 	     Persistencia persis = new Persistencia();
 	     persis.Persistir(strUsuario, usuarios);
+	     System.exit(0);
 	    }
 	   }); 
 	  add (txtUsuario);
