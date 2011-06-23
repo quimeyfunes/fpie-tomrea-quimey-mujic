@@ -27,6 +27,8 @@ public class Persistencia {
 		for (ObjetosMoviles elemento: escenario.objetosVivos() ) {
 			lista_xml.add( elemento );
 		}
+		String nivel = Usuario + "Nivel";
+		Usuarios.put(nivel , escenario.getNivelActiual());
 		String puntos = Usuario + "Puntos";
 		Usuarios.put(Usuario, lista_xml);
 		Usuarios.put(puntos, escenario.getPuntos());
@@ -62,6 +64,16 @@ public class Persistencia {
 			Usuarios_persistidos = (Hashtable) xstream.fromXML(new FileInputStream("Hash_usuarios.xml"));
 			String puntos = Usuario + "Puntos";
 			return (Integer) Usuarios_persistidos.get(puntos);
+		} catch (FileNotFoundException e) {
+			return 0;
+		}
+	}
+	public int getNivel(String Usuario){
+		Hashtable Usuarios_persistidos;
+		try {
+			Usuarios_persistidos = (Hashtable) xstream.fromXML(new FileInputStream("Hash_usuarios.xml"));
+			String nivel = Usuario + "Nivel";
+			return (Integer) Usuarios_persistidos.get(nivel);
 		} catch (FileNotFoundException e) {
 			return 0;
 		}
