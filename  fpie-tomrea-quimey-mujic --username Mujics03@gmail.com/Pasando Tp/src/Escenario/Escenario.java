@@ -18,7 +18,7 @@ public class Escenario implements ObjetoVivo,ObjetoDeTexto
 	LinkedList<ObjetosMoviles> todoLoQueEstaEnJuego;
 	LinkedList<ObjetosMoviles> temp;
 	int sumaDePuntos;
-	static int nivelActual;
+	static int nivelActual = 1;
 	static double LimiteX=1200;
 	static double LimiteY=500;
 	private static Escenario instance = null;
