@@ -27,7 +27,9 @@ public class Persistencia {
 		for (ObjetosMoviles elemento: escenario.objetosVivos() ) {
 			lista_xml.add( elemento );
 		}
+		String puntos = Usuario + "Puntos";
 		Usuarios.put(Usuario, lista_xml);
+		Usuarios.put(puntos, escenario.getPuntos());
 		try {
 			
 			xstream.toXML(Usuarios,new FileOutputStream("Hash_usuarios.xml"));
