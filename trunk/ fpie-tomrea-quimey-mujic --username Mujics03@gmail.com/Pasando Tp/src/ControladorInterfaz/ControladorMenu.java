@@ -1,11 +1,9 @@
 package ControladorInterfaz;
 
 
-import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import Menu.Juego;
 import Menu.MenuInicial;
 
 
