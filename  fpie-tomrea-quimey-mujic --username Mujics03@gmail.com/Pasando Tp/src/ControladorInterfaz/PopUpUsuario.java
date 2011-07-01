@@ -1,8 +1,6 @@
 package ControladorInterfaz;
 
-import java.applet.Applet;
 import java.awt.Color;
-import java.awt.Label;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +16,11 @@ import com.thoughtworks.xstream.XStream;
 
 public class PopUpUsuario  extends JFrame { 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public void start(){
 		init();
 	}

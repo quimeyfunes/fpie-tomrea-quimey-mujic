@@ -1,5 +1,4 @@
 package Pruebas;
-import java.awt.geom.Rectangle2D;
 
 import junit.framework.TestCase;
 import Armas.Danio;
